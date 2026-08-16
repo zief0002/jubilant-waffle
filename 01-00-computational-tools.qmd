@@ -1,0 +1,15 @@
+# Tools for Visualization
+
+
+Under construction
+
+
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| out-width: "100%" -->
+<!-- knitr::include_graphics("figs/01-00-stat-computing.png") -->
+<!-- ``` -->
+
+<br /><br />
+
+

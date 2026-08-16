@@ -1,0 +1,361 @@
+object_id,r_num,type,spaces,condition,notes,global_id,creation_date,creator,edit_date,editor,campus,longitude,latitude
+1,1,Rack on Rails,4,Good,,01daf045-7903-44a2-85d4-fee80d8f29e7,10/24/14 0:03,stobb014_UMN,10/24/14 0:03,stobb014_UMN,,-93.24317639,44.97237257
+86,,Grounded Rack,1,Good,,fca86fce-da2b-473d-98cb-beb1f8d50350,10/26/14 19:22,gis8501_groupa,11/2/14 5:41,gis8501_groupa,,-93.23028725,44.9701834
+87,,Rack on Rails,5,Good,,6cd7a5a8-dd76-4079-a002-318077170262,10/26/14 19:30,gis8501_groupa,11/2/14 5:37,gis8501_groupa,,-93.23364085,44.97111285
+88,,Rack on Rails,4,Good,,b154b8ad-996e-4fdb-a6a9-2bb8e84f719d,10/26/14 19:34,gis8501_groupa,11/2/14 5:37,gis8501_groupa,,-93.23411493,44.97120041
+89,,Rack on Rails,25,Poor,5 broken hoops,1e5687c1-1724-4744-827b-49192d1279bf,10/26/14 19:53,gis8501_groupa,10/26/14 19:53,gis8501_groupa,,-93.23204795,44.97009681
+90,,Grounded Rack,2,Fair,Weismann garage,d793a6a5-4b5d-4262-ab79-dea73c4b0105,10/26/14 20:01,gis8501_groupa,11/2/14 5:29,gis8501_groupa,,-93.23742628,44.97317712
+91,,Moped Parking,6,Good,Next to bike parking ,2d1dabc2-1182-4ea7-9378-dd9b384cc8b0,10/26/14 20:04,gis8501_groupa,11/2/14 5:23,gis8501_groupa,,-93.23746811,44.97516018
+92,,Rack on Rails,25,Fair,,474d8aaa-c16a-4399-a702-64ca871800be,10/26/14 20:07,gis8501_groupa,11/2/14 5:23,gis8501_groupa,,-93.2374645,44.97509597
+93,,Moped Parking,10,Fair,"Spaces not explicitly marked, at least 10 spaces",bc67f020-b6cb-4ab0-95b6-396851f4fc70,10/26/14 20:15,gis8501_groupa,11/2/14 5:15,gis8501_groupa,,-93.23820437,44.97645697
+94,,Rack on Rails,5,Good,,9d716dd1-91fc-4cd9-ada9-a6afbb010a14,10/26/14 20:18,gis8501_groupa,11/2/14 4:25,gis8501_groupa,,-93.23989685,44.97861114
+95,0,Rack on Rails,6,Good,,75000bee-dd1d-403e-b78a-9e469dd90487,10/26/14 20:32,gis8501_groupa,10/26/14 20:32,gis8501_groupa,,-93.23521262,44.9798116
+96,,Rack on Rails,8,Fair,,eb2fb544-0279-450d-b9ad-a5c2a8548428,10/26/14 20:33,gis8501_groupa,11/2/14 4:37,gis8501_groupa,,-93.23734699,44.97917454
+97,,Grounded Rack,4,Good,,d74d6187-fd54-4b3f-bb3b-126ebd881d6e,10/26/14 20:34,gis8501_groupa,11/2/14 4:36,gis8501_groupa,,-93.2370729,44.97937416
+99,,Rack on Rails,10,Good,,72e2362a-ff2b-473f-ad90-b35438e720d7,10/26/14 20:39,gis8501_groupa,10/26/14 20:39,gis8501_groupa,,-93.23968252,44.97895832
+100,,Rack on Rails,10,Good,,09321129-75ce-45a7-ab80-2d07e535c13d,10/26/14 20:40,gis8501_groupa,10/26/14 20:40,gis8501_groupa,,-93.23968252,44.97895832
+101,,Rack on Rails,10,Good,,cebd4d4b-d050-46f9-a8b7-511109026e80,10/26/14 20:42,gis8501_groupa,11/2/14 4:27,gis8501_groupa,,-93.23923267,44.97816013
+102,,Rack on Rails,20,Good,,d93498ae-97be-4ded-8052-85061cc86b8b,10/27/14 21:57,gis8501_groupa,11/25/14 1:10,gis8501_groupa,,-93.23063072,44.97150515
+103,,Grounded Rack,9,Good,group of 6 and group of 3 separated by bike lockers,a362c24c-0436-43b9-9e8f-63eee4879d54,10/27/14 22:00,gis8501_groupa,11/5/14 7:01,gis8501_groupa,,-93.23095491,44.97171532
+104,,Rack on Rails,21,Good,,4b301698-791f-4b85-83a2-9daa696a6523,10/27/14 22:07,gis8501_groupa,11/2/14 17:00,gis8501_groupa,,-93.23066636,44.97245939
+105,,Rack on Rails,4,Good,,bf46232a-a666-4015-b6a3-423b99a07988,10/27/14 22:12,gis8501_groupa,10/27/14 22:12,gis8501_groupa,,-93.23121018,44.97143297
+106,,Rack on Rails,4,Good,,bd8b8288-7c56-481a-97ef-ac7a30f1c28c,10/27/14 22:13,gis8501_groupa,11/2/14 5:43,gis8501_groupa,,-93.23105142,44.97130381
+107,,Rack on Rails,6,Good,,078c1354-3612-4050-bedf-5721e4de5e4b,10/27/14 22:15,gis8501_groupa,11/2/14 5:43,gis8501_groupa,,-93.23161854,44.97139048
+108,,Rack on Rails,11,Good,,75f4658b-5311-4ce4-83fc-ab89521fe7c9,10/27/14 22:32,gis8501_groupa,11/2/14 17:01,gis8501_groupa,,-93.23039504,44.97303941
+109,,Rack on Rails,21,Good,,f1f74bdc-f887-44d7-979f-83db76dbe6bc,10/27/14 22:36,gis8501_groupa,11/2/14 17:02,gis8501_groupa,,-93.23084984,44.97314837
+110,,Rack on Rails,60,Good,,97c56914-ee20-4024-8a32-1f776fb5fab7,10/27/14 22:49,gis8501_groupa,11/2/14 16:55,gis8501_groupa,,-93.23192105,44.97301566
+111,,Rack on Rails,21,Fair,,cd4a90bd-2570-4d25-a723-6e6ba942d5de,10/27/14 22:53,gis8501_groupa,11/2/14 16:56,gis8501_groupa,,-93.23207963,44.97335525
+112,,Rack on Rails,34,Good,,058e92d6-f342-40f9-ad89-4276fe2b79cd,10/27/14 23:00,gis8501_groupa,11/2/14 17:07,gis8501_groupa,,-93.23258867,44.97343499
+113,,Rack on Rails,18,Good,,ea4f2e22-0149-42a2-aef6-9f560ec230e3,10/27/14 23:11,gis8501_groupa,11/2/14 17:09,gis8501_groupa,,-93.23309443,44.97340274
+114,,Rack on Rails,8,Good,,fc8058a7-7422-43eb-a5c1-29b68e3a20f7,10/27/14 23:14,gis8501_groupa,11/2/14 16:55,gis8501_groupa,,-93.23177495,44.97328352
+115,,Rack on Rails,15,Good,,a4a8472d-6194-4f09-b4d9-378b0e3b2126,10/27/14 23:18,gis8501_groupa,11/2/14 16:57,gis8501_groupa,,-93.231712,44.9734453
+116,,Rack on Rails,16,Good,,35e6af55-a36d-4a27-a596-0ab184f3b8bd,10/27/14 23:24,gis8501_groupa,11/2/14 16:58,gis8501_groupa,,-93.23136482,44.97341707
+117,,Rack on Rails,19,Good,,7ff151c6-2c38-4ab0-a846-30997ccec75b,10/27/14 23:47,gis8501_groupa,11/2/14 16:58,gis8501_groupa,,-93.23276217,44.97248509
+118,,Rack on Rails,12,Good,,d84dcb85-5f76-4684-86ab-0ef46c120993,10/27/14 23:49,gis8501_groupa,10/27/14 23:57,gis8501_groupa,,-93.23187369,44.97202305
+119,,Rack on Rails,7,Good,group of 7 on west side of walkway,5e2181fe-d535-4480-a9cd-124685836656,10/28/14 0:04,gis8501_groupa,11/3/14 21:24,gis8501_groupa,,-93.23393463,44.97280576
+120,,Rack on Rails,18,Good,9 on each side of street/walkway,da339a86-79d3-4c82-a277-d12c32b428d0,10/28/14 0:07,gis8501_groupa,11/3/14 21:21,gis8501_groupa,,-93.23387168,44.97329703
+122,,Rack on Rails,7,Good,"temp triangle style, on west side of street/walkway",0e17693b-ca44-4426-adbc-b5d642eb5414,10/28/14 0:10,gis8501_groupa,11/3/14 21:38,gis8501_groupa,,-93.23389934,44.97357063
+123,,Rack on Rails,9,Good,west side of street/walkway,47368846-5c84-4164-a985-ae121efc91dd,10/28/14 0:14,gis8501_groupa,11/3/14 21:22,gis8501_groupa,,-93.23393296,44.97294196
+126,,Rack on Rails,10,Good,,42afc1c7-f64e-4a4b-935f-91f54e2a42ec,10/28/14 0:30,gis8501_groupa,11/2/14 16:07,gis8501_groupa,,-93.23399532,44.97210895
+127,,Rack on Rails,4,Good,,cedd3dc7-ea9f-48fe-838f-f9312c0db51d,10/28/14 0:41,gis8501_groupa,11/2/14 5:42,gis8501_groupa,,-93.23276184,44.97118482
+128,,Rack on Rails,10,Good,,d3685ae4-a52a-4bb1-9913-c15c3b640fd3,10/28/14 0:42,gis8501_groupa,11/2/14 5:38,gis8501_groupa,,-93.23393849,44.97141261
+129,,Rack on Rails,22,Good,,6f00f3cc-10d6-4ed2-89d1-24a7f0402597,10/28/14 0:58,gis8501_groupa,10/28/14 0:58,gis8501_groupa,,-93.23157244,44.9734616
+130,,Rack on Rails,7,Good,,c6e23679-9866-4cb2-8883-79a5654bb7f2,10/28/14 1:00,gis8501_groupa,11/2/14 16:59,gis8501_groupa,,-93.23134161,44.97268132
+131,,Rack on Rails,8,Good,,4c2ab73f-cd2d-44dd-9eb6-9211421e4208,10/28/14 1:02,gis8501_groupa,11/2/14 16:59,gis8501_groupa,,-93.23112401,44.97252768
+132,,Rack on Rails,6,Good,,39a92afd-0853-4e54-bf3d-b76885076ff7,10/28/14 1:07,gis8501_groupa,10/28/14 1:07,gis8501_groupa,,-93.23164319,44.97165421
+133,,Grounded Rack,8,Good,,dc8cbf0f-23bf-4bb6-955e-8efca05f06a8,10/28/14 15:15,gis8501_groupa,11/11/14 3:32,gis8501_groupa,,-93.24318753,44.97213311
+134,,Grounded Rack,7,Good,,ee8c5564-39c1-43da-a080-0cac64985961,10/28/14 15:16,gis8501_groupa,11/11/14 3:32,gis8501_groupa,,-93.24323011,44.97218604
+135,,Grounded Rack,6,Good,,6548e4d9-bd8a-4013-9b87-b6835998574a,10/28/14 15:18,gis8501_groupa,11/11/14 3:33,gis8501_groupa,,-93.24322533,44.97227178
+137,,Grounded Rack,7,Good,,07b60646-99f9-4677-a5a6-4374637189cb,10/28/14 15:20,gis8501_groupa,11/11/14 3:35,gis8501_groupa,,-93.24317522,44.97242733
+138,,Grounded Rack,7,Good,,4ad33713-56b8-495c-8f12-7b8dcf125679,10/28/14 15:21,gis8501_groupa,11/11/14 3:36,gis8501_groupa,,-93.2431821,44.97249186
+139,,Grounded Rack,7,Good,,069f9690-3879-4983-8177-96bf8902a7df,10/28/14 15:22,gis8501_groupa,11/11/14 3:36,gis8501_groupa,,-93.24317905,44.97254014
+140,,Grounded Rack,7,Good,,b1f2e599-db29-4461-ba35-aa6f88c276f6,10/28/14 15:23,gis8501_groupa,11/11/14 3:37,gis8501_groupa,,-93.24317368,44.97259448
+141,,Grounded Rack,7,Fair,,b72b31c8-5b10-4f11-92c6-57d453ba3f36,10/28/14 15:24,gis8501_groupa,11/11/14 3:38,gis8501_groupa,,-93.24317596,44.97264495
+142,,Grounded Rack,7,Fair,,08ebcb4f-6571-42dc-828b-a57e09dcb186,10/28/14 15:25,gis8501_groupa,11/11/14 3:39,gis8501_groupa,,-93.24317237,44.97270057
+143,,Grounded Rack,7,Good,,9e37b305-3c06-441f-a87f-b45d9fb8f5e9,10/28/14 15:26,gis8501_groupa,11/11/14 3:40,gis8501_groupa,,-93.24316852,44.97274409
+144,,Grounded Rack,5,Good,,7d550e40-2f8b-4278-8a3a-53994cf8f4e7,10/28/14 15:27,gis8501_groupa,11/17/14 20:54,gis8501_groupa,,-93.24310825,44.97298021
+145,0,Grounded Rack,5,Good,,61d07cd7-2e0d-44c9-a753-58d889dde9c4,10/28/14 15:28,gis8501_groupa,11/17/14 20:45,gis8501_groupa,,-93.24305536,44.97293025
+146,,Grounded Rack,9,Fair,Below Anderson library,4ea41264-860b-498c-819e-36338e0e410b,10/28/14 15:31,gis8501_groupa,11/17/14 20:41,gis8501_groupa,,-93.24298446,44.9729216
+147,,Moped Parking,3,Good,Lines are a little faded,6deb45e9-53f2-481a-9d23-b1c1dad28e00,10/28/14 15:34,gis8501_groupa,11/17/14 20:57,gis8501_groupa,,-93.24361501,44.97350985
+148,,Grounded Rack,16,Good,,fdd9208b-bad5-4a1d-a641-946fe912956b,10/28/14 15:35,gis8501_groupa,11/17/14 20:55,gis8501_groupa,,-93.2436423,44.97326705
+149,,Rack on Rails,4,Good,,04220962-7b15-4cf5-b22a-2292e280a55a,10/28/14 15:36,gis8501_groupa,11/14/14 22:20,gis8501_groupa,,-93.24307683,44.97276593
+150,,Rack on Rails,7,Good,,86a8c875-4ca7-4220-ba3a-f8dd9be93e7c,10/28/14 15:37,gis8501_groupa,11/14/14 22:21,gis8501_groupa,,-93.24306706,44.97273654
+151,,Rack on Rails,7,Good,,2d344b0b-d7df-4750-a621-355bb2f7409b,10/28/14 15:38,gis8501_groupa,11/11/14 3:40,gis8501_groupa,,-93.24307497,44.97270438
+152,,Rack on Rails,7,Fair,Has some corrosion along the rails and two bicycle violations,ce84645d-464f-4e0a-a00e-414460ade852,10/28/14 15:39,gis8501_groupa,11/17/14 20:35,gis8501_groupa,,-93.24297686,44.97266448
+153,,Rack on Rails,7,Fair,Has some corrosion on rails,df62ccab-b22c-4cee-ad5e-77e1f43d68c0,10/28/14 15:40,gis8501_groupa,11/17/14 20:36,gis8501_groupa,,-93.2429285,44.97267973
+154,,Rack on Rails,5,Good,Has one bicycle violation,524d1a4a-b789-48f5-a5b8-c60829b9790f,10/28/14 15:41,gis8501_groupa,11/17/14 20:39,gis8501_groupa,,-93.24285773,44.97269751
+155,,Rack on Rails,7,Good,,5adb631a-565b-414d-88d0-508a6aeb7590,10/28/14 15:42,gis8501_groupa,11/11/14 3:34,gis8501_groupa,,-93.24294591,44.97236699
+156,,Rack on Rails,6,Good,,f2d03666-f414-4ddd-b28e-7c190f6684a4,10/28/14 15:43,gis8501_groupa,11/11/14 3:31,gis8501_groupa,,-93.24306663,44.97211306
+157,,Rack on Rails,7,Good,Has one dismantled bike still attached,f2378957-4379-45f1-b168-a1a240c62ae0,10/28/14 15:45,gis8501_groupa,11/11/14 3:12,gis8501_groupa,,-93.24318356,44.97162571
+158,,Rack on Rails,8,Good,Near social sciences building entrance,00b9ad7c-4043-449b-98e0-22eec2ddedf6,10/28/14 15:46,gis8501_groupa,11/11/14 3:11,gis8501_groupa,,-93.24318168,44.97151291
+159,,Rack on Rails,7,Good,Near entrance to Bligen hall and skyway,fbc85a42-c36c-4f0a-9163-4faaae4dc42a,10/28/14 15:47,gis8501_groupa,11/11/14 3:12,gis8501_groupa,,-93.24321658,44.97158028
+160,,Rack on Rails,7,Good,An apparent bicycle violation,10351ae0-b8bd-4f99-ae63-921ce3e23014,10/28/14 15:49,gis8501_groupa,11/11/14 3:10,gis8501_groupa,,-93.24317456,44.97145958
+162,,Rack on Rails,7,Good,North east corner rack of quad,0e45548c-357a-49cc-8c75-5b7d5656b77a,10/28/14 15:52,gis8501_groupa,11/25/14 2:59,gis8501_groupa,,-93.24327534,44.97141159
+163,,Rack on Rails,7,Good,Northernmost rack of quad,115ccf27-cc08-4a25-b786-518bf7c85699,10/28/14 15:53,gis8501_groupa,11/25/14 3:04,gis8501_groupa,,-93.24333246,44.97144672
+164,,Rack on Rails,7,Good,North east corner rack of quad,dc727750-b51e-4f78-99a8-291058079ac3,10/28/14 15:55,gis8501_groupa,11/7/14 16:43,gis8501_groupa,,-93.24338213,44.97141262
+165,,Rack on Rails,7,Good,South east corner rack of quad,94cd8693-6e6d-4985-9fb2-3ca9660f0e68,10/28/14 15:55,gis8501_groupa,11/25/14 3:00,gis8501_groupa,,-93.24328195,44.97133002
+166,,Rack on Rails,7,Good,Southern middle rack of quad,ef83085e-17c6-4cf6-b8f3-9672b543bc10,10/28/14 15:56,gis8501_groupa,11/25/14 3:01,gis8501_groupa,,-93.24333247,44.97134352
+167,,Rack on Rails,7,Good,North middle rack of quad,f48c89b7-5748-45c3-8449-e19260c0b808,10/28/14 15:58,gis8501_groupa,11/25/14 3:04,gis8501_groupa,,-93.24333566,44.97140408
+168,,Rack on Rails,8,Good,Off south west corner of Belgen hall,5372a666-8472-4308-84f6-6b48d47e9d72,10/28/14 16:00,gis8501_groupa,11/11/14 3:07,gis8501_groupa,,-93.24353263,44.97155481
+169,,Rack on Rails,8,Good,Along west side of Blegen hall,74d156e2-52ae-4471-9bd7-06c5b51f5437,10/28/14 16:01,gis8501_groupa,11/11/14 3:09,gis8501_groupa,,-93.24353089,44.97169269
+170,,Rack on Rails,8,Good,Off south east corner of Heller hall,2840db21-e88b-486c-8400-d89cd3fc22a9,10/28/14 16:02,gis8501_groupa,11/11/14 3:08,gis8501_groupa,,-93.24366527,44.97154562
+171,,Rack on Rails,6,Good,,a795fc0c-d693-4722-b2e4-7beb868546e7,10/29/14 15:16,gis8501_groupa,11/17/14 21:10,gis8501_groupa,,-93.24473526,44.97369546
+172,,Rack on Rails,6,Good,,63137438-697d-418a-a84b-29dd7e7e531e,10/29/14 15:17,gis8501_groupa,11/17/14 21:09,gis8501_groupa,,-93.24463634,44.97369437
+173,,Rack on Rails,6,Good,,ee9219b2-f8b8-41a8-8cc5-19663a9ed25f,10/29/14 15:17,gis8501_groupa,11/17/14 21:03,gis8501_groupa,,-93.24454282,44.97369069
+174,,Rack on Rails,6,Good,Has one bicycle violation,2f1be418-32e1-45e4-8902-d8f17f9dc9c5,10/29/14 15:19,gis8501_groupa,11/17/14 21:01,gis8501_groupa,,-93.24443794,44.97369397
+175,,Rack on Rails,6,Good,,640d62b6-7ebc-4c58-a797-3c43502e95b4,10/29/14 15:20,gis8501_groupa,11/17/14 21:00,gis8501_groupa,,-93.24434299,44.97369273
+176,,Rack on Rails,6,Good,,5e3a2211-cd87-42a0-ae3b-f2508cc16ceb,10/29/14 15:21,gis8501_groupa,11/17/14 20:58,gis8501_groupa,,-93.24412457,44.97356195
+177,,Rack on Rails,6,Good,To the left of the left entrance of Heller hall on southside,6b8dcd2b-9cdd-43bb-8a20-edb814b92a2d,10/29/14 15:30,gis8501_groupa,11/11/14 3:02,gis8501_groupa,,-93.24394252,44.97155603
+178,,Rack on Rails,7,Fair,Northernmost rack in quad West of Blagen rack is slightly bent on one end,b85a08d7-5ffc-413f-9afe-164e4ce82944,10/29/14 15:34,gis8501_groupa,11/25/14 2:50,gis8501_groupa,,-93.24387436,44.97145189
+179,,Rack on Rails,7,Good,North east rack of quad west of Blegen hall,2e1b218e-2067-426c-9af9-83f8fe3761ff,10/29/14 15:35,gis8501_groupa,11/25/14 2:51,gis8501_groupa,,-93.24383844,44.97142429
+180,,Rack on Rails,7,Good,Southeast rack in quad west of Blegen hall,d1e3a8f1-e6b6-4a84-98b2-964cad7c53e3,10/29/14 15:36,gis8501_groupa,11/25/14 2:54,gis8501_groupa,,-93.24383197,44.97133865
+181,,Rack on Rails,7,Good,Southern middle rack in the quad west of Blegen hall,f9a0d296-194c-442b-8db1-102120a28399,10/29/14 15:36,gis8501_groupa,11/25/14 2:58,gis8501_groupa,,-93.24386439,44.9713606
+182,,Rack on Rails,7,Good,Northern middle rack and quad west of Blegen hall,07428000-847d-452f-8018-6ea33c6f69a3,10/29/14 15:38,gis8501_groupa,11/25/14 2:56,gis8501_groupa,,-93.24387436,44.97141094
+183,,Rack on Rails,7,Good,Northwest rack in the quad west of Blegen hall,4a870524-6cfe-40a3-81b9-1c3ccaee796a,10/29/14 15:39,gis8501_groupa,11/11/14 3:01,gis8501_groupa,,-93.2439046,44.97141869
+184,,Rack on Rails,7,Good,Southwest rack west of Blegen hall,e452a774-846a-443a-a343-f51dff49f89a,10/29/14 15:40,gis8501_groupa,11/25/14 2:57,gis8501_groupa,,-93.24389197,44.97133711
+185,,Rack on Rails,8,Good,,dc65af7a-0854-449e-a491-8a268eb8b08f,10/29/14 15:42,gis8501_groupa,11/11/14 3:03,gis8501_groupa,,-93.24421234,44.97151886
+186,,Rack on Rails,8,Good,,45fc61e6-e136-4827-904d-9d7e899c82e4,10/29/14 15:44,gis8501_groupa,11/11/14 3:03,gis8501_groupa,,-93.24428796,44.97151759
+187,,Rack on Rails,8,Good,,07e4900d-9216-49fd-a013-619119d4daaa,10/29/14 15:45,gis8501_groupa,11/11/14 3:04,gis8501_groupa,,-93.24436583,44.97152281
+188,,Grounded Rack,10,Good,,1709f3f1-da37-4cb9-b789-95fbfb4f77b4,10/29/14 15:47,gis8501_groupa,11/25/14 2:41,gis8501_groupa,,-93.24435401,44.97054474
+189,,Grounded Rack,15,Good,There is one bicycle violation,e37cf315-e004-4c22-b43f-4489023adb4c,10/29/14 15:50,gis8501_groupa,11/25/14 2:45,gis8501_groupa,,-93.24480763,44.97094872
+190,,Grounded Rack,15,Good,There is one bicycle violation,a53ab780-abc6-409f-a4fb-5506af31578f,10/29/14 15:51,gis8501_groupa,11/25/14 2:43,gis8501_groupa,,-93.24478282,44.97093108
+191,,Rack on Rails,4,Good,At west entrance to Humphrey school of Public affairs,41511991-7418-4a33-922f-aedb0689702e,10/29/14 15:53,gis8501_groupa,11/25/14 2:47,gis8501_groupa,,-93.24486241,44.97111231
+192,,Rack on Rails,7,Good,,0f83fa0b-cb74-4df7-a226-fb83ffe7a784,10/29/14 18:39,gis8501_groupa,11/11/14 3:24,gis8501_groupa,,-93.24254301,44.97228729
+193,,Rack on Rails,8,Good,,03e00e56-5c71-4c23-ad5a-587d06170208,10/29/14 18:39,gis8501_groupa,11/11/14 3:25,gis8501_groupa,,-93.24253586,44.97223447
+194,,Rack on Rails,7,Good,To the right of the entrance to Anderson Hall,de560f15-0703-41a3-abc9-e95a86b35521,10/29/14 18:41,gis8501_groupa,11/11/14 3:26,gis8501_groupa,,-93.2425112,44.97209487
+195,,Rack on Rails,7,Good,,e7b6f21e-a94d-447f-a144-a14a66dd3a59,10/29/14 18:43,gis8501_groupa,11/11/14 3:26,gis8501_groupa,,-93.24250889,44.97204418
+196,,Grounded Rack,21,Good,Front of building,6dc01b90-f216-41d8-bcef-1b707df56f95,10/29/14 18:44,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22522662,44.97882444
+197,,Rack on Rails,6,Good,Left of entrance to Anderson Hall with access to rooms 130 through 350,ef8db750-2fb3-4f33-a5ee-4de7ff8ba081,10/29/14 18:44,gis8501_groupa,11/11/14 3:27,gis8501_groupa,,-93.24248537,44.97187879
+198,,Rack on Rails,7,Good,To the right of entrance to Anderson Hall access to rooms 130 through 350,2713eec5-4e3e-4877-b251-7cdc15e89ba9,10/29/14 18:45,gis8501_groupa,11/11/14 3:28,gis8501_groupa,,-93.2424595,44.97175517
+199,,Rack on Rails,8,Good,,0d89a4c6-2f5d-4b7c-b028-4322b86296f9,10/29/14 18:46,gis8501_groupa,11/11/14 3:29,gis8501_groupa,,-93.2424588,44.97171695
+200,,Rack on Rails,4,Good,,9de20fc1-c924-48a3-b32f-70d09f8ea056,10/29/14 18:46,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22445498,44.97868431
+201,,Grounded Rack,12,Good,,9158e88f-612d-4f83-82fe-f5e3deb3e622,10/29/14 18:47,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22363506,44.97845842
+202,,Rack on Rails,10,Good, ,3415e43d-e70b-4ae5-baba-33d2010ca9ef,10/29/14 18:48,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22357958,44.97852073
+203,,Grounded Rack,18,Good, ,ac441863-f4c8-4246-8a54-655907429a6c,10/29/14 18:50,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.2230743,44.9781232
+204,,Rack on Rails,7,Good,,febe01b4-7ec2-43d8-ab6a-76327d63b775,10/29/14 18:50,gis8501_groupa,11/11/14 3:13,gis8501_groupa,,-93.24269709,44.97154869
+205,205,Grounded Rack,11,Good,,4b43d734-13eb-4a8d-b3d0-080a55d49ea4,10/29/14 18:51,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22194427,44.97763902
+206,206,Rack on Rails,6,Good,,79028176-ab87-45be-9c42-3b5d5fb2d126,10/29/14 18:52,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.2217999,44.97759391
+207,,Rack on Rails,7,Good,Has one unmarked bicycle violation,6c521ceb-da4f-4254-86a3-482d14079164,10/29/14 18:52,gis8501_groupa,11/11/14 3:15,gis8501_groupa,,-93.24244312,44.97167437
+208,,Rack on Rails,8,Good,,a9239a62-2944-4923-9fdb-2035cb3498af,10/29/14 18:54,gis8501_groupa,11/11/14 3:14,gis8501_groupa,,-93.2421266,44.97125552
+209,209,Grounded Rack,7,Good,,00122808-be3b-4aee-b9bd-a56b3ce68f42,10/29/14 18:54,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22103349,44.97769066
+210,,Rack on Rails,8,Good,Has one bicycle violation,875ce00f-1ef3-45cf-8799-a26ac0a66fb4,10/29/14 18:55,gis8501_groupa,11/25/14 2:25,gis8501_groupa,,-93.24225351,44.97075591
+211,211,Rack on Rails,11,Good,Two racks. 1 with 4 spots and 1 with 7,a3837474-d1df-4cf8-9ba3-112c3e9819a6,10/29/14 18:56,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22116077,44.97697342
+212,,Rack on Rails,8,Good,,3a3221a5-25b6-4903-a673-a492a8cec736,10/29/14 18:56,gis8501_groupa,11/25/14 2:27,gis8501_groupa,,-93.24233963,44.97060877
+213,213,Moped Parking,1,Good,Colocated with bikes,7fdebe8c-9120-4148-be73-e3922ee06ad0,10/29/14 18:57,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22119131,44.97695029
+214,214,Rack on Rails,24,Good,3 racks with 8 spots each,698992cd-05ff-42cd-be46-96de225d66c1,10/29/14 18:58,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22174436,44.97686851
+215,,Rack on Rails,8,Good,To the right of the entrance of Rarig center below the steps,774b6607-ce4a-42c3-b081-2036dd6911e6,10/29/14 18:59,gis8501_groupa,11/25/14 2:30,gis8501_groupa,,-93.24260605,44.97075357
+216,216,Grounded Rack,5,Good,,af8280f0-89c6-4707-b1f6-cb8946312154,10/29/14 19:00,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22177291,44.97619322
+217,,Rack on Rails,7,Good,In gravel to right of entrance to Rarig hall,bebe3206-6a51-466f-907c-158c191bc05c,10/29/14 19:01,gis8501_groupa,11/25/14 2:28,gis8501_groupa,,-93.24261309,44.9706213
+218,,Rack on Rails,7,Good,,25a85f2a-8444-4289-ad51-bcfcaa14fc29,10/29/14 19:02,gis8501_groupa,11/17/14 22:31,gis8501_groupa,,-93.24337869,44.97065387
+219,,Grounded Rack,6,Good,,ce325539-3d5b-4b0c-a374-69e04eefb83c,10/29/14 19:02,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22259529,44.9753311
+220,220,Grounded Rack,6,Good,,c1917972-9f76-4d8f-aeb9-fa356c96de0e,10/29/14 19:03,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22234896,44.97524626
+221,,Rack on Rails,5,Good,To the right of the entrance hall to Carlson,13b5999e-412f-4214-820d-b7f1a968fd1d,10/29/14 19:05,gis8501_groupa,11/25/14 2:38,gis8501_groupa,,-93.24421673,44.9703442
+222,,Rack on Rails,30,Good,Racks on rails mounted to concrete pads,38652f9a-6abc-4680-a77f-070f43e8c223,10/29/14 19:06,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22311037,44.9754666
+223,,Rack on Rails,5,Good,To the right of the entrance hall to Carlson,e00225fd-7c36-4e1e-92b4-b7dffc403a3a,10/29/14 19:06,gis8501_groupa,11/25/14 2:39,gis8501_groupa,,-93.24422553,44.97036682
+224,,Rack on Rails,6,Good,,c60d48e9-4aa7-410b-90cc-900d8db668cd,10/29/14 19:07,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22390167,44.97530179
+225,,Grounded Rack,9,Good,Beneath awning entrance to Carlson,d1185bd1-5232-4f63-acc0-88f56604fa46,10/29/14 19:08,gis8501_groupa,11/25/14 2:33,gis8501_groupa,,-93.24397881,44.97020699
+226,,Rack on Rails,4,Good,,1cda6f2b-6fef-4d68-b999-9513c155c1af,10/29/14 19:08,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22386977,44.97499003
+227,,Grounded Rack,7,Good,Beneath awning entrance to Carlson,45cbc523-f771-4bcb-8c90-f338a01d64c3,10/29/14 19:09,gis8501_groupa,11/25/14 2:35,gis8501_groupa,,-93.24394242,44.97020421
+228,,Grounded Rack,10,Good,Beneath awning entrance to Carlson,69fe4a67-46ed-48ca-953c-e9b0b985d20a,10/29/14 19:10,gis8501_groupa,11/25/14 2:34,gis8501_groupa,,-93.24395725,44.97022605
+229,,Grounded Rack,10,Good,,7fc4e34a-3bc9-423b-a50a-624a8eb9470d,10/29/14 19:10,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22429136,44.9748662
+230,,Grounded Rack,15,Good,One dismantled bike,7183839e-3f3c-4698-9c8e-b5fd285b8e48,10/29/14 19:11,gis8501_groupa,11/25/14 2:40,gis8501_groupa,,-93.24421227,44.97042852
+231,,Rack on Rails,12,Good,One bicycle violation,e4d0bab7-8f2f-421e-8e1b-fad98be4b87d,10/29/14 19:13,gis8501_groupa,11/17/14 22:34,gis8501_groupa,,-93.24384464,44.97066153
+232,,Rack on Rails,50,Good,"Rack on rails, mounted to concrete",a2bc33c0-6436-4633-80cc-21762937d031,10/29/14 19:18,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22650306,44.97720521
+233,,Rack on Rails,6,Good,,58d9aaf2-eda6-4ba1-a42b-2b93d9fcac07,10/29/14 19:20,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22836453,44.97767349
+234,,Moped Parking,45,Good,,0cd2f4d5-9333-47db-bb05-714697f0073b,10/29/14 19:22,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22906108,44.97795186
+235,,Rack on Rails,14,Good,Two racks. 1 with 6 hoops and 1 with 8...2 hoops,0f383519-b1f1-45aa-a9cc-949d77ef5218,10/29/14 19:24,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22912007,44.97807993
+236,,Grounded Rack,7,Good,,c244cef7-00b5-4583-b28b-cf22a251696b,10/29/14 19:25,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22892091,44.97812093
+237,,Moped Parking,20,Good,,c5f32bf0-2fc9-41f3-80fe-cdc02ad51c5e,10/29/14 19:28,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22661826,44.97804645
+239,,Rack on Rails,12,Good,Two racks. 1 with 6 hoops and 1 with 4 hoops,b5fc00c9-af77-49e4-8b1f-f5c066c2fcf3,10/29/14 19:29,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22669855,44.97802161
+240,,Rack on Rails,6,Good,,6d892382-d5e6-4f27-9f96-82fb9ca48e9e,10/29/14 19:37,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22915687,44.97902665
+241,,Moped Parking,15,Good,,575d561b-634a-4c55-86ca-a4aadb99c7ed,10/29/14 19:39,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22946824,44.97948158
+242,,Rack on Rails,4,Good,,a333c815-6089-45bd-83b2-106d6597edcc,10/29/14 19:44,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.2316418,44.97901129
+243,,Rack on Rails,18,Good,Three racks with 6 hoops each,2c32a4e6-214e-4a95-abce-63c149876ad4,10/29/14 19:46,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.23141695,44.97864959
+244,,Rack on Rails,23,Good,Four total racks. 3 with 5 hoops and 1 with 8 hoops,f733aa69-0196-4ab1-9029-d320653a4e0a,10/29/14 19:48,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.23163121,44.97861725
+245,,Rack on Rails,17,Good,Three total racks. 2 with 5 hoops and 1 with 7 hoops,72d10fc9-2000-4097-b8e0-c0fefeb5c69c,10/29/14 19:50,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.2320937,44.97801688
+246,,Grounded Rack,12,Good,,3683ef1f-95e1-43b4-94db-a6f7777db186,10/29/14 19:52,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.23147108,44.97823657
+247,,Rack on Rails,36,Good,Seven total racks.4 with 6 hoops and 3 with 4 hoops,54ea2bee-cf20-4e7c-9158-f3f321b5440f,10/29/14 19:53,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.23126927,44.97820844
+248,,Moped Parking,12,Good, ,15b84595-9c60-45d4-b66a-fdcabc11c7b1,10/29/14 19:55,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.23101449,44.97810454
+249,,Rack on Rails,6,Good,,87c44a80-5934-4cac-a180-359858ece928,10/29/14 19:57,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.23006249,44.97832872
+250,,Grounded Rack,4,Good,,99cf31a2-a25d-4347-8621-1ec2e8dc7301,10/29/14 19:59,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22937983,44.97692611
+251,,Rack on Rails,14,Good,Two racks with 7 hoops each,9c95dda0-d7d3-45c1-889b-cb499281270b,10/29/14 20:01,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22865432,44.97669041
+252,,Moped Parking,9,Good,,44fa6160-5eed-483f-8674-2ba1a13fd0ec,10/29/14 20:02,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22859638,44.97647564
+253,,Grounded Rack,3,Good,Buffalo Wildwings,61c55a13-7149-4fdd-9213-09b6f01fc166,10/29/14 20:06,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22658896,44.97603057
+254,,Grounded Rack,33,Good,,e4595eaf-acec-4820-847a-2aebd517168f,10/29/14 20:09,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.2280182,44.97579928
+255,,Rack on Rails,12,Good,Two racks with 6 hoops each,e8f6425f-3d05-4daf-94ac-61578ef1780a,10/29/14 20:16,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22854362,44.97459344
+256,,Grounded Rack,15,Good,,7a549d09-ae91-49eb-8a03-257314dc3b1a,10/29/14 20:21,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.23064611,44.97545533
+257,,Grounded Rack,24,Good,,9fe54971-fe66-4cab-a716-db4f8484ec8d,10/29/14 20:22,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.2307501,44.97556556
+258,,Rack on Rails,30,Good,"Five racks total. 2 with 7 hoops, 2 with 6 hoops and 1 with 4 hoops",c153c893-c02f-4390-b932-287cebf24093,10/29/14 20:33,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.23035249,44.97561988
+259,,Rack on Rails,6,Good,,2cde126d-2d9a-4449-9dc1-b604de698b3f,10/29/14 20:34,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.2303904,44.97578591
+260,,Rack on Rails,38,Good,"Seven racks totoal. 4 with 5 hoops, 2 with 6 hoops and 1 with 7 hoops",be3f5780-3c80-4e19-aae7-5fa5510789d9,10/29/14 20:38,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22985144,44.97623341
+261,,Rack on Rails,17,Good,"Three total racks, 1 with 4 hoops,1 with 6 hoops and 1 with 7",24528c0a-61e7-4344-976a-ef3e46b7e81a,10/29/14 20:39,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.23005448,44.97632984
+262,,Grounded Rack,15,Fair,Middle rack is loose,48d50b08-2b47-41f6-aa33-14be1be3dcc8,10/29/14 20:41,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.23023479,44.97640136
+263,,Rack on Rails,6,Good,,85d6f652-a3bd-4f0d-acc5-81ca9f98292c,10/29/14 20:42,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22960636,44.97651805
+264,,Rack on Rails,6,Good,,50627771-79a7-465d-baa9-45700c99cf4d,10/29/14 20:47,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.23012781,44.97426128
+265,,Rack on Rails,6,Good,,a55149e2-32ed-41d9-8ff0-f7637f89fbc6,10/29/14 20:49,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.2300793,44.97397545
+266,,Grounded Rack,9,Good,,f529045a-f4d2-4381-9409-d4a7f2e8ad5e,10/29/14 20:52,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22875771,44.97347091
+267,,Rack on Rails,12,Good,Two total racks with 6 hoops each,07e92e9e-8a4b-4389-b082-ce9b6a24d607,10/29/14 20:53,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22860473,44.97315645
+268,,Grounded Rack,9,Good, ,02b1a3c3-3013-4100-a9b2-59ab635f5f58,10/29/14 20:55,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22860488,44.97328317
+269,,Moped Parking,6,Good,,265f30de-22d8-4d60-a444-903561b1c17a,10/29/14 20:58,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22727323,44.97311152
+270,,Grounded Rack,6,Good,,def0d92e-c124-44aa-8f33-2edb7a402212,10/29/14 21:01,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22737603,44.97239627
+271,,Rack on Rails,12,Good,Three total racks. 1 with 8 hoops and 2 with 4,21c70969-220e-45c0-a9b6-d90ee941e0e3,10/29/14 21:04,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22875959,44.9724256
+272,,Grounded Rack,19,Good,,4426a93b-a7e0-40d3-a70b-0fad7e11bd14,10/29/14 21:07,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22879846,44.97229865
+273,,Rack on Rails,4,Good,,2d66bbce-35a2-452a-94f9-56f889a4cb8a,10/30/14 15:44,gis8501_groupa,11/25/14 2:23,gis8501_groupa,,-93.24235458,44.97024435
+274,,Rack on Rails,4,Good,,ae65ded6-8390-4e41-9d2d-3a29037bfac2,10/30/14 15:46,gis8501_groupa,11/25/14 2:21,gis8501_groupa,,-93.24249826,44.9702523
+275,,Rack on Rails,5,Good,,53987a68-bd6a-49cd-85c9-b6b52fdbc0bd,10/30/14 15:46,gis8501_groupa,11/25/14 2:19,gis8501_groupa,,-93.2425154,44.97013449
+276,,Moped Parking,12,Good,Street side of planter,3ff2d394-811c-4dbf-add3-fcb2eb0ab17c,10/30/14 15:48,gis8501_groupa,11/25/14 2:18,gis8501_groupa,,-93.24223419,44.97010925
+277,,Rack on Rails,6,Good,,199dc570-7e3a-4c74-8774-816ba8399ea6,10/30/14 15:49,gis8501_groupa,11/25/14 2:16,gis8501_groupa,,-93.24167063,44.96990147
+278,,Rack on Rails,5,Good,,f17a58df-def7-457d-83b8-806faf4c5a5f,10/30/14 15:49,gis8501_groupa,11/17/14 21:34,gis8501_groupa,,-93.24164338,44.9699101
+279,,Rack on Rails,8,Good,Along longest edge,5219044c-7ce9-4874-928e-244df7e5d988,10/30/14 15:50,gis8501_groupa,11/17/14 21:32,gis8501_groupa,,-93.24160985,44.96989268
+280,,Rack on Rails,8,Good,Closest to entrance of hall,920767b8-1da3-43ea-9882-f2dfb6c8fba8,10/30/14 15:52,gis8501_groupa,11/17/14 21:23,gis8501_groupa,,-93.24159952,44.96984833
+281,,Rack on Rails,5,Good,,7acea877-8824-404e-ba07-6ed244911d76,10/30/14 15:53,gis8501_groupa,11/17/14 21:20,gis8501_groupa,,-93.24172634,44.96955448
+282,,Rack on Rails,5,Good,,f2aebf7a-e02c-4e86-a729-70c665e2b82a,10/30/14 15:53,gis8501_groupa,11/17/14 21:21,gis8501_groupa,,-93.24177998,44.96955488
+283,,Rack on Rails,3,Good,,3bf86d6a-92ee-41ac-9fcd-1e582bd4abb9,10/30/14 18:00,stobb014_UMN,10/30/14 18:00,stobb014_UMN,,-93.22200941,44.97577843
+284,,Moped Parking,22,Good,move closer to building,3d323235-b633-43db-b485-1dd61c13b400,10/30/14 18:06,stobb014_UMN,10/30/14 18:06,stobb014_UMN,,-93.22418284,44.97533544
+286,,Rack on Rails,6,Fair,outside come to hillel,98e97bc9-6998-48b4-a563-89897f4b80e7,10/30/14 18:30,stobb014_UMN,10/30/14 18:30,stobb014_UMN,,-93.23423415,44.9786636
+287,,Grounded Rack,4,Good,bordertown coffe.  dif style,6ad0a8c5-1e73-4a90-94f2-353479928069,10/30/14 18:36,stobb014_UMN,10/30/14 18:36,stobb014_UMN,,-93.23349663,44.9790829
+288,,Rack on Rails,42,Good,7x6,fe1da1bf-c302-4f08-bdf8-9b713227e73c,10/30/14 19:04,stobb014_UMN,11/17/14 22:17,stobb014_UMN,,-93.22370152,44.97787845
+289,,Moped Parking,6,Good,,0b325e8f-cf88-4f28-b058-031e509d3216,10/30/14 22:31,gis8501_groupa,11/17/14 21:13,gis8501_groupa,,-93.24151483,44.9689953
+292,,Rack on Rails,25,Good,group of 6 racks,d3b10fa7-c56f-4004-baee-e576345f3b91,10/30/14 22:33,gis8501_groupa,11/25/14 1:33,gis8501_groupa,,-93.24140113,44.96902663
+297,,Rack on Rails,9,Good,,ede9a7b6-a031-4841-a977-36ac7f93f22a,10/30/14 22:37,gis8501_groupa,11/2/14 5:35,gis8501_groupa,,-93.2344062,44.97354507
+299,,Rack on Rails,25,Good,group of 6 racks,d93320cc-e832-4139-91df-2278125e4488,10/30/14 22:38,gis8501_groupa,11/25/14 1:33,gis8501_groupa,,-93.24139046,44.96909885
+303,,Rack on Rails,31,Good,,e864e0d4-6721-4d07-97f9-7867784ac853,10/30/14 22:40,gis8501_groupa,11/2/14 16:04,gis8501_groupa,,-93.23469504,44.97312219
+305,,Rack on Rails,22,Good,group of 5 racks,9c2a85e6-d1ea-4804-973e-0380be7c5106,10/30/14 22:41,gis8501_groupa,11/25/14 1:36,gis8501_groupa,,-93.24141204,44.96922261
+307,,Grounded Rack,3,Good,3 bicycle shaped racks,c62c2176-93b2-4725-939f-ef607b5d375a,10/30/14 22:42,gis8501_groupa,11/2/14 16:05,gis8501_groupa,,-93.23470107,44.97315277
+310,,Rack on Rails,22,Good,Hang by wheel type,16e5df91-ae82-4eb5-b545-9ae840b02901,10/30/14 22:44,gis8501_groupa,11/2/14 16:05,gis8501_groupa,,-93.23458641,44.97315263
+311,,Rack on Rails,45,Good,,03b748f2-5d0a-4348-954c-d3c7749b2e4c,10/30/14 22:46,gis8501_groupa,11/2/14 16:04,gis8501_groupa,,-93.23458674,44.97312161
+312,,Rack on Rails,8,Good,,9023e888-ba90-44bd-98d6-4caf58cd632f,10/30/14 22:50,gis8501_groupa,11/2/14 5:31,gis8501_groupa,,-93.23591745,44.9734533
+313,,Rack on Rails,93,Good,,ffcd6269-f3cc-46d1-9781-6f05e0659ab2,10/30/14 22:54,gis8501_groupa,11/2/14 5:33,gis8501_groupa,,-93.23613756,44.97301325
+314,,Rack on Rails,10,Good,,2e733c59-5ce1-4b1c-b6b4-f22cd4d97abf,10/30/14 23:01,gis8501_groupa,11/2/14 16:07,gis8501_groupa,,-93.23499838,44.97248856
+315,,Moped Parking,7,Good,Next to bike parking,59a19b43-3107-4feb-823c-284dadc1c217,10/30/14 23:02,gis8501_groupa,11/2/14 5:37,gis8501_groupa,,-93.23489302,44.97247984
+316,,Rack on Rails,7,Good,Median in front of Boynton ,a9f38a88-b894-4653-8721-431d16382a0a,10/30/14 23:06,gis8501_groupa,11/2/14 16:52,gis8501_groupa,,-93.23385651,44.9723805
+317,,Moped Parking,23,Good,,46ccc888-6af5-486e-bb76-863efa9160ae,10/30/14 23:13,gis8501_groupa,11/2/14 16:52,gis8501_groupa,,-93.2331044,44.9727851
+318,,Moped Parking,16,Good,"Sign says 14 limit, but 16 spaces painted",f041e56c-007b-4a28-b52e-06fc5c32b505,10/30/14 23:19,gis8501_groupa,11/2/14 5:35,gis8501_groupa,,-93.23600899,44.97231674
+319,,Rack on Rails,39,Good,Group 1 of 2,e6609bc4-788c-4dbc-bd52-785c019b8934,10/30/14 23:24,gis8501_groupa,11/2/14 5:36,gis8501_groupa,,-93.23600546,44.9722041
+320,,Rack on Rails,33,Good,Group 2 of 2,094eefdc-6266-42a7-a99d-10e4f7357d6b,10/30/14 23:26,gis8501_groupa,11/2/14 5:36,gis8501_groupa,,-93.23611074,44.97205809
+321,,Moped Parking,6,Good,,4de5d841-8db6-4f0f-bcc2-d25cfcf06955,10/30/14 23:28,gis8501_groupa,11/2/14 5:33,gis8501_groupa,,-93.23637125,44.9727778
+322,,Rack on Rails,44,Good,,9810c1e1-b8e0-4c1e-bdbf-588376cf5e43,10/30/14 23:31,gis8501_groupa,11/2/14 5:34,gis8501_groupa,,-93.23685857,44.9727021
+323,,Rack on Rails,3,Good,,dd4f6474-ed90-46d4-99b1-8118f9f139b1,10/30/14 23:36,gis8501_groupa,10/30/14 23:36,gis8501_groupa,,-93.23726183,44.97350317
+324,,Grounded Rack,18,Good,,383bbd81-0385-4857-acd8-f067efdb42a2,10/30/14 23:37,gis8501_groupa,11/2/14 5:28,gis8501_groupa,,-93.23735621,44.97355257
+325,,Grounded Rack,12,Good,Fish shaped rack on the bridge,b2a21a28-89ab-41fa-976d-84c87907a9fb,10/30/14 23:39,gis8501_groupa,11/2/14 5:27,gis8501_groupa,,-93.2373252,44.9735778
+326,,Rack on Rails,47,Good,On bridge,931e1f3c-8daa-4b21-90c7-80726a44f70a,10/30/14 23:41,gis8501_groupa,11/2/14 5:28,gis8501_groupa,,-93.23750423,44.97354221
+328,,Grounded Rack,7,Good,Four street across the street from Carlson,1dce0cf0-fa12-40de-a035-7fc7928ed2e8,10/31/14 19:14,gis8501_groupa,11/11/14 2:58,gis8501_groupa,,-93.24477296,44.96989778
+329,,Grounded Rack,8,Good,,a5e32914-efcb-4d5a-8949-4ece13efb12e,10/31/14 19:15,gis8501_groupa,11/11/14 2:57,gis8501_groupa,,-93.24421797,44.96982604
+330,,Grounded Rack,7,Good,Has one bicycle violation,feb0ec79-b2a3-4e15-acc6-23ab9892344f,10/31/14 19:15,gis8501_groupa,11/11/14 2:57,gis8501_groupa,,-93.24422105,44.96973523
+331,,Grounded Rack,7,Good,,948c851d-5fa7-4595-8471-1fcc78061082,10/31/14 19:16,gis8501_groupa,11/11/14 2:56,gis8501_groupa,,-93.24421908,44.96963556
+332,,Grounded Rack,10,Good,,aa90056e-33f6-449d-8265-d28c00731ded,10/31/14 19:16,gis8501_groupa,11/11/14 2:56,gis8501_groupa,,-93.24421856,44.96953346
+333,,Grounded Rack,4,Good,,837e97d4-0f22-4898-a275-40caa1a8a446,10/31/14 19:17,gis8501_groupa,11/11/14 2:55,gis8501_groupa,,-93.24422006,44.96935355
+334,,Grounded Rack,4,Good,,3d165c52-188f-431a-be8f-4cfa9448a9a9,10/31/14 19:19,gis8501_groupa,11/11/14 2:54,gis8501_groupa,,-93.24432299,44.96911034
+335,,Rack on Rails,8,Fair,Paint is faded in front of Barbara Parker Center,2d7e0c6f-eb24-4730-a370-60b27a9aed23,10/31/14 19:20,gis8501_groupa,11/11/14 2:53,gis8501_groupa,,-93.24266134,44.96879989
+336,,Rack on Rails,7,Good,,425857e1-c55d-4143-85ac-02f4349b7f9f,10/31/14 19:21,gis8501_groupa,11/11/14 2:53,gis8501_groupa,,-93.24266219,44.96907358
+337,,Rack on Rails,7,Good,,2f50178f-60e6-47f8-b0d8-057638e6eff3,10/31/14 19:21,gis8501_groupa,11/11/14 2:52,gis8501_groupa,,-93.24265496,44.96912652
+338,,Rack on Rails,5,Good,,9469d304-3406-4e37-b65a-105ca66b7366,10/31/14 19:22,gis8501_groupa,11/11/14 2:51,gis8501_groupa,,-93.24263861,44.96919199
+339,,Rack on Rails,6,Good,,e6c05422-c93b-491f-904a-0dda730949a1,10/31/14 19:23,gis8501_groupa,11/11/14 2:49,gis8501_groupa,,-93.24246331,44.96980457
+340,,Rack on Rails,3,Good,,27b18735-b4fb-416e-8c47-3a65dce79d74,10/31/14 19:33,gis8501_groupa,11/11/14 2:47,gis8501_groupa,,-93.24072903,44.97046681
+341,,Moped Parking,14,Good,,03d741d7-0984-4c0f-add8-64919df97825,10/31/14 19:37,gis8501_groupa,11/11/14 2:58,gis8501_groupa,,-93.24612885,44.97010113
+342,,Moped Parking,17,Good,,b03b1e09-4487-4a02-b9f6-05acca1ccf40,10/31/14 22:22,gis8501_groupa,11/2/14 4:01,gis8501_groupa,,-93.24154548,44.98042739
+343,,Moped Parking,10,Good,,b8f1d1d9-b3e9-4a91-bc80-dec122a0e9a0,10/31/14 22:44,gis8501_groupa,11/2/14 4:15,gis8501_groupa,,-93.23944674,44.97997336
+344,,Rack on Rails,22,Good,,b809929a-d8cc-4166-9735-4de8cf59a12c,10/31/14 22:47,gis8501_groupa,10/31/14 22:47,gis8501_groupa,,-93.23962284,44.97992773
+345,,Rack on Rails,6,Good,,3b87f43a-5cbc-4967-9410-015e16b0a95d,10/31/14 22:50,gis8501_groupa,11/2/14 3:50,gis8501_groupa,,-93.23919905,44.9804457
+346,,Rack on Rails,16,Good,different rack style than others in same location,4657905e-cd10-489f-9bbf-f4c74a8190a8,10/31/14 22:52,gis8501_groupa,11/2/14 3:53,gis8501_groupa,,-93.239405,44.98038784
+347,,Rack on Rails,14,Good,,bedfaab0-78ee-4baf-a6d1-7a771e576e37,10/31/14 22:54,gis8501_groupa,11/2/14 3:55,gis8501_groupa,,-93.23950876,44.98025445
+348,,Grounded Rack,69,Good,,f0a95887-63b4-442c-ad00-826bc200c1a2,10/31/14 22:57,gis8501_groupa,11/2/14 3:59,gis8501_groupa,,-93.23980037,44.98054705
+349,,Rack on Rails,8,Good,,b438a00e-c8f0-4df1-b843-73af9c35acd7,10/31/14 22:59,gis8501_groupa,11/2/14 3:58,gis8501_groupa,,-93.23997379,44.98062437
+350,,Rack on Rails,7,Good,,c8e49cd5-7bbc-4d2f-bb08-1c307c909586,10/31/14 23:00,gis8501_groupa,11/2/14 3:57,gis8501_groupa,,-93.24004361,44.98065157
+351,,Rack on Rails,8,Good,,7ca3b421-ddc8-4e14-95a4-c531a9fef353,10/31/14 23:02,gis8501_groupa,11/2/14 3:56,gis8501_groupa,,-93.24037059,44.98077423
+352,,Rack on Rails,4,Good,,e9e394ee-c18a-475c-85fa-1656f06e3ce4,10/31/14 23:09,gis8501_groupa,11/2/14 4:30,gis8501_groupa,,-93.23859514,44.97822014
+353,,Rack on Rails,7,Good,,eee4af10-1891-4e47-a123-c78e377dbd3d,10/31/14 23:16,gis8501_groupa,11/2/14 4:34,gis8501_groupa,,-93.23793121,44.97706183
+354,,Grounded Rack,15,Good,Next to entrance in front of Elliot hall,2539d550-5a8b-460e-a6fb-acc8e105fff6,10/31/14 23:20,gis8501_groupa,11/2/14 4:33,gis8501_groupa,,-93.23779182,44.97715632
+355,,Grounded Rack,18,Good,,5fda194c-e4d3-47ac-b5bd-94b162343052,10/31/14 23:24,gis8501_groupa,11/2/14 5:17,gis8501_groupa,,-93.2376686,44.97671657
+356,,Rack on Rails,3,Good,At the end of the row of grounded rack row,f8ee1c85-0fea-4afb-bd83-56f7da12adcc,10/31/14 23:26,gis8501_groupa,11/2/14 5:16,gis8501_groupa,,-93.23760222,44.97682329
+357,,Rack on Rails,3,Good,,815ca2d0-4060-42ca-98b7-237a16aaec74,10/31/14 23:29,gis8501_groupa,11/2/14 5:18,gis8501_groupa,,-93.2372822,44.97642941
+358,,Rack on Rails,8,Good,,b11fa39a-a939-4137-85d3-d03ed766a031,10/31/14 23:35,gis8501_groupa,10/31/14 23:35,gis8501_groupa,,-93.23723886,44.97809884
+359,,Grounded Rack,8,Good,2 section of 4 separated by plants ,e5a73c14-096f-4595-88df-08217867e0cc,10/31/14 23:39,gis8501_groupa,11/2/14 4:32,gis8501_groupa,,-93.23680719,44.97751476
+360,,Rack on Rails,7,Good,,c60d66b4-2e03-4150-9d45-2dfdad9089a9,10/31/14 23:42,gis8501_groupa,11/2/14 4:43,gis8501_groupa,,-93.23769408,44.97881381
+361,,Grounded Rack,7,Good,,8b45b5d8-9b91-457d-aea9-2a3140bb9607,10/31/14 23:45,gis8501_groupa,11/2/14 4:41,gis8501_groupa,,-93.2365704,44.97898474
+362,,Rack on Rails,14,Good,,34f2a700-ba44-4f47-a199-84798a69737f,10/31/14 23:49,gis8501_groupa,11/2/14 4:46,gis8501_groupa,,-93.23609867,44.97814463
+363,,Grounded Rack,7,Good,,48db0328-4c9e-46ac-99b8-3955bad15c1d,11/1/14 19:01,gis8501_groupa,11/2/14 5:39,gis8501_groupa,,-93.22999145,44.96960678
+364,,Rack on Rails,5,Good,Against wall across from large round planter,8ac817e3-6a60-47bc-b378-ddea59e7ba13,11/1/14 19:35,gis8501_groupa,11/2/14 5:27,gis8501_groupa,,-93.23751161,44.97444177
+365,,Rack on Rails,7,Good,,5b2cdc28-33e5-4300-b6b5-b65482fb0cf7,11/1/14 19:36,gis8501_groupa,11/2/14 5:25,gis8501_groupa,,-93.23709402,44.97453746
+366,,Rack on Rails,13,Good,,63e14d15-db72-4c11-a78c-74dc2088eb5a,11/1/14 19:40,gis8501_groupa,11/2/14 5:25,gis8501_groupa,,-93.23756894,44.9746698
+367,,Grounded Rack,74,Good,Four total racks within Pioneer Hall Quad,c5f2732f-257f-4b21-93f4-26a6ab834db4,11/1/14 19:43,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22949949,44.97058697
+368,,Grounded Rack,9,Good,,fd1b7b0e-525a-4058-9d7f-2f1a98f45eb5,11/1/14 19:45,gis8501_groupa,11/2/14 5:22,gis8501_groupa,,-93.23701716,44.97538529
+369,,Grounded Rack,79,Good,Four total racks within Pioneer Hall Quad,83d628c5-ee96-4882-9d06-43b5c7ca3b5f,11/1/14 19:47,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22950835,44.97113966
+370,,Rack on Rails,32,Good,Six total racks. 2 with 6 hoops and 4 with 5,869846b6-7dfc-46e6-80fd-603d80e10d58,11/1/14 19:50,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22951538,44.97157492
+371,,Rack on Rails,42,Good,Six total racks. 2 with 5 hoops and 4 with 8,39631f45-de60-4408-a37e-f6c335b47a1f,11/1/14 19:53,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22954399,44.97203611
+372,,Rack on Rails,6,Good,,6582444e-f400-4894-811a-dda52d7db5af,11/1/14 19:53,gis8501_groupa,11/2/14 17:19,gis8501_groupa,,-93.23586809,44.97398679
+373,,Rack on Rails,42,Good,,1c61fafb-8738-4c8c-90fe-4959d1a4b832,11/1/14 19:58,gis8501_groupa,11/2/14 17:20,gis8501_groupa,,-93.23608836,44.97415118
+374,,Rack on Rails,12,Fair,,8b611275-a456-44ec-9766-1f778e37e9dc,11/1/14 20:07,gis8501_groupa,11/1/14 20:07,gis8501_groupa,,-93.23393203,44.97377885
+375,,Moped Parking,10,Good,,a76ad462-24be-4101-9402-2a40eae22b07,11/1/14 20:08,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22866143,44.97207631
+376,,Rack on Rails,5,Good,,4750e692-317c-48bf-89bd-c98be4d6dde2,11/1/14 20:08,gis8501_groupa,11/2/14 17:05,gis8501_groupa,,-93.23397361,44.97395428
+377,,Rack on Rails,48,Good,,4fea8a5a-11d2-42be-8296-81f3dd4875d2,11/1/14 20:09,gis8501_groupa,11/2/14 5:22,gis8501_groupa,,-93.23637628,44.97558761
+378,,Rack on Rails,7,Good,Triangle shaped rack adjacent to rack on rails near tree,3de29c97-2efe-4a23-9520-3c112be2c508,11/1/14 20:11,gis8501_groupa,11/2/14 17:06,gis8501_groupa,,-93.23391301,44.97399295
+379,,Grounded Rack,64,Good,Six total racks. 4 with 11 hoops and 2 with 5 hoops,7aaa0ad0-1f6f-470d-8f40-b5720328cc6a,11/1/14 20:11,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22867273,44.97178543
+380,,Rack on Rails,8,Good,,c2c96955-97b8-4f9b-9c74-dde14a4d5a22,11/1/14 20:12,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22858796,44.97189601
+381,,Rack on Rails,24,Good,6 hoops on rails are a different design than others,3a8dc9ad-eb98-48ab-8331-9ad7cc49ea31,11/1/14 20:14,gis8501_groupa,11/2/14 17:17,gis8501_groupa,,-93.23409204,44.97402065
+382,,Rack on Rails,16,Good,,d4836c27-11f1-4f7d-8b1d-a285df005384,11/1/14 20:14,gis8501_groupa,11/2/14 5:21,gis8501_groupa,,-93.23591385,44.9759957
+383,,Rack on Rails,18,Good,Group 2 of 2 in the same location,48232c71-b5c3-4913-a53b-fda7b7cd4ee6,11/1/14 20:16,gis8501_groupa,11/2/14 17:16,gis8501_groupa,,-93.23430771,44.97402415
+384,,Grounded Rack,34,Fair,"Three total racks. 1 with 12, 1 with 11 and 1 with 10. A couple loops are slightly bent",400275f6-dfa4-479f-bfb2-f7bc1ae9b9f8,11/1/14 20:18,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.2286815,44.97103318
+385,,Grounded Rack,5,Good,,ac43e692-71b9-4aed-b07b-ac228585f9f0,11/1/14 20:18,gis8501_groupa,11/1/14 20:18,gis8501_groupa,,-93.23594302,44.9769589
+386,,Rack on Rails,4,Good,South side of Vincent hall near loading dock ,b43d402e-406f-4df0-bb6c-84e2476f767a,11/1/14 20:20,gis8501_groupa,11/2/14 17:15,gis8501_groupa,,-93.2345968,44.97415189
+387,,Rack on Rails,50,Good,"Eight total racks. 3 racks with 6 hoops, 3 with 7 hoops, 1 with 8 hoops and 1 with 3 hoops",88df9913-f1f9-463c-a9a7-2f576f38611c,11/1/14 20:20,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22882014,44.97097799
+388,,Grounded Rack,15,Good,,9b2b2f8a-1223-4019-b55e-beb1432339e8,11/1/14 20:20,gis8501_groupa,11/1/14 20:20,gis8501_groupa,,-93.23620722,44.97707457
+389,,Grounded Rack,18,Good,,0b06c3c2-f7df-4c1d-8f2f-89a824f8db3d,11/1/14 20:21,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22854809,44.9708642
+390,,Rack on Rails,7,Good,,aea20d15-d593-4442-a780-2e0833262070,11/1/14 20:22,cahal016_UMN,11/25/14 22:36,cahal016_UMN,East Bank,-93.22854186,44.97071948
+391,,Rack on Rails,5,Good,East side of Vincent and adjacent hall near stairs,3c8991be-ab18-4800-bc4e-ff81b2b5f6c8,11/1/14 20:23,gis8501_groupa,11/2/14 17:15,gis8501_groupa,,-93.23437854,44.97421437
+392,,Grounded Rack,8,Good,,57a91d9b-06f1-4bff-a696-7ca05be91fb6,11/1/14 20:23,gis8501_groupa,11/2/14 5:01,gis8501_groupa,,-93.23534288,44.9773762
+393,,Rack on Rails,13,Good,,539ccce1-79de-46c1-8485-d2e19a92ed6f,11/1/14 20:25,gis8501_groupa,11/2/14 5:02,gis8501_groupa,,-93.23493811,44.97719636
+394,,Rack on Rails,6,Good,,67547b5c-37f3-41a1-8be2-73bb32957be5,11/1/14 20:27,gis8501_groupa,11/2/14 5:11,gis8501_groupa,,-93.23516032,44.976786
+395,0,Rack on Rails,22,Good,Group west side Murphy hall,d1aec831-5296-4ed0-8f5e-9488603ed001,11/1/14 20:28,gis8501_groupa,11/2/14 17:18,gis8501_groupa,,-93.23432037,44.97476577
+396,,Grounded Rack,17,Good,,8cc86683-d143-4118-98a7-a9062ed5994c,11/1/14 20:29,gis8501_groupa,11/2/14 5:04,gis8501_groupa,,-93.23498656,44.97710379
+397,,Rack on Rails,6,Good,,193ca844-3ac3-45ae-8f83-b6afa615ac6a,11/1/14 20:31,gis8501_groupa,11/2/14 5:05,gis8501_groupa,,-93.23452991,44.97714026
+398,,Rack on Rails,16,Good,East side of Vincent hall,7cd701c0-4815-43c8-90c5-76b3b540dc18,11/1/14 20:33,gis8501_groupa,11/2/14 17:17,gis8501_groupa,,-93.23456026,44.97476951
+399,,Rack on Rails,5,Fair,"Only reason not ""good"" condition is due to one end rack being bent due to missing bolts.  See photo.",8af79a81-4ce6-43ee-94ec-69124d52dbf9,11/1/14 20:34,gis8501_groupa,11/2/14 5:07,gis8501_groupa,,-93.23374537,44.97692868
+400,,Moped Parking,12,Good,sign says 10 moped limit but there are 12 painted spots,10ecf012-3fc0-402c-a62f-f31b9ae834a8,11/1/14 20:36,gis8501_groupa,11/2/14 5:06,gis8501_groupa,,-93.23377496,44.976938
+401,,Rack on Rails,16,Good,Under addition between Vincent and Murphy hall,f05bb3b0-debd-4aa9-9a26-8bc0f47c7483,11/1/14 20:38,gis8501_groupa,11/2/14 17:16,gis8501_groupa,,-93.23436907,44.97425682
+402,,Moped Parking,4,Good,,29c28d8f-44df-47c7-b91e-2a98baacd177,11/1/14 20:41,gis8501_groupa,11/2/14 5:10,gis8501_groupa,,-93.23480534,44.97663592
+403,,Rack on Rails,4,Good,,7098e269-dc16-45ba-85dc-ba4336c4611b,11/1/14 20:43,gis8501_groupa,11/2/14 5:10,gis8501_groupa,,-93.23480886,44.97659858
+404,,Rack on Rails,58,Good,"North side of Tate hall , large group",68772ed9-d12f-4afc-aab1-cea1b4cf6681,11/1/14 20:46,gis8501_groupa,11/1/14 20:48,gis8501_groupa,,-93.2346046,44.97560627
+405,,Rack on Rails,3,Good,,8757031a-6a36-4ce6-9e68-348f4e393d00,11/1/14 20:48,gis8501_groupa,11/2/14 5:21,gis8501_groupa,,-93.2349066,44.97589952
+406,,Rack on Rails,28,Good,"outside tate lab on church street, west side",d9ef9306-20af-4a7b-abd5-ded3d44a8a30,11/1/14 20:52,gis8501_groupa,11/3/14 21:55,gis8501_groupa,,-93.23399398,44.97531685
+407,,Rack on Rails,3,Good,,c333b29c-43e2-4dc7-bfaa-6f205a25bebc,11/1/14 20:53,gis8501_groupa,11/2/14 17:13,gis8501_groupa,,-93.23398232,44.97582934
+408,,Rack on Rails,35,Good,Courtyards behind Nolte and Bell,4369c47a-8ea9-4071-8a99-7e4dcb2af62a,11/1/14 21:16,gis8501_groupa,11/2/14 4:56,gis8501_groupa,,-93.23350623,44.97748192
+409,,Moped Parking,8,Good,,b4fb6921-7e05-4f23-9908-c16f9055e40a,11/1/14 21:20,gis8501_groupa,11/2/14 5:01,gis8501_groupa,,-93.23464994,44.97729631
+410,,Rack on Rails,5,Good,,51de2c4e-3d74-4ef5-966f-a6b70cb22fc7,11/1/14 21:22,gis8501_groupa,11/2/14 5:00,gis8501_groupa,,-93.23491054,44.97760065
+411,,Rack on Rails,27,Good,6 hoops are a different style than others ,90ecb37f-a56a-4861-ade9-a1744378c3ee,11/1/14 21:25,gis8501_groupa,11/2/14 4:59,gis8501_groupa,,-93.23478716,44.97769727
+412,,Rack on Rails,8,Good,Right side of east jones hall entrance,4e66099a-df19-424a-8aa6-b5533991a7b2,11/1/14 23:07,gis8501_groupa,11/2/14 4:48,gis8501_groupa,,-93.23509259,44.97789527
+413,,Rack on Rails,4,Good,East side of jones hall,6df07853-7bfd-49dd-86bb-97ee8e09062f,11/1/14 23:09,gis8501_groupa,11/2/14 4:48,gis8501_groupa,,-93.23497768,44.97804998
+414,,Grounded Rack,10,Good,Nw side of Williamson,4e7415ca-a84d-4f6a-a16f-4b298b45149b,11/1/14 23:12,gis8501_groupa,11/2/14 4:58,gis8501_groupa,,-93.23443755,44.97790963
+415,,Rack on Rails,8,Good,,5b704381-85c0-4d25-ab0f-3df7925591e7,11/1/14 23:15,gis8501_groupa,11/2/14 4:47,gis8501_groupa,,-93.23509913,44.97838869
+416,,Grounded Rack,11,Good,rack on rails in same area,e81a2765-ec0e-41e0-aa1a-7b1538e62fda,11/1/14 23:20,gis8501_groupa,11/2/14 4:47,gis8501_groupa,,-93.23506963,44.97859606
+417,,Rack on Rails,11,Good,grounded in same area,c52ad1a3-4a4f-46b0-bd74-5d733e4cdb78,11/1/14 23:21,gis8501_groupa,11/2/14 4:46,gis8501_groupa,,-93.23506351,44.97865805
+418,,Rack on Rails,12,Good,,922bcbfd-4551-4836-a739-5c2c22c63e7b,11/1/14 23:25,gis8501_groupa,11/2/14 4:48,gis8501_groupa,,-93.23546642,44.97813887
+419,,Rack on Rails,5,Good,cluster of racks in same location,97f72c39-0403-4418-b59f-b2a36f449f4a,11/1/14 23:30,gis8501_groupa,11/2/14 17:13,gis8501_groupa,,-93.23363028,44.97581941
+420,,Rack on Rails,18,Good,"cluster in same location, different design",a7dc4c4a-9e31-4905-ba8c-5a393a84067c,11/1/14 23:32,gis8501_groupa,11/2/14 17:12,gis8501_groupa,,-93.23373347,44.975844
+421,,Rack on Rails,8,Good,cluster of racks in same location,4a4e7c1c-c8c2-46f4-a550-bd8f10fd819b,11/1/14 23:33,gis8501_groupa,11/2/14 17:13,gis8501_groupa,,-93.23374101,44.9757926
+422,,Rack on Rails,5,Good,on sidewalk north side of rapson,c9d2da1e-cbe6-44d0-af47-332e292a04bc,11/1/14 23:38,gis8501_groupa,11/2/14 17:10,gis8501_groupa,,-93.23275169,44.9766689
+423,,Grounded Rack,40,Good,,171c7490-d0e0-4289-879a-bdd15a85d6ee,11/1/14 23:41,gis8501_groupa,11/2/14 17:09,gis8501_groupa,,-93.23257282,44.9762516
+424,,Moped Parking,7,Good,area is under construction,eeb2ad62-510a-4ec5-a548-2858f140d95a,11/1/14 23:46,gis8501_groupa,11/1/14 23:46,gis8501_groupa,,-93.23296929,44.97576758
+430,,Grounded Rack,28,Fair,Second group on median in front of Boynton ,b0d17674-b0c7-4afc-83a4-d0e1b64c2caa,11/3/14 21:00,gis8501_groupa,11/5/14 6:56,gis8501_groupa,,-93.23383773,44.97201883
+431,,Rack on Rails,7,Good,another group of 7 on west side of walkway,3239edab-5a32-4c97-9dc2-24593e6aa7f7,11/3/14 21:26,gis8501_groupa,11/3/14 21:35,gis8501_groupa,,-93.23392734,44.97264516
+432,,Rack on Rails,7,Good,"temp triangle style, 2 of 2, on east side of street/walkway",237a297f-98dd-440b-afb3-6fb32062fe49,11/3/14 21:41,gis8501_groupa,11/3/14 21:43,gis8501_groupa,,-93.23381075,44.9735082
+433,,Rack on Rails,36,Good,right of entrance to lind hall on church street,cd8b4d94-ec1b-4571-b15c-c8837f37aaaf,11/3/14 21:47,gis8501_groupa,11/3/14 21:47,gis8501_groupa,,-93.2338436,44.97435791
+434,,Rack on Rails,12,Good,left of entrance to lind hall on church street,c345eec4-d0db-42d1-8831-8a45d7979845,11/3/14 21:49,gis8501_groupa,11/3/14 21:49,gis8501_groupa,,-93.23382877,44.97465287
+435,,Rack on Rails,47,Good,entrance to mechanical engineering on church street,1ecbc2ae-6ab2-4127-b8bc-7de345d2e20f,11/3/14 21:52,gis8501_groupa,11/3/14 21:52,gis8501_groupa,,-93.23377797,44.97513672
+436,,Rack on Rails,27,Good,"behind amundsen hall, between amunsen and lind. under construction in this area",15b5f29f-6295-4148-8ba4-2fecbf72e567,11/3/14 22:01,gis8501_groupa,11/3/14 22:01,gis8501_groupa,,-93.23339123,44.97415532
+437,,Rack on Rails,3,Good,behind constrction fence,38fef402-da62-4ae0-87f7-e8f4a80b5305,11/3/14 22:03,gis8501_groupa,11/3/14 22:03,gis8501_groupa,,-93.23369566,44.97410642
+438,,Rack on Rails,6,Good,left of entrance to keller hall,7b971db4-015b-44a7-a29d-08b52e464394,11/3/14 22:06,gis8501_groupa,11/4/14 0:37,gis8501_groupa,,-93.23305191,44.97478766
+439,,Rack on Rails,8,Good,across from entrance to keller hall,98b7f9b7-65db-46eb-8a5e-a69c61afcb47,11/3/14 22:07,gis8501_groupa,11/5/14 6:31,gis8501_groupa,,-93.23304764,44.97470086
+440,,Grounded Rack,10,Good,right of entrance to keller along bldg,e9f453b0-becf-4f56-a9ec-2796c0326c63,11/3/14 22:09,gis8501_groupa,11/5/14 20:34,gis8501_groupa,,-93.23282233,44.9746373
+441,,Rack on Rails,8,Good,"2 sets of 8 along triangle sides, this is 1 of 2",be138ce4-8fcd-4b85-be6b-6ac03fa590b2,11/3/14 22:12,gis8501_groupa,11/5/14 6:35,gis8501_groupa,,-93.23303693,44.97434679
+442,,Rack on Rails,8,Good,second set of 8 along triangle,d7ed4d86-7231-4d85-a6f1-3528f1f8f6e8,11/3/14 22:19,gis8501_groupa,11/5/14 6:34,gis8501_groupa,,-93.2329658,44.97439847
+443,,Grounded Rack,19,Good,"9 to the left, 10 to the right",caea7e7e-e27f-4764-bea9-6c9940a9671d,11/3/14 22:26,gis8501_groupa,11/3/14 22:26,gis8501_groupa,,-93.23304942,44.97424354
+444,,Rack on Rails,6,Good,next to grounded racks,31bef06a-6b22-4044-a77a-c758def04dcd,11/3/14 22:27,gis8501_groupa,11/5/14 6:38,gis8501_groupa,,-93.23295357,44.97430576
+445,,Rack on Rails,15,Good,Near half globe,58f99aa2-71b5-4afb-bc19-ebe4095af430,11/4/14 22:43,gis8501_groupa,11/5/14 6:53,gis8501_groupa,,-93.23228703,44.97390364
+446,,Rack on Rails,8,Good,,50e9cac1-1ca4-4f18-8157-3499ce2e2753,11/4/14 22:45,gis8501_groupa,11/5/14 6:53,gis8501_groupa,,-93.23213119,44.97380961
+447,,Rack on Rails,8,Good,To the north of Ackerman rear entrance ,57d69bec-616c-4ef9-9f07-4360c37a862b,11/4/14 22:53,gis8501_groupa,11/5/14 6:44,gis8501_groupa,,-93.23216615,44.97549147
+448,,Grounded Rack,12,Good,"New, behind new physics and nanotechnology building, 6 spaces on each side of bike lockers",a1612e73-76f3-47af-8ced-5cecb898b2da,11/4/14 22:57,gis8501_groupa,11/5/14 6:45,gis8501_groupa,,-93.23168946,44.9755012
+449,,Rack on Rails,14,Good,Between Ackerman and shepherd ,8857e22d-7589-493b-ac3c-761084623a50,11/4/14 23:00,gis8501_groupa,11/5/14 6:40,gis8501_groupa,,-93.23252825,44.97568926
+450,,Rack on Rails,4,Good,Against shepherd ,a48a2290-2e7f-4e73-8581-9a3d4523c08b,11/4/14 23:06,gis8501_groupa,11/5/14 6:43,gis8501_groupa,,-93.2321799,44.9756925
+451,,Moped Parking,9,Good,Against shepherd ,3a244a24-d83b-423e-937c-f54d290153ac,11/4/14 23:08,gis8501_groupa,11/5/14 6:40,gis8501_groupa,,-93.23227157,44.97569574
+452,,Rack on Rails,6,Good,Against Ackerman ,9518d3ae-2812-4f40-9e82-39da7b744e09,11/4/14 23:10,gis8501_groupa,11/5/14 6:41,gis8501_groupa,,-93.23228074,44.97560496
+453,,Rack on Rails,8,Good,Mech engineering ,18eafbf3-e4ca-499f-970e-53da1e89416c,11/4/14 23:14,gis8501_groupa,11/5/14 6:46,gis8501_groupa,,-93.23175363,44.97626966
+454,,Rack on Rails,4,Good,Next to bus shelter,59213300-e596-4f46-8002-e5042da8c3bd,11/4/14 23:17,gis8501_groupa,11/5/14 6:47,gis8501_groupa,,-93.23177654,44.97658093
+455,,Rack on Rails,8,Good,,638a6911-f885-4050-a803-bcb7044a5034,11/4/14 23:19,gis8501_groupa,11/5/14 6:47,gis8501_groupa,,-93.23222115,44.97662957
+456,,Moped Parking,17,Good,Sign says 9 but there are 18,85ebac81-ffcd-4fab-846c-4607ee0df902,11/4/14 23:22,gis8501_groupa,11/5/14 6:49,gis8501_groupa,,-93.23067819,44.97618985
+457,,Grounded Rack,24,Good,Along street,7dc8c750-215d-40eb-81ef-67f2baa63331,11/4/14 23:27,gis8501_groupa,11/5/14 6:51,gis8501_groupa,,-93.23095779,44.97564187
+458,,Rack on Rails,8,Good,South side of entrance to physics and nanotechnology ,c00c18bf-85e3-4aef-a32f-0bf2012951ea,11/4/14 23:33,gis8501_groupa,11/5/14 6:45,gis8501_groupa,,-93.2316757,44.9751121
+459,,Grounded Rack,3,Good,Right side of entrance to wash ave parking ramp,87772003-d2a8-4a59-86c5-699c05220c0e,11/4/14 23:38,gis8501_groupa,11/5/14 6:52,gis8501_groupa,,-93.23144824,44.97389716
+460,,Rack on Rails,8,Good,Ground floor inside parking ramp,9efb2520-59f8-472c-b6fe-4365e7e15799,11/5/14 20:31,gis8501_groupa,11/5/14 20:32,gis8501_groupa,,-93.23167499,44.97409351
+461,,Rack on Rails,16,Good,,f034774f-3b11-4d63-9f2d-08c277b871ba,11/5/14 20:38,gis8501_groupa,11/5/14 20:38,gis8501_groupa,,-93.23223289,44.97423961
+462,,Rack on Rails,16,Good,2 sets of 8 on boths sides of half circle plaza entrance to keller,d0bd4182-decb-46bb-9fae-96b1316106c9,11/5/14 20:44,gis8501_groupa,11/5/14 23:43,gis8501_groupa,,-93.23217528,44.97423366
+463,,Rack on Rails,6,Good,Left of round turret ,d3fa8861-9e8f-4015-857d-41bc4830177d,11/5/14 23:13,gis8501_groupa,11/6/14 0:56,gis8501_groupa,,-93.23236969,44.97740261
+464,,Rack on Rails,9,Good,Just inside of fence facing north,a0acdefa-55e0-4e40-baaf-efabdf45a4d8,11/5/14 23:15,gis8501_groupa,11/6/14 0:57,gis8501_groupa,,-93.23198483,44.97751398
+465,,Rack on Rails,10,Poor,University Avenue entrance to field house. Old style ,9c42aa1e-1a63-4c53-b2c5-3bb719fb33fb,11/5/14 23:19,gis8501_groupa,11/6/14 0:57,gis8501_groupa,,-93.23157424,44.97727668
+468,,Moped Parking,6,Good,new pt,b3477f87-a9b1-4704-9a21-06e085685ea4,11/6/14 16:59,stobb014_UMN,11/6/14 16:59,stobb014_UMN,,-93.22881953,44.97084577
+469,,Rack on Rails,6,Good,new pt,a1d1d683-d38a-475a-abf2-96dc37a566bd,11/6/14 17:13,stobb014_UMN,11/6/14 17:13,stobb014_UMN,,-93.22921185,44.97220864
+470,,,7,Good,,046ae659-d741-4f3b-9d11-49c6a716d52a,11/7/14 16:43,gis8501_groupa,11/25/14 3:02,gis8501_groupa,,-93.24337623,44.97132799
+479,,Rack on Rails,4,Good,Left of entrance to clinic,0322c4ff-e716-4ed8-910b-ef5a98bf26a2,11/10/14 1:55,gis8501_groupa,11/10/14 1:57,gis8501_groupa,,-93.24015694,44.96790376
+481,,Moped Parking,25,Good,In alley by motorcycle parking,927f2ba6-bbc5-4fcf-91a9-d458e342b2c5,11/10/14 2:26,gis8501_groupa,11/10/14 2:26,gis8501_groupa,,-93.24310815,44.96947296
+482,,Grounded Rack,5,Good,along sidewalk,3457c48a-7686-4878-a4c7-7b2825de68e7,11/10/14 2:33,gis8501_groupa,11/10/14 2:33,gis8501_groupa,,-93.24579855,44.96981811
+483,,Grounded Rack,3,Good,on 19th curbside,7f975eda-1c68-49f4-af7f-ef6b431f5e99,11/10/14 2:42,gis8501_groupa,11/10/14 2:42,gis8501_groupa,,-93.24570668,44.9736268

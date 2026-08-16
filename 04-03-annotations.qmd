@@ -1,0 +1,568 @@
+# Annotations: Contextualing Interesting Findings
+
+
+This chapter will focus on how we can continue to improve the information conveyed in a plot by adding annotations. 
+
+Annotations are the text and guides (e.g., arrows) that explain or clarify information in a plot. They often provide additional context or information to aid readers in interpreting the data. @fig-annotation shows a plot of the men's marathon world record times from 1908--2014. This plot has five annotations that further explain interesting aspects of the plot by adding context about the data. 
+
+
+```{r}
+#| label: fig-annotation
+#| fig-cap: "Plot created by `@alimotion` with five different annotations that explain the data."
+#| fig-alt: "Plot created by `@alimotion` with five different annotations that explain the data."
+#| out-width: "100%"
+#| echo: false
+
+knitr::include_graphics("https://images.squarespace-cdn.com/content/v1/55b6a6dce4b089e11621d3ed/1516582242159-PIPKNPKY5CJOFQFP2EHX/Alistair.PNG")
+```
+
+
+It is important to think about what aspects of the plot to annotate. @Yau:2013 provides some advice on this, suggesting that some things to consider annotating are highlighted elements, outliers, clusters, explanations of trends, important contextual milestones or reference points, and interesting observations. For example, consider the five annotations in @fig-annotation: 
+
+1. "Record dropped by almost 15 mins in the 13 months between July 1908 and August 1909 with 6 different record holders"
+2. "Jim Peters (UK) set the record then broke his own record 3 times between 1952-54"
+3. "Derek Clayton (Australia) was first man to break the 2:10 barrier in December 1967. In the following 50 years the record would only drop by a further 6:39"
+4. The last 6 record times have occurred at the Berlin Marathon"
+5. Current record holder Dennis Kimetto (Kenya) set new mark 2:02:57 at Berlin in 2014"
+
+In addition to the text, each of the annotations also includes a short light-grey line that links the text annotation to a particular data point. 
+
+The first annotation point out an interesting finding in the data where there was a large drop in the world record time over a short period of time. The second annotation indicates a cluster of data points that have an interesting contextual story (they all belong to the same person). The third annotation indicates an important contextual milestone, namely the breaking of the 2:10 barrier. The fourth annotation explains several highlighted data points and why they are highlighted. The last annotation again points out something of interest contextually (namely who the current record holder was at the time the plot was made).
+
+
+<br />
+
+
+## Example Plot to Annotate
+
+Consider the plot shown in @fig-bls. This shows the weekly median pay for both men and women for 39 occupations identified as "professional occupations" by the United States Bureau of Labor Statistics. One goal of such a plot is to look at pay gaps between men and women.
+
+
+```{r}
+#| label: fig-bls
+#| fig-cap: "Scatterplot showing the weekly median pay by professional occupation based on 2025 data."
+#| fig-alt: "Scatterplot showing the weekly median pay by professional occupation based on 2025 data."
+#| fig-width: 6
+#| fig-height: 6
+#| out-width: "80%"
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+bls = read_csv("data/bls-earnings.csv")
+
+prof = bls |>
+  filter(occupation_cat %in% c("Professional occupations")) |>
+  select(Occupation, med_weeklypay_men, med_weeklypay_women) |>
+  drop_na()
+
+ggplot(data = prof, aes(x = med_weeklypay_men, y = med_weeklypay_women)) +
+  geom_point(shape = 21, color = "black", fill = "#d50000", alpha = 0.7, size = 3) +
+  labs(
+    title = "2025 Pay by Occupation\n", 
+    subtitle = "Women weekly median salary",
+    caption = "\nSource: Bureau of Labor Statistics"
+  ) +
+  scale_x_continuous(
+    name = "Men weekly median salary",
+    limits = c(0, 3700),
+    expand = c(0, 0),
+    breaks = c(0, 500, 1000, 1500, 2000, 2500, 3000, 3500),
+    labels = scales::label_currency()
+    ) +
+  scale_y_continuous(
+    name = "",
+    limits = c(0, 3700),
+    expand = c(0, 0),
+    breaks = c(0, 500, 1000, 1500, 2000, 2500, 3000, 3500),
+    labels = scales::label_currency()
+    ) +
+  theme_classic() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 15),
+    plot.subtitle = element_text(hjust = -0.3, face = "bold"),
+    axis.title.x = element_text(hjust = -0.1, face = "bold"),
+    panel.grid.major = element_line(colour = "#bdbdbd", linetype = "dotted")
+  )
+```
+
+What annotations might yuo add to this plot? We could describe the trend in the plot---it is an upward trend indicating that occupations in which men make a higher weekly salary are the same occupations in which women make a higher weekly salary. While this describes the trend, it doesn't necessarily help readers understand gender pay gaps.
+
+In a similar plot based on 2011 data @Yau:2013 suggested several annotations that would help contextualize pay gaps in these occupations. @fig-bls-annotate shows the plot of weekly median pay for both men and women but also includes several of Yau's annotations.
+
+1. A diagonal line has been added to indicate where the median weekly pay is the same for both men and women.
+2. Text annotations have been added to label the line as well as the areas in the plot where men earn more than women and where women earn more than men.
+3. The occupations where women earn more than men have been labelled to provide context.
+
+
+```{r}
+#| label: fig-bls-annotate
+#| fig-cap: "Scatterplot showing the weekly median pay by professional occupation based on 2025 data."
+#| fig-alt: "Scatterplot showing the weekly median pay by professional occupation based on 2025 data."
+#| fig-width: 6
+#| fig-height: 6
+#| out-width: "80%"
+#| echo: false
+#| message: false
+#| warning: false
+
+women_more = prof |>
+  filter(med_weeklypay_women > med_weeklypay_men)
+
+ggplot(data = prof, aes(x = med_weeklypay_men, y = med_weeklypay_women)) +
+  geom_point(shape = 21, color = "black", fill = "#d50000", alpha = 0.7, size = 3) +
+  labs(
+    title = "2025 Pay by Occupation\n", 
+    subtitle = "Women weekly median salary",
+    caption = "\nSource: Bureau of Labor Statistics"
+  ) +
+  geom_abline(intercept = 0, slope = 1) +
+  annotate("text", x = 3000, y = 3150, label = "bold(Equal~pay)", angle = 41, parse = TRUE) +
+  annotate("text", x = 300, y = 3150, label = "WOMEN PAID MORE", hjust = 0) +
+  annotate("text", x = 2450, y = 400, label = "MEN PAID MORE", hjust = 0) +
+  # Education Counselors
+  geom_segment(x = 1000, y = 1900, xend = 1150, yend = 1440, linewidth = 0.2) +
+  annotate("label", x = 1000, y = 1900, label = "Counselor\n(Education)", size = 3) +
+  # Other Counselors
+  geom_segment(x = 600, y = 1300, xend = 1033, yend = 1175, linewidth = 0.2) +
+  annotate("label", x = 600, y = 1300, label = "Counselor\n(Other)", size = 3) +
+  # Producers
+  geom_segment(x = 1550, y = 2400, xend = 1753, yend = 1852, linewidth = 0.2) +
+  annotate("label", x = 1550, y = 2400, label = "Producers/\nDirectors ", size = 3) +
+  scale_x_continuous(
+    name = "Men weekly median salary",
+    limits = c(0, 3700),
+    expand = c(0, 0),
+    breaks = c(0, 500, 1000, 1500, 2000, 2500, 3000, 3500),
+    labels = scales::label_currency()
+    ) +
+  scale_y_continuous(
+    name = "",
+    limits = c(0, 3700),
+    expand = c(0, 0),
+    breaks = c(0, 500, 1000, 1500, 2000, 2500, 3000, 3500),
+    labels = scales::label_currency()
+    ) +
+  theme_classic() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 15),
+    plot.subtitle = element_text(hjust = -0.3, face = "bold"),
+    axis.title.x = element_text(hjust = -0.1, face = "bold"),
+    panel.grid.major = element_line(colour = "#bdbdbd", linetype = "dotted")
+  )
+```
+
+
+It isn't always clear what annotations might be useful. The best way to figure this out is to have other people give you feedback about how they are interpreting your plot, what they find interesting, and what they don't understand. As Yau pointed out:
+
+> In the end, you must consider what your audience will or might not understand graphically and statistically, and annotate based on that [@Yau:2013, p. 233].
+
+<br />
+
+
+## Adding Annotation Layers to Your Plot
+
+To illustrate how to add annotations to a data visualizations, we will work with the *mn-colleges.csv* data. In the first code chunk of your QMD document, load the `{tidyverse}` library and use the `read_csv()` function to import the *mn-colleges.csv* data and assign the data into an object called `mn`. (You also might want to view the data to ensure that it imported into the QMD correctly.) Don't forget to add code comments as well!
+
+
+```{r}
+#| label: load-packages4
+#| message: false
+
+# Load libraries
+library(tidyverse)
+
+# Import data
+mn <- read_csv("data/mn-colleges.csv")
+```
+
+
+We will create a histogram of the number of applicants in a new code chunk in the QMD document. We will also add a title, subtitle, caption and axes labels using the `labs()` layer using the following syntax:
+
+```{r}
+#| label: fig-mn-accept-rate
+#| fig-cap: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| fig-alt: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| out-width: "100%"
+#| message: false
+
+ggplot(data = mn, aes(x = applicants)) +
+  geom_histogram(
+    breaks = seq(from = 0, to = 42000, by = 2000),
+    color = "black", 
+    fill = "#FFB71E"
+  ) +
+  labs(
+    title = "How Many Students Apply to College? ",
+    subtitle = "The number of applicants for the 33 institutions of higher education in Minnesota.\n",
+    caption = "\nSOURCE: https://www.acceptancerate.com/minnesota",
+    x = "Number of applicants",
+    y = "Count"
+  )
+```
+
+Two annotations that might help readers contextualize and make sense about of plot are:
+
+1. That most institutions get fewer than 4,000 applicants. We see this in the first two bars which include 22 of the 33 institutions.
+2. That one institution gets more than 40,000 applicants. This is the University of Minnesota-Twin Cities.
+
+
+To add annotations, we include `annotate()` layers to our plot code, one for each annotation. The syntax for this layer when adding a text annotation looks like the following:
+
+```{r}
+#| eval: false
+
+annotate("text", x = , y = , label = "")
+```
+
+The string `"text"` indicates that the annotation is text. The arguments `x=` and `y=` give the *x*- and *y*-coordinates where you want the text annotation to appear in the plot. Finally, the `label=` argument includes the text that you want to appear in the annotation.
+
+For example, let's add the first annotation at the coordinate (5000, 12). Note that picking the coordinates for your annotation is a bit of trial-and-error. Pick a coordinate that seems reasanable to start, and then change it until you get it to look good.
+
+```{r}
+#| label: fig-mn-accept-rate2
+#| fig-cap: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| fig-alt: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| out-width: "100%"
+#| message: false
+
+ggplot(data = mn, aes(x = applicants)) +
+  geom_histogram(
+    breaks = seq(from = 0, to = 42000, by = 2000),
+    color = "black", 
+    fill = "#FFB71E"
+  ) +
+  labs(
+    title = "How Many Students Apply to College? ",
+    subtitle = "The number of applicants for the 33 institutions of higher education in Minnesota.\n",
+    caption = "\nSOURCE: https://www.acceptancerate.com/minnesota",
+    x = "Number of applicants",
+    y = "Count"
+  ) +
+  annotate(
+    "text", 
+    x = 5000, y = 11, 
+    label = "22 of the 33 institutions get\nfewer than 4000 applicants."
+    )
+```
+
+
+Notice that the text annotation is centered at the coordinate we specified, namely (5000, 12). Instead of centering the text at this coordinate, we want to left-justify the text at this coordinate. To do that, we can include the argument `hjust=0`. This sets the horizontal justification---this takes a value between 0 and 1 where left justified is 0, right justified is 1, centered (the default) is 0.5.
+
+
+```{r}
+#| label: fig-mn-accept-rate3
+#| fig-cap: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| fig-alt: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| out-width: "100%"
+#| message: false
+
+ggplot(data = mn, aes(x = applicants)) +
+  geom_histogram(
+    breaks = seq(from = 0, to = 42000, by = 2000),
+    color = "black", 
+    fill = "#FFB71E"
+  ) +
+  labs(
+    title = "How Many Students Apply to College? ",
+    subtitle = "The number of applicants for the 33 institutions of higher education in Minnesota.\n",
+    caption = "\nSOURCE: https://www.acceptancerate.com/minnesota",
+    x = "Number of applicants",
+    y = "Count"
+  ) +
+  annotate(
+    "text", 
+    x = 5000, y = 12, 
+    label = "22 of the 33 institutions get\nfewer than 4000 applicants.",
+    hjust = 0
+    )
+```
+
+
+The next thing we will do is add a pointer from the annotated text to the two bars in the histogram that correspond to fewer than 4000 applicants. To do this we will add an annotation that is a line segment rather than text. The syntax for this is as follows:
+
+
+```{r}
+#| eval: false
+
+annotate("segment", x = , y = , xend = , yend =)
+```
+
+The line segment extends from the coordinate (`x`, `y`) to the coordinate (`xend`, `yend`). Since we need two line segments, we need two of these annotation layers. Again, the coordinates you will need are a bit of trial-and-error, adapting them until the pointer looks good.
+
+For our two line segments, we will try:
+
+- A segment extending from (12000, 11) to (3550, 8), and
+- A segment extending from (12000, 11) to (1550, 10).
+
+
+
+
+```{r}
+#| label: fig-mn-accept-rate4
+#| fig-cap: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| fig-alt: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| out-width: "100%"
+#| message: false
+
+ggplot(data = mn, aes(x = applicants)) +
+  geom_histogram(
+    breaks = seq(from = 0, to = 42000, by = 2000),
+    color = "black", 
+    fill = "#FFB71E"
+  ) +
+  labs(
+    title = "How Many Students Apply to College? ",
+    subtitle = "The number of applicants for the 33 institutions of higher education in Minnesota.\n",
+    caption = "\nSOURCE: https://www.acceptancerate.com/minnesota",
+    x = "Number of applicants",
+    y = "Count"
+  ) +
+  annotate(
+    "text", 
+    x = 5000, y = 12, 
+    label = "22 of the 33 institutions get\nfewer than 4000 applicants.",
+    hjust = 0
+    ) +
+  annotate(
+    "segment", 
+    x = 12000, y = 11, 
+    xend = 3550, yend = 8
+    ) +
+  annotate(
+    "segment", 
+    x = 12000, y = 11, 
+    xend = 1550, yend = 10
+    )
+```
+
+Lastly, we will add another text annotation and pointer to contextualize the outlying institution that gets over 40,000 student applicants.
+
+
+```{r}
+#| label: fig-mn-accept-rate5
+#| fig-cap: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| fig-alt: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| out-width: "100%"
+#| message: false
+
+ggplot(data = mn, aes(x = applicants)) +
+  geom_histogram(
+    breaks = seq(from = 0, to = 42000, by = 2000),
+    color = "black", 
+    fill = "#FFB71E"
+  ) +
+  labs(
+    title = "How Many Students Apply to College? ",
+    subtitle = "The number of applicants for the 33 institutions of higher education in Minnesota.\n",
+    caption = "\nSOURCE: https://www.acceptancerate.com/minnesota",
+    x = "Number of applicants",
+    y = "Count"
+  ) +
+  annotate(
+    "text", 
+    x = 5000, y = 12, 
+    label = "22 of the 33 institutions get\nfewer than 4000 applicants.",
+    hjust = 0
+    ) +
+  annotate(
+    "segment", 
+    x = 12000, y = 11, 
+    xend = 3550, yend = 8
+    ) +
+  annotate(
+    "segment", 
+    x = 12000, y = 11, 
+    xend = 1550, yend = 10
+    ) +
+  annotate(
+    "text", 
+    x = 25000, y = 3, 
+    label = "UMN-Twin Cities gets\nmore than 40,000\napplicants.",
+    hjust = 0
+    ) +
+  annotate(
+    "segment", 
+    x = 33000, y = 2, 
+    xend = 40800, yend = 0.6
+    )
+```
+
+
+Lastly, we will make the annotations a bit more aesthetically pleasing. First, we will use a slightly smaller size font on the text annotations. To do this we will add the argument `size=` (the default size is 4). Second, we will change the width of our pointer segments using the `linewidth=` argument (the default width is 0.5). 
+
+```{r}
+#| label: fig-mn-accept-rate6
+#| fig-cap: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| fig-alt: "Histogram of the number of applicants for the 33 institutions of higher learning in Minnesota."
+#| out-width: "100%"
+#| message: false
+
+ggplot(data = mn, aes(x = applicants)) +
+  geom_histogram(
+    breaks = seq(from = 0, to = 42000, by = 2000),
+    color = "black", 
+    fill = "#FFB71E"
+  ) +
+  labs(
+    title = "How Many Students Apply to College? ",
+    subtitle = "The number of applicants for the 33 institutions of higher education in Minnesota.\n",
+    caption = "\nSOURCE: https://www.acceptancerate.com/minnesota",
+    x = "Number of applicants",
+    y = "Count"
+  ) +
+  annotate(
+    "text", 
+    x = 5000, y = 12, 
+    label = "22 of the 33 institutions get\nfewer than 4000 applicants.",
+    hjust = 0,
+    size = 3.2
+    ) +
+  annotate(
+    "segment", 
+    x = 12000, y = 11, 
+    xend = 3550, yend = 8,
+    linewidth = 0.3
+    ) +
+  annotate(
+    "segment", 
+    x = 12000, y = 11, 
+    xend = 1550, yend = 10,
+    linewidth = 0.3
+    ) +
+  annotate(
+    "text", 
+    x = 26000, y = 3, 
+    label = "UMN-Twin Cities gets\nmore than 40,000\napplicants.",
+    hjust = 0,
+    size = 3.2
+    ) +
+  annotate(
+    "segment", 
+    x = 33000, y = 2, 
+    xend = 40800, yend = 0.6,
+    linewidth = 0.3
+    )
+```
+
+
+:::fyi
+**FYI**
+
+When you change the size of text, you may need to re-modify coordinates to make it look good again! Similarly, if you change the aspect ratio of your plot, you will also likely need to change them.
+:::
+
+
+<br />
+
+
+
+## Exercises: Your Turn {-}
+
+
+1. Use the *mn-colleges.csv* to create a histogram of the acceptance rates for the 33 institutions of higher education in Minnesota. Add a title, subtitle, caption, and axes labels using the `labs()` layer. Also add at least one text annotation and one segment annotation to this plot. 
+
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-03-01');">Show/Hide Solution</button>
+
+<div id="exercise_04-03-01" style="display:none; margin: -40px 0 40px 40px;">
+```{r}
+#| fig-alt: "Histogram of the acceptance rates for the 33 institutions of higher learning in Minnesota."
+#| out-width: "100%"
+#| message: false
+
+ggplot(data = mn, aes(x = accept_rate)) +
+  geom_histogram(
+    breaks = seq(from = 0, to = 115, by = 5),
+    color = "black", 
+    fill = "#FFB71E"
+  ) +
+  labs(
+    title = "What Percentage of Applicants are Accepted to College?",
+    subtitle = "The acceptance rate for the 33 institutions of higher education in Minnesota.\n",
+    caption = "\nSOURCE: https://www.acceptancerate.com/minnesota",
+    x = "Acceptance Rate (%)",
+    y = "Count"
+  ) +
+  annotate(
+    "text", 
+    x = 10, y = 2, 
+    label = "Carleton College\n(19.1%)",
+    hjust = 0.5,
+    size = 3.2
+    ) +
+  annotate(
+    "segment", 
+    x = 10, y = 1.6, 
+    xend = 16.1, yend = 0.7,
+    linewidth = 0.3
+    ) +
+  annotate(
+    "text",
+    x = 32, y = 3,
+    label = "Macalester College\n(32.3%)",
+    hjust = 0.5,
+    size = 3.2
+    ) +
+  annotate(
+    "segment",
+    x = 32, y = 2.6,
+    xend = 32.1, yend = 0.8,
+    linewidth = 0.3
+    ) +
+  annotate(
+    "text",
+    x = 100, y = 3,
+    label = "Dunwoody College\nof Technology\n(96.9%)",
+    hjust = 0.5,
+    size = 3.2
+    ) +
+  annotate(
+    "segment",
+    x = 100, y = 2.4,
+    xend = 97.1, yend = 0.8,
+    linewidth = 0.3
+    ) 
+```
+</div>
+
+
+<!-- 2. Write the syntax you would add into the `gf_labs()` function if you were creating this plot using R. -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-00-02');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_04-01-00-02" style="display:none; margin: -40px 0 40px 40px;"> -->
+
+<!-- </div> -->
+
+
+
+<!-- Consider the following data from the *umn-bike-amenities.csv* file.  -->
+
+<!-- ```{r} -->
+<!-- #| label: import-bike-amenities-data -->
+<!-- #| message: false -->
+
+<!-- # Import data -->
+<!-- bike_amenities <- readr::read_csv("data/umn-bike-amenities.csv") -->
+
+<!-- # View data -->
+<!-- DT::datatable(bike_amenities) -->
+<!-- ``` -->
+
+<!-- Imagine that this has been imported into a data object called `bike_amenities`. Also suppose we wanted to create a bar chart of the `campus` attribute, which provides the campus location (East Bank, West Bank, or St. Paul) of the bike amenities in the data. -->
+
+<!-- 3. Write out the syntax to create a horizontal bar chart of the `campus` attribute. Also color the bar borders black and fill the bars with yellow. Lastly, add labels to help readers better interpret the plot. -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03-01-04');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_03-01-04" style="display:none; margin: -40px 0 40px 40px;"> -->
+
+<!-- </div> -->
+
+
+
+<br />
+
+
+## References {-}

@@ -1,0 +1,537 @@
+first_name,last_name,birthday,age,gender,party,chamber,state,birthyear,generation
+Maria,Cantwell,1958-10-13,67,F,Democrat,Senate,WA,1958,Baby Boomer
+Amy,Klobuchar,1960-05-25,66,F,Democrat,Senate,MN,1960,Baby Boomer
+Bernard,Sanders,1941-09-08,84,M,Independent,Senate,VT,1941,Silent Generation
+Sheldon,Whitehouse,1955-10-20,70,M,Democrat,Senate,RI,1955,Baby Boomer
+John,Barrasso,1952-07-21,73,M,Republican,Senate,WY,1952,Baby Boomer
+Roger,Wicker,1951-07-05,74,M,Republican,Senate,MS,1951,Baby Boomer
+Susan,Collins,1952-12-07,73,F,Republican,Senate,ME,1952,Baby Boomer
+John,Cornyn,1952-02-02,74,M,Republican,Senate,TX,1952,Baby Boomer
+Richard,Durbin,1944-11-21,81,M,Democrat,Senate,IL,1944,Silent Generation
+Lindsey,Graham,1955-07-09,70,M,Republican,Senate,SC,1955,Baby Boomer
+Mitch,McConnell,1942-02-20,84,M,Republican,Senate,KY,1942,Silent Generation
+Jeff,Merkley,1956-10-24,69,M,Democrat,Senate,OR,1956,Baby Boomer
+John,Reed,1949-11-12,76,M,Democrat,Senate,RI,1949,Baby Boomer
+James,Risch,1943-05-03,83,M,Republican,Senate,ID,1943,Silent Generation
+Jeanne,Shaheen,1947-01-28,79,F,Democrat,Senate,NH,1947,Baby Boomer
+Mark,Warner,1954-12-15,71,M,Democrat,Senate,VA,1954,Baby Boomer
+Kirsten,Gillibrand,1966-12-09,59,F,Democrat,Senate,NY,1966,Generation X
+Christopher,Coons,1963-09-09,62,M,Democrat,Senate,DE,1963,Baby Boomer
+Robert,Aderholt,1965-07-22,60,M,Republican,House,AL,1965,Generation X
+Tammy,Baldwin,1962-02-11,64,F,Democrat,Senate,WI,1962,Baby Boomer
+Michael,Bennet,1964-11-28,61,M,Democrat,Senate,CO,1964,Baby Boomer
+Gus,Bilirakis,1963-02-08,63,M,Republican,House,FL,1963,Baby Boomer
+Sanford,Bishop,1947-02-04,79,M,Democrat,House,GA,1947,Baby Boomer
+Marsha,Blackburn,1952-06-06,73,F,Republican,Senate,TN,1952,Baby Boomer
+Richard,Blumenthal,1946-02-13,80,M,Democrat,Senate,CT,1946,Baby Boomer
+John,Boozman,1950-12-10,75,M,Republican,Senate,AR,1950,Baby Boomer
+Vern,Buchanan,1951-05-08,75,M,Republican,House,FL,1951,Baby Boomer
+Ken,Calvert,1953-06-08,72,M,Republican,House,CA,1953,Baby Boomer
+Shelley,Capito,1953-11-26,72,F,Republican,Senate,WV,1953,Baby Boomer
+André,Carson,1974-10-16,51,M,Democrat,House,IN,1974,Generation X
+John,Carter,1941-11-06,84,M,Republican,House,TX,1941,Silent Generation
+Bill,Cassidy,1957-09-28,68,M,Republican,Senate,LA,1957,Baby Boomer
+Kathy,Castor,1966-08-20,59,F,Democrat,House,FL,1966,Generation X
+Judy,Chu,1953-07-07,72,F,Democrat,House,CA,1953,Baby Boomer
+Yvette,Clarke,1964-11-21,61,F,Democrat,House,NY,1964,Baby Boomer
+Emanuel,Cleaver,1944-10-26,81,M,Democrat,House,MO,1944,Silent Generation
+James,Clyburn,1940-07-21,85,M,Democrat,House,SC,1940,Silent Generation
+Steve,Cohen,1949-05-24,77,M,Democrat,House,TN,1949,Baby Boomer
+Tom,Cole,1949-04-28,77,M,Republican,House,OK,1949,Baby Boomer
+Jim,Costa,1952-04-13,74,M,Democrat,House,CA,1952,Baby Boomer
+Joe,Courtney,1953-04-06,73,M,Democrat,House,CT,1953,Baby Boomer
+Michael,Crapo,1951-05-20,75,M,Republican,Senate,ID,1951,Baby Boomer
+Eric,Crawford,1966-01-22,60,M,Republican,House,AR,1966,Generation X
+Henry,Cuellar,1955-09-19,70,M,Democrat,House,TX,1955,Baby Boomer
+Danny,Davis,1941-09-06,84,M,Democrat,House,IL,1941,Silent Generation
+Diana,DeGette,1957-07-29,68,F,Democrat,House,CO,1957,Baby Boomer
+Rosa,DeLauro,1943-03-02,83,F,Democrat,House,CT,1943,Silent Generation
+Scott,DesJarlais,1964-02-21,62,M,Republican,House,TN,1964,Baby Boomer
+Mario,Diaz-Balart,1961-09-25,64,M,Republican,House,FL,1961,Baby Boomer
+Lloyd,Doggett,1946-10-06,79,M,Democrat,House,TX,1946,Baby Boomer
+Charles,Fleischmann,1962-10-11,63,M,Republican,House,TN,1962,Baby Boomer
+Virginia,Foxx,1943-06-29,82,F,Republican,House,NC,1943,Silent Generation
+John,Garamendi,1945-01-24,81,M,Democrat,House,CA,1945,Silent Generation
+Paul,Gosar,1958-11-22,67,M,Republican,House,AZ,1958,Baby Boomer
+Charles,Grassley,1933-09-17,92,M,Republican,Senate,IA,1933,Silent Generation
+Sam,Graves,1963-11-07,62,M,Republican,House,MO,1963,Baby Boomer
+Al,Green,1947-09-01,78,M,Democrat,House,TX,1947,Baby Boomer
+H.,Griffith,1958-03-15,68,M,Republican,House,VA,1958,Baby Boomer
+Brett,Guthrie,1964-02-18,62,M,Republican,House,KY,1964,Baby Boomer
+Andy,Harris,1957-01-25,69,M,Republican,House,MD,1957,Baby Boomer
+Martin,Heinrich,1971-10-17,54,M,Democrat,Senate,NM,1971,Generation X
+James,Himes,1966-07-05,59,M,Democrat,House,CT,1966,Generation X
+Mazie,Hirono,1947-11-03,78,F,Democrat,Senate,HI,1947,Baby Boomer
+John,Hoeven,1957-03-13,69,M,Republican,Senate,ND,1957,Baby Boomer
+Steny,Hoyer,1939-06-14,86,M,Democrat,House,MD,1939,Silent Generation
+Bill,Huizenga,1969-01-31,57,M,Republican,House,MI,1969,Generation X
+Henry,Johnson,1954-10-02,71,M,Democrat,House,GA,1954,Baby Boomer
+Ron,Johnson,1955-04-08,71,M,Republican,Senate,WI,1955,Baby Boomer
+Jim,Jordan,1964-02-17,62,M,Republican,House,OH,1964,Baby Boomer
+Marcy,Kaptur,1946-06-17,79,F,Democrat,House,OH,1946,Baby Boomer
+William,Keating,1952-09-06,73,M,Democrat,House,MA,1952,Baby Boomer
+Mike,Kelly,1948-05-10,78,M,Republican,House,PA,1948,Baby Boomer
+James,Lankford,1968-03-04,58,M,Republican,Senate,OK,1968,Generation X
+Rick,Larsen,1965-06-15,60,M,Democrat,House,WA,1965,Generation X
+John,Larson,1948-07-22,77,M,Democrat,House,CT,1948,Baby Boomer
+Robert,Latta,1956-04-18,70,M,Republican,House,OH,1956,Baby Boomer
+Mike,Lee,1971-06-04,54,M,Republican,Senate,UT,1971,Generation X
+Zoe,Lofgren,1947-12-21,78,F,Democrat,House,CA,1947,Baby Boomer
+Frank,Lucas,1960-01-06,66,M,Republican,House,OK,1960,Baby Boomer
+Ben,Luján,1972-06-07,53,M,Democrat,Senate,NM,1972,Generation X
+Stephen,Lynch,1955-03-31,71,M,Democrat,House,MA,1955,Baby Boomer
+Edward,Markey,1946-07-11,79,M,Democrat,Senate,MA,1946,Baby Boomer
+Doris,Matsui,1944-09-25,81,F,Democrat,House,CA,1944,Silent Generation
+Michael,McCaul,1962-01-14,64,M,Republican,House,TX,1962,Baby Boomer
+Tom,McClintock,1956-07-10,69,M,Republican,House,CA,1956,Baby Boomer
+Betty,McCollum,1954-07-12,71,F,Democrat,House,MN,1954,Baby Boomer
+James,McGovern,1959-11-20,66,M,Democrat,House,MA,1959,Baby Boomer
+Gregory,Meeks,1953-09-25,72,M,Democrat,House,NY,1953,Baby Boomer
+Gwen,Moore,1951-04-18,75,F,Democrat,House,WI,1951,Baby Boomer
+Jerry,Moran,1954-05-29,72,M,Republican,Senate,KS,1954,Baby Boomer
+Lisa,Murkowski,1957-05-22,69,F,Republican,Senate,AK,1957,Baby Boomer
+Christopher,Murphy,1973-08-03,52,M,Democrat,Senate,CT,1973,Generation X
+Patty,Murray,1950-10-11,75,F,Democrat,Senate,WA,1950,Baby Boomer
+Jerrold,Nadler,1947-06-13,78,M,Democrat,House,NY,1947,Baby Boomer
+Richard,Neal,1949-02-14,77,M,Democrat,House,MA,1949,Baby Boomer
+Eleanor,Norton,1937-06-13,88,F,Democrat,House,DC,1937,Silent Generation
+Frank,Pallone,1951-10-30,74,M,Democrat,House,NJ,1951,Baby Boomer
+Rand,Paul,1963-01-07,63,M,Republican,Senate,KY,1963,Baby Boomer
+Nancy,Pelosi,1940-03-26,86,F,Democrat,House,CA,1940,Silent Generation
+Gary,Peters,1958-12-01,67,M,Democrat,Senate,MI,1958,Baby Boomer
+Chellie,Pingree,1955-04-02,71,F,Democrat,House,ME,1955,Baby Boomer
+Mike,Quigley,1958-10-17,67,M,Democrat,House,IL,1958,Baby Boomer
+Harold,Rogers,1937-12-31,88,M,Republican,House,KY,1937,Silent Generation
+Mike,Rogers,1958-07-16,67,M,Republican,House,AL,1958,Baby Boomer
+Steve,Scalise,1965-10-06,60,M,Republican,House,LA,1965,Generation X
+Janice,Schakowsky,1944-05-26,82,F,Democrat,House,IL,1944,Silent Generation
+Adam,Schiff,1960-06-22,65,M,Democrat,Senate,CA,1960,Baby Boomer
+Charles,Schumer,1950-11-23,75,M,Democrat,Senate,NY,1950,Baby Boomer
+David,Schweikert,1962-03-03,64,M,Republican,House,AZ,1962,Baby Boomer
+Austin,Scott,1969-12-10,56,M,Republican,House,GA,1969,Generation X
+Robert,Scott,1947-04-30,79,M,Democrat,House,VA,1947,Baby Boomer
+Tim,Scott,1965-09-19,60,M,Republican,Senate,SC,1965,Generation X
+Terri,Sewell,1965-01-01,61,F,Democrat,House,AL,1965,Generation X
+Brad,Sherman,1954-10-24,71,M,Democrat,House,CA,1954,Baby Boomer
+Michael,Simpson,1950-09-08,75,M,Republican,House,ID,1950,Baby Boomer
+Adam,Smith,1965-06-15,60,M,Democrat,House,WA,1965,Generation X
+Adrian,Smith,1970-12-19,55,M,Republican,House,NE,1970,Generation X
+Christopher,Smith,1953-03-04,73,M,Republican,House,NJ,1953,Baby Boomer
+Linda,Sánchez,1969-01-28,57,F,Democrat,House,CA,1969,Generation X
+Bennie,Thompson,1948-01-28,78,M,Democrat,House,MS,1948,Baby Boomer
+Mike,Thompson,1951-01-24,75,M,Democrat,House,CA,1951,Baby Boomer
+Glenn,Thompson,1959-07-27,66,M,Republican,House,PA,1959,Baby Boomer
+John,Thune,1961-01-07,65,M,Republican,Senate,SD,1961,Baby Boomer
+Paul,Tonko,1949-06-18,76,M,Democrat,House,NY,1949,Baby Boomer
+Michael,Turner,1960-01-11,66,M,Republican,House,OH,1960,Baby Boomer
+Chris,Van Hollen,1959-01-10,67,M,Democrat,Senate,MD,1959,Baby Boomer
+Nydia,Velázquez,1953-03-28,73,F,Democrat,House,NY,1953,Baby Boomer
+Tim,Walberg,1951-04-12,75,M,Republican,House,MI,1951,Baby Boomer
+Debbie,Wasserman Schultz,1966-09-27,59,F,Democrat,House,FL,1966,Generation X
+Maxine,Waters,1938-08-15,87,F,Democrat,House,CA,1938,Silent Generation
+Daniel,Webster,1949-04-27,77,M,Republican,House,FL,1949,Baby Boomer
+Peter,Welch,1947-05-02,79,M,Democrat,Senate,VT,1947,Baby Boomer
+Joe,Wilson,1947-07-31,78,M,Republican,House,SC,1947,Baby Boomer
+Frederica,Wilson,1942-11-05,83,F,Democrat,House,FL,1942,Silent Generation
+Robert,Wittman,1959-02-03,67,M,Republican,House,VA,1959,Baby Boomer
+Steve,Womack,1957-02-18,69,M,Republican,House,AR,1957,Baby Boomer
+Ron,Wyden,1949-05-03,77,M,Democrat,Senate,OR,1949,Baby Boomer
+Todd,Young,1972-08-24,53,M,Republican,Senate,IN,1972,Generation X
+Mark,Amodei,1958-06-12,67,M,Republican,House,NV,1958,Baby Boomer
+Suzanne,Bonamici,1954-10-14,71,F,Democrat,House,OR,1954,Baby Boomer
+Suzan,DelBene,1962-02-17,64,F,Democrat,House,WA,1962,Baby Boomer
+Thomas,Massie,1971-01-13,55,M,Republican,House,KY,1971,Generation X
+Brian,Schatz,1972-10-20,53,M,Democrat,Senate,HI,1972,Generation X
+Bill,Foster,1955-10-07,70,M,Democrat,House,IL,1955,Baby Boomer
+Dina,Titus,1950-05-23,76,F,Democrat,House,NV,1950,Baby Boomer
+Tom,Cotton,1977-05-13,49,M,Republican,Senate,AR,1977,Generation X
+Jared,Huffman,1964-02-18,62,M,Democrat,House,CA,1964,Baby Boomer
+Ami,Bera,1965-03-02,61,M,Democrat,House,CA,1965,Generation X
+Julia,Brownley,1952-08-28,73,F,Democrat,House,CA,1952,Baby Boomer
+Raul,Ruiz,1972-08-25,53,M,Democrat,House,CA,1972,Generation X
+Mark,Takano,1960-12-10,65,M,Democrat,House,CA,1960,Baby Boomer
+Juan,Vargas,1961-03-07,65,M,Democrat,House,CA,1961,Baby Boomer
+Scott,Peters,1958-06-17,67,M,Democrat,House,CA,1958,Baby Boomer
+Lois,Frankel,1948-05-16,78,F,Democrat,House,FL,1948,Baby Boomer
+Tammy,Duckworth,1968-03-12,58,F,Democrat,Senate,IL,1968,Generation X
+Garland,Barr,1973-07-24,52,M,Republican,House,KY,1973,Generation X
+Elizabeth,Warren,1949-06-22,76,F,Democrat,Senate,MA,1949,Baby Boomer
+Angus,King,1944-03-31,82,M,Independent,Senate,ME,1944,Silent Generation
+Ann,Wagner,1962-09-13,63,F,Republican,House,MO,1962,Baby Boomer
+Steve,Daines,1962-08-20,63,M,Republican,Senate,MT,1962,Baby Boomer
+Richard,Hudson,1971-11-04,54,M,Republican,House,NC,1971,Generation X
+Kevin,Cramer,1961-01-21,65,M,Republican,Senate,ND,1961,Baby Boomer
+Deb,Fischer,1951-03-01,75,F,Republican,Senate,NE,1951,Baby Boomer
+Grace,Meng,1975-10-01,50,F,Democrat,House,NY,1975,Generation X
+Hakeem,Jeffries,1970-08-04,55,M,Democrat,House,NY,1970,Generation X
+Joyce,Beatty,1950-03-12,76,F,Democrat,House,OH,1950,Baby Boomer
+David,Joyce,1957-03-17,69,M,Republican,House,OH,1957,Baby Boomer
+Scott,Perry,1962-05-27,64,M,Republican,House,PA,1962,Baby Boomer
+Ted,Cruz,1970-12-22,55,M,Republican,Senate,TX,1970,Generation X
+Randy,Weber,1953-07-02,72,M,Republican,House,TX,1953,Baby Boomer
+Joaquin,Castro,1974-09-16,51,M,Democrat,House,TX,1974,Generation X
+Roger,Williams,1949-09-13,76,M,Republican,House,TX,1949,Baby Boomer
+Marc,Veasey,1971-01-03,55,M,Democrat,House,TX,1971,Generation X
+Timothy,Kaine,1958-02-26,68,M,Democrat,Senate,VA,1958,Baby Boomer
+Mark,Pocan,1964-08-14,61,M,Democrat,House,WI,1964,Baby Boomer
+Robin,Kelly,1956-04-30,70,F,Democrat,House,IL,1956,Baby Boomer
+Jason,Smith,1980-06-16,45,M,Republican,House,MO,1980,Generation X
+Cory,Booker,1969-04-27,57,M,Democrat,Senate,NJ,1969,Generation X
+Katherine,Clark,1963-07-17,62,F,Democrat,House,MA,1963,Baby Boomer
+Donald,Norcross,1958-12-13,67,M,Democrat,House,NJ,1958,Baby Boomer
+Alma,Adams,1946-05-27,80,F,Democrat,House,NC,1946,Baby Boomer
+Gary,Palmer,1954-05-14,72,M,Republican,House,AL,1954,Baby Boomer
+J.,Hill,1956-12-05,69,M,Republican,House,AR,1956,Baby Boomer
+Bruce,Westerman,1967-11-18,58,M,Republican,House,AR,1967,Generation X
+Ruben,Gallego,1979-11-20,46,M,Democrat,Senate,AZ,1979,Generation X
+Mark,DeSaulnier,1952-03-31,74,M,Democrat,House,CA,1952,Baby Boomer
+Pete,Aguilar,1979-06-19,46,M,Democrat,House,CA,1979,Generation X
+Ted,Lieu,1969-03-29,57,M,Democrat,House,CA,1969,Generation X
+Norma,Torres,1965-04-04,61,F,Democrat,House,CA,1965,Generation X
+Earl,Carter,1957-09-06,68,M,Republican,House,GA,1957,Baby Boomer
+Barry,Loudermilk,1963-12-22,62,M,Republican,House,GA,1963,Baby Boomer
+Rick,Allen,1951-11-07,74,M,Republican,House,GA,1951,Baby Boomer
+Mike,Bost,1960-12-30,65,M,Republican,House,IL,1960,Baby Boomer
+Seth,Moulton,1978-10-24,47,M,Democrat,House,MA,1978,Generation X
+John,Moolenaar,1961-05-08,65,M,Republican,House,MI,1961,Baby Boomer
+Debbie,Dingell,1953-11-23,72,F,Democrat,House,MI,1953,Baby Boomer
+Tom,Emmer,1961-03-03,65,M,Republican,House,MN,1961,Baby Boomer
+David,Rouzer,1972-02-16,54,M,Republican,House,NC,1972,Generation X
+Bonnie,Watson Coleman,1945-02-06,81,F,Democrat,House,NJ,1945,Silent Generation
+Elise,Stefanik,1984-07-02,41,F,Republican,House,NY,1984,Millennial
+Brendan,Boyle,1977-02-06,49,M,Democrat,House,PA,1977,Generation X
+Brian,Babin,1948-03-23,78,M,Republican,House,TX,1948,Baby Boomer
+Donald,Beyer,1950-06-20,75,M,Democrat,House,VA,1950,Baby Boomer
+Stacey,Plaskett,1966-05-13,60,F,Democrat,House,VI,1966,Generation X
+Dan,Newhouse,1955-07-10,70,M,Republican,House,WA,1955,Baby Boomer
+Glenn,Grothman,1955-07-03,70,M,Republican,House,WI,1955,Baby Boomer
+Aumua Amata,Radewagen,1947-12-29,78,F,Republican,House,AS,1947,Baby Boomer
+Dan,Sullivan,1964-11-13,61,M,Republican,Senate,AK,1964,Baby Boomer
+Joni,Ernst,1970-07-01,55,F,Republican,Senate,IA,1970,Generation X
+Thom,Tillis,1960-08-30,65,M,Republican,Senate,NC,1960,Baby Boomer
+Mike,Rounds,1954-10-24,71,M,Republican,Senate,SD,1954,Baby Boomer
+Trent,Kelly,1966-03-01,60,M,Republican,House,MS,1966,Generation X
+Darin,LaHood,1968-07-05,57,M,Republican,House,IL,1968,Generation X
+Warren,Davidson,1970-03-01,56,M,Republican,House,OH,1970,Generation X
+James,Comer,1972-08-19,53,M,Republican,House,KY,1972,Generation X
+Dwight,Evans,1954-05-16,72,M,Democrat,House,PA,1954,Baby Boomer
+John,Kennedy,1951-11-21,74,M,Republican,Senate,LA,1951,Baby Boomer
+Margaret,Hassan,1958-02-27,68,F,Democrat,Senate,NH,1958,Baby Boomer
+Catherine,Cortez Masto,1964-03-29,62,F,Democrat,Senate,NV,1964,Baby Boomer
+Bradley,Schneider,1961-08-20,64,M,Democrat,House,IL,1961,Baby Boomer
+Andy,Biggs,1958-11-07,67,M,Republican,House,AZ,1958,Baby Boomer
+Ro,Khanna,1976-09-13,49,M,Democrat,House,CA,1976,Generation X
+Jimmy,Panetta,1969-10-01,56,M,Democrat,House,CA,1969,Generation X
+Salud,Carbajal,1964-11-18,61,M,Democrat,House,CA,1964,Baby Boomer
+Nanette,Barragán,1976-09-15,49,F,Democrat,House,CA,1976,Generation X
+J.,Correa,1958-01-24,68,M,Democrat,House,CA,1958,Baby Boomer
+Lisa,Blunt Rochester,1962-02-10,64,F,Democrat,Senate,DE,1962,Baby Boomer
+Neal,Dunn,1953-02-16,73,M,Republican,House,FL,1953,Baby Boomer
+John,Rutherford,1952-09-02,73,M,Republican,House,FL,1952,Baby Boomer
+Darren,Soto,1978-02-25,48,M,Democrat,House,FL,1978,Generation X
+Brian,Mast,1980-07-10,45,M,Republican,House,FL,1980,Generation X
+Raja,Krishnamoorthi,1973-07-19,52,M,Democrat,House,IL,1973,Generation X
+Jim,Banks,1979-07-16,46,M,Republican,Senate,IN,1979,Generation X
+Roger,Marshall,1960-08-09,65,M,Republican,Senate,KS,1960,Baby Boomer
+Clay,Higgins,1961-08-24,64,M,Republican,House,LA,1961,Baby Boomer
+Mike,Johnson,1972-01-30,54,M,Republican,House,LA,1972,Generation X
+Jamie,Raskin,1962-12-13,63,M,Democrat,House,MD,1962,Baby Boomer
+Jack,Bergman,1947-02-02,79,M,Republican,House,MI,1947,Baby Boomer
+Ted,Budd,1971-10-21,54,M,Republican,Senate,NC,1971,Generation X
+Don,Bacon,1963-08-16,62,M,Republican,House,NE,1963,Baby Boomer
+Josh,Gottheimer,1975-03-08,51,M,Democrat,House,NJ,1975,Generation X
+Jacky,Rosen,1957-08-02,68,F,Democrat,Senate,NV,1957,Baby Boomer
+Adriano,Espaillat,1954-09-27,71,M,Democrat,House,NY,1954,Baby Boomer
+Brian,Fitzpatrick,1973-12-17,52,M,Republican,House,PA,1973,Generation X
+Lloyd,Smucker,1964-01-23,62,M,Republican,House,PA,1964,Baby Boomer
+David,Kustoff,1966-10-08,59,M,Republican,House,TN,1966,Generation X
+Vicente,Gonzalez,1967-09-04,58,M,Democrat,House,TX,1967,Generation X
+Jodey,Arrington,1972-03-09,54,M,Republican,House,TX,1972,Generation X
+Pramila,Jayapal,1965-09-21,60,F,Democrat,House,WA,1965,Generation X
+Ron,Estes,1956-07-19,69,M,Republican,House,KS,1956,Baby Boomer
+Ralph,Norman,1953-06-20,72,M,Republican,House,SC,1953,Baby Boomer
+Jimmy,Gomez,1974-11-25,51,M,Democrat,House,CA,1974,Generation X
+John,Curtis,1960-05-10,66,M,Republican,Senate,UT,1960,Baby Boomer
+Tina,Smith,1958-03-04,68,F,Democrat,Senate,MN,1958,Baby Boomer
+Cindy,Hyde-Smith,1959-05-10,67,F,Republican,Senate,MS,1959,Baby Boomer
+Michael,Cloud,1975-05-13,51,M,Republican,House,TX,1975,Generation X
+Troy,Balderson,1962-01-16,64,M,Republican,House,OH,1962,Baby Boomer
+Kevin,Hern,1961-12-04,64,M,Republican,House,OK,1961,Baby Boomer
+Joseph,Morelle,1957-04-29,69,M,Democrat,House,NY,1957,Baby Boomer
+Mary,Scanlon,1959-08-30,66,F,Democrat,House,PA,1959,Baby Boomer
+Ed,Case,1952-09-27,73,M,Democrat,House,HI,1952,Baby Boomer
+Steven,Horsford,1973-04-29,53,M,Democrat,House,NV,1973,Generation X
+Greg,Stanton,1970-03-08,56,M,Democrat,House,AZ,1970,Generation X
+Josh,Harder,1986-08-01,39,M,Democrat,House,CA,1986,Millennial
+Mike,Levin,1978-10-28,47,M,Democrat,House,CA,1978,Generation X
+Joe,Neguse,1984-05-13,42,M,Democrat,House,CO,1984,Millennial
+Jason,Crow,1979-03-15,47,M,Democrat,House,CO,1979,Generation X
+Jahana,Hayes,1973-03-08,53,F,Democrat,House,CT,1973,Generation X
+W.,Steube,1978-05-19,48,M,Republican,House,FL,1978,Generation X
+Lucy,McBath,1960-06-01,65,F,Democrat,House,GA,1960,Baby Boomer
+Russ,Fulcher,1973-07-19,52,M,Republican,House,ID,1973,Generation X
+Jesús,García,1956-04-12,70,M,Democrat,House,IL,1956,Baby Boomer
+Sean,Casten,1971-11-23,54,M,Democrat,House,IL,1971,Generation X
+Lauren,Underwood,1986-10-04,39,F,Democrat,House,IL,1986,Millennial
+James,Baird,1945-06-04,80,M,Republican,House,IN,1945,Silent Generation
+Sharice,Davids,1980-05-22,46,F,Democrat,House,KS,1980,Generation X
+Lori,Trahan,1973-10-27,52,F,Democrat,House,MA,1973,Generation X
+Ayanna,Pressley,1974-02-03,52,F,Democrat,House,MA,1974,Generation X
+Elissa,Slotkin,1976-07-10,49,F,Democrat,Senate,MI,1976,Generation X
+Haley,Stevens,1983-06-24,42,F,Democrat,House,MI,1983,Millennial
+Rashida,Tlaib,1976-07-24,49,F,Democrat,House,MI,1976,Generation X
+Angie,Craig,1972-02-14,54,F,Democrat,House,MN,1972,Generation X
+Ilhan,Omar,1981-10-04,44,F,Democrat,House,MN,1981,Millennial
+Pete,Stauber,1966-05-10,60,M,Republican,House,MN,1966,Generation X
+Michael,Guest,1970-02-04,56,M,Republican,House,MS,1970,Generation X
+Chris,Pappas,1980-06-04,45,M,Democrat,House,NH,1980,Generation X
+Jefferson,Van Drew,1953-02-23,73,M,Republican,House,NJ,1953,Baby Boomer
+Andy,Kim,1982-07-12,43,M,Democrat,Senate,NJ,1982,Millennial
+Susie,Lee,1966-11-07,59,F,Democrat,House,NV,1966,Generation X
+Alexandria,Ocasio-Cortez,1989-10-13,36,F,Democrat,House,NY,1989,Millennial
+Madeleine,Dean,1959-06-06,66,F,Democrat,House,PA,1959,Baby Boomer
+Chrissy,Houlahan,1967-06-05,58,F,Democrat,House,PA,1967,Generation X
+Daniel,Meuser,1964-02-10,62,M,Republican,House,PA,1964,Baby Boomer
+John,Joyce,1957-02-08,69,M,Republican,House,PA,1957,Baby Boomer
+Guy,Reschenthaler,1983-04-17,43,M,Republican,House,PA,1983,Millennial
+William,Timmons,1984-04-30,42,M,Republican,House,SC,1984,Millennial
+Dusty,Johnson,1976-09-30,49,M,Republican,House,SD,1976,Generation X
+Tim,Burchett,1964-08-25,61,M,Republican,House,TN,1964,Baby Boomer
+John,Rose,1965-02-23,61,M,Republican,House,TN,1965,Generation X
+Dan,Crenshaw,1984-03-14,42,M,Republican,House,TX,1984,Millennial
+Lance,Gooden,1982-12-01,43,M,Republican,House,TX,1982,Millennial
+Lizzie,Fletcher,1975-02-13,51,F,Democrat,House,TX,1975,Generation X
+Veronica,Escobar,1969-09-15,56,F,Democrat,House,TX,1969,Generation X
+Chip,Roy,1972-08-07,53,M,Republican,House,TX,1972,Generation X
+Sylvia,Garcia,1950-09-06,75,F,Democrat,House,TX,1950,Baby Boomer
+Ben,Cline,1972-02-29,54,M,Republican,House,VA,1972,Generation X
+Kim,Schrier,1968-08-23,57,F,Democrat,House,WA,1968,Generation X
+Bryan,Steil,1981-03-30,45,M,Republican,House,WI,1981,Millennial
+Carol,Miller,1950-11-04,75,F,Republican,House,WV,1950,Baby Boomer
+Rick,Scott,1952-12-01,73,M,Republican,Senate,FL,1952,Baby Boomer
+Joshua,Hawley,1979-12-31,46,M,Republican,Senate,MO,1979,Generation X
+Jared,Golden,1982-07-25,43,M,Democrat,House,ME,1982,Millennial
+Gregory,Murphy,1963-03-05,63,M,Republican,House,NC,1963,Baby Boomer
+Kweisi,Mfume,1948-10-24,77,M,Democrat,House,MD,1948,Baby Boomer
+Thomas,Tiffany,1957-12-30,68,M,Republican,House,WI,1957,Baby Boomer
+Mark,Kelly,1964-02-21,62,M,Democrat,Senate,AZ,1964,Baby Boomer
+Cynthia,Lummis,1954-09-10,71,F,Republican,Senate,WY,1954,Baby Boomer
+Darrell,Issa,1953-11-01,72,M,Republican,House,CA,1953,Baby Boomer
+Pete,Sessions,1955-03-22,71,M,Republican,House,TX,1955,Baby Boomer
+David,Valadao,1977-04-14,49,M,Republican,House,CA,1977,Generation X
+Tommy,Tuberville,1954-09-18,71,M,Republican,Senate,AL,1954,Baby Boomer
+John,Hickenlooper,1952-02-07,74,M,Democrat,Senate,CO,1952,Baby Boomer
+Bill,Hagerty,1959-08-14,66,M,Republican,Senate,TN,1959,Baby Boomer
+Barry,Moore,1966-09-26,59,M,Republican,House,AL,1966,Generation X
+Jay,Obernolte,1970-08-18,55,M,Republican,House,CA,1970,Generation X
+Young,Kim,1962-10-18,63,F,Republican,House,CA,1962,Baby Boomer
+Sara,Jacobs,1989-02-01,37,F,Democrat,House,CA,1989,Millennial
+Lauren,Boebert,1986-12-15,39,F,Republican,House,CO,1986,Millennial
+Katherine,Cammack,1988-02-16,38,F,Republican,House,FL,1988,Millennial
+C.,Franklin,1964-08-23,61,M,Republican,House,FL,1964,Baby Boomer
+Byron,Donalds,1978-10-28,47,M,Republican,House,FL,1978,Generation X
+Carlos,Gimenez,1954-01-17,72,M,Republican,House,FL,1954,Baby Boomer
+Maria,Salazar,1961-11-01,64,F,Republican,House,FL,1961,Baby Boomer
+Nikema,Williams,1978-07-30,47,F,Democrat,House,GA,1978,Generation X
+Andrew,Clyde,1963-11-22,62,M,Republican,House,GA,1963,Baby Boomer
+Ashley,Hinson,1983-06-27,42,F,Republican,House,IA,1983,Millennial
+Mariannette,Miller-Meeks,1955-09-06,70,F,Republican,House,IA,1955,Baby Boomer
+Randy,Feenstra,1969-01-14,57,M,Republican,House,IA,1969,Generation X
+Mary,Miller,1959-08-27,66,F,Republican,House,IL,1959,Baby Boomer
+Frank,Mrvan,1969-04-16,57,M,Democrat,House,IN,1969,Generation X
+Victoria,Spartz,1978-10-06,47,F,Republican,House,IN,1978,Generation X
+Tracey,Mann,1976-12-17,49,M,Republican,House,KS,1976,Generation X
+Jake,Auchincloss,1988-01-29,38,M,Democrat,House,MA,1988,Millennial
+Lisa,McClain,1966-04-07,60,F,Republican,House,MI,1966,Generation X
+Michelle,Fischbach,1965-11-03,60,F,Republican,House,MN,1965,Generation X
+Deborah,Ross,1963-06-20,62,F,Democrat,House,NC,1963,Baby Boomer
+Teresa,Leger Fernandez,1959-07-01,66,F,Democrat,House,NM,1959,Baby Boomer
+Andrew,Garbarino,1984-09-27,41,M,Republican,House,NY,1984,Millennial
+Nicole,Malliotakis,1980-11-11,45,F,Republican,House,NY,1980,Generation X
+Ritchie,Torres,1988-03-12,38,M,Democrat,House,NY,1988,Millennial
+Stephanie,Bice,1973-11-11,52,F,Republican,House,OK,1973,Generation X
+Cliff,Bentz,1952-01-12,74,M,Republican,House,OR,1952,Baby Boomer
+Nancy,Mace,1977-12-04,48,F,Republican,House,SC,1977,Generation X
+Diana,Harshbarger,1960-01-01,66,F,Republican,House,TN,1960,Baby Boomer
+Patrick,Fallon,1967-12-19,58,M,Republican,House,TX,1967,Generation X
+August,Pfluger,1978-12-28,47,M,Republican,House,TX,1978,Generation X
+Ronny,Jackson,1967-05-04,59,M,Republican,House,TX,1967,Generation X
+Troy,Nehls,1968-04-07,58,M,Republican,House,TX,1968,Generation X
+Beth,Van Duyne,1970-11-16,55,F,Republican,House,TX,1970,Generation X
+Blake,Moore,1980-06-22,45,M,Republican,House,UT,1980,Generation X
+Clarence,Owens,1951-08-02,74,M,Republican,House,UT,1951,Baby Boomer
+Marilyn,Strickland,1962-09-25,63,F,Democrat,House,WA,1962,Baby Boomer
+Scott,Fitzgerald,1963-11-16,62,M,Republican,House,WI,1963,Baby Boomer
+Alejandro,Padilla,1973-03-22,53,M,Democrat,Senate,CA,1973,Generation X
+Jon,Ossoff,1987-02-16,39,M,Democrat,Senate,GA,1987,Millennial
+Raphael,Warnock,1969-07-23,56,M,Democrat,Senate,GA,1969,Generation X
+Claudia,Tenney,1961-02-04,65,F,Republican,House,NY,1961,Baby Boomer
+Julia,Letlow,1981-03-16,45,F,Republican,House,LA,1981,Millennial
+Troy,Carter,1963-10-26,62,M,Democrat,House,LA,1963,Baby Boomer
+Melanie,Stansbury,1979-01-31,47,F,Democrat,House,NM,1979,Generation X
+Jake,Ellzey,1970-01-24,56,M,Republican,House,TX,1970,Generation X
+Shontel,Brown,1975-06-24,50,F,Democrat,House,OH,1975,Generation X
+Mike,Carey,1971-03-13,55,M,Republican,House,OH,1971,Generation X
+Mike,Flood,1975-02-23,51,M,Republican,House,NE,1975,Generation X
+Brad,Finstad,1976-05-30,49,M,Republican,House,MN,1976,Generation X
+Patrick,Ryan,1982-03-28,44,M,Democrat,House,NY,1982,Millennial
+Rudy,Yakym,1984-02-24,42,M,Republican,House,IN,1984,Millennial
+Ryan,Zinke,1961-11-01,64,M,Republican,House,MT,1961,Baby Boomer
+Katie,Britt,1982-02-02,44,F,Republican,Senate,AL,1982,Millennial
+Eric,Schmitt,1975-06-20,50,M,Republican,Senate,MO,1975,Generation X
+John,Fetterman,1969-08-15,56,M,Democrat,Senate,PA,1969,Generation X
+Dale,Strong,1970-05-08,56,M,Republican,House,AL,1970,Generation X
+Eli,Crane,1980-01-03,46,M,Republican,House,AZ,1980,Generation X
+Juan,Ciscomani,1982-08-30,43,M,Republican,House,AZ,1982,Millennial
+Kevin,Kiley,1985-01-30,41,M,Independent,House,CA,1985,Millennial
+Kevin,Mullin,1970-06-15,55,M,Democrat,House,CA,1970,Generation X
+Sydney,Kamlager-Dove,1972-07-20,53,F,Democrat,House,CA,1972,Generation X
+Robert,Garcia,1977-12-02,48,M,Democrat,House,CA,1977,Generation X
+Brittany,Pettersen,1981-12-06,44,F,Democrat,House,CO,1981,Millennial
+Aaron,Bean,1967-01-25,59,M,Republican,House,FL,1967,Generation X
+Cory,Mills,1980-07-30,45,M,Republican,House,FL,1980,Generation X
+Maxwell,Frost,1997-01-17,29,M,Democrat,House,FL,1997,Generation Z
+Anna,Luna,1989-05-06,37,F,Republican,House,FL,1989,Millennial
+Laurel,Lee,1974-03-26,52,F,Republican,House,FL,1974,Generation X
+Jared,Moskowitz,1980-12-18,45,M,Democrat,House,FL,1980,Generation X
+Rich,McCormick,1968-10-07,57,M,Republican,House,GA,1968,Generation X
+Mike,Collins,1967-07-02,58,M,Republican,House,GA,1967,Generation X
+James (Jim),Moylan,1962-07-18,63,M,Republican,House,GU,1962,Baby Boomer
+Jill,Tokuda,1976-03-28,50,F,Democrat,House,HI,1976,Generation X
+Zachary (Zach),Nunn,1979-05-04,47,M,Republican,House,IA,1979,Generation X
+Jonathan,Jackson,1966-01-07,60,M,Democrat,House,IL,1966,Generation X
+Delia,Ramirez,1983-06-02,42,F,Democrat,House,IL,1983,Millennial
+Nicole (Nikki),Budzinski,1977-03-11,49,F,Democrat,House,IL,1977,Generation X
+Eric,Sorensen,1976-03-18,50,M,Democrat,House,IL,1976,Generation X
+Erin,Houchin,1976-09-24,49,F,Republican,House,IN,1976,Generation X
+Morgan,McGarvey,1979-12-23,46,M,Democrat,House,KY,1979,Generation X
+Glenn,Ivey,1961-02-27,65,M,Democrat,House,MD,1961,Baby Boomer
+Hillary,Scholten,1982-02-22,44,F,Democrat,House,MI,1982,Millennial
+John,James,1981-06-08,44,M,Republican,House,MI,1981,Millennial
+Shri,Thanedar,1955-02-22,71,M,Democrat,House,MI,1955,Baby Boomer
+Mark,Alford,1963-10-04,62,M,Republican,House,MO,1963,Baby Boomer
+Eric,Burlison,1976-10-02,49,M,Republican,House,MO,1976,Generation X
+Mike,Ezell,1959-04-06,67,M,Republican,House,MS,1959,Baby Boomer
+Donald,Davis,1971-08-29,54,M,Democrat,House,NC,1971,Generation X
+Valerie,Foushee,1956-05-07,70,F,Democrat,House,NC,1956,Baby Boomer
+Charles (Chuck),Edwards,1960-09-13,65,M,Republican,House,NC,1960,Baby Boomer
+Thomas,Kean,1968-09-05,57,M,Republican,House,NJ,1968,Generation X
+Robert,Menendez,1985-07-12,40,M,Democrat,House,NJ,1985,Millennial
+Gabriel (Gabe),Vasquez,1984-08-03,41,M,Democrat,House,NM,1984,Millennial
+Nicolas,LaLota,1978-06-23,47,M,Republican,House,NY,1978,Generation X
+Dan,Goldman,1976-02-26,50,M,Democrat,House,NY,1976,Generation X
+Michael,Lawler,1986-09-09,39,M,Republican,House,NY,1986,Millennial
+Nicholas,Langworthy,1981-02-27,45,M,Republican,House,NY,1981,Millennial
+Greg,Landsman,1976-12-04,49,M,Democrat,House,OH,1976,Generation X
+Max,Miller,1988-11-13,37,M,Republican,House,OH,1988,Millennial
+Emilia,Sykes,1986-01-04,40,F,Democrat,House,OH,1986,Millennial
+Josh,Brecheen,1979-06-19,46,M,Republican,House,OK,1979,Generation X
+Valerie,Hoyle,1964-02-14,62,F,Democrat,House,OR,1964,Baby Boomer
+Andrea,Salinas,1969-12-06,56,F,Democrat,House,OR,1969,Generation X
+Summer,Lee,1987-11-26,38,F,Democrat,House,PA,1987,Millennial
+Chris,Deluzio,1984-07-13,41,M,Democrat,House,PA,1984,Millennial
+Seth,Magaziner,1983-07-22,42,M,Democrat,House,RI,1983,Millennial
+Russell,Fry,1985-01-31,41,M,Republican,House,SC,1985,Millennial
+Andrew,Ogles,1971-06-18,54,M,Republican,House,TN,1971,Generation X
+Nathaniel,Moran,1974-07-22,51,M,Republican,House,TX,1974,Generation X
+Keith,Self,1953-03-20,73,M,Republican,House,TX,1953,Baby Boomer
+Morgan,Luttrell,1975-11-07,50,M,Republican,House,TX,1975,Generation X
+Mónica,De La Cruz,1974-11-11,51,F,Republican,House,TX,1974,Generation X
+Jasmine,Crockett,1981-03-29,45,F,Democrat,House,TX,1981,Millennial
+Gregorio,Casar,1989-05-04,37,M,Democrat,House,TX,1989,Millennial
+Wesley,Hunt,1981-11-13,44,M,Republican,House,TX,1981,Millennial
+Jennifer,Kiggans,1971-06-18,54,F,Republican,House,VA,1971,Generation X
+Becca,Balint,1968-05-04,58,F,Democrat,House,VT,1968,Generation X
+Marie,Gluesenkamp Perez,1988-06-06,37,F,Democrat,House,WA,1988,Millennial
+Derrick,Van Orden,1969-09-15,56,M,Republican,House,WI,1969,Generation X
+Harriet,Hageman,1962-10-18,63,F,Republican,House,WY,1962,Baby Boomer
+Pete,Ricketts,1964-08-19,61,M,Republican,Senate,NE,1964,Baby Boomer
+Jennifer,McClellan,1972-12-28,53,F,Democrat,House,VA,1972,Generation X
+Gabe,Amo,1987-12-11,38,M,Democrat,House,RI,1987,Millennial
+Celeste,Maloy,1981-05-22,45,F,Republican,House,UT,1981,Millennial
+Thomas,Suozzi,1962-08-31,63,M,Democrat,House,NY,1962,Baby Boomer
+Timothy,Kennedy,1976-10-20,49,M,Democrat,House,NY,1976,Generation X
+Vince,Fong,1979-10-24,46,M,Republican,House,CA,1979,Generation X
+Michael,Rulli,1969-03-11,57,M,Republican,House,OH,1969,Generation X
+LaMonica,McIver,1986-06-20,39,F,Democrat,House,NJ,1986,Millennial
+Tony,Wied,1976-05-03,50,M,Republican,House,WI,1976,Generation X
+Cleo,Fields,1962-11-22,63,M,Democrat,House,LA,1962,Baby Boomer
+Marlin,Stutzman,1976-08-31,49,M,Republican,House,IN,1976,Generation X
+Gilbert,Cisneros,1971-02-12,55,M,Democrat,House,CA,1971,Generation X
+Angela,Alsobrooks,1971-02-23,55,F,Democrat,Senate,MD,1971,Generation X
+Tim,Sheehy,1985-11-18,40,M,Republican,Senate,MT,1985,Millennial
+Bernie,Moreno,1967-02-14,59,M,Republican,Senate,OH,1967,Generation X
+Dave,McCormick,1965-08-17,60,M,Republican,Senate,PA,1965,Generation X
+Nicholas,Begich,1977-10-21,48,M,Republican,House,AK,1977,Generation X
+Shomari,Figures,1985-09-03,40,M,Democrat,House,AL,1985,Millennial
+Yassamin,Ansari,1992-04-07,34,F,Democrat,House,AZ,1992,Millennial
+Abraham,Hamadeh,1991-05-15,35,M,Republican,House,AZ,1991,Millennial
+Lateefah,Simon,1977-01-29,49,F,Democrat,House,CA,1977,Generation X
+Adam,Gray,1977-09-23,48,M,Democrat,House,CA,1977,Generation X
+Sam,Liccardo,1970-04-16,56,M,Democrat,House,CA,1970,Generation X
+George,Whitesides,1974-03-03,52,M,Democrat,House,CA,1974,Generation X
+Luz,Rivas,1974-02-06,52,F,Democrat,House,CA,1974,Generation X
+Laura,Friedman,1966-12-03,59,F,Democrat,House,CA,1966,Generation X
+Derek,Tran,1980-12-22,45,M,Democrat,House,CA,1980,Generation X
+Dave,Min,1976-03-05,50,M,Democrat,House,CA,1976,Generation X
+Jeff,Hurd,1979-08-15,46,M,Republican,House,CO,1979,Generation X
+Jeff,Crank,1967-01-28,59,M,Republican,House,CO,1967,Generation X
+Gabe,Evans,1986-07-28,39,M,Republican,House,CO,1986,Millennial
+Sarah,McBride,1990-08-09,35,F,Democrat,House,DE,1990,Millennial
+Mike,Haridopolos,1970-03-15,56,M,Republican,House,FL,1970,Generation X
+Brian,Jack,1988-02-17,38,M,Republican,House,GA,1988,Millennial
+Jefferson,Shreve,1965-09-24,60,M,Republican,House,IN,1965,Generation X
+Mark,Messmer,1967-12-16,58,M,Republican,House,IN,1967,Generation X
+Derek,Schmidt,1968-01-23,58,M,Republican,House,KS,1968,Generation X
+Johnny,Olszewski,1982-09-10,43,M,Democrat,House,MD,1982,Millennial
+Sarah,Elfreth,1988-09-09,37,F,Democrat,House,MD,1988,Millennial
+April,McClain Delaney,1964-05-28,61,F,Democrat,House,MD,1964,Baby Boomer
+Tom,Barrett,1981-04-30,45,M,Republican,House,MI,1981,Millennial
+Kristen,McDonald Rivet,1970-07-11,55,F,Democrat,House,MI,1970,Generation X
+Kelly,Morrison,1969-02-02,57,F,Democrat,House,MN,1969,Generation X
+Wesley,Bell,1974-11-05,51,M,Democrat,House,MO,1974,Generation X
+Robert,Onder,1962-01-06,64,M,Republican,House,MO,1962,Baby Boomer
+Kimberlyn,King-Hinds,1975-04-10,51,F,Republican,House,MP,1975,Generation X
+Troy,Downing,1967-03-04,59,M,Republican,House,MT,1967,Generation X
+Addison,McDowell,1994-01-21,32,M,Republican,House,NC,1994,Millennial
+Mark,Harris,1966-04-24,60,M,Republican,House,NC,1966,Generation X
+Pat,Harrigan,1987-06-21,38,M,Republican,House,NC,1987,Millennial
+Brad,Knott,1986-04-17,40,M,Republican,House,NC,1986,Millennial
+Tim,Moore,1970-10-02,55,M,Republican,House,NC,1970,Generation X
+Julie,Fedorchak,1968-09-28,57,F,Republican,House,ND,1968,Generation X
+Maggie,Goodlander,1986-11-04,39,F,Democrat,House,NH,1986,Millennial
+Herbert,Conaway,1963-01-30,63,M,Democrat,House,NJ,1963,Baby Boomer
+Nellie,Pou,1956-05-20,70,F,Democrat,House,NJ,1956,Baby Boomer
+Laura,Gillen,1969-07-10,56,F,Democrat,House,NY,1969,Generation X
+George,Latimer,1953-11-22,72,M,Democrat,House,NY,1953,Baby Boomer
+Josh,Riley,1981-01-21,45,M,Democrat,House,NY,1981,Millennial
+John,Mannion,1968-07-08,57,M,Democrat,House,NY,1968,Generation X
+David,Taylor,1969-11-16,56,M,Republican,House,OH,1969,Generation X
+Maxine,Dexter,1972-12-05,53,F,Democrat,House,OR,1972,Generation X
+Janelle,Bynum,1975-01-31,51,F,Democrat,House,OR,1975,Generation X
+Ryan,Mackenzie,1982-08-03,43,M,Republican,House,PA,1982,Millennial
+Robert,Bresnahan,1990-04-22,36,M,Republican,House,PA,1990,Millennial
+Pablo José,Hernández Rivera,1991-05-11,35,M,Democrat,House,PR,1991,Millennial
+Sheri,Biggs,1970-03-28,56,F,Republican,House,SC,1970,Generation X
+Craig,Goldman,1968-10-03,57,M,Republican,House,TX,1968,Generation X
+Brandon,Gill,1994-02-26,32,M,Republican,House,TX,1994,Millennial
+Julie,Johnson,1966-05-02,60,F,Democrat,House,TX,1966,Generation X
+Mike,Kennedy,1969-02-02,57,M,Republican,House,UT,1969,Generation X
+John,McGuire,1968-08-24,57,M,Republican,House,VA,1968,Generation X
+Eugene,Vindman,1975-06-06,50,M,Democrat,House,VA,1975,Generation X
+Suhas,Subramanyam,1986-09-26,39,M,Democrat,House,VA,1986,Millennial
+Michael,Baumgartner,1975-12-13,50,M,Republican,House,WA,1975,Generation X
+Emily,Randall,1985-10-30,40,F,Democrat,House,WA,1985,Millennial
+Riley,Moore,1980-07-01,45,M,Republican,House,WV,1980,Generation X
+Jim,Justice,1951-04-27,75,M,Republican,Senate,WV,1951,Baby Boomer
+Jon,Husted,1967-08-25,58,M,Republican,Senate,OH,1967,Generation X
+Ashley,Moody,1975-03-28,51,F,Republican,Senate,FL,1975,Generation X
+Jimmy,Patronis,1972-04-13,54,M,Republican,House,FL,1972,Generation X
+Randall,Fine,1974-04-20,52,M,Republican,House,FL,1974,Generation X
+James,Walkinshaw,1982-10-22,43,M,Democrat,House,VA,1982,Millennial
+Adelita,Grijalva,1970-10-30,55,F,Democrat,House,AZ,1970,Generation X
+Matt,Van Epps,1983-03-29,43,M,Republican,House,TN,1983,Millennial
+Christian,Menefee,1988-04-18,38,M,Democrat,House,TX,1988,Millennial
+Alan,Armstrong,1962-07-11,63,M,Republican,Senate,OK,1962,Baby Boomer
+Clay,Fuller,1981-04-09,45,M,Republican,House,GA,1981,Millennial
+Analilia,Mejia,1977-08-19,48,F,Democrat,House,NJ,1977,Generation X

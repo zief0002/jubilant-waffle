@@ -1,0 +1,26 @@
+# Ugh
+
+
+:::mathnote
+**Data Dictionary for Airbnb Data**
+
+The data in *airbnb.csv* is a sample from a larger dataset collected by Inside Airbnb. This organization is a mission driven project that provides data and advocacy about Airbnb's impact on residential communities in an effort to empower communities to understand, decide and control the role of renting residential homes to tourists. 
+
+
+The data, which includes 500 Airbnb listings from the Twin Cities (Minneapolis/St. Paul metro area), were collected from public information compiled from the Airbnb web-site including the availability calendar for 365 days in the future, and the reviews for each listing. Data is verified, cleansed, analyzed and aggregated by Inside Airbnb. The attributes in this data include:
+
+- `id`: Airbnb's unique identifier for the listing
+- `name`: Name of the listing
+- `host_response_rate`: The percentage of guest inquiries responded to by the host within 24 hours (from 1--100 percent).
+- `host_acceptance_rate`: The percentage of booking requests accepted by the host (from 1--100 percent).
+- `host_is_superhost`: The host has is an Airbnb Superhost (TRUE or FALSE)
+- `host_listings_count`: The number of listings the host has
+- `room_type`: Airbnb's classification of the type of room for the listing ("Entire home/apt"; "Private room"; "Shared room"; or "Hotel room")
+- `accommodates`: The maximum capacity of the listing.
+- `beds`: The number of bed(s).
+- `price`: Daily price in local currency; in these data it is in U.S. dollars.
+- `minimum_nights`: The minimum number of night stay for the listing.
+
+:::
+
+

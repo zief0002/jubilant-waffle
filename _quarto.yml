@@ -1,0 +1,79 @@
+project:
+  type: book
+  output-dir: docs
+  preview:
+    port: 4200
+    browser: true
+  # resources: 
+    # - codebooks/ #Add codebooks to docs
+
+book:
+  title: "Data Visualization: Summarizing and Communicating Patterns in Data"
+  author: "Chelsey Legacy and Andrew Zieffler"
+  date: "today"
+  page-navigation: false
+  bread-crumbs: false
+  sidebar:
+    search: true
+    background: '#3F4C64'
+  chapters:
+    - index.qmd
+    - part: 01-00-computational-tools.qmd
+      chapters:
+        - 01-01-r-and-rstudio-installation.qmd
+        - 01-02-introduction-to-rstudio.qmd
+        - 01-03-r-packages.qmd
+        - 01-04-script-files.qmd
+    - part: 02-00-data.qmd
+      chapters:
+        - 02-01-questions-to-ask-about-data.qmd
+        - 02-02-importing-data.qmd
+    - part: 03-00-visualizing-and-describing-univariate-data.qmd
+      chapters:
+        - 03-01-visualizing-quantitative-attributes.qmd
+        - 03-02-visualizing-categorical-attributes.qmd
+        - 04-01-color.qmd
+    # - part: 04-00-plot-enhancement.qmd
+    #   chapters:
+    #     - 04-02-labels.qmd
+    #     - 04-03-annotations.qmd
+    #     - 04-04-scales.qmd
+    #     - 04-05-themes.qmd
+    #     - 04-06-blast.qmd
+    # - part: 06-00-temporal-visualizations.qmd
+      # chapters:
+    #     - 05-01-introduction-to-mixed-effects-models.qmd
+    #     - 05-02-lmer-average-change-over-time.qmd
+    #     - 05-03-lmer-other-random-effects-and-covariates.qmd
+    #     - 05-04-lmer-alt-representations-and-assumptions.qmd
+
+lightbox: "auto"
+bibliography: ["assets/epsy-1261.bib"]
+csl: 'assets/apa.csl'
+include-in-header: 'assets/epsy-1261.js'
+
+format:
+  html:
+    axe: true
+    theme: 
+      - cosmo
+      - "assets/theme.scss"
+    css: ["assets/sticky-notes.css", "assets/table-styles.css"]
+    header-includes: |
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    code-copy: true
+    # code-tools:
+    #   source: true
+    #   toggle: true
+    #   caption: "Quarto Code"
+    highlight-style: "a11y-dark"
+    # df-print: paged
+    mainfont: 'Atkinson Hyperlegible'
+    fontsize: '13pt'
+    linestretch: '1.5em'
+    linkcolor: '#c10088'
+    toc: false
+    toc-title: "On This Page"
+editor: source

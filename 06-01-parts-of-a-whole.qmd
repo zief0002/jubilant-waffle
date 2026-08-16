@@ -1,0 +1,72 @@
+# Visualizing Parts of a Whole
+
+### Bar Chart Variations
+
+There are several variations on the bar chart that you may see in practice. For example, the **segmented bar chart** is a variation of the bar chart. This variation of the plot, which always uses proportions rather than counts, has a single bar that is split into segments---one for each category. A segmented bar chart summarizing the pet data is shown in @fig-barchart-seg.
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+#| label: fig-barchart-seg
+#| fig-cap: Segmented bar chart indicating the proportion of each type of pet owned.
+#| fig-alt: Segmented bar chart indicating the proportion of each type of pet owned.
+#| echo: false
+
+knitr::include_graphics("figs/04-04-pet-barchart-hseg.png")
+```
+
+
+:::fyi
+**PROTIP**
+
+When proportions are used in a bar chart, it is conventional to extend that axis from 0 to 1 (the range of potential proportions). 
+:::
+
+
+
+Another variation of the bar chart is the **donut chart**. A donut chart is simply a segmented bar chart that is presented in a circular layout. @fig-donut-chart presents a donut chart summarizing the pet data. Because there is no axis to indicate the proportion of each category in a donut chart, it is conventional to indicate the percentages of each category in the plot. Here percentages are used rather than proportions.
+
+```{r}
+#| label: fig-donut-chart
+#| fig-cap: Donut chart indicating the percentage of each type of pet owned. A donut chart is simply a segmented bar chart presented in a circular layout.
+#| fig-alt: Donut chart indicating the percentage of each type of pet owned. A donut chart is simply a segmented bar chart presented in a circular layout.
+#| echo: false
+#| out-width: "60%"
+
+knitr::include_graphics("figs/04-05-pet-donut-chart.png")
+```
+
+
+<br />
+
+
+### Pie Charts
+
+One last plot used to visualize summaries of categorical dat is the **pie chart**. @fig-pie-chart shows a pie chart summarizing the pet data. Unlike any of the bar charts that we have looked at, a pie chart uses the proportional area of a circle to indicate the proportion or percentage of each pet type rather than the length of a bar.
+
+```{r}
+#| label: fig-pie-chart
+#| fig-cap: Pie chart indicating the percentage of each type of pet owned. A pie chart uses the proportional area of a circle to indicate the proportion or percentage of each pet type.
+#| fig-alt: Pie chart indicating the percentage of each type of pet owned. A pie chart uses the proportional area of a circle to indicate the proportion or percentage of each pet type.
+#| echo: false
+#| out-width: "60%"
+
+knitr::include_graphics("figs/04-06-pet-pie-chart.png")
+```
+
+:::fyi
+**FYI**
+
+In a pie chart, each section of the pie is determined by proportionally dividing the 360&deg; of the circle based on the data, and then making each section have the computed angle. For example the proportion of pet owners who have a cat is 0.4, and 0.4 of 360&deg; is 144&deg;---so the cats section has an angle of 144&deg;. While these computations and the drawing of the pie chart would be done by the computer, it has implications for interpretations. Namely, research has suggested that humans may not be as adept at making accurate comparisons involving angles and the areas of sections based on those angles. Because of this, the recommendation from the data visualization community is to **use bar charts rather than pie charts** when displaying summaries of categorical data.
+:::
+
+
+<br />

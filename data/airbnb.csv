@@ -1,0 +1,501 @@
+id,name,host_response_rate,host_acceptance_rate,host_is_superhost,host_listings_count,room_type,accommodates,beds,price,minimum_nights
+881381807653323e3,Home in Minneapolis · ★5.0 · 1 bedroom · 1 bed · 1 bath,100,100,TRUE,1,Entire home/apt,4,1,163,2
+831402456466571e3,Home in Minneapolis · ★4.91 · 1 bedroom · 1 bed · 1.5 baths,100,88,TRUE,1,Entire home/apt,2,1,85,28
+847229588394661500,Home in Garrison · ★5.0 · 3 bedrooms · 5 beds · 2 baths,100,99,TRUE,25,Entire home/apt,7,5,252,2
+679959917045130800,Home in Vadnais Heights · ★4.95 · 5 bedrooms · 5 beds · 3 baths,100,100,TRUE,4,Entire home/apt,10,5,414,4
+47353621,Home in Saint Paul · ★5.0 · 3 bedrooms · 5 beds · 1 bath,100,100,TRUE,1,Entire home/apt,6,5,151,7
+21746343,Home in Minneapolis · ★4.93 · 3 bedrooms · 3 beds · 1 bath,100,99,TRUE,4,Entire home/apt,8,3,179,1
+37493007,Home in Saint ANTHNY VLG · ★5.0 · 1 bedroom · 1 bed · 5 baths,92,73,TRUE,98,Private room,2,1,52,7
+15164723,Townhouse in Saint Bonifacius · 1 bedroom · 2 beds · 1.5 baths,NA,NA,FALSE,1,Private room,3,2,250,2
+21109415,Guest suite in Bayport · ★4.95 · Studio · 1 bed · 1 bath,NA,NA,FALSE,1,Entire home/apt,2,1,NA,1
+52633589,Home in Saint Paul · ★4.93 · 2 bedrooms · 2 beds · 1 bath,100,99,TRUE,2,Entire home/apt,4,2,177,2
+1014711941364321400,Cabin in Lindstrom · ★New · 2 bedrooms · 3 beds · 1 bath,100,75,FALSE,2,Entire home/apt,6,3,150,30
+965269725036571800,Home in Minneapolis · ★New · 1 bedroom · 2 beds · 1 bath,100,100,FALSE,1,Entire home/apt,3,2,73,2
+650618728768909600,Home in Minneapolis · ★4.98 · 3 bedrooms · 4 beds · 1 bath,100,100,TRUE,1,Entire home/apt,6,4,143,1
+36233681,Cabin in Annandale · ★4.99 · 2 bedrooms · 3 beds · 1 bath,100,100,TRUE,1,Entire home/apt,6,3,195,4
+995694349233295e3,Home in Minneapolis · ★4.73 · 3 bedrooms · 4 beds · 1 bath,100,97,TRUE,2,Entire home/apt,7,4,135,2
+762459679404911500,Home in Champlin · ★5.0 · 4 bedrooms · 4 beds · 3.5 baths,99,100,TRUE,102,Entire home/apt,8,4,145,1
+38290651,Condo in Minneapolis · ★4.86 · 1 bedroom · 1 bed · 1 private bath,NA,0,FALSE,1,Private room,2,1,50,2
+857899946612214300,Home in Blaine · ★5.0 · 5 bedrooms · 13 beds · 3 baths,99,99,FALSE,890,Entire home/apt,16,13,337,2
+547740326632626050,Home in Saint Paul · ★4.91 · 3 bedrooms · 4 beds · 2 baths,100,99,TRUE,7,Entire home/apt,9,4,115,3
+23980495,Home in Saint Paul · ★4.94 · 1 bedroom · 3 beds · 1 private bath,NA,64,FALSE,2,Private room,2,3,75,3
+22485860,Home in Prior Lake · 6 bedrooms · 4 beds · 3 baths,NA,NA,FALSE,1,Entire home/apt,10,4,1490,4
+985401079445294200,Cabin in Rockford · 1 bedroom · 1 bed · 1 bath,100,98,TRUE,3,Entire home/apt,4,1,221,2
+45789799,Guest suite in New Prague · ★5.0 · Studio · 3 beds · 1 bath,100,0,FALSE,1,Entire home/apt,4,3,70,1
+53969459,Home in Excelsior · ★4.63 · 7 bedrooms · 7 beds · 6.5 baths,99,100,TRUE,102,Entire home/apt,16,7,997,1
+986342890483123100,Home in Plymouth · ★New · 4 bedrooms · 4 beds · 2.5 baths,100,100,TRUE,2,Entire home/apt,9,4,292,3
+41126841,Home in Saint Paul · ★4.64 · 1 bedroom · 1 bed · 1.5 shared baths,92,73,TRUE,98,Private room,1,1,50,2
+692811563488919400,Home in Minneapolis · ★5.0 · 4 bedrooms · 6 beds · 3.5 baths,100,99,TRUE,13,Entire home/apt,10,6,528,4
+622618659346307100,Home in Minneapolis · ★5.0 · 3 bedrooms · 3 beds · 2 baths,100,100,TRUE,1,Entire home/apt,6,3,288,2
+676014528613030400,Home in Excelsior · 3 bedrooms · 4 beds · 2 baths,100,100,FALSE,5,Entire home/apt,8,4,139,30
+53775258,Home in Minneapolis · ★5.0 · 3 bedrooms · 4 beds · 1.5 baths,100,94,TRUE,6,Entire home/apt,6,4,222,4
+745538092141551200,Cottage in Zimmerman · ★4.82 · 2 bedrooms · 3 beds · 1 bath,100,100,TRUE,2,Entire home/apt,5,3,185,2
+1044244770989912300,Rental unit in Minneapolis · ★New · Studio · 1 bed · 1 bath,100,99,FALSE,21,Entire home/apt,3,1,83,30
+38071239,Home in Shoreview · ★4.89 · 1 bedroom · 1 bed · 1 private bath,100,100,TRUE,1,Private room,2,1,40,1
+22342751,Home in Lindstrom · ★5.0 · 5 bedrooms · 10 beds · 3.5 baths,100,100,FALSE,1,Entire home/apt,16,10,331,2
+1004736509215484400,Home in Minneapolis · ★New · 2 bedrooms · 2 beds · 1.5 baths,100,25,FALSE,2,Entire home/apt,6,2,50,30
+22910673,Home in Minneapolis · 4 bedrooms · 8 beds · 2.5 baths,NA,NA,FALSE,1,Entire home/apt,16,8,700,4
+965911432494283400,Home in Maplewood · 3 bedrooms · 3 beds · 1 bath,100,100,FALSE,1,Entire home/apt,6,3,270,1
+43792047,Rental unit in Hastings · ★4.85 · 2 bedrooms · 2 beds · 2 baths,100,100,TRUE,30,Entire home/apt,4,2,122,1
+53144067,Cottage in Forest Lake · ★4.77 · 2 bedrooms · 5 beds · 1.5 baths,100,87,TRUE,4,Entire home/apt,6,5,160,2
+51665582,Home in St. Louis Park · ★4.91 · 1 bedroom · 2 beds · 1 private bath,100,95,TRUE,1,Private room,2,2,64,1
+919869330194705e3,Home in Minneapolis · ★New · 2 bedrooms · 2 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,5,2,140,2
+6.9500184682268006e+17,Home in Minneapolis · ★5.0 · 3 bedrooms · 3 beds · 2 baths,100,94,TRUE,1,Entire home/apt,6,3,269,2
+52855490,Hotel in Bloomington · 1 bedroom · 1 bed · 1 bath,100,98,FALSE,2035,Private room,2,1,135,1
+22944275,Guest suite in Falcon Heights · ★4.94 · 1 bedroom · 3 beds · 1 bath,90,100,TRUE,3,Entire home/apt,4,3,116,1
+932533702815951400,Rental unit in Saint Paul · 2 bedrooms · 1 bed · 1 bath,NA,NA,FALSE,1,Entire home/apt,2,1,66,30
+22981831,Home in Minneapolis · 4 bedrooms · 4 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,5,4,600,4
+8.8865845073864794e+17,Home in Mendota Heights · ★4.95 · 8 bedrooms · 13 beds · 4.5 baths,100,99,TRUE,7,Entire home/apt,16,13,1708,2
+1041300926056318100,Rental unit in Minneapolis · ★New · 2 bedrooms · 2 beds · 1 bath,100,100,FALSE,10,Entire home/apt,5,2,94,1
+888607712680394900,Home in Hager City · ★5.0 · 3 bedrooms · 3 beds · 3 baths,99,100,TRUE,102,Entire home/apt,6,3,252,1
+833321765180230400,Home in St. Paul · ★4.83 · 2 bedrooms · 2 beds · 1.5 baths,100,88,FALSE,1,Entire home/apt,5,2,150,3
+40095531,Rental unit in Minneapolis · ★4.69 · Studio · 1 bed · 1 bath,NA,NA,FALSE,42,Entire home/apt,2,1,NA,3
+997144279893913900,Rental unit in Saint Paul · ★5.0 · 2 bedrooms · 1 bath,100,100,FALSE,2,Entire home/apt,4,NA,156,1
+639721411504604500,Rental unit in Minneapolis · ★4.26 · 3 bedrooms · 6 beds · 1 bath,99,92,FALSE,31,Entire home/apt,10,6,137,1
+973927616371041400,Home in Excelsior · ★5.0 · 2 bedrooms · 3 beds · 2 baths,100,100,FALSE,1,Entire home/apt,6,3,193,2
+48138228,Rental unit in Minneapolis · ★4.94 · 1 bedroom · 2 beds · 1 bath,100,95,TRUE,1,Entire home/apt,4,2,112,2
+962970359837461200,Home in Minneapolis · 1 bedroom · 1 bed · 2.5 baths,100,60,FALSE,2,Private room,2,1,38,5
+53111980,Home in Minneapolis · ★4.67 · 3 bedrooms · 3 beds · 2 baths,100,100,FALSE,1,Entire home/apt,5,3,200,4
+23061274,Home in Minneapolis · 2 bedrooms · 2 beds · 1 private bath,NA,NA,FALSE,2,Private room,4,2,500,2
+715895766078238700,Home in Minneapolis · ★5.0 · 1 bedroom · 1 bed · 1.5 baths,100,98,TRUE,6,Private room,1,1,37,5
+1014579816588715400,Home in Minneapolis · ★New · 1 bedroom · 1 bed · 1 bath,100,100,FALSE,4,Entire home/apt,2,1,89,7
+696016113317510100,Home in Fridley · 1 bedroom · 3 beds · 1 shared bath,100,0,FALSE,2,Private room,1,3,42,30
+102616478173519e4,Home in Saint Paul · ★New · 1 bedroom · 1 bed · 1 bath,100,92,FALSE,6,Private room,1,1,65,4
+52185456,Home in Chisago City · ★4.98 · 4 bedrooms · 5 beds · 4 baths,100,99,TRUE,4,Entire home/apt,10,5,404,2
+1040526313522030800,Home in Minneapolis · ★New · 3 bedrooms · 4 beds · 1 bath,100,100,FALSE,1,Entire home/apt,6,4,79,1
+821797618820681500,Serviced apartment in Minneapolis · 1 bedroom · 1 bed · 1 bath,100,95,FALSE,1768,Entire home/apt,2,1,309,1
+632566632777514500,Campsite in Big Lake · ★4.91 · 1 bath,100,100,TRUE,6,Entire home/apt,4,NA,40,1
+51584899,Home in Minneapolis · ★4.86 · 3 bedrooms · 4 beds · 1 bath,100,99,TRUE,1,Entire home/apt,8,4,110,1
+704610434194993400,Rental unit in Eden Prairie · 1 bedroom · 1 bed · 1 bath,86,98,FALSE,2545,Entire home/apt,2,1,82,30
+44576791,Home in Excelsior · ★4.93 · 1 bedroom · 2 beds · 1 bath,100,100,TRUE,3,Entire home/apt,4,2,200,1
+759227136119527300,Rental unit in Minneapolis · ★4.67 · 1 bedroom · 1 bed · 1 bath,100,90,TRUE,11,Entire home/apt,2,1,70,30
+718969774083635e3,Home in South Saint Paul · ★4.94 · 1 bedroom · 1 bed · 1 shared bath,100,92,TRUE,1,Private room,2,1,50,1
+20196751,Home in River Falls · ★4.94 · 1 bedroom · 2 beds · 1 private bath,NA,NA,FALSE,1,Private room,6,2,NA,2
+944229392778177900,Home in Hudson · ★5.0 · 5 bedrooms · 5 beds · 4.5 baths,100,90,FALSE,1,Entire home/apt,10,5,996,3
+657428828461819100,Cabin in Garrison · 2 bedrooms · 4 beds · 1 bath,NA,100,FALSE,6,Entire home/apt,4,4,245,3
+975088730125819500,Hotel in Minneapolis · 1 bedroom · 1 bed · 1 bath,100,99,FALSE,3145,Private room,2,1,245,1
+35180792,Rental unit in Minneapolis · ★4.79 · 2 bedrooms · 2 beds · 1 bath,NA,100,FALSE,1,Entire home/apt,5,2,140,30
+22972984,Home in Minneapolis · 3 bedrooms · 3 beds · 2 baths,NA,NA,FALSE,2,Entire home/apt,8,3,1500,3
+48096366,Rental unit in Saint Paul · ★5.0 · 2 bedrooms · 2 beds · 2 baths,100,95,TRUE,12,Entire home/apt,4,2,199,30
+815978596272317300,Home in Saint Paul · ★5.0 · 3 bedrooms · 2 beds · 2 baths,100,99,TRUE,4,Entire home/apt,5,2,199,2
+16241535,Guest suite in Minneapolis · ★4.89 · 1 bedroom · 1 bed · 1 bath,100,96,TRUE,2,Entire home/apt,4,1,72,6
+52155676,Home in Minneapolis · ★4.91 · 5 bedrooms · 6 beds · 3.5 baths,NA,0,FALSE,1,Entire home/apt,10,6,600,2
+1015352261733072800,Guesthouse in Minneapolis · ★New · 2 bedrooms · 4 beds · 1 bath,100,99,FALSE,7,Entire home/apt,6,4,81,1
+895588628606314800,Home in Minneapolis · ★4.86 · 1 bedroom · 1 bed · 1 private bath,100,100,TRUE,5,Private room,2,1,49,1
+745052756283967700,Rental unit in White Bear Lake · ★5.0 · 1 bedroom · 1 bed · 1 bath,100,98,TRUE,2,Entire home/apt,2,1,92,2
+7920348,Home in Denmark Twp · ★4.91 · 3 bedrooms · 3 beds · 2 baths,100,99,TRUE,2,Entire home/apt,6,3,210,2
+672528509997885300,Home in Minneapolis · ★4.87 · 3 bedrooms · 3 beds · 2.5 baths,100,98,TRUE,1,Entire home/apt,6,3,161,2
+19285917,Home in Saint Louis Park · ★4.86 · 4 bedrooms · 6 beds · 2 baths,100,80,FALSE,1,Entire home/apt,8,6,239,2
+46450852,Rental unit in Saint Paul · ★4.88 · Studio · 2 beds · 1 bath,92,99,TRUE,2,Entire home/apt,3,2,109,2
+720101904191147100,Home in Minneapolis · ★4.81 · 4 bedrooms · 5 beds · 2 baths,100,98,TRUE,4,Entire home/apt,10,5,192,2
+39358010,Boutique hotel in Saint Paul · ★5.0 · 1 bedroom · 1 bed · 1 private bath,NA,NA,FALSE,8,Private room,2,1,NA,1
+671721873150834e3,Home in Saint Paul · ★4.98 · 6 bedrooms · 7 beds · 2 baths,100,100,TRUE,1,Entire home/apt,10,7,270,2
+676817551824453900,Guest suite in Saint Paul · ★4.63 · 3 bedrooms · 3 beds · 1 bath,90,97,FALSE,1,Entire home/apt,6,3,120,1
+45787233,Tent in Shafer · ★4.90 · 1 bedroom · 1 bed · 1 bath,100,99,TRUE,2,Entire home/apt,2,1,120,2
+43325913,Guest suite in Forest Lake · ★4.95 · 1 bedroom · 1 bed · 1 bath,100,98,TRUE,3,Entire home/apt,2,1,99,3
+710102234922134800,Home in Saint Paul · ★5.0 · 3 bedrooms · 2 beds · 1.5 baths,100,99,TRUE,3,Entire home/apt,6,2,100,3
+610661112905850400,Condo in Minneapolis · ★4.84 · 1 bedroom · 1 bed · 1 bath,100,99,TRUE,18,Entire home/apt,2,1,53,1
+720590775725810600,Rental unit in Minneapolis · ★4.85 · 1 bedroom · 1 bed · 1 bath,100,99,TRUE,1,Entire home/apt,2,1,103,1
+15845823,Home in Saint Paul · ★4.63 · 4 bedrooms · 4 beds · 2 baths,100,100,FALSE,2,Entire home/apt,8,4,231,3
+1001688105051173100,Home in Saint Paul · ★5.0 · 1 bedroom · 1 bed · 1 shared bath,100,100,FALSE,3,Private room,2,1,45,30
+778891137682211100,Rental unit in Saint Paul · ★4.56 · 3 bedrooms · 3 beds · 2 baths,100,99,FALSE,4,Entire home/apt,3,3,213,3
+619015396850218500,Rental unit in Saint Paul · 1 bedroom · 1 bed · 1 bath,100,95,TRUE,12,Entire home/apt,2,1,125,30
+10514034,Cottage in Marine on Saint Croix · ★4.68 · 2 bedrooms · 5 beds · 1 bath,100,75,FALSE,3,Entire home/apt,5,5,135,2
+948501666395358800,Rental unit in Buffalo · ★5.0 · 2 bedrooms · 3 beds · 1 bath,100,98,TRUE,4,Entire home/apt,5,3,211,2
+47195314,Home in Minneapolis · ★4.77 · 3 bedrooms · 4 beds · 1.5 baths,100,100,FALSE,2,Entire home/apt,8,4,105,2
+45329568,Home in Minneapolis · ★4.60 · 2 bedrooms · 2 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,3,2,NA,30
+929822131799863700,Home in Minneapolis · 2 bedrooms · 1 bed · 1 bath,NA,67,FALSE,1,Entire home/apt,2,1,NA,1
+40643398,Home in Maple Grove · ★5.0 · 4 bedrooms · 7 beds · 2.5 baths,100,100,FALSE,2,Entire home/apt,13,7,525,2
+1010266862171383600,Home in Anoka · ★New · 3 bedrooms · 3 beds · 2 baths,100,100,FALSE,1,Entire home/apt,6,3,208,1
+26193579,Home in Minnetonka · ★4.94 · 1 bedroom · 1 bed · 1 private bath,NA,NA,FALSE,3,Private room,2,1,150,2
+9730310,Guest suite in Minneapolis · ★4.43 · 1 bedroom · 1 bed · 1 bath,100,NA,FALSE,1,Entire home/apt,2,1,55,30
+711451933613621900,Rental unit in Minneapolis · ★4.80 · 1 bedroom · 1 bed · 1 shared bath,100,75,TRUE,8,Private room,1,1,27,30
+760844580246977500,Guest suite in Cokato · ★4.97 · 2 bedrooms · 4 beds · 1 bath,100,100,TRUE,11,Entire home/apt,6,4,87,1
+43529314,Home in Burnsville · ★4.82 · 6 bedrooms · 10 beds · 2.5 baths,100,96,TRUE,1,Entire home/apt,16,10,358,3
+938989833420616800,Rental unit in Mound · 1 bedroom · 1 bed · 1 bath,NA,50,FALSE,1,Entire home/apt,2,1,62,30
+46995257,Guest suite in Zimmerman · ★4.86 · 1 bedroom · 2 beds · 1 bath,100,81,TRUE,1,Entire home/apt,4,2,85,1
+1009389682747461600,Home in Minneapolis · ★New · 4 bedrooms · 4 beds · 3 baths,100,99,TRUE,13,Entire home/apt,10,4,180,30
+24778282,Cabin in South Haven · ★4.86 · 3 bedrooms · 4 beds · 1 bath,100,100,TRUE,2,Entire home/apt,8,4,200,4
+822425146471080200,Serviced apartment in Minneapolis · 1 bedroom · 1 bed · 1 bath,100,95,FALSE,1768,Entire home/apt,2,1,319,1
+741701,Home in Minneapolis · ★4.60 · 4 bedrooms · 4 beds · 1 bath,100,100,FALSE,2,Entire home/apt,6,4,159,5
+20942498,Home in Minneapolis · ★4.98 · 7 bedrooms · 8 beds · 2 baths,100,100,TRUE,6,Entire home/apt,10,8,372,2
+981825282243305500,Townhouse in Saint Paul · ★5.0 · 2 bedrooms · 2 beds · 1 bath,100,100,FALSE,3,Entire home/apt,4,2,112,5
+1003823855303345700,Home in Minneapolis · ★4.88 · 3 bedrooms · 3 beds · 2 baths,100,88,FALSE,1,Entire home/apt,6,3,133,2
+698698152644272400,Home in Minneapolis · 3 bedrooms · 5 beds · 3 baths,NA,20,FALSE,1,Entire home/apt,8,5,250,30
+38102004,Home in Minneapolis · ★5.0 · 1 bedroom · 1 bed · 1 bath,100,86,TRUE,1,Entire home/apt,2,1,69,30
+23505548,Home in Saint Paul · ★4.89 · 2 bedrooms · 3 beds · 1 bath,100,93,FALSE,1,Entire home/apt,5,3,161,1
+697057922707425500,Rental unit in White Bear Lake · 2 bedrooms · 2 beds · 2 baths,86,98,FALSE,2545,Entire home/apt,4,2,98,30
+843388495732239700,Cabin in Jordan · ★5.0 · 2 bedrooms · 4 beds · 2 baths,100,94,TRUE,2,Entire home/apt,7,4,256,2
+40710976,Guest suite in Minneapolis · ★4.63 · 2 bedrooms · 2 beds · 1 bath,NA,95,FALSE,1,Entire home/apt,3,2,NA,2
+50358513,Home in Minneapolis · ★4.68 · 2 bedrooms · 2 beds · 1 bath,100,99,TRUE,2,Entire home/apt,5,2,118,1
+699974519261144400,Home in Saint Paul · ★4.91 · 3 bedrooms · 4 beds · 1 bath,100,82,FALSE,1,Entire home/apt,6,4,189,3
+15612131,Rental unit in Saint Paul · ★4.40 · 2 bedrooms · 2 beds · 1 bath,NA,67,FALSE,2,Entire home/apt,4,2,200,4
+52694208,Home in Woodbury · ★4.81 · 2 bedrooms · 3 beds · 1 bath,100,95,TRUE,1,Entire home/apt,6,3,121,3
+944908377545683300,Cabin in Maple Lake · 2 bedrooms · 4 beds · 1 bath,100,100,TRUE,2,Entire home/apt,5,4,300,2
+50860506,Home in Saint Paul · ★4.86 · 1 bedroom · 1 bed · 1 shared bath,100,0,FALSE,1,Private room,2,1,50,1
+961184483474326100,Cabin in Waterville · 3 bedrooms · 7 beds · 1 bath,100,100,FALSE,1,Entire home/apt,10,7,229,2
+1008680522671993900,Rental unit in Shakopee · ★New · 1 bedroom · 1 bed · 1 bath,80,NA,FALSE,1,Entire home/apt,2,1,50,7
+52467426,Home in Saint Paul · ★4.88 · 1 bedroom · 1 bed · 1 shared bath,92,73,TRUE,98,Private room,1,1,29,2
+811922062138636400,Bed and breakfast in Minneapolis · ★5.0 · 2 bedrooms · 1 bed · 1 shared bath,NA,100,FALSE,3,Private room,2,1,64,3
+13184364,Townhouse in Saint Anthony · ★4.86 · 1 bedroom · 1 bed · 1 private bath,100,95,TRUE,3,Private room,4,1,39,1
+40431812,Condo in Minneapolis · ★4.71 · 1 bedroom · 1 bed · 1 bath,67,0,FALSE,1,Entire home/apt,2,1,120,14
+952215290834885900,Home in Blaine · 1 bedroom · 1 bed · 1 bath,100,100,FALSE,1,Private room,2,1,75,1
+744155993430718100,Home in Minneapolis · ★4.83 · 4 bedrooms · 4 beds · 3 baths,100,99,TRUE,23,Entire home/apt,10,4,126,30
+795844739070830200,Farm stay in Savage · 1 bedroom · 2 beds · 2 shared baths,100,100,FALSE,1,Private room,4,2,132,1
+838819224475061900,Home in Maple Lake · 1 bedroom · 1 bed · 1 shared bath,100,0,FALSE,1,Private room,1,1,22,30
+49419771,Guest suite in Minneapolis · ★4.99 · Studio · 1 bed · 1 bath,100,100,TRUE,1,Entire home/apt,2,1,100,2
+561467771188297340,Place to stay in Cokato · ★3.33 · 1 bedroom · 2 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,4,2,NA,3
+821797737074888400,Serviced apartment in Minneapolis · 1 bedroom · 1 bed · 1 bath,100,95,FALSE,1768,Entire home/apt,2,1,309,1
+17746482,Townhouse in Saint Anthony · ★4.91 · 1 bedroom · 1 bed · 1 private bath,100,95,TRUE,3,Private room,3,1,43,1
+22807863,Townhouse in Minneapolis · 3 bedrooms · 3 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,6,3,3000,30
+36764427,Guest suite in Burnsville · ★4.0 · 1 bedroom · 1 bed · 1 private bath,100,85,FALSE,10,Private room,2,1,110,1
+20895497,Home in Cottage Grove · 3 bedrooms · 4 beds · 2 baths,NA,NA,FALSE,1,Entire home/apt,10,4,2000,1
+22826855,Condo in Minneapolis · 2 bedrooms · 3 beds · 2 baths,NA,NA,FALSE,1,Entire home/apt,6,3,900,4
+755667632205685200,Home in Minneapolis · ★5.0 · 1 bedroom · 1 bed · 1.5 shared baths,100,95,TRUE,8,Private room,2,1,50,1
+949609534547243800,Home in Cottage Grove · ★4.83 · 1 bedroom · 1 bed · 1 private bath,100,93,FALSE,6,Private room,1,1,49,2
+759293923534997500,Home in Roseville · ★4.92 · 5 bedrooms · 5 beds · 2 baths,100,99,TRUE,7,Entire home/apt,11,5,144,3
+47730826,Cottage in Annandale · ★4.91 · 4 bedrooms · 10 beds · 1 bath,100,96,TRUE,1,Entire home/apt,7,10,180,2
+43827987,Rental unit in Saint Paul · ★4.89 · 1 bedroom · 2 beds · 1 bath,100,98,TRUE,1,Entire home/apt,3,2,75,1
+910977722438619500,Home in Minneapolis · ★4.50 · 3 bedrooms · 3 beds · 1 bath,100,100,FALSE,2,Entire home/apt,4,3,NA,1
+28575580,Home in Minneapolis · ★4.93 · 2 bedrooms · 3 beds · 1 bath,100,98,TRUE,7,Entire home/apt,3,3,102,1
+46098277,Rental unit in Edina · ★4.33 · 1 bedroom · 1 bed · 1 bath,100,96,TRUE,44,Entire home/apt,2,1,165,14
+872662287610942600,"Home in Lakeland, Minnesota · ★New · 2 bedrooms · 3 beds · 1 bath",100,80,FALSE,1,Entire home/apt,4,3,120,1
+961691142410303e3,Home in Saint Paul · 1 bedroom · 1 bed · 1 bath,92,73,TRUE,98,Private room,1,1,32,5
+955853294514428400,Home in Minneapolis · ★4.43 · 3 bedrooms · 3 beds · 2 baths,100,100,FALSE,5,Entire home/apt,8,3,146,2
+937189674515977900,Home in Minneapolis · ★4.67 · 1 bedroom · 1 bed · 1 bath,90,87,FALSE,1,Private room,2,1,40,1
+20744070,Guesthouse in Annandale · ★4.94 · Studio · 2 beds · 1 bath,NA,86,FALSE,1,Entire home/apt,2,2,120,3
+942142794161884700,Home in Zimmerman · 1 bedroom · 1 bed · 0 shared baths,NA,NA,FALSE,1,Private room,2,1,180,1
+936290676394379800,Farm stay in Big Lake · ★5.0 · 4 bedrooms · 4 beds · 1 bath,100,100,TRUE,6,Entire home/apt,16,4,200,1
+53892292,Home in Minneapolis · ★5.0 · 2 bedrooms · 3 beds · 1.5 baths,100,79,TRUE,2,Entire home/apt,4,3,223,1
+895676852930345700,Home in Minneapolis · ★4.80 · 1 bedroom · 1 bed · 1 private bath,100,100,TRUE,5,Private room,2,1,44,1
+1000042759942708200,Home in Belle Plaine · ★New · 3 bedrooms · 5 beds · 2.5 baths,80,70,FALSE,1,Entire home/apt,6,5,340,6
+1004583069798050700,Rental unit in Maplewood · ★New · 1 bedroom · 1 bed · 1 bath,100,33,FALSE,1,Entire home/apt,2,1,70,1
+708834918404300700,Guest suite in Saint Paul · ★4.97 · 1 bedroom · 1 bed · 1 bath,100,97,TRUE,1,Entire home/apt,2,1,84,1
+865140457599274900,Rental unit in Minneapolis · ★4.85 · 1 bedroom · 1 bed · 1 bath,99,97,TRUE,58,Entire home/apt,2,1,84,2
+7824517,Guest suite in Saint Paul · ★5.0 · 1 bedroom · 1 bed · 1 bath,100,100,TRUE,1,Entire home/apt,2,1,95,3
+17106314,Home in Blaine · 4 bedrooms · 5 beds · 3 baths,NA,NA,FALSE,1,Entire home/apt,10,5,415,2
+902883570787258e3,Cabin in Waverly · ★4.0 · 2 bedrooms · 3 beds · 1 bath,99,100,TRUE,102,Entire home/apt,6,3,190,1
+51600008,Home in Minneapolis · ★4.72 · 4 bedrooms · 5 beds · 2 baths,100,99,TRUE,23,Entire home/apt,10,5,125,2
+924087445036814300,Home in White Bear Lake · ★5.0 · 4 bedrooms · 6 beds · 3.5 baths,100,88,FALSE,1,Entire home/apt,10,6,309,3
+17317250,Home in Falcon Heights · ★4.93 · 1 bedroom · 1 bed · 1 private bath,100,100,TRUE,3,Private room,1,1,44,3
+23857487,Guest suite in Minneapolis · ★4.98 · 1 bedroom · 1 bed · 1 private bath,NA,NA,FALSE,2,Private room,2,1,89,2
+671670441245533800,Home in Saint Paul · ★4.98 · 2 bedrooms · 3 beds · 1 bath,100,100,TRUE,1,Entire home/apt,6,3,97,1
+744953954584872600,Home in Minneapolis · ★4.76 · 3 bedrooms · 4 beds · 1 bath,100,97,FALSE,2,Entire home/apt,8,4,199,2
+994975228777298e3,Home in Minneapolis · ★New · 3 bedrooms · 4 beds · 1 bath,100,100,FALSE,1,Entire home/apt,6,4,121,1
+21563870,Bungalow in Minneapolis · ★4.93 · 1 bedroom · 2 beds · 1 private bath,100,100,TRUE,1,Private room,3,2,45,2
+864348963502634400,Home in Stillwater · 1 bedroom · 1 bed · 1 private bath,100,0,FALSE,2,Private room,2,1,NA,30
+44163612,Serviced apartment in Minneapolis · ★4.67 · 1 bedroom · 2 beds · 1 bath,100,99,FALSE,5,Entire home/apt,2,2,148,1
+934067718630947300,Home in Anoka · ★4.80 · 4 bedrooms · 6 beds · 2 baths,100,98,TRUE,3,Entire home/apt,10,6,171,4
+793750924294268700,Home in Minneapolis · ★5.0 · 1 bedroom · 2 beds · 1 bath,100,89,TRUE,2,Entire home/apt,4,2,109,1
+42223841,Townhouse in Minneapolis · ★4.89 · 1 bedroom · 1 bed · 1 bath,NA,NA,FALSE,3,Entire home/apt,2,1,71,2
+27319,Home in Minneapolis · ★4.78 · 2 bedrooms · 2 beds · 1 shared bath,100,74,FALSE,2,Private room,3,2,64,2
+844881701868121e3,Home in Woodbury · ★5.0 · 1 bedroom · 1 bed · 1 private bath,100,91,FALSE,1,Private room,1,1,47,3
+18388244,Home in Saint Paul · 1 bedroom · 1 bed · 1 bath,NA,NA,FALSE,1,Private room,1,1,400,1
+22471828,Rental unit in Brooklyn Park · 1 bedroom · 1 bed · 1 bath,NA,NA,FALSE,1,Entire home/apt,5,1,600,3
+653522179467652700,Rental unit in Saint Paul · ★4.64 · 1 bedroom · 2 beds · 1 bath,100,98,FALSE,2,Entire home/apt,4,2,56,1
+896495111791544600,Home in Stillwater · ★4.94 · 2 bedrooms · 3 beds · 2 baths,100,100,TRUE,2,Entire home/apt,6,3,276,1
+962559532852903200,Rental unit in Somerset · ★5.0 · 2 bedrooms · 2 beds · 1 bath,100,100,FALSE,1,Entire home/apt,4,2,171,2
+38723196,Bed and breakfast in Minneapolis · ★4.89 · 1 bedroom · 1 bed · 1 private bath,96,98,TRUE,4,Private room,2,1,103,1
+40263228,Home in Saint Paul · ★4.89 · 1 bedroom · 1 bed · 1 shared bath,100,100,TRUE,4,Private room,1,1,46,13
+921427548630032500,Home in Minneapolis · ★4.86 · 1 bedroom · 1 bed · 1 bath,100,99,TRUE,21,Private room,2,1,37,1
+860507439156400800,Home in Shakopee · ★4.08 · 4 bedrooms · 4 beds · 2.5 baths,100,100,FALSE,1,Entire home/apt,10,4,200,2
+27359204,Home in Minneapolis · ★4.87 · 1 bedroom · 1 bed · 1 private bath,NA,NA,FALSE,1,Private room,2,1,NA,2
+19747120,Rental unit in Minneapolis · ★4.91 · 2 bedrooms · 2 beds · 1 bath,100,100,TRUE,1,Entire home/apt,6,2,125,2
+16084883,Guest suite in Minneapolis · 1 bedroom · 1 bed · 1 bath,NA,NA,FALSE,1,Entire home/apt,2,1,200,30
+48605134,Rental unit in Minneapolis · ★4.88 · 1 bedroom · 1 bed · 1 bath,100,99,TRUE,13,Entire home/apt,2,1,77,30
+50046584,Rental unit in Minneapolis · ★4.75 · 2 bedrooms · 2 beds · 1 bath,100,97,FALSE,7,Entire home/apt,4,2,129,30
+710337154977707500,Home in Circle Pines · ★4.75 · 1 bedroom · 1 bed · 1 shared bath,80,63,FALSE,2,Private room,1,1,35,2
+1045925527600251e3,Rental unit in Andover · ★New · 1 bedroom · 1 bed · Half-bath,NA,NA,FALSE,1,Private room,2,1,50,30
+54084213,Cabin in Annandale · ★5.0 · 5 bedrooms · 6 beds · 3 baths,100,89,TRUE,3,Entire home/apt,10,6,257,2
+39794865,Guest suite in Eagan · ★4.98 · 3 bedrooms · 4 beds · 1 bath,100,92,TRUE,1,Entire home/apt,6,4,65,1
+997841589068993800,Cabin in Zimmerman · 3 bedrooms · 7 beds · 2 baths,NA,NA,FALSE,1,Entire home/apt,10,7,200,3
+813950101394886700,Home in Waterville · ★5.0 · 4 bedrooms · 4 beds · 2.5 baths,99,99,FALSE,890,Entire home/apt,8,4,181,2
+736956000976001e3,Condo in Minneapolis · ★4.63 · 1 bedroom · 1 bed · 1 bath,100,99,TRUE,18,Entire home/apt,2,1,53,1
+38747536,Home in Saint Paul · ★4.90 · 1 bedroom · 1 bed · 1 shared bath,92,73,TRUE,98,Private room,1,1,33,2
+18617921,Home in Minneapolis · 2 bedrooms · 2 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,6,2,NA,30
+929669344256166400,Home in Woodbury · 1 bedroom · 2 beds · 1 private bath,100,44,FALSE,3,Private room,2,2,60,1
+31668957,Rental unit in Saint Paul · ★4.96 · 2 bedrooms · 2 beds · 1 bath,NA,100,TRUE,1,Entire home/apt,4,2,NA,1
+8036442,Home in Minneapolis · ★4.76 · 3 bedrooms · 4 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,8,4,NA,30
+943642645106257e3,Rental unit in Saint Paul · ★4.80 · 2 bedrooms · 2 beds · 1 bath,100,97,TRUE,3,Entire home/apt,5,2,74,2
+21242721,Rental unit in Minneapolis · 3 bedrooms · 6 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,7,6,1000,30
+29643495,Guesthouse in Minneapolis · ★5.0 · 1 bedroom · 3 beds · 1 bath,100,100,TRUE,1,Entire home/apt,4,3,225,2
+875223435767167900,Home in Minneapolis · ★5.0 · Studio · 1 bed · 1 private bath,100,96,FALSE,2,Private room,2,1,80,2
+908671667451164800,Rental unit in Minneapolis · ★4.80 · 1 bedroom · 2 beds · 1 bath,100,86,TRUE,3,Entire home/apt,2,2,70,14
+11942016,Home in Victoria · 5 bedrooms · 5 beds · 3.5 baths,NA,NA,FALSE,1,Entire home/apt,10,5,1000,7
+896955285362554400,Home in Minneapolis · ★5.0 · 1 bedroom · 1 bed · 1.5 baths,100,100,FALSE,1,Private room,4,1,78,2
+593699077257728800,Guest suite in Saint Paul · ★4.82 · 1 bedroom · 1 bed · 1 bath,100,100,TRUE,1,Entire home/apt,2,1,123,3
+984815159920357500,Home in Isle · ★5.0 · 4 bedrooms · 9 beds · 3 baths,100,97,FALSE,2,Entire home/apt,14,9,510,2
+35634174,Home in Saint Paul · ★4.67 · 1 bedroom · 1 bed · 2 shared baths,92,73,TRUE,98,Private room,1,1,50,2
+1024624855013133400,Rental unit in Minneapolis · ★New · 2 bedrooms · 2 beds · 2 baths,100,89,FALSE,2,Entire home/apt,6,2,196,2
+40012769,Home in Maple Grove · ★4.95 · 2 bedrooms · 3 beds · 1 private bath,100,53,FALSE,1,Private room,5,3,90,2
+1029029205371559200,Home in Minneapolis · ★New · 4 bedrooms · 3 beds · 2 baths,100,100,FALSE,1,Entire home/apt,6,3,300,1
+50001746,Cabin in Isanti · ★4.62 · 3 bedrooms · 5 beds · 1.5 baths,NA,67,FALSE,1,Entire home/apt,6,5,308,6
+799661,Loft in St Paul · ★4.38 · 1 bedroom · 1 bed · 1 bath,100,50,FALSE,1,Entire home/apt,2,1,84,180
+47089491,Cabin in Dalbo · ★4.89 · 2 bedrooms · 2 beds · 1 bath,100,100,TRUE,1,Entire home/apt,4,2,124,2
+33429862,Home in Apple Valley · ★4.59 · 1 bedroom · 1 bed · 1 bath,100,97,FALSE,5,Private room,1,1,30,30
+940099567450373200,Home in Shakopee · 3 bedrooms · 3 beds · 2 baths,0,11,FALSE,1,Entire home/apt,6,3,NA,2
+645102940457392600,Home in Saint Paul · ★5.0 · 1 bedroom · 1 bed · 1 shared bath,100,100,TRUE,4,Private room,2,1,83,5
+49551592,Home in Saint Paul · ★4.98 · 3 bedrooms · 4 beds · 2 baths,100,100,TRUE,1,Entire home/apt,6,4,196,3
+828495960000107800,Rental unit in Eden Prairie · 2 bedrooms · 2 beds · 2 baths,75,15,FALSE,2,Entire home/apt,4,2,109,3
+1020541719648239100,Home in Burnsville · ★New · 1 bedroom · 1 bed · 1 bath,100,NA,FALSE,1,Private room,1,1,49,1
+784736338653631700,Home in Saint Paul · ★4.67 · 1 bedroom · 1 bed · 2 shared baths,92,73,TRUE,98,Private room,1,1,29,3
+30708559,Home in Minneapolis · ★4.88 · 1 bedroom · 1 bed · 2 shared baths,100,98,TRUE,10,Private room,2,1,194,3
+15004933,Rental unit in Minneapolis · ★4.86 · 2 bedrooms · 2 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,4,2,NA,2
+883337631055200100,Home in Minneapolis · ★5.0 · 3 bedrooms · 3 beds · 3.5 baths,100,86,FALSE,1,Entire home/apt,8,3,276,3
+626041344886966100,Cottage in Mound · ★5.0 · 2 bedrooms · 2 beds · 1 bath,100,91,FALSE,7,Entire home/apt,4,2,133,28
+1019084358110563700,Home in Minneapolis · ★New · 1 bedroom · 1 bed · 1 bath,100,NA,FALSE,3,Private room,2,1,48,1
+1025267331802876700,Home in Inver Grove Heights · ★New · 1 bedroom · 4 beds · 1 bath,100,100,FALSE,2,Private room,4,4,54,1
+995724106432971e3,Home in Spring Park · 2 bedrooms · 1 bed · 2 baths,100,50,FALSE,1,Entire home/apt,4,1,100,30
+2590405,Home in Minneapolis · ★5.0 · 2 bedrooms · 2 beds · 1 bath,100,100,TRUE,3,Entire home/apt,4,2,204,7
+702498987878370300,Home in Minneapolis · ★4.63 · 1 bedroom · 1 bed · 1 private bath,100,98,FALSE,3,Private room,1,1,63,3
+1000280391011898600,Rental unit in Saint Paul · ★New · 2 bedrooms · 2 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,3,2,NA,30
+829032985048422100,Home in Prescott · ★5.0 · 2 bedrooms · 4 beds · 1.5 baths,100,100,TRUE,1,Entire home/apt,6,4,191,2
+22691419,Home in Minneapolis · 2 bedrooms · 4 beds · 2 baths,NA,NA,FALSE,9,Entire home/apt,15,4,990,30
+874734025118495100,Home in Minneapolis · ★4.92 · 1 bedroom · 1 bed · 1.5 baths,80,100,TRUE,2,Private room,2,1,68,1
+22843641,Home in Minneapolis · ★4.83 · 5 bedrooms · 8 beds · 2 baths,100,99,TRUE,90,Entire home/apt,10,8,295,30
+858506832536697500,Home in Saint Paul · ★4.94 · 1 bedroom · 1 bed · 1 bath,100,75,FALSE,1,Entire home/apt,2,1,68,1
+30530415,Home in Hager City · ★4.77 · 4 bedrooms · 12 beds · 2.5 baths,100,44,FALSE,1,Entire home/apt,16,12,664,2
+711727733214706800,Rental unit in Isle · ★5.0 · 1 bedroom · 2 beds · 1 bath,100,100,TRUE,3,Entire home/apt,3,2,114,2
+53069284,Rental unit in Minneapolis · ★4.66 · 1 bedroom · 1 bed · 1 shared bath,100,100,FALSE,13,Private room,2,1,32,2
+776750421797732500,Home in Spring Lake Park · 1 bedroom · 1 bed · 1 private bath,100,83,TRUE,4,Private room,2,1,50,3
+51557224,Rental unit in Bloomington · ★2.0 · 1 bedroom · 1 bed · 1 bath,0,33,FALSE,1,Entire home/apt,2,1,45,1
+697236,Home in Minneapolis · ★4.55 · 1 bedroom · 1 bed,0,14,FALSE,1,Private room,2,1,40,1
+19382514,Cottage in Independence · ★5.0 · 4 bedrooms · 9 beds · 2.5 baths,100,100,TRUE,1,Entire home/apt,14,9,321,2
+27540098,Home in Bayport · ★4.93 · 3 bedrooms · 3 beds · 2.5 baths,100,92,FALSE,1,Entire home/apt,6,3,800,2
+978366707886578800,Home in Minneapolis · 2 bedrooms · 10 beds · 2 baths,100,100,FALSE,1,Entire home/apt,10,10,219,2
+740647428447070800,Guest suite in Saint Paul · ★5.0 · 1 bedroom · 1 bed · 1 bath,100,96,FALSE,2,Entire home/apt,4,1,102,2
+52185163,Home in Saint Paul · ★4.97 · 2 bedrooms · 2 beds · 1 bath,100,99,FALSE,5,Entire home/apt,4,2,154,3
+822432627997302900,Home in Maple Grove · 1 bedroom · 1 bed · 1 private bath,67,67,FALSE,2,Private room,2,1,35,15
+8295577,Home in Woodbury · ★4.94 · 1 bedroom · 1 bed · 1 private bath,100,92,TRUE,1,Private room,2,1,55,1
+79653320762635e4,Rental unit in Minneapolis · 1 bedroom · 1 bed · 1 shared bath,100,95,FALSE,6,Private room,1,1,40,30
+15042255,Home in Saint Paul · ★4.92 · 5 bedrooms · 5 beds · 2.5 baths,100,100,TRUE,2,Entire home/apt,10,5,295,4
+48764447,Home in Minneapolis · ★4.67 · 2 bedrooms · 2 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,4,2,NA,30
+878535683410921300,Rental unit in Minneapolis · ★4.36 · 2 bedrooms · 2 beds · 1 bath,100,100,FALSE,1,Entire home/apt,6,2,115,5
+7618001,Condo in Mound · 1 bedroom · 1 bed · 1 bath,NA,NA,FALSE,1,Entire home/apt,2,1,80,45
+986476124785762800,Home in Saint Paul · ★4.50 · 5 bedrooms · 5 beds · 3 baths,100,100,FALSE,1,Entire home/apt,10,5,275,1
+22829673,Home in Plymouth · ★4.93 · 7 bedrooms · 12 beds · 7 baths,97,99,FALSE,7,Entire home/apt,16,12,1872,3
+623162367836282800,Cottage in Arden Hills · ★4.97 · 3 bedrooms · 4 beds · 2 baths,100,99,TRUE,9,Entire home/apt,8,4,259,1
+46398491,Home in Minneapolis · ★5.0 · 4 bedrooms · 6 beds · 2.5 baths,100,100,TRUE,2,Entire home/apt,10,6,326,3
+22903836,Home in Rush City · ★4.88 · 3 bedrooms · 4 beds · 1.5 baths,100,83,FALSE,1,Entire home/apt,7,4,275,7
+51891871,Home in Minneapolis · ★4.93 · 4 bedrooms · 5 beds · 1 bath,100,96,TRUE,1,Entire home/apt,4,5,200,2
+628774605527245400,Farm stay in Hudson · ★5.0 · 4 bedrooms · 4 beds · 1 bath,100,99,TRUE,2,Entire home/apt,6,4,249,2
+36456027,Home in Minneapolis · ★4.93 · 3 bedrooms · 4 beds · 2 baths,100,100,TRUE,1,Entire home/apt,7,4,159,2
+902774912361923800,Home in Minneapolis · ★5.0 · 1 bedroom · 1 bed · 1 bath,100,100,TRUE,1,Entire home/apt,2,1,112,2
+31929389,Home in Minneapolis · ★4.74 · 2 bedrooms · 2 beds · 1 bath,100,100,FALSE,1,Entire home/apt,4,2,135,2
+849950235049784700,Home in Minneapolis · 3 bedrooms · 7 beds · 2 baths,100,99,TRUE,90,Entire home/apt,7,7,90,30
+991520092678193900,Home in Minneapolis · 5 bedrooms · 6 beds · 2 baths,NA,NA,FALSE,3,Entire home/apt,10,6,174,1
+822419063487230300,Serviced apartment in Minneapolis · 3 bedrooms · 3 beds · 3 baths,100,95,FALSE,1768,Entire home/apt,6,3,1219,1
+3393634,Rental unit in Minneapolis · ★4.55 · 3 bedrooms · 4 beds · 1 bath,100,77,FALSE,2,Entire home/apt,6,4,160,1
+53345828,Guest suite in Prescott · ★4.50 · 1 bedroom · 3 beds · 1 bath,100,96,FALSE,1,Entire home/apt,7,3,199,1
+29293881,Condo in Minneapolis · 1 bedroom · 4 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,3,4,249,30
+52945904,Home in Minneapolis · ★4.86 · 4 bedrooms · 4 beds · 3 baths,100,69,FALSE,2,Entire home/apt,6,4,183,3
+1026035768465086e3,Guesthouse in Excelsior · ★New · 1 bedroom · 2 beds · 1 bath,100,NA,FALSE,1,Entire home/apt,4,2,NA,2
+50705587,Home in Cambridge · ★4.80 · 4 bedrooms · 6 beds · 1 bath,100,97,TRUE,14,Entire home/apt,7,6,179,2
+15110113,Home in Eagan · ★4.93 · 4 bedrooms · 4 beds · 3 baths,100,99,TRUE,1,Entire home/apt,8,4,251,2
+14885901,Home in Chaska · 5 bedrooms · 5 beds · 3.5 baths,NA,NA,FALSE,1,Entire home/apt,10,5,1000,6
+51004211,Home in Minneapolis · ★4.83 · 1 bedroom · 1 bed · 1 shared bath,100,97,TRUE,4,Private room,1,1,49,1
+9302224,Home in Prior Lake · ★4.96 · 6 bedrooms · 7 beds · 4.5 baths,100,89,TRUE,1,Entire home/apt,12,7,553,3
+663595294004908400,Home in Minneapolis · ★4.96 · 5 bedrooms · 5 beds · 2 baths,100,94,TRUE,1,Entire home/apt,10,5,459,2
+14490809,Townhouse in Minneapolis · ★4.92 · 5 bedrooms · 11 beds · 2.5 baths,100,98,TRUE,5,Entire home/apt,10,11,641,2
+1000057836104174100,Rental unit in Lindstrom · ★New · 1 bedroom · 1 bed · 1 bath,100,97,FALSE,6,Entire home/apt,2,1,89,28
+842712813499228400,Home in Minneapolis · 3 bedrooms · 4 beds · 2 baths,100,81,TRUE,2,Entire home/apt,6,4,160,28
+24894630,Townhouse in Minneapolis · ★4.85 · 1 bedroom · 1 bed · 1.5 shared baths,100,98,FALSE,3,Private room,1,1,25,3
+902970344003191e3,Home in Minneapolis · 1 bedroom · 1 bed · 1 shared bath,100,98,FALSE,3,Private room,1,1,68,2
+699981302305566800,Home in Stillwater · ★5.0 · 3 bedrooms · 3 beds · 2 baths,100,100,FALSE,1,Entire home/apt,6,3,300,2
+637782108778719700,Townhouse in Elko New Market · 2 bedrooms · 2 beds · 3 baths,67,NA,FALSE,1,Entire home/apt,3,2,68,28
+1006460571013462500,Home in Minneapolis · ★5.0 · 3 bedrooms · 6 beds · 3.5 baths,100,100,FALSE,1,Entire home/apt,10,6,297,1
+14127784,Home in Chaska · 4 bedrooms · 6 beds · 3 baths,NA,NA,FALSE,1,Entire home/apt,10,6,900,2
+52473724,Home in Minneapolis · ★4.96 · 2 bedrooms · 2 beds · 1 bath,100,100,TRUE,1,Entire home/apt,5,2,236,2
+33182388,Home in Minneapolis · ★4.93 · 1 bedroom · 1 bed · 1 shared bath,100,83,TRUE,1,Private room,2,1,NA,3
+22517058,Home in Fridley · ★4.78 · 1 bedroom · 1 bed · 1 shared bath,75,96,TRUE,1,Private room,2,1,56,1
+3820168,Home in Saint Paul · ★4.88 · 5 bedrooms · 8 beds · 3.5 baths,100,83,TRUE,8,Entire home/apt,10,8,295,4
+30440839,Townhouse in Bloomington · ★4.67 · 2 bedrooms · 3 beds · 2 baths,100,67,FALSE,1,Entire home/apt,5,3,150,30
+592725645644858400,Home in Minneapolis · ★5.0 · 3 bedrooms · 4 beds · 2 baths,100,81,TRUE,2,Entire home/apt,6,4,156,21
+38699181,Home in Saint Paul · ★5.0 · 1 bedroom · 1 bed · 1 shared bath,100,94,TRUE,3,Private room,2,1,75,2
+727410403959640400,Home in Minneapolis · ★4.79 · 3 bedrooms · 4 beds · 2 baths,NA,NA,FALSE,1,Entire home/apt,8,4,108,2
+39756801,Home in Minneapolis · ★4.0 · 1 bedroom · 3 beds · 2 shared baths,100,95,FALSE,6,Private room,6,3,69,2
+1027783928304467800,Home in St. Louis Park · ★New · 2 bedrooms · 2 beds · 2 baths,100,NA,FALSE,1,Entire home/apt,5,2,104,1
+44645392,Home in Mendota Heights · ★4.85 · 1 bedroom · 1 bed · 1 private bath,NA,NA,FALSE,1,Private room,2,1,NA,1
+21474348,Home in Minneapolis · ★4.91 · 1 bedroom · 1 bed · 1.5 baths,NA,90,TRUE,2,Private room,2,1,NA,1
+861634684483013200,Home in Blaine · 5 bedrooms · 8 beds · 3.5 baths,100,100,TRUE,2,Entire home/apt,13,8,520,2
+982977459488019200,Home in Eden Prairie · 5 bedrooms · 5 beds · 3 baths,100,98,TRUE,3,Entire home/apt,11,5,275,2
+762333397443084900,Hotel in Eagan · ★5.0 · 1 bedroom · 2 beds · 1 private bath,89,96,FALSE,1,Private room,4,2,50,14
+821573473621417e3,Home in Saint Paul · ★4.96 · 7 bedrooms · 7 beds · 2.5 baths,99,92,FALSE,31,Entire home/apt,16,7,261,4
+35217565,Serviced apartment in Minneapolis · ★4.92 · 1 bedroom · 2 beds · 1 bath,99,100,TRUE,102,Entire home/apt,4,2,137,1
+54081528,Rental unit in Bloomington · 1 bedroom · 1 bed · 1 bath,100,95,FALSE,3,Entire home/apt,3,1,120,3
+1003197974473406200,Rental unit in Minneapolis · ★4.0 · 1 bedroom · 3 beds · 1 bath,100,98,FALSE,2,Entire home/apt,6,3,109,1
+940534182156461700,Home in Minneapolis · ★4.69 · 2 bedrooms · 2 beds · 1 bath,90,100,TRUE,1,Entire home/apt,6,2,130,1
+49777721,Home in Minneapolis · 4 bedrooms · 5 beds · 5 baths,NA,0,FALSE,1,Entire home/apt,10,5,2700,2
+15173154,Loft in Minneapolis · ★4.80 · 3 bedrooms · 4 beds · 1 bath,100,91,TRUE,3,Entire home/apt,10,4,91,3
+21648510,Townhouse in Eden Prairie · ★4.78 · 1 bedroom · 1 bed · 1 shared bath,NA,NA,FALSE,1,Private room,1,1,65,30
+841288507514484e3,Rental unit in Minneapolis · ★5.0 · Studio · 1 bed · 1 bath,100,97,TRUE,12,Entire home/apt,2,1,70,30
+889692041011044100,Rental unit in Minneapolis · ★5.0 · 1 bedroom · 2 beds · 1 bath,100,98,TRUE,12,Entire home/apt,2,2,NA,3
+577622740134897300,Home in Minneapolis · 2 bedrooms · 3 beds · 2 baths,100,100,FALSE,1,Entire home/apt,5,3,120,1
+659306952791187600,Home in Minneapolis · ★4.85 · 2 bedrooms · 2 beds · 2 baths,100,100,TRUE,2,Entire home/apt,4,2,209,2
+569749178409742100,Rental unit in White Bear Lake · ★4.97 · 2 bedrooms · 3 beds · 1 bath,100,98,TRUE,2,Entire home/apt,5,3,100,2
+54395156,Cabin in Clear Lake · ★4.92 · 3 bedrooms · 3 beds · 1.5 baths,100,100,TRUE,1,Entire home/apt,6,3,150,3
+979786325681728900,Home in Minneapolis · 4 bedrooms · 10 beds · 3 baths,100,99,FALSE,7,Entire home/apt,16,10,981,1
+31797961,Home in Minneapolis · 1 bedroom · 1 bed · 1 private bath,NA,NA,FALSE,2,Private room,2,1,50,2
+34566844,Rental unit in Minneapolis · ★4.95 · 1 bedroom · 3 beds · 1 bath,100,100,TRUE,8,Entire home/apt,5,3,113,30
+3705734,Home in Minneapolis · ★4.80 · 1 bedroom · 1 bed · 1 bath,NA,NA,FALSE,2,Private room,2,1,108,30
+22901387,Home in Roseville · 4 bedrooms · 5 beds · 2 baths,NA,NA,FALSE,2,Entire home/apt,8,5,950,4
+5.5790181597682803e+17,Home in Prescott · ★4.98 · 1 bedroom · 1 bed · 1 bath,100,100,TRUE,1,Entire home/apt,4,1,97,2
+570813511397774340,Rental unit in Minneapolis · ★4.57 · 1 bedroom · 1 bed · 1 bath,90,94,TRUE,36,Entire home/apt,2,1,79,2
+53438180,Rental unit in Saint Paul · 1 bedroom · 1 bed · 1 bath,86,98,FALSE,2545,Entire home/apt,2,1,102,30
+734855177439826300,Home in Saint Paul · ★4.22 · 1 bedroom · 1 bed · 1 shared bath,NA,100,FALSE,4,Private room,1,1,NA,1
+21911952,Home in Shakopee · ★4.90 · 5 bedrooms · 5 beds · 3.5 baths,100,100,FALSE,2,Entire home/apt,7,5,368,3
+834814416345972600,Home in Minneapolis · ★4.92 · 4 bedrooms · 4 beds · 2.5 baths,100,97,TRUE,9,Entire home/apt,10,4,453,2
+18958518,Tiny home in New Richmond · ★4.91 · 1 bedroom · 5 beds · 1 bath,100,100,TRUE,2,Entire home/apt,8,5,109,1
+21913430,Home in Minneapolis · ★4.90 · 2 bedrooms · 2 beds · 1 shared bath,NA,NA,FALSE,1,Private room,4,2,100,30
+34547345,Guest suite in Minneapolis · ★4.98 · 1 bedroom · 2 beds · 1 bath,100,98,TRUE,1,Entire home/apt,2,2,99,2
+4086229,Rental unit in Minneapolis · ★4.79 · 1 bedroom · 1 bed · 1 bath,NA,NA,FALSE,2,Entire home/apt,2,1,140,365
+53081545,Guesthouse in Big Lake · ★4.95 · 1 bedroom · 4 beds · 1 bath,100,100,TRUE,6,Entire home/apt,4,4,75,1
+990685964445340200,Home in Minneapolis · ★New · 3 bedrooms · 3 beds · 1 bath,86,100,FALSE,1,Entire home/apt,4,3,149,1
+659346483379208700,Home in Plymouth · 3 bedrooms · 3 beds · 2.5 baths,100,100,FALSE,1,Entire home/apt,6,3,1369,5
+24404534,Condo in Minneapolis · ★5.0 · 3 bedrooms · 3 beds · 2 baths,100,0,FALSE,7,Entire home/apt,6,3,262,300
+626876215130182400,Home in Saint Paul · ★4.94 · 3 bedrooms · 3 beds · 2 baths,100,99,TRUE,2,Entire home/apt,8,3,456,1
+705910474102884500,Rental unit in Minneapolis · 1 bedroom · 1 bed · 1 shared bath,100,72,NA,25,Private room,1,1,30,30
+852961252554084100,Rental unit in Saint Paul · ★4.80 · 2 bedrooms · 2 beds · 1 bath,100,95,FALSE,13,Entire home/apt,3,2,65,2
+42900778,Rental unit in Minneapolis · ★4.66 · 1 bedroom · 2 beds · 1 bath,99,97,TRUE,58,Entire home/apt,4,2,90,2
+744963365185707800,Rental unit in Circle Pines · 1 bedroom · 1 bed · 1 bath,100,96,TRUE,8,Entire home/apt,2,1,150,3
+851979914197306e3,Home in Saint Paul · ★4.90 · 4 bedrooms · 4 beds · 2 baths,100,94,TRUE,1,Entire home/apt,8,4,224,1
+23036492,Home in Minneapolis · 1 bedroom · 4 beds · 2.5 baths,NA,NA,FALSE,1,Entire home/apt,8,4,1000,1
+1008644390943659300,Home in Cottage Grove · ★5.0 · 1 bedroom · 1 bed · Private half-bath,100,100,FALSE,2,Private room,2,1,43,1
+949511965365861500,Home in Golden Valley · ★5.0 · 4 bedrooms · 4 beds · 3 baths,100,100,FALSE,1,Entire home/apt,10,4,194,3
+12185517,Home in Saint Paul · 1 bedroom · 3 beds · 1 bath,NA,NA,FALSE,2,Private room,3,3,60,2
+32137730,Rental unit in Minneapolis · ★4.72 · 2 bedrooms · 2 beds · 2 baths,100,97,FALSE,3,Entire home/apt,4,2,112,2
+742943724261989800,Townhouse in Saint Anthony · ★4.91 · 2 bedrooms · 2 beds · 1 bath,100,99,TRUE,3,Entire home/apt,6,2,88,1
+32240512,Home in Minneapolis · ★4.94 · 3 bedrooms · 3 beds · 2 baths,100,100,TRUE,1,Entire home/apt,6,3,186,3
+625191546476811300,Home in Minneapolis · 1 bedroom · 1 bed · 1 shared bath,NA,0,FALSE,2,Private room,1,1,64,1
+1043740363366246400,Home in Chisago City · ★New · 3 bedrooms · 5 beds · 2 baths,100,100,FALSE,2,Entire home/apt,8,5,439,2
+40893727,Home in Minneapolis · ★4.92 · 1 bedroom · 3 beds · 1 bath,100,81,FALSE,13,Entire home/apt,4,3,93,1
+1027448679829941600,Rental unit in Saint Paul · ★5.0 · 2 bedrooms · 2 beds · 1 bath,100,100,FALSE,1,Entire home/apt,4,2,114,1
+595452067097820500,Vacation home in Becker · 1 bedroom · 1 bed · 1 bath,100,100,FALSE,2,Entire home/apt,4,1,150,1
+21837838,Home in Minneapolis · 3 bedrooms · 4 beds · 2 baths,NA,NA,FALSE,1,Entire home/apt,6,4,950,3
+702947468370833900,Home in South Saint Paul · ★4.97 · 2 bedrooms · 2 beds · 1 bath,100,100,TRUE,2,Entire home/apt,4,2,99,5
+836927311236243600,Rental unit in Waterville · ★4.94 · 3 bedrooms · 4 beds · 1 bath,100,100,TRUE,1,Entire home/apt,6,4,175,2
+831290581037671400,Home in Minneapolis · ★5.0 · 1 bedroom · 1 bed · 1 private bath,100,100,TRUE,1,Private room,2,1,54,1
+666746470794926600,Home in Stanchfield · ★4.80 · 5 bedrooms · 11 beds · 2.5 baths,100,100,FALSE,3,Entire home/apt,16,11,695,2
+671144894278558800,Townhouse in Brooklyn Center · 1 bedroom · 1 bed · 1.5 baths,NA,0,FALSE,1,Private room,2,1,125,1
+54398877,Cottage in Minneapolis · ★4.92 · 2 bedrooms · 2 beds · 1 bath,100,100,FALSE,1,Entire home/apt,4,2,145,2
+49098563,Guest suite in Prescott · ★5.0 · Studio · 1 bed · 1 bath,100,100,TRUE,23,Entire home/apt,2,1,116,1
+1018948553025555100,Home in Saint Paul · ★New · 5 bedrooms · 5 beds · 2 baths,99,99,FALSE,890,Entire home/apt,11,5,250,2
+15008642,Home in South Haven · ★4.90 · 3 bedrooms · 5 beds · 2.5 baths,100,94,TRUE,1,Entire home/apt,9,5,308,2
+802255882178826e3,Rental unit in West Saint Paul · 2 bedrooms · 3 beds · 1 bath,100,100,TRUE,2,Entire home/apt,6,3,133,7
+49178167,Condo in Minneapolis · ★5.0 · Studio · 1 bed · 1 bath,100,100,TRUE,1,Entire home/apt,2,1,72,30
+53903459,Home in Minneapolis · ★4.85 · 3 bedrooms · 3 beds · 1 bath,100,77,FALSE,3,Entire home/apt,8,3,465,30
+776023942764844200,Bed and breakfast in Zimmerman · 1 bedroom · 1 bed · 1 shared bath,0,0,FALSE,1,Private room,2,1,78,1
+894392038598457300,Home in Minneapolis · 3 bedrooms · 3 beds · 2.5 baths,NA,NA,FALSE,1,Entire home/apt,6,3,340,30
+53663427,Vacation home in Fridley · 2 bedrooms · 1.5 baths,NA,NA,FALSE,1,Entire home/apt,4,NA,150,2
+52109422,Tent in Onamia · 1 bedroom · 1 bed · 0 shared baths,NA,NA,FALSE,1,Shared room,16,1,69,1
+781098516203599500,Rental unit in Minneapolis · 1 bedroom · 1 bed · 1 bath,NA,33,FALSE,1,Entire home/apt,4,1,80,30
+21835556,Home in Roseville · 3 bedrooms · 3 beds · 2 baths,NA,NA,FALSE,1,Entire home/apt,6,3,900,3
+45541107,Home in Minneapolis · ★4.89 · 2 bedrooms · 2 beds · 1 bath,100,100,TRUE,1,Entire home/apt,6,2,242,2
+51578832,Guest suite in Shoreview · ★5.0 · Studio · 2 beds · 1 bath,100,96,TRUE,1,Entire home/apt,4,2,115,3
+8234238,Home in Excelsior · ★4.70 · 1 bedroom · 1 bed · 1.5 shared baths,0,NA,FALSE,2,Private room,2,1,100,2
+928200567528794100,Home in Minneapolis · ★4.95 · 1 bedroom · 1 bed · 1 shared bath,100,96,TRUE,1,Private room,2,1,NA,2
+986135122407286700,Rental unit in Minneapolis · ★4.83 · 2 bedrooms · 2 beds · 1 bath,100,90,FALSE,1,Entire home/apt,3,2,144,2
+27434515,Rental unit in Minneapolis · ★4.83 · 1 bedroom · 1 bed · 1 bath,100,95,TRUE,6,Entire home/apt,2,1,195,30
+924283670179422800,Home in Minneapolis · ★4.91 · 1 bedroom · 1 bed · 1 bath,100,99,TRUE,21,Private room,2,1,37,1
+21353502,Rental unit in Saint Paul · ★4.81 · 1 bedroom · 1 bed · 1 bath,100,95,TRUE,5,Entire home/apt,2,1,90,2
+910706002690598100,Rental unit in Minneapolis · Studio · 1 bed · 1 bath,100,97,TRUE,12,Entire home/apt,2,1,69,30
+918720985841935900,Rental unit in Minneapolis · Studio · 1 bed · 1 bath,100,97,TRUE,12,Entire home/apt,2,1,97,2
+875377511003491500,Rental unit in Saint Paul · ★4.67 · 2 bedrooms · 2 beds · 1 bath,100,55,FALSE,1,Entire home/apt,4,2,104,5
+37617127,Home in Minneapolis · ★4.91 · 2 bedrooms · 2 beds · 1 bath,NA,94,TRUE,3,Entire home/apt,4,2,159,2
+31357392,Home in Minneapolis · ★4.88 · 4 bedrooms · 4 beds · 1 bath,100,100,TRUE,1,Entire home/apt,10,4,182,2
+1022361329821568100,Home in Harris · ★New · 5 bedrooms · 7 beds · 3 baths,100,99,TRUE,2,Entire home/apt,14,7,195,2
+899984097882945200,Home in Minneapolis · ★4.94 · 3 bedrooms · 5 beds · 2 baths,100,97,TRUE,1,Entire home/apt,8,5,226,2
+22435209,Home in Saint Paul · 3 bedrooms · 4 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,7,4,975,3
+41642254,Serviced apartment in Minneapolis · ★4.85 · 2 bedrooms · 3 beds · 2 baths,99,100,TRUE,102,Entire home/apt,6,3,201,1
+720576757430895e3,Home in Saint Paul · ★4.75 · 2 bedrooms · 3 beds · 1 private bath,86,67,TRUE,2,Private room,6,3,119,2
+31145416,Guest suite in Minneapolis · ★4.87 · 3 bedrooms · 3 beds · 1 bath,100,98,TRUE,14,Entire home/apt,6,3,205,3
+951551915110055700,Rental unit in Saint Paul · ★5.0 · 3 bedrooms · 3 beds · 1.5 baths,100,96,TRUE,4,Entire home/apt,6,3,259,1
+960125198046634100,Home in Plum City · Studio · 2 beds · 1 bath,100,0,FALSE,1,Entire home/apt,5,2,NA,2
+33305027,Home in Saint Paul · ★4.86 · 1 bedroom · 1 bed · 1 shared bath,92,73,TRUE,98,Private room,1,1,33,2
+4105383,Rental unit in Minneapolis · ★4.91 · 1 bedroom · 1 bed · 1 bath,100,0,FALSE,1,Entire home/apt,2,1,68,7
+51593051,Home in Oak Grove · ★4.78 · 1 bedroom · 1 bed · 2 shared baths,100,80,TRUE,5,Private room,2,1,37,1
+1009338281685983700,Home in Apple Valley · ★New · 4 bedrooms · 6 beds · 2 baths,100,NA,FALSE,1,Entire home/apt,10,6,NA,30
+587010605540888400,Bungalow in Saint Paul · ★4.96 · 4 bedrooms · 5 beds · 2 baths,100,97,TRUE,1,Entire home/apt,10,5,221,3
+939920530927487400,Home in White Bear Lake · ★4.75 · 1 bedroom · 2 beds · 1 bath,100,86,FALSE,1,Entire home/apt,4,2,325,2
+899059241214893200,Home in Minneapolis · ★4.92 · 2 bedrooms · 4 beds · 1 bath,100,100,TRUE,3,Entire home/apt,6,4,106,2
+22673762,Home in Minneapolis · ★3.67 · 5 bedrooms · 18 beds · 2.5 baths,NA,NA,FALSE,1,Entire home/apt,11,18,899,3
+44811352,Home in Farmington · ★4.85 · 1 bedroom · 1 bed · 1 private bath,80,100,TRUE,1,Private room,3,1,29,1
+18508840,Home in South Saint Paul · ★4.93 · 1 bedroom · 1 bed · 1 private bath,NA,0,FALSE,1,Private room,2,1,44,1
+7.4621565427514406e+17,Home in Minneapolis · 3 bedrooms · 3 beds · 2 baths,100,67,TRUE,1,Entire home/apt,6,3,100,28
+22031671,Rental unit in Minneapolis · ★4.90 · 2 bedrooms · 2 beds · 1 bath,NA,90,TRUE,1,Entire home/apt,2,2,132,2
+41587649,Rental unit in Hudson · ★4.81 · 2 bedrooms · 2 beds · 1 bath,100,99,TRUE,4,Entire home/apt,6,2,112,2
+568338161033545660,Loft in Hager City · 1 bedroom · 3 beds · 1 bath,NA,NA,FALSE,1,Entire home/apt,6,3,NA,1
+45376341,Home in Saint Paul · ★4.90 · 5 bedrooms · 7 beds · 2.5 baths,100,99,TRUE,4,Entire home/apt,13,7,306,2
+22471543,Bungalow in Minneapolis · ★4.96 · 3 bedrooms · 3 beds · 2 baths,100,100,TRUE,2,Entire home/apt,6,3,126,4
+43336433,Cottage in Forest Lake · ★4.94 · 3 bedrooms · 4 beds · 1.5 baths,NA,80,FALSE,1,Entire home/apt,8,4,400,3
+1028600781544284700,Bed and breakfast in Saint Paul · ★New · 1 bedroom · 3 beds · 3 baths,90,45,FALSE,2,Private room,6,3,69,1
+33017202,Bed and breakfast in Stillwater · ★4.98 · 1 bedroom · 1 bed · 1 private bath,100,100,TRUE,5,Hotel room,2,1,187,1
+669610808591914500,Camper/RV in Elk River · 0 baths,100,100,TRUE,2,Entire home/apt,4,NA,NA,1
+20250219,Home in Saint Paul · ★4.98 · 1 bedroom · 1 bed · 1 shared bath,100,82,TRUE,1,Private room,1,1,40,1
+15335892,Townhouse in Shoreview · ★4.95 · 1 bedroom · 2 beds · 1 bath,NA,97,TRUE,3,Entire home/apt,4,2,NA,2
+965181535291260800,Home in Minneapolis · ★5.0 · 3 bedrooms · 4 beds · 1.5 baths,100,100,FALSE,1,Entire home/apt,7,4,169,2
+45068820,Home in Saint Paul · ★4.75 · 1 bedroom · 1 bed · 1 shared bath,100,28,FALSE,5,Private room,2,1,40,2
+8612672,Rental unit in Stillwater · Studio · 1 bed · 1 bath,NA,NA,FALSE,1,Private room,2,1,28,365
+895195572206403300,Home in Minnetonka · ★5.0 · 3 bedrooms · 4 beds · 2 baths,97,99,FALSE,7,Entire home/apt,8,4,577,3
+699820709978814700,Home in Minneapolis · 1 bedroom · 1 bed · 1 bath,50,0,FALSE,1,Entire home/apt,2,1,66,30
+21745914,Home in Saint Paul · ★4.98 · 1 bedroom · 1 bed · 1 bath,100,98,TRUE,7,Entire home/apt,2,1,120,3
+858829281053716500,Cottage in Minneapolis · ★4.97 · 1 bedroom · 1 bed · 1 bath,100,100,TRUE,1,Entire home/apt,2,1,131,1
+876285770695245200,Home in Minneapolis · ★5.0 · 2 bedrooms · 3 beds · 1 bath,100,92,FALSE,1,Entire home/apt,5,3,125,1
+736366032248230900,Home in Minneapolis · ★4.92 · 1 bedroom · 1 bed · 2 shared baths,100,100,TRUE,11,Private room,1,1,80,1
+21551503,Home in Hopkins · ★4.86 · 3 bedrooms · 3 beds · 2 baths,100,100,TRUE,2,Entire home/apt,5,3,150,30
+979776437037024400,Home in Minneapolis · 1 bedroom · 1 bed · 3 baths,80,50,FALSE,2,Private room,2,1,75,2
+720892254161647600,Condo in Eden Prairie · ★3.75 · 2 bedrooms · 2 beds · 1 bath,99,99,FALSE,890,Entire home/apt,4,2,121,2
+1031488827796551e3,Home in Saint Paul · ★New · 3 bedrooms · 3 beds · 3 baths,100,93,FALSE,8,Private room,3,3,63,1
+855985438492319100,Home in Wyoming · ★4.94 · 2 bedrooms · 2 beds · 1 bath,100,100,FALSE,1,Entire home/apt,6,2,111,2
+904429119310099100,Rental unit in Buffalo · ★5.0 · 3 bedrooms · 3 beds · 1 bath,100,98,TRUE,4,Entire home/apt,6,3,229,2
+776082870368647200,Home in Richfield · ★New · 4 bedrooms · 1 bed · 2 baths,NA,NA,FALSE,1,Private room,4,1,86,1
+21892887,Home in Minneapolis · 2 bedrooms · 3 beds · 2.5 baths,NA,NA,FALSE,1,Entire home/apt,8,3,875,5
+21752857,Home in Elko New Market · 2 bedrooms · 2 beds · 1 private bath,NA,NA,FALSE,1,Private room,3,2,200,3
+833526604897136300,Rental unit in Minneapolis · 2 bedrooms · 2 beds · 1 bath,100,100,FALSE,4,Entire home/apt,4,2,103,2
+638482495254399500,Rental unit in Saint Paul · ★5.0 · 2 bedrooms · 2 beds · 1 bath,100,86,FALSE,2,Entire home/apt,4,2,104,1
+550722797884353200,Rental unit in Saint Paul · 1 bedroom · 1 bed · 1 bath,100,95,TRUE,12,Entire home/apt,2,1,125,30
+47150212,Home in Apple Valley · ★4.92 · 1 bedroom · 1 bed · 1 shared bath,100,95,TRUE,2,Private room,1,1,62,28
+17728825,Home in Minneapolis · ★4.91 · 1 bedroom · 1 bed · 1 bath,100,100,TRUE,1,Entire home/apt,6,1,142,1
+13109781,Camper/RV in Lakeville · ★4.75 · 2 beds · Half-bath,NA,0,FALSE,3,Entire home/apt,3,2,85,1
+559220054824347800,Home in Saint Bonifacius · 2 bedrooms · 4 beds · 2 baths,100,75,FALSE,1,Entire home/apt,8,4,225,4
+31023372,Rental unit in Minneapolis · ★4.94 · 3 bedrooms · 3 beds · 1 bath,100,100,TRUE,1,Entire home/apt,6,3,180,2
+796989371955372500,Home in Maple Grove · 3 bedrooms · 2 beds · 2 baths,67,67,FALSE,2,Entire home/apt,6,2,100,30
+46547444,Home in Saint Paul · 4 bedrooms · 4 beds · 1.5 baths,80,56,FALSE,4,Entire home/apt,6,4,80,90
+22908458,Home in Saint Paul · 1 bedroom · 1 bed · 1 private bath,NA,NA,FALSE,1,Private room,4,1,1000,1
+15719921,Rental unit in Minneapolis · ★4.97 · 1 bedroom · 2 beds · 1 bath,100,98,TRUE,2,Entire home/apt,4,2,90,7
+20154301,Home in Minneapolis · ★4.93 · 1 bedroom · 1 bed · 2.5 baths,100,73,FALSE,1,Private room,2,1,85,2
+771024576837496700,Home in Hudson · ★5.0 · 2 bedrooms · 2 beds · 2 baths,NA,100,FALSE,1,Entire home/apt,6,2,525,2
+53622391,Home in Minneapolis · ★4.89 · 1 bedroom · 1 bed · 1 bath,100,97,TRUE,1,Entire home/apt,2,1,120,2
+671092373361102600,Home in Saint Paul · 5 bedrooms · 9 beds · 2.5 baths,NA,75,FALSE,1,Entire home/apt,9,9,200,2
+35113423,Guest suite in Scandia · ★4.88 · 3 bedrooms · 4 beds · 1 bath,NA,90,TRUE,1,Entire home/apt,6,4,120,2
+975879808229052700,Home in Minneapolis · ★4.75 · 5 bedrooms · 5 beds · 3.5 baths,100,78,FALSE,10,Entire home/apt,16,5,599,1
+49854931,Home in Shakopee · ★4.67 · 5 bedrooms · 5 beds · 3.5 baths,NA,79,FALSE,1,Entire home/apt,9,5,350,1
+850857888325275400,Hostel in Saint Paul · ★4.83 · 1 bedroom · 3 beds · 3 baths,100,93,FALSE,8,Private room,6,3,69,1
+30948927,Home in Jordan · ★4.75 · 1 bedroom · 1 bed · 1.5 shared baths,100,100,FALSE,1,Private room,2,1,55,1
+36804270,Guest suite in Burnsville · ★5.0 · 1 bedroom · 1 bed · 1 private bath,100,85,FALSE,10,Private room,2,1,150,1
+41486444,Rental unit in Minneapolis · ★4.89 · 2 bedrooms · 4 beds · 1 bath,100,97,TRUE,2,Entire home/apt,6,4,140,1
+25810374,Villa in Minneapolis · ★4.91 · 6 bedrooms · 8 beds · 4.5 baths,100,98,FALSE,1,Entire home/apt,16,8,560,2
+53056314,Rental unit in Stillwater · 2 bedrooms · 2 beds · 2 baths,NA,NA,FALSE,1,Entire home/apt,5,2,149,28
+22865431,Rental unit in Minneapolis · ★4.96 · 3 bedrooms · 3 beds · 1 bath,100,100,TRUE,1,Entire home/apt,5,3,65,2
+966805821073033100,Home in Savage · 1 bedroom · 1 bed · 2 shared baths,100,97,TRUE,3,Private room,2,1,84,3
+1014933290171336700,Hotel in Minneapolis · ★New · 1 bedroom · 2 beds · 1 bath,100,99,FALSE,3145,Private room,4,2,265,1
+38744609,Bed and breakfast in Minneapolis · ★4.91 · 1 bedroom · 1 bed · 1 shared bath,96,98,TRUE,4,Private room,1,1,50,1
+35810037,Home in Minneapolis · ★4.81 · 2 bedrooms · 2 beds · 1 bath,100,90,TRUE,11,Entire home/apt,5,2,155,30
+43223196,Home in Minneapolis · ★5.0 · 1 bedroom · 1 bed · 3 shared baths,92,73,TRUE,98,Private room,2,1,37,2
+799367343781395600,Home in Saint Paul · ★5.0 · 5 bedrooms · 6 beds · 3 baths,100,96,TRUE,9,Entire home/apt,12,6,276,3
+48535650,Home in Annandale · ★4.75 · 4 bedrooms · 7 beds · 3.5 baths,100,100,FALSE,9,Entire home/apt,14,7,383,2
+22655014,Home in Elk River · ★4.96 · 1 bedroom · 3 beds · 1 private bath,100,100,TRUE,1,Private room,5,3,64,2
+934258782893540100,Rental unit in Minneapolis · 2 bedrooms · 2 beds · 1 bath,100,72,NA,25,Entire home/apt,4,2,58,30
+40680249,Home in Wayzata · ★4.88 · 3 bedrooms · 3 beds · 2 baths,100,92,TRUE,1,Entire home/apt,7,3,313,3
+645622894056259600,Condo in Minneapolis · ★4.92 · 1 bedroom · 1 bed · 1 bath,100,99,TRUE,1,Entire home/apt,4,1,72,1
+20651429,Rental unit in Minneapolis · ★4.90 · 1 bedroom · 2 beds · 1 bath,100,98,TRUE,2,Entire home/apt,2,2,98,1
+50524598,Rental unit in St. Louis Park · ★4.60 · 1 bedroom · 3 beds · 1 bath,90,100,TRUE,1,Entire home/apt,5,3,50,2
+19478645,Cottage in Minnetonka · ★4.93 · 3 bedrooms · 3 beds · 2.5 baths,NA,86,FALSE,1,Entire home/apt,8,3,420,2
+22867463,Home in Minneapolis · 3 bedrooms · 3 beds · 1 shared bath,NA,NA,FALSE,1,Private room,5,3,NA,2
+518796593761025300,Serviced apartment in Champlin · ★4.81 · 2 bedrooms · 2 beds · 2 baths,100,99,TRUE,2,Entire home/apt,4,2,185,3
+33314154,Home in Minneapolis · ★5.0 · 3 bedrooms · 3 beds · 2 baths,NA,50,FALSE,1,Entire home/apt,6,3,206,2
+52594241,Home in Minneapolis · ★4.93 · 1 bedroom · 1 bed · 1 shared bath,100,94,FALSE,1,Private room,1,1,56,1
+50105071,Rental unit in Minneapolis · 2 bedrooms · 2 beds · 1 private bath,100,97,FALSE,7,Private room,4,2,129,30
+33473088,Home in Minneapolis · ★5.0 · 2 bedrooms · 2 beds · 1 bath,100,100,FALSE,1,Entire home/apt,4,2,180,1
+846260304517581300,Home in Minneapolis · ★4.89 · 2 bedrooms · 3 beds · 1 bath,100,98,TRUE,1,Entire home/apt,6,3,130,1
+45567221,Rental unit in Saint Paul · ★5.0 · 1 bedroom · 1 bed · 1 bath,100,95,TRUE,12,Entire home/apt,2,1,130,30

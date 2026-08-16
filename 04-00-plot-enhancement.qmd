@@ -1,0 +1,12 @@
+# Enhancing Your Plot {#sec-plot-enhance}
+
+<!-- The American Statistical Association defines statistics as, "the science of learning from data, and of measuring, controlling and communicating uncertainty" [@ASA:2023]. The methods you learn throughout this textbook, and the EPSY 1261 course, will help you to learn from data and to measure, control, and communicate about uncertainty.  -->
+
+Creating a plot is the first step to visualizing data, but there is still a lot of work to do to get your plot ready for an audience. For example, updating the labels, adding a title, subtitle or data source, and adding annotations will help readers of your plot interpret and contextualize the information you have visualized. Making aesthetic improvements such as adding color or changing the look of your plot can also help engage your audience to pay better attention to your data visualization. In this section you will learn how to make these types of changes to the plots you create in this class.
+
+<!-- @sec-importing-data will introduce the syntax we use to import data into R. Finally, @sec-design will introduce how the collection of the data impacts the type of inferences and conclusions we can draw. -->
+
+<br />
+
+
+<!-- ## References {-} -->

@@ -1,0 +1,341 @@
+# Questions to Ask About Data {#sec-data-questions}
+
+One thing that is required in data visualization is data. Anytime you encounter data there are several questions that you should ask [@Gould:2013]. These questions not only help you become familiar with the data, but also aid in contextualizing what the data can tell you and what they can't. 
+
+1. What are the cases and how many are in the data?
+2. What are the attribute names and how many attributes are included in the data?
+3. What does each attribute represent? 
+4. Which attributes are categorical? Which are quantitative?
+5. Who collected the data? 
+6. For what purpose (why) were the data collected?
+7. How and where were the data collected?
+8. Are there any issues or ethical considerations to be aware of with the data?
+
+The first four questions are about the actual data collected. They are asked to get a sense for the information in the dataset. This is important in thinking about the appropriate methods we might use to visualize the data. The last four questions help you contextualize the data. They help you in thinking about how you will communicate findings and trends from any potential visualization of the data. 
+
+<br />
+
+
+## NYT Bestselling Books Data: An Example
+
+Consider the following data which constitute a random sample of 25 New York Times bestselling hardcover fiction books [@Pruett:2021]. These books were sampled from a list of all unique titles that appeared in the weekly New York Times bestselling hardcover fiction books list from 1931--2020. Take a minute to look familiarize yourself with these data.
+
+```{r}
+#| label: nyt-data
+#| echo: false
+#| message: false
+
+nyt = readr::read_csv("data/nyt-best-sellers.csv")
+DT::datatable(nyt)
+```
+
+These data have a tabular structure, that is, it is organized into rows and columns. In well-organized tabular data, the rows represent **cases** (also called **units**) and the columns represent **attributes** (also referred to as **variables**). Attributes are the information or characteristics that are collected for each of the cases.
+
+:::fyi
+**FYI**
+
+Tabular data are required in order to carry out most analyses with computational tools, although not all data are tabular. For example, many websites store data in non-tabular forms such as [XML](https://www.w3.org/standards/xml/core) or [JSON](https://www.json.org/). In this course, all the data you work with will be tabular. 
+:::
+
+Now let's try to answer the seven questions about these data.
+
+<br />
+
+
+**1. What are the cases and how many are in the data?**
+
+In these data, each case is a NYT best selling book. That is, each row represents a different NYT best selling hardcover fiction book. There are 25 total cases (books) in the data. 
+
+
+
+**2.  What are the attribute names and how many attributes are included in the data?**
+
+There are eight attributes in these data. They are:
+
+- `year`
+- `title`
+- `author`
+- `female`
+- `total_weeks`
+- `first_week`
+- `debut_rank`
+- `best_rank`
+
+As you identify the attribute names, pay attentiton to case (upper- vs lowercase letters), etc. You will ultimately be typing the names of the data's attributes when you create your visualizations, and you need to type them exactly correct.
+
+
+**3. What does each attribute represent?**
+
+Answering this question requires that you provide a human understandable description of each attribute. This also often includes any units of measurement and sometimes the format of the data.
+
+ The attributes in these data are:
+
+- `year`: The year the book was published (formatted as YYYY).
+- `title`: The title of the book (formatted in all uppercase).
+- `author`: The author of the book (formatted in title case). 
+- `female`: Whether the author identifies as a female (0 = no, 1 = yes). 
+- `total_weeks`: The total number of weeks the book was on the NYT Best Sellers list. 
+- `first_week`: The first week the book appeared on the NYT Best Sellers list (formatted as m/d/yy). 
+- `debut_rank`: The book's debut rank on the NYT Best Sellers list. 
+- `best_rank`: The book's highest rank while it was on the NYT Best Sellers list.
+
+As you do this you may have follow-up questions that arise. For example what are the possible ranks in the NYT Best Sellers list? Is it 1--100 or 1--25? This often requires doing some work to find out additional informations. Here is a nice [blog post](https://www.novlr.org/the-reading-room/the-new-york-times-bestseller-lists-explained/) explaining the NYT bestsellers list. The larger dataset that our data were sampled from can be found [here](https://data.post45.org/posts/nyt_hardcover_fiction_bestsellers/index.html). This suggests that the ranking could be anywhere from 1--17. 
+
+
+To answer the next two questions, we need to understand how data scientists classify attributes.
+
+<br />
+
+
+## Classifying Attributes
+
+Our ultimate goal in creating a data visualization is typically to learn from or understand patterns in the data. For example, in our NYT Best Seller data, we may be interested in the proportion of authors that identify as female. Or, we may want to. know how many weeks a book stays on the Best Sellers list. The type of analyses we can do, however, depend on the type of attributes we have.
+
+We typically classify attributes as either **categorical attributes** or **quantitative attributes**. These classifications are based on the type of information (data) in the attribute. A categorical attribute has values that represent categorical (or qualitative) differences between the cases, whereas a quantitative attribute represents numerical (or quantitative) differences between cases. For example, in the NYT Best Seller data, title and author are categorical variables, whereas year, and total number of weeks the book was on the NYT Best Sellers list are quantitative attributes. 
+
+Typically attributes that have numerical values are quantitative, but not always. In our data, consider the attribute that indicates whether the author identifies as a female. Although the values in the data are numeric, these numbers actually represent different categories: 0 = no (not female) and 1 = yes (female). Therefore, this attribute is actually a categorical attribute, not a quantitative attribute.
+
+One check of whether an attribute is actually quantitative is whether numeric computations, such as finding an average of the attribute, can be carried out *and* the result makes conceptual sense. For example, we cannot compute the mean author value (it is thus a categorical attribute). If we compute the mean of the `female` attribute we get a result, but it does not indicate anything about the gender identity of a NYT best selling author. The mean does not make conceptual sense and thus we classify `female` as a categorical attribute.
+
+
+**4. Which attributes are categorical? Which are quantitative?**
+
+Categorical attributes include:
+
+- The title of the book, 
+- The author of the book, 
+- Whether the author identifies as a female (0 = no, 1 = yes), 
+
+
+Quantitative attributes include:
+
+- The year the book was published,
+- The total number of weeks the book was on the NYT Best Sellers list,
+- The first week the book appeared on the NYT Best Sellers list,
+- The book's debut rank on the NYT Best Sellers list, and 
+- The book's highest rank while it was on the NYT Best Sellers list.
+
+<br />
+
+
+
+## Context and Background
+
+The answers to the last three questions give us information about the data's context, which is key to drawing reasonable conclusions and interpreting any data visualization. If you are the one collecting the data, you should record all of this information so others have access to it. For the NYT best sellers data here are the answers to these questions:
+
+
+**5. Who collected the data?** 
+
+Jordan Pruett collected the data for the Post45 Data Collective. The Post45 Data Collective peer reviews and houses post-1945 literary data on an open-access website designed, hosted, and maintained by Emory University’s Center for Digital Scholarship. 
+
+According to LinkedIn Jordan Pruett is a Data Scientist and Python developer working in the Greater Seattle Area at Lyssn (a company helping providers in health and human services and wellness improve engagement, satisfaction, and outcomes).
+
+
+
+**6. For what purpose (why) were the data collected?**
+
+As per [Post45 Data Collective](https://data.post45.org/posts/nyt_hardcover_fiction_bestsellers/#significance-and-context),
+
+> "These datasets provide valuable metadata for researchers of 20th century American literature working in fields such as cultural analytics, book and publishing history, and the sociology of literature. In cultural analytics, recent scholarship has used bestseller status as a rough proxy for popularity, enabling researchers to computationally model the textual boundaries between, for instance, popular and prizewinning fiction (Algee-Hewitt and McGurl 2015; Piper et al. 2016b; English 2016). Previous research of this kind has often relied on the Publishers Weekly annual bestseller list. Although Publishers Weekly also publishes a weekly list, it is not readily accessible to researchers. In contrast to the Publishers Weekly annual list, this dataset reports weekly bestsellers, and therefore captures a much broader subset of the historical literary marketplace."
+
+
+**7. How and where were the data collected?** 
+
+These data were scraped from Hawes Publications, an online repository that publishes a PDF transcript of the list for every year of the last going back to 1931, using the open-source Python library pdfminer.
+
+<!-- This knowledge helps us consider representation which is useful as we consider who or what the data visualization will be helping people understand. For example, are these 25 books representative of all books? New York Times bestselling books? New York Times bestselling hardcover books? New York Times bestselling hardcover fiction books? Since they were randomly sampled from New York Times bestselling hardcover books that -->
+
+
+**8. Are there any issues or ethical considerations to be aware of with the data?**
+
+By understanding who collected the data, for what purpose, and how it was collected we can start to evaluate things that might distort the information being communicated (e.g., bias in which data were collected). For example if the data of best selling books was made available by Random House (a major publishing company), we might be worried about whether books from other publishers were being fairly included. Additionally, we want to consider any other ethical considerations. For example, we would want to not only consider things like anonymity or privacy, but also whether the data should be used for something that it wasn't originally intended for. 
+
+
+The [Post45 Data Collective](https://data.post45.org/posts/nyt_hardcover_fiction_bestsellers/#significance-and-context) lays out several ethical considerations, including:
+
+- Considering the limitations of drawing historical or cultural conclusions from bestseller data;
+- Hardcover sales at bookstores are especially unrepresentative of the broader book market in the early years of the "paperback revolution" after WWII, when most popular novels were sold in paperback format at non-bookstore outlets like drugstores.
+- The Times only expanded its coverage to include nationwide bestsellers in September of 1945. Before that, entries are based on sales in New York or other metropolitan areas.
+
+<br />
+
+
+## Data Dictionaries: Documentation for the Data
+
+The answers to these eight questions about the data are often compiled into a document called a *data dictionary* or a *data codebook*. In this class you will often be provided with a data dictionary along with the data. You should always read through the data dictionary. This provides important information about the data that helps you interpret and use the data more effectively. If you collect data as part of a study or project, you should create a dictionary for the data.
+
+A data dictionary for the New York Times bestseller data is shown below.
+
+
+:::mathnote
+**Data Dictionary for nyt-best-sellers.csv**
+
+The data in *nyt-best-sellers.csv* is a sample from a larger dataset collected by Jordan Pruett for the Post45 Data Collective. The Post45 Data Collective peer reviews and houses post-1945 literary data on an open-access website designed, hosted, and maintained by Emory University’s Center for Digital Scholarship. 
+
+
+The larger dataset was obtained by scraping Hawes Publications, an online repository that publishes a PDF transcript of the list for every year of the last going back to 1931, using the open-source Python library pdfminer. The 25 books in the data were randomly sampled from a list of all unique titles that appeared in the weekly New York Times bestselling hardcover fiction books list from 1931--2020. The attributes in this data include:
+
+- `year`: The year the book was published (formatted as YYYY).
+- `title`: The title of the book (formatted in all uppercase).
+- `author`: The author of the book (formatted in title case). 
+- `female`: Whether the author identifies as a female (0 = no, 1 = yes). 
+- `total_weeks`: The total number of weeks the book was on the NYT Best Sellers list. 
+- `first_week`: The first week the book appeared on the NYT Best Sellers list (formatted as m/d/yy). 
+- `debut_rank`: The book's debut rank on the NYT Best Sellers list. 
+- `best_rank`: The book's highest rank while it was on the NYT Best Sellers list.
+
+:::
+
+
+
+
+
+
+## Exercises: Your Turn {-}
+
+Inside Airbnb is a mission driven project that provides data and advocacy about Airbnb's impact on residential communities. The data below constitutes a random sample of Airbnb listings from the Twin Cities scraped by Inside Airbnb. Use these data along with information form the data dictionary to answer questions 1--4 below.
+
+
+```{r}
+#| label: airbnb-data
+#| echo: false
+#| message: false
+
+airbnb = readr::read_csv("data/airbnb.csv")
+DT::datatable(airbnb)
+```
+
+
+<br />
+
+
+1. What are the cases and how many are in the data?
+
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_01');">Show/Hide Solution</button>
+
+<div id="exercise_01" style="display:none; margin: -40px 0 40px 40px;">
+A case in this data set is an individual Airbnb listing. There are 500 cases (listings) in the data.
+</div>
+
+
+2. What are the attribute names and how many attributes are included in the data?
+
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_02');">Show/Hide Solution</button>
+
+<div id="exercise_02" style="display:none; margin: -40px 0 40px 40px;">
+There are 11 attributes in the data. These include:
+
+- `id`
+- `name`
+- `host_response_rate`
+- `host_acceptance_rate`
+- `host_is_superhost`
+- `host_listings_count`
+- `room_type`
+- `accommodates`
+- `beds`
+- `price`
+- `minimum_nights`
+</div>
+
+
+3. What does each attribute represent? 
+
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03');">Show/Hide Solution</button>
+
+<div id="exercise_03" style="display:none; margin: -40px 0 40px 40px;">
+There are 11 attributes in the data. These include:
+
+- `id`: Airbnb's unique identifier for the listing
+- `name`: Name of the listing
+- `host_response_rate`: The percentage of guest inquiries responded to by the host within 24 hours (from 1--100 percent).
+- `host_acceptance_rate`: The percentage of booking requests accepted by the host (from 1--100 percent).
+- `host_is_superhost`: The host has is an Airbnb Superhost (TRUE or FALSE)
+- `host_listings_count`: The number of listings the host has
+- `room_type`: Airbnb's classification of the type of room for the listing ("Entire home/apt"; "Private room"; "Shared room"; or "Hotel room")
+- `accommodates`: The maximum capacity of the listing.
+- `beds`: The number of bed(s).
+- `price`: Daily price in local currency; in these data it is in U.S. dollars.
+- `minimum_nights`: The minimum number of night stay for the listing.
+</div>
+
+
+4. Which attributes are categorical? Which are quantitative? 
+
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04');">Show/Hide Solution</button>
+
+<div id="exercise_04" style="display:none; margin: -40px 0 40px 40px;">
+Categorical attributes include:
+
+- id
+- name
+- host_is_superhost
+- room_type
+
+Quantitative attributes include:
+
+- host_response_rate
+- host_acceptance_rate
+- host_listings_count
+- accommodates
+- beds
+- price
+- minimum_nights
+</div>
+
+
+
+Inside Airbnb listings includes a lot of [information about the data](https://insideairbnb.com/get-the-data/) in "Data Resources" on their website. In particular the "Data Dictionary" and "Data Assumptions" pages have a great deal of useful information.
+
+
+5. Who/what organization collected the data? 
+
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_05');">Show/Hide Solution</button>
+
+<div id="exercise_05" style="display:none; margin: -40px 0 40px 40px;">
+The data were collected by Inside Airbnb
+</div>
+
+
+6. For what purpose (why) were the data collected?
+
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_06');">Show/Hide Solution</button>
+
+<div id="exercise_06" style="display:none; margin: -40px 0 40px 40px;">
+The data were collected as part of Inside Airbnb's a mission driven project to provides data and advocacy about Airbnb's impact on residential communities in an effort to empower communities to understand, decide and control the role of renting residential homes to tourists.
+</div>
+
+
+7. How and where were the data collected?
+
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_07');">Show/Hide Solution</button>
+
+<div id="exercise_07" style="display:none; margin: -40px 0 40px 40px;">
+The data were collected from public information compiled from the Airbnb web-site including the availabiity calendar for 365 days in the future, and the reviews for each listing. Data is verified, cleansed, analyzed and aggregated by Inside Airbnb.
+</div>
+
+
+
+8. Are there any issues or ethical considerations to be aware of with the data?
+
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_08');">Show/Hide Solution</button>
+
+<div id="exercise_08" style="display:none; margin: -40px 0 40px 40px;">
+- Location information for listings are anonymized by Airbnb.
+- Listings can be deleted in the Airbnb platform. The data presented here is a snapshot of listings available at a particular time.
+- The Airbnb calendar for a listing does not differentiate between a booked night vs an unavailable night, therefore these bookings have been counted as "unavailable". This serves to understate the Availability metric because popular listings will be "booked" rather than being "blacked out" by a host.
+- Some hosts might not keep their calendar updated, or have it highly available even though they live in the entire home/apartment.
+</div>
+
+
+<br />
+
+
+## References
+
+
+
+
+
+
+

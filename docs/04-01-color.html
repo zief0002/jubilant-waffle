@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; More Colors with RGB and HEX – Data Visualization: Summarizing and Communicating Patterns in Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-d6a2ae2cb249da1580f0a11f71b8f854.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9efa02ec1c9fc2ae2ff3301d4cc10a3d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script id="quarto-axe-checker-options" type="text/plain">dHJ1ZQ==</script>
+<script type="text/javascript">
+// Function to toggle the visibility of solutions in exercises
+function toggle_visibility(id) {
+   var e = document.getElementById(id);
+   if(e.style.display == 'block')
+      e.style.display = 'none';
+   else
+      e.style.display = 'block';
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="assets/sticky-notes.css">
+<link rel="stylesheet" href="assets/table-styles.css">
+</head>
+
+<body class="nav-sidebar floating fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"><span id="sec-labels" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Data Visualization: Summarizing and Communicating Patterns in Data</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Front Matter</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-00-computational-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tools for Visualization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-r-and-rstudio-installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing the Computational Tools for the Course</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02-introduction-to-rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Using RStudio</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03-r-packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing and Loading R Packages</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04-script-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Script Files: Saving Your Syntax</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-00-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01-questions-to-ask-about-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Questions to Ask About Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02-importing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Importing Data into an RMD Document</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-00-visualizing-and-describing-univariate-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualizing and Describing Univariate Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01-visualizing-quantitative-attributes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Visualizing and Describing Quantitative Attributes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02-visualizing-categorical-attributes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Visualizing and Describing Categorical Attributes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01-color.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span id="sec-labels" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In the previous chapters, you learned how to add color to a plot using names that R recognizes (e.g., maroon, black). While there are many color names that R recognizes, there are many times that you want to use a more specific color in your data visualization for aesthetic reasons or branding. For example, suppose we were creating a data visualization for the University of Minnesota. The color name “maroon” (<span style="color: #B03060; font-size: 2em; vertical-align: middle;">■</span>) is not the official maroon of the university (<span style="color: #7A0019;font-size: 2em; vertical-align: middle;">■</span>). In this chapter, you will learn how color is interpreted by computers and how we can use the RGB color model and HEX notation to express up to 16 million different colors.</p>
+<p><br></p>
+<section id="the-human-eye-and-color-perception" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="the-human-eye-and-color-perception"><span class="header-section-number">9.1</span> The Human Eye and Color Perception</h2>
+<p>In 1704, <span class="citation" data-cites="Newton:1704">Newton (<a href="#ref-Newton:1704" role="doc-biblioref">1704</a>)</span> suggested that objects don’t possess color, rather they reflect or absorb different wavelengths of light. The human eye detects only the reflected wavelengths of light which is perceived as color. When light enters your eye and hits your retina, it activates the millions of rods and cones which are the tiny biological translators (photoreceptor cells) that convert light into electrical signals for the brain. The cones are what get activated that allow us to perceive color.</p>
+<p>There are three distinct types of cones in our eyeballs, and each is sensitive to the long, medium or short wavelengths of light.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (Many times they are referred to as long, medium, and short cones for this reason.)</p>
+<ul>
+<li>Long cones: Most sensitive to the wavelengths that we perceive as red.</li>
+<li>Medium cones: Most sensitive to the wavelengths that we perceive as green.</li>
+<li>Short cones: Most sensitive to the wavelengths that we perceive as blue.</li>
+</ul>
+<p>Of course we see more colors than just red, green, and blue. When light hits the retina, it activates more than one type of cone, but often in different ratios. For example, when we see the color yellow, the light reflecting off an object is activating more of the long and medium cones than the short cones. This mixing allows most humans to perceive millions of colors. Human’s ability to perceive the entire spectrum of colors from the mixing just three primary signals is called the Trichromacy Theory (also known as the Young-Helmholtz Theory).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> This theory is the basis behind many of the models to create color on a computer.</p>
+<p><br></p>
+</section>
+<section id="the-rgb-color-model" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="the-rgb-color-model"><span class="header-section-number">9.2</span> The RGB Color Model</h2>
+<p>The RGB (red-green-blue) color model is one of the most common models for producing color on electronic screens (e.g., computers, TVs). To create a color, a red light beam, a green light beam, and a blue light beam (components) are superimposed on one another. Each component can have an intensity from 0 (none of the component light) to 255 (full intensity of that component light). By combining varying intensities of each red, green, and blue component we can create many different colors.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> In fact, since there are 256 possibilities for each component and there are three components, there are about 16.7 million potential colors we can create with this model:</p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{Total~number~of~colors} &amp;= 256 \times 256 \times 256 \\[2ex]
+&amp;= 16,777,216
+\end{split}
+\]</span></p>
+<p>In practice, when we use this model all we need to do is specify the intensity of each of the three components using a value from 0–255. For example, to specify the color red we would use:</p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{R} &amp;= 255 \\
+\mathrm{G} &amp;= 0 \\
+\mathrm{B} &amp;= 0
+\end{split}
+\]</span></p>
+<p>Instead of listing these out like this, we often provide the intensities for the three components as an ordered triple:</p>
+<p><span class="math display">\[
+\mathrm{Red} = (255,~0,~0)
+\]</span></p>
+<p>Here are the RGB specifications for some other common colors:</p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{Red} &amp;= (255,~0,~0) \\
+\mathrm{Green} &amp;= (0,~255,~0) \\
+\mathrm{Blue} &amp;= (0,~0,~255)\\
+\mathrm{Cyan} &amp;= (0,~255,~255)\\
+\mathrm{Magenta} &amp;= (255,~0,~255)\\
+\mathrm{Yellow} &amp;= (255,~255,~0)\\
+\mathrm{Black} &amp;= (0,~0,~0) \\
+\mathrm{White} &amp;= (255,~255,~255)\\
+\end{split}
+\]</span> In the RGB model, red, green, and blue are called primary colors because they have full intensity of one component and no intensity of the other components. The secondary colors are cyan, magenta, and yellow because they are created by combining two of the primary colors. White is the combination of all three primary colors, and black is the absence of all three primary colors.</p>
+<p>You can add intensity values to each component in the RGB Color Generator below to see what colors are produced.</p>
+<iframe src="assets/rgb-color-generator.html" title="RGB Color Generator" style="width:100%; height: 500px;"></iframe>
+<p><br></p>
+</section>
+<section id="expressing-rgb-color-in-binary-values" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="expressing-rgb-color-in-binary-values"><span class="header-section-number">9.3</span> Expressing RGB Color in Binary Values</h2>
+<p>When a computer goes to represent an RGB color it converts the intensity values to a binary value (i.e., Base 2). A binary number is only composed of 0s and 1s. Each digit in a binary number is called a “bit” (binary unit) and to represent values from 0 to 255 we need 8 digits or 8 bits. For example, the value 0 in binary is 00000000 and the value 255 in binary is 11111111. To represent a color a computer processes a 24-bit string that looks like this: 11111111 01010111 00110011. This is equivalent to the RGB color (255, 87, 51).</p>
+<p><br></p>
+<section id="converting-binary-to-base-10" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="converting-binary-to-base-10"><span class="header-section-number">9.3.1</span> Converting Binary to Base-10</h3>
+<p>The number we know as 253 is a three digit number in base-10. In representing 253, you might have learned about the ones, tens and hundreds place in the number—the 2 is in the hundreds place, the 5 is in the tens place, and the 3 is in the ones place. We can also represent these “places” using the powers of 10:</p>
+<ul>
+<li>Ones place is <span class="math inline">\(10^0\)</span></li>
+<li>Tens place is <span class="math inline">\(10^1\)</span></li>
+<li>Hundreds place is <span class="math inline">\(10^2\)</span></li>
+</ul>
+<p>If you think about a number that has a thousands place, this is just <span class="math inline">\(10^4\)</span>. Going back to our number 251, this is telling us that we have two <span class="math inline">\(10^2\)</span>s, five <span class="math inline">\(10^1\)</span>s, and three <span class="math inline">\(10^0\)</span>s. Mathematically, we can express this as:</p>
+<p><span class="math display">\[
+253 = (2 \times 10^2) + (5 \times 10^1) + (3 \times 10^0)
+\]</span></p>
+<p>Thinking about the “places” in a number as powers helps us generalize to more than just base-10. For example, to write a number in base-2, now it is not powers of 10 in the “places”, but powers of 2. Looking at the three bit number 101, this is:</p>
+<p><span class="math display">\[
+\begin{split}
+101 &amp;= (1 \times 2^2) + (0 \times 2^1) + (1 \times 2^0) \\
+&amp;= 4 + 2 + 1 \\
+&amp;= 7
+\end{split}
+\]</span></p>
+<p>So 101 in base-2 is equivalent to 7 in base-10. For our colors, recall that we have an 8-bit string to represent each channel. So in the color 11111111 01010111 00110011, the first channel (R) is 11111111. Translating this to base-10:</p>
+<p><span class="math display">\[
+\begin{split}
+11111111 &amp;= (1 \times 2^7) + (1 \times 2^6) + (1 \times 2^5) + (1 \times 2^4) + (1 \times 2^3) + \\
+&amp;~~~~~(1 \times 2^2) + (1 \times 2^1) + (1 \times 2^0) \\
+&amp;= 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 \\
+&amp;= 255
+\end{split}
+\]</span></p>
+<p>The second channel (G) is 01010111, which translated to base-10 is:</p>
+<p><span class="math display">\[
+\begin{split}
+01010111 &amp;= (0 \times 2^7) + (1 \times 2^6) + (0 \times 2^5) + (1 \times 2^4) + (0 \times 2^3) +\\
+&amp;~~~~~(1 \times 2^2) + (1 \times 2^1) + (1 \times 2^0) \\
+&amp;= 0 + 64 + 0 + 16 + 0 + 4 + 2 + 1 \\
+&amp;= 87
+\end{split}
+\]</span></p>
+<p>Finally, the third channel (B) is 00110011, which translated to base-10 is:</p>
+<p><span class="math display">\[
+\begin{split}
+00110011 &amp;= (0 \times 2^7) + (0 \times 2^6) + (1 \times 2^5) + (1 \times 2^4) + (0 \times 2^3) +\\
+&amp;~~~~~(0 \times 2^2) + (1 \times 2^1) + (1 \times 2^0) \\
+&amp;= 0 + 0 + 32 + 16 + 0 + 0 + 2 + 1 \\
+&amp;= 51
+\end{split}
+\]</span></p>
+<p><br></p>
+</section>
+<section id="converting-base-10-to-binary" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="converting-base-10-to-binary"><span class="header-section-number">9.3.2</span> Converting Base-10 to Binary</h3>
+<p>Now that we know how to translate base-2 to base-10, how can we translate base-10 to base-2? For example, what is the binary 8-bit representation of the base-10 RGB color of (42, 111, 75)? To figure this out we need to take each channel of the RGB color and determine the values for each of the question marks in the following:</p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{Channel~Value} = &amp;(? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\
+&amp;(? \times 2^2) + (? \times 2^1) + (? \times 2^0)
+\end{split}
+\]</span></p>
+<p>For example, for the R channel:</p>
+<p><span class="math display">\[
+\begin{split}
+42 = &amp;(? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\
+&amp;(? \times 2^2) + (? \times 2^1) + (? \times 2^0)
+\end{split}
+\]</span> It is easier to do this once we compute the powers of 2 in this mathematical statement.</p>
+<p><span class="math display">\[
+\begin{split}
+42 = &amp;(? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) + \\
+&amp;(? \times 4) + (? \times 2) + (? \times 1)
+\end{split}
+\]</span> Finally, before we figure this out, we need to keep in mind that every digit in a base-2 number can only be a 0 or 1. (This is different from a base-10 number, where every digit can be 0–9.) Filling in each question mark with either a 0 or 1, how do we make it so the overall sum is 42?</p>
+<p><span class="math display">\[
+\begin{split}
+42 = &amp;(0 \times 128) + (0 \times 64) + (1 \times 32) + (0 \times 16) + (1 \times 8) +\\
+&amp;(0 \times 4) + (1 \times 2) + (0 \times 1)
+\end{split}
+\]</span> The 8-bit binary number that is equivalent to 42 is 00101010. Now to solve for the G channel:</p>
+<p><span class="math display">\[
+\begin{split}
+111 &amp;= (? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\
+&amp;~~~~~(? \times 2^2) + (? \times 2^1) + (? \times 2^0) \\[1ex]
+&amp;= (? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) +\\
+&amp;~~~~~(? \times 4) + (? \times 2) + (? \times 1) \\[1ex]
+&amp;= (0 \times 128) + (1 \times 64) + (1 \times 32) + (0 \times 16) + (1 \times 8) +\\
+&amp;~~~~~(1 \times 4) + (1 \times 2) + (1 \times 1)
+\end{split}
+\]</span></p>
+<p>The 8-bit binary number that is equivalent to 111 is 01101111. Finally, we solve for the B channel:</p>
+<p><span class="math display">\[
+\begin{split}
+75 &amp;= (? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\
+&amp;~~~~~(? \times 2^2) + (? \times 2^1) + (? \times 2^0) \\[1ex]
+&amp;= (? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) +\\
+&amp;~~~~~(? \times 4) + (? \times 2) + (? \times 1) \\[1ex]
+&amp;= (0 \times 128) + (1 \times 64) + (0 \times 32) + (0 \times 16) + (1 \times 8) +\\
+&amp;~~~~~(0 \times 4) + (1 \times 2) + (1 \times 1)
+\end{split}
+\]</span></p>
+<p>The 8-bit binary number that is equivalent to 75 is 01001011. So the binary equivalent of the RGB color (42, 111, 75) is 01101111 01101111 01001011.</p>
+<div class="fyi">
+<p><strong>FUN FACT</strong></p>
+<p>Computers store information in their memory in 8-bit units. Each 8-bit unit is called a <em>byte</em>. Each color channel takes up one byte in memory. Today’s computers have memories that are generally 16 GB or 16 gigabytes. A gigabyte has 125 million bytes, so taking up three bytes out of the two-billion bytes in a modern computer’s memory is trivial!</p>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="hexadecimal-notation-base-16" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="hexadecimal-notation-base-16"><span class="header-section-number">9.4</span> Hexadecimal Notation: Base-16</h2>
+<p>Although binary is what computers use, it is rather difficult for humans to write in binary. Think about how easy it would be to make a mistake in writing out the 24-bit string for a color! Instead early computer scientists took advantage of different bases to express information which was both easier for humans, but could be translated easily into binary. They settled on base-16, or hexadecimal.</p>
+<p>Base-16 numbers use powers of 16 for each digit. One nice property for expressing color is that to express each channel we only need two digits! That is because <span class="math inline">\(16^2 = 256\)</span>—which is how many values we have from 0 to 255. For an RGB color, we only need to express six values! This is far easier than using binary which would take 24—humans are far less likely to make a mistake with only six values. For example, the <a href="https://umarcomm.umn.edu/resources/colors-and-type">official primary maroon color</a> for the University of Minnesota is: #7A0019.</p>
+<p>The hashtag is used to indicate that the color value is in hexadecimal (base-16) notation. When we read a color in hexadecimal notation, the first two values are the red channel, the second two values are the green channel, and the last two values are the blue channel; #RRGGBB. In our example:</p>
+<ul>
+<li>R = 7A</li>
+<li>G = 00</li>
+<li>B = 19</li>
+</ul>
+<p>Wait…there’s an A in the red channel’s number?! Yes. Hexadecimal numbers can have letters in them. This is because each digit in a base-16 number can take a value from 0–15. Unfortunately, the values from 10 to 15 are all two digits long so we need to use different entities to indicate these values. Because of this we replace the two digit possbilities with letters so that the values for each digit in a base-16 numer can be: 0–9, and A–F, where,</p>
+<ul>
+<li>A = 10</li>
+<li>B = 11</li>
+<li>C = 12</li>
+<li>D = 13</li>
+<li>E = 14</li>
+<li>F = 15</li>
+</ul>
+<p><br></p>
+<section id="converting-hexadecimal-to-base-10" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="converting-hexadecimal-to-base-10"><span class="header-section-number">9.4.1</span> Converting Hexadecimal to Base-10</h3>
+<p>In converting a base-16 to base-10 value, we use the same idea as we did for base-2; only we will use the base of 16 in our conversion. As an example consider the red channel in our UMN maroon: 7A. To convert this to base-10 we use:</p>
+<p><span class="math display">\[
+\begin{split}
+7\mathrm{A} &amp;= (7 \times 16^1) + (\mathrm{A} \times 16^0) \\[1ex]
+&amp;= (7 \times 16^1) + (10 \times 16^0) \\[1ex]
+&amp;= 112 + 14 \\[1ex]
+&amp;= 126
+\end{split}
+\]</span></p>
+<p>For the green channel:</p>
+<p><span class="math display">\[
+\begin{split}
+00 &amp;= (0 \times 16^1) + (0 \times 16^0) \\[1ex]
+&amp;= 0 + 0 \\[1ex]
+&amp;= 0
+\end{split}
+\]</span></p>
+<p>And for the blue channel:</p>
+<p><span class="math display">\[
+\begin{split}
+19 &amp;= (1 \times 16^1) + (9 \times 16^0) \\[1ex]
+&amp;= 16 + 9 \\[1ex]
+&amp;= 25
+\end{split}
+\]</span></p>
+<p>So the maroon expressed as #7A0019 can be expressed as an RGB color of (126, 0, 25). Check this in the RGB Color Mixer above to see the result.</p>
+<p><br></p>
+</section>
+<section id="converting-base-10-to-hexadecimal" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="converting-base-10-to-hexadecimal"><span class="header-section-number">9.4.2</span> Converting Base-10 to Hexadecimal</h3>
+<p>We will use the same process for translating base-10 to base-16 that we did when we translated base-10 to base-2. We take each channel of the RGB color and determine the values for each of the question marks in the following:</p>
+<p><span class="math display">\[
+\mathrm{Channel~Value} = (? \times 16^1) + (? \times 16^0)
+\]</span></p>
+<p>For example, say we wanted to get the hexadecimal notation for the RGB color (255, 183, 30). To translate the R channel:</p>
+<p><span class="math display">\[
+\begin{split}
+255 &amp;= (? \times 16^1) + (? \times 16^0) \\[1ex]
+&amp;= (? \times 16) + (? \times 1) \\[1ex]
+&amp;= (15 \times 16) + (15 \times 1) \\[1ex]
+&amp;= \textrm{FF}
+\end{split}
+\]</span> For the G channel:</p>
+<p><span class="math display">\[
+\begin{split}
+183 &amp;= (? \times 16^1) + (? \times 16^0) \\[1ex]
+&amp;= (? \times 16) + (? \times 1) \\[1ex]
+&amp;= (11 \times 16) + (7 \times 1) \\[1ex]
+&amp;= \textrm{B7}
+\end{split}
+\]</span> Finally, for the B channel:</p>
+<p><span class="math display">\[
+\begin{split}
+30 &amp;= (? \times 16^1) + (? \times 16^0) \\[1ex]
+&amp;= (? \times 16) + (? \times 1) \\[1ex]
+&amp;= (1 \times 16) + (14 \times 1) \\[1ex]
+&amp;= \textrm{1E}
+\end{split}
+\]</span></p>
+<p>So the hexadecimal notation for the RGB color (255, 183, 30) is #FFB71E.</p>
+<div class="fyi">
+<p><strong>PROTIP</strong></p>
+<p>There are many online converters for translating between RGB and HEX. While you will need to be able to show the mathematics of how you translate between different bases, you can check your work with these converters.</p>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="using-hex-colors-in-r" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="using-hex-colors-in-r"><span class="header-section-number">9.5</span> Using HEX Colors in R</h2>
+<p>To illustrate how to use HEX colors in our data visualizations, we will work with the <em>mn-colleges.csv</em> data. In the first code chunk of your QMD document, load the <code>{tidyverse}</code> library and use the <code>read_csv()</code> function to import the <em>mn-colleges.csv</em> data and assign the data into an object called <code>mn</code>. (You also might want to view the data to ensure that it imported into the QMD correctly.) Don’t forget to add code comments as well!</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>mn <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/mn-colleges.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>We will create a histogram of the acceptance rates using the <code>geom_histogram()</code> function in a new code chunk in the QMD document. Inside the code chunk we will add the following syntax:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mn, <span class="fu">aes</span>(<span class="at">x =</span> accept_rate)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>We can use HEX colors in the <code>color=</code> and <code>fill=</code> arguments. Similar to the color names we used, the HEX codes need to be enclosed in quotation marks. We also need to include the hashtag (<code>#</code>) to inform R that the color is in HEX notation. For example, to color the interior of our boxplot using the primary UMN maroon (<code>#7A0019</code>) and the border using the secondary dark gold (<code>#FFB71E</code>), we use:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mn, <span class="fu">aes</span>(<span class="at">x =</span> accept_rate)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"#FFB71E"</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"#7A0019"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-bp-umn" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. The border is colored using the secondary dark gold and the interior of the plot is filled with the primary maroon color for UMN.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bp-umn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="04-01-color_files/figure-html/fig-bp-umn-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;9.1: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. The border is colored using the secondary dark gold and the interior of the plot is filled with the primary maroon color for UMN."><img src="04-01-color_files/figure-html/fig-bp-umn-1.png" class="img-fluid figure-img" style="width:70.0%" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. The border is colored using the secondary dark gold and the interior of the plot is filled with the primary maroon color for UMN."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bp-umn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. The border is colored using the secondary dark gold and the interior of the plot is filled with the primary maroon color for UMN.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="exercises-your-turn" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises-your-turn">Exercises: Your Turn</h2>
+<ol type="1">
+<li>The primary gold color of the University of Minnesota has an RGB notation of (255, 204, 51). Convert this to binary notation. Show your work.</li>
+</ol>
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-01');">
+Show/Hide Solution
+</button>
+<div id="exercise_04-01-01" style="display:none; margin: -40px 0 40px 40px;">
+<p><strong>R channel</strong></p>
+<p><span class="math display">\[
+\begin{split}
+255 &amp;= (? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\
+&amp;~~~~~(? \times 2^2) + (? \times 2^1) + (? \times 2^0) \\[1ex]
+&amp;= (? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) +\\
+&amp;~~~~~(? \times 4) + (? \times 2) + (? \times 1) \\[1ex]
+&amp;= (1 \times 128) + (1 \times 64) + (1 \times 32) + (1 \times 16) + (1 \times 8) +\\
+&amp;~~~~~(1 \times 4) + (1 \times 2) + (1 \times 1) \\[1ex]
+&amp;= 11111111
+\end{split}
+\]</span></p>
+<p><strong>G channel</strong></p>
+<p><span class="math display">\[
+\begin{split}
+204 &amp;= (? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\
+&amp;~~~~~(? \times 2^2) + (? \times 2^1) + (? \times 2^0) \\[1ex]
+&amp;= (? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) +\\
+&amp;~~~~~(? \times 4) + (? \times 2) + (? \times 1) \\[1ex]
+&amp;= (1 \times 128) + (1 \times 64) + (0 \times 32) + (0 \times 16) + (1 \times 8) +\\
+&amp;~~~~~(1 \times 4) + (0 \times 2) + (0 \times 1) \\[1ex]
+&amp;= 11001100
+\end{split}
+\]</span></p>
+<p><strong>B channel</strong></p>
+<p><span class="math display">\[
+\begin{split}
+51 &amp;= (? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\
+&amp;~~~~~(? \times 2^2) + (? \times 2^1) + (? \times 2^0) \\[1ex]
+&amp;= (? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) +\\
+&amp;~~~~~(? \times 4) + (? \times 2) + (? \times 1) \\[1ex]
+&amp;= (0 \times 128) + (0 \times 64) + (1 \times 32) + (1 \times 16) + (0 \times 8) +\\
+&amp;~~~~~(0 \times 4) + (1 \times 2) + (1 \times 1) \\[1ex]
+&amp;= 00110011
+\end{split}
+\]</span></p>
+<p>So the binary notation for (255, 204, 51) is 11111111 11001100 00110011.</p>
+</div>
+<ol start="2" type="1">
+<li>The primary gold color of the University of Minnesota has an RGB notation of (255, 204, 51). Convert this to HEX notation. Show your work.</li>
+</ol>
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-02');">
+Show/Hide Solution
+</button>
+<div id="exercise_04-01-02" style="display:none; margin: -40px 0 40px 40px;">
+<p><strong>R channel</strong></p>
+<p><span class="math display">\[
+\begin{split}
+255 &amp;= (? \times 16^1) + (? \times 16^0) \\[1ex]
+&amp;= (? \times 16) + (? \times 1) \\[1ex]
+&amp;= (15 \times 16) + (15 \times 1) \\[1ex]
+&amp;= \textrm{FF}
+\end{split}
+\]</span></p>
+<p><strong>G channel</strong></p>
+<p><span class="math display">\[
+\begin{split}
+204 &amp;= (? \times 16^1) + (? \times 16^0) \\[1ex]
+&amp;= (? \times 16) + (? \times 1) \\[1ex]
+&amp;= (12 \times 16) + (12 \times 1) \\[1ex]
+&amp;= \textrm{CC}
+\end{split}
+\]</span></p>
+<p><strong>B channel</strong></p>
+<p><span class="math display">\[
+\begin{split}
+51 &amp;= (? \times 16^1) + (? \times 16^0) \\[1ex]
+&amp;= (? \times 16) + (? \times 1) \\[1ex]
+&amp;= (3 \times 16) + (3 \times 1) \\[1ex]
+&amp;= \textrm{33}
+\end{split}
+\]</span></p>
+<p>So the HEX notation for (255, 204, 51) is #FFCC33.</p>
+</div>
+<ol start="3" type="1">
+<li>The HEX notation for the University of Minnesota’s secondary light gold is #FFB71E. Convert this to RGB notation. Show your work.</li>
+</ol>
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-03');">
+Show/Hide Solution
+</button>
+<div id="exercise_04-01-03" style="display:none; margin: -40px 0 40px 40px;">
+<p><strong>R channel</strong></p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{FF} &amp;= (\mathrm{F} \times 16^1) + (\mathrm{F} \times 16^0) \\[1ex]
+&amp;= (15 \times 16^1) + (15 \times 16^0) \\[1ex]
+&amp;= 240 + 15 \\[1ex]
+&amp;= 255
+\end{split}
+\]</span></p>
+<p><strong>G channel</strong></p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{B7} &amp;= (\mathrm{B} \times 16^1) + (\mathrm{7} \times 16^0) \\[1ex]
+&amp;= (11 \times 16^1) + (7 \times 16^0) \\[1ex]
+&amp;= 176 + 7 \\[1ex]
+&amp;= 183
+\end{split}
+\]</span></p>
+<p><strong>B channel</strong></p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{1E} &amp;= (\mathrm{1} \times 16^1) + (\mathrm{E} \times 16^0) \\[1ex]
+&amp;= (1 \times 16^1) + (14 \times 16^0) \\[1ex]
+&amp;= 16 + 14 \\[1ex]
+&amp;= 30
+\end{split}
+\]</span></p>
+<p>#FFB71E is (255, 183, 30)</p>
+</div>
+<ol start="4" type="1">
+<li>Use the <em>mn-colleges.csv</em> data to create a density plot of the acceptance rates. Color the interior of the plot using #CBA67B and the border with #695645.</li>
+</ol>
+<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-04');">
+Show/Hide Solution
+</button>
+<div id="exercise_04-01-04" style="display:none; margin: -40px 0 40px 40px;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mn, <span class="fu">aes</span>(<span class="at">x =</span> accept_rate)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"#695645"</span>, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"#CBA67B"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-hist-umn" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Density plot of acceptance rates for the 33 institutions of higher learning in Minnesota.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hist-umn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="04-01-color_files/figure-html/fig-hist-umn-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;9.2: Density plot of acceptance rates for the 33 institutions of higher learning in Minnesota."><img src="04-01-color_files/figure-html/fig-hist-umn-1.png" class="img-fluid figure-img" style="width:70.0%" alt="Density plot of acceptance rates for the 33 institutions of higher learning in Minnesota."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-umn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.2: Density plot of acceptance rates for the 33 institutions of higher learning in Minnesota.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Newton:1704" class="csl-entry" role="listitem">
+Newton, I. (1704). <em>Opticks: Or, a treatise of the reflections, refractions, inflections and colours of light</em>. <span>Printed for Sam. Smith, and Benj. Walford.</span>
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Visible light encompasses wavelengths roughly between 380 and 750 nanometers (nm). Newton described this as a spectrum of light and divided the spectrum into seven named colors: red, orange, yellow, green, blue, indigo, and violet.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Our perception of color has since been augmented by Opponent Process Theory which describes how the brain processes those three signals later on in the visual system.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Because the different wavelengths for the three components essentially sum together to create a new wavelength, the RGB color model is sometimes referred to as an additive model.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

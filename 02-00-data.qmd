@@ -1,0 +1,12 @@
+# Data {#sec-data}
+
+<!-- The American Statistical Association defines statistics as, "the science of learning from data, and of measuring, controlling and communicating uncertainty" [@ASA:2023]. The methods you learn throughout this textbook, and the EPSY 1261 course, will help you to learn from data and to measure, control, and communicate about uncertainty.  -->
+
+An important learning goal of any course on data visualization is to understand the vocabulary and ideas related to data. To this end, in @sec-data-structure you will learn about the structure of data and attribute classification. You will also learn how to judge the quality of data including questions you should ask about the data. 
+
+<!-- @sec-importing-data will introduce the syntax we use to import data into R. Finally, @sec-design will introduce how the collection of the data impacts the type of inferences and conclusions we can draw. -->
+
+<br />
+
+
+## References {-}

@@ -1,0 +1,9 @@
+mn-colleges.csv
+
+- https://www.acceptancerate.com/minnesota
+
+
+
+Bls-earnings
+
+- https://www.bls.gov/cps/cpsaat39.htm
