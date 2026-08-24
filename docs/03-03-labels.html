@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Installing the Computational Tools for the Course – Data Visualization: Summarizing and Communicating Patterns in Data</title>
+<title>10&nbsp; Labels: Improving Interpretation – Data Visualization: Summarizing and Communicating Patterns in Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -101,7 +136,7 @@ function toggle_visibility(id) {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing the Computational Tools for the Course</span></h1>
+          <h1 class="quarto-secondary-nav-title"><span id="sec-labels" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Labels: Improving Interpretation</span></span></h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -142,7 +177,7 @@ function toggle_visibility(id) {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-01-r-and-rstudio-installation.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01-01-r-and-rstudio-installation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing the Computational Tools for the Course</span></span></a>
   </div>
 </li>
@@ -218,7 +253,7 @@ function toggle_visibility(id) {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-03-labels.html" class="sidebar-item-text sidebar-link">
+  <a href="./03-03-labels.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Labels: Improving Interpretation</span></span></a>
   </div>
 </li>
@@ -253,7 +288,7 @@ function toggle_visibility(id) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing the Computational Tools for the Course</span></h1>
+<h1 class="title d-none d-lg-block"><span id="sec-labels" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Labels: Improving Interpretation</span></span></h1>
 </div>
 
 
@@ -270,91 +305,241 @@ function toggle_visibility(id) {
 </header>
 
 
-<p>In this chapter, we will walk you through the process of installing the computational tools that you will need to use to create the data visualizations for this course. There are three applications that you will need to install on your computer:</p>
-<ul>
-<li>R</li>
-<li>RStudio Desktop</li>
-<li>Spreadsheet Application (e.g., Microsoft Excel or Apple Numbers)</li>
-</ul>
-<p>RStudio is the program that you will interact with to create the data visualizations. RStudio itself is just a program for interacting with R. Although you could interact directly with R, RStudio has a lot of features that make it easier and more efficient for using R.</p>
-<p>You will also need a spreadsheet application for interacting with and creating data sets. In particular you need to be able to create a CSV file. Most common spreadsheet applications can create a CSV file, including Microsoft Excel, Apple Numbers, and even Google Sheets).</p>
-<p>You will also need to install a helper tool: Command Line Tools (for Mac users) and Rtools (for PCs). This will be necessary to build some of the R packages that we will use in the course.</p>
-<p>Below we provide instruction for installing each of these applications.</p>
-<p><br></p>
-<section id="installing-r" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="installing-r"><span class="header-section-number">1.1</span> Installing R</h2>
-<p>To install R, navigate your web browser to:</p>
-<p style="margin-left:auto; margin-right:auto;">
-<a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>
-</p>
-<p>Then,</p>
-<ul>
-<li>Click the <code>CRAN</code> link under <code>Download</code> on the left-hand side of the page.</li>
-<li>Select a mirror site. These should all be the same, but I tend to choose the <code>Iowa State University</code> link under <code>USA</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-<li>In the <code>Download and Install R</code> box, choose the binary that matches the operating system (OS) for your computer.</li>
-</ul>
-<p>This is where the installation directions diverge depending on your OS.</p>
-<p><strong>Mac Instructions</strong></p>
-<p>So long as you are running MacOS 10.13 or higher just click the first link for the PKG, which will download the installer for the most current version of R (4.5.2 as of October 31, 2025). Once the download completes, open the installer and follow the directions to install R on your computer.</p>
-<p>If you are running an older version of MacOS, you will have to install an older version of R. You can find these links under the <code>Binaries for legacy OS X systems</code> heading further down the install page. Click the appropriate PKG link for R your version of MacOS. Once the download completes, open the installer and follow the directions to install R on your computer.</p>
-<p>If you are unsure which version of the MacOS is running on your computer, select <code>About this Mac</code> from the Apple menu in your toolbar.</p>
-<p><strong>Windows Instructions</strong></p>
-<p>Click the link that says <code>Install R for the first time</code> (or click <code>base</code>; they go to the same place). Then click the <code>Download R-4.5.2 for Windows</code> link, which will download the installer for the most current version of R (4.5.2 as of October 31, 2025). Once the download completes, open the installer and follow the directions to install R on your computer.</p>
-<div class="fyi">
-<p><strong>FYI</strong></p>
-<p>Although you will need to install R to use RStudio, once they are installed you will only interact with RStudio when you compute. You will never open R directly.</p>
-</div>
-<p><br></p>
-</section>
-<section id="installing-rstudio-desktop" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="installing-rstudio-desktop"><span class="header-section-number">1.2</span> Installing RStudio Desktop</h2>
-<p>After you have installed R, you next need to install RStudio Desktop. To do this, navigate your web browser to:</p>
-<p style="margin-left:auto; margin-right:auto;">
-<a href="https://rstudio.com/products/rstudio/download/" class="uri">https://rstudio.com/products/rstudio/download/</a>
-</p>
-<p>Then,</p>
-<ul>
-<li>Select the blue <code>Download</code> button under the free, open-source version of RStudio Desktop.</li>
-<li>Select the installer associated with your computer’s OS.</li>
-<li>Once the download completes, open the installer and follow the directions to install RStudio Desktop on your computer.</li>
-</ul>
-<p><br></p>
-</section>
-<section id="checking-that-things-worked" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="checking-that-things-worked"><span class="header-section-number">1.3</span> Checking that Things Worked</h2>
-<p>From your Applications or Programs folder, open the RStudio application. If you have successfully downloaded both programs, this should open the application and you should see a message indicating that you are using “R version 4.5.2” (or whichever version of R you installed) in the console pane.</p>
-<div class="cell">
+<p>This chapter will focus on how we can add labels to a plot. Labels include not only the information attached to a plot’s axes, but also a title, subtitle, and footnote to a plot. Labels help us convey information about the datas’ context to people who are engaging with our plot. They also act as a tool to help those readers make more accurate interpretations about the information being presented in the visualization.</p>
+<p><a href="#fig-college-cost" class="quarto-xref">Figure&nbsp;<span>10.1</span></a> shows a visualization that examines the cost of college tuition from 1980 to 2020 and compares that increase to the amount of inflation during that same time period. This visualization has included several different labels to help readers make sense of the visualized data.</p>
+<div class="cell" data-fig-caption="An example data visualization from [Visual Capitalist](https://www.visualcapitalist.com/datastream/).">
 <div class="cell-output-display">
-<div id="fig-rstudio" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Once you open RStudio, you should see a message indicating that you are using `R version 4.6.0` (or whichever version of R you installed) in the console pane. Here the console pane is on the left-side, but it may be in a different location for you. Your RStudio may also have a white background rather than the black background seen here.">
+<div id="fig-college-cost" class="quarto-float quarto-figure quarto-figure-center anchored" width="90%" alt="An example data visualization from Visual Capitalist. URL: https://www.visualcapitalist.com/datastream/">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/01-01-opening-rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1.1: Once you open RStudio, you should see a message indicating that you are using R version 4.6.0 (or whichever version of R you installed) in the console pane. Here the console pane is on the left-side, but it may be in a different location for you. Your RStudio may also have a white background rather than the black background seen here."><img src="figs/01-01-opening-rstudio.png" class="img-fluid figure-img" style="width:100.0%" alt="Once you open RStudio, you should see a message indicating that you are using `R version 4.6.0` (or whichever version of R you installed) in the console pane. Here the console pane is on the left-side, but it may be in a different location for you. Your RStudio may also have a white background rather than the black background seen here."></a>
+<div aria-describedby="fig-college-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figs/04-02-01-college-cost.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;10.1: "><img src="figs/04-02-01-college-cost.png" id="fig-college-cost" class="img-fluid figure-img" style="width:90.0%" alt="An example data visualization from Visual Capitalist. URL: https://www.visualcapitalist.com/datastream/"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: Once you open RStudio, you should see a message indicating that you are using <code>R version 4.6.0</code> (or whichever version of R you installed) in the console pane. Here the console pane is on the left-side, but it may be in a different location for you. Your RStudio may also have a white background rather than the black background seen here.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-college-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.1
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p><br></p>
-</section>
-<section id="installing-a-spreadsheet-application" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="installing-a-spreadsheet-application"><span class="header-section-number">1.4</span> Installing a Spreadsheet Application</h2>
-<p>As a University of Minnesota student, Microsoft Office 365 Pro Plus is available at no charge so long as you are registered for at least one credit. This includes access to Microsoft Excel, Word, and PowerPoint. You can learn more about how to installl this at <a href="https://it.umn.edu/services-technologies/how-tos/microsoft-office-365-pro-plus-faculty" class="uri">https://it.umn.edu/services-technologies/how-tos/microsoft-office-365-pro-plus-faculty</a>.</p>
+<section id="titles-and-subtitles" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="titles-and-subtitles"><span class="header-section-number">10.1</span> Titles and Subtitles</h2>
+<p>The title of a visualization serves the very important purpose of telling the reader what the visualization is about. It acts as an informative headline and provides a concise description that explains the data that are being visualized. Since it is the first text that readers see, it sets the stage for the whole visualization. In <a href="#fig-college-cost" class="quarto-xref">Figure&nbsp;<span>10.1</span></a> the title “The rising cost of college in the U.S.” concisely explains the gist of the visualization.</p>
+<p>The subtitle provides additional details about the data visualization. It often highlights overall or specific findings that you want your audience to attend to. In <a href="#fig-college-cost" class="quarto-xref">Figure&nbsp;<span>10.1</span></a> the subtitle highlights the main finding that the percentage increase in attending college is higher than the percentage increase in inflation. It also provides the amount of increase for both college cost and inflation to further make this point.</p>
+<p>As a second example, consider <a href="#fig-adam-sandler-movies" class="quarto-xref">Figure&nbsp;<span>10.2</span></a>.</p>
+<div class="cell" data-fig-caption="An example data visualization from [fivethirtyeight](https://fivethirtyeight.com/).">
+<div class="cell-output-display">
+<div id="fig-adam-sandler-movies" class="quarto-float quarto-figure quarto-figure-center anchored" width="90%" alt="An example data visualization from fivethirtyeight. URL: https://fivethirtyeight.com/">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adam-sandler-movies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figs/04-02-02-adam-sandler-annotated.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;10.2: "><img src="figs/04-02-02-adam-sandler-annotated.png" id="fig-adam-sandler-movies" class="img-fluid figure-img" style="width:90.0%" alt="An example data visualization from fivethirtyeight. URL: https://fivethirtyeight.com/"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-adam-sandler-movies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.2
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This visualization examines the relationship between the Rotten Tomatoes rating and box office gross for 28 Adam Sandler movies. In this example the title provides the main finding from the data analysis, and the subtitle includes more specific contextual information about the analysis undertaken.</p>
 <p><br></p>
 </section>
-<section id="install-rtoolscommand-line-tools" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="install-rtoolscommand-line-tools"><span class="header-section-number">1.5</span> Install Rtools/Command Line Tools</h2>
-<p>You may need to install some additional functionality to your system in order to get certain packages to install or load properly. On a Windows machine, you might need to install <em>Rtools</em>. Mac users might need to add the <em>Command Line Tools</em>. These tools also allow you to write and compile your own R packages. RStudio has well written instructions for adding these tools at: <a href="https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites" class="uri">https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites</a>.</p>
+<section id="caption" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="caption"><span class="header-section-number">10.2</span> Caption</h2>
+<p>In data visualizations, the caption is typically used to indicate the source of the underlying data. This is important because it helps give credibility to the visualization by making the source of the data transparent. It can also be used to provide notes that give additional information about the underlying data (e.g., how values were computed). The captions in <a href="#fig-college-cost" class="quarto-xref">Figure&nbsp;<span>10.1</span></a> do both of these. The caption on the bottom-right of the visualization provides the source of the underlying data, while the caption on the bottom-left gives us additional information about the basis for how the CPI-based inflation was calculated. In <a href="#fig-adam-sandler-movies" class="quarto-xref">Figure&nbsp;<span>10.2</span></a>, the caption only provides the source of the data used in the visualization.</p>
+<p><br></p>
+</section>
+<section id="axis-labels" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="axis-labels"><span class="header-section-number">10.3</span> Axis Labels</h2>
+<p>Axis labels are typically included to provide important cues for interpreting data visualizations. They define the attributes that are being plotted and also often give information about the scales of those attributes. <a href="#fig-college-cost" class="quarto-xref">Figure&nbsp;<span>10.1</span></a> provides a label for the <em>y</em>-axis which informs us that what is being plotted is the change in percentage. Notice that there is no label on the <em>x</em>-axis in this visualization.</p>
+<p>Despite what your math teachers in high school may have taught you, not every axis needs to be labelled—although it can’t hurt. In this visualization, the data plotted along the <em>x</em>-axis is year. When you look at this visualization, it is instantly obvious what the values on this axis are without a label telling you this. Moreover, after reading the title and subtitle, you could intuit that these values represent years without a label. In contrast, <a href="#fig-adam-sandler-movies" class="quarto-xref">Figure&nbsp;<span>10.2</span></a> includes a label on both axes, since what is being plotted there needs additional text to help the reader interpret the visualization.</p>
+<p><br></p>
+</section>
+<section id="adding-labels-to-a-plot-in-r" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="adding-labels-to-a-plot-in-r"><span class="header-section-number">10.4</span> Adding Labels to a Plot in R</h2>
+<p>To illustrate how we can add labels to a plot, we are going to use the <strong>mn-colleges.csv</strong> data that includes admissions related data for the 33 institutions of higher learning in Minnesota. As a reminder, in the first code chunk of your script file, load the <code>{tidyverse}</code> library. In a second code chunk, use the <code>read_csv()</code> function to import the <em>mn-colleges.csv</em> data and assign the data into an object called <code>mn</code>. (You also might want to view the data to ensure that it imported into RStudio correctly.)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>mn <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/mn-colleges.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Next we create a histogram of the acceptance rate attribute using the following syntax (in a new code chunk).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create histogram</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mn, <span class="fu">aes</span>(<span class="at">x =</span> accept_rate)) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"yellow"</span>, <span class="at">binwidth =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-buildings3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-buildings3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="03-03-labels_files/figure-html/fig-buildings3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;10.3: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota."><img src="03-03-labels_files/figure-html/fig-buildings3-1.png" class="img-fluid figure-img" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota." width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-buildings3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.3: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<section id="adding-labels-to-the-histogram" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="adding-labels-to-the-histogram"><span class="header-section-number">10.4.1</span> Adding Labels to the Histogram</h3>
+<p>To add labels, we are going to modify our original plot by adding a layer to our plot using the <code>labs()</code> function. So the bones of the code will look like this:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Remember, good coding practice suggests that any modifications to the plot go on a separate line of code; this makes it easier to understand the code and also makes it easier for humans to read.</p>
+<p>There are several arguments for <code>labs()</code> depending on which label you want to add/edit. Five arguments<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> that we will use a lot include:</p>
+<ul>
+<li><code>x=</code>: This argument adds/edits the label on the <em>x</em>-axis.</li>
+<li><code>y=</code>: This argument adds/edits the label on the <em>y</em>-axis.</li>
+<li><code>title=</code>: This argument adds/edits the title of the plot.</li>
+<li><code>subtitle=</code>: This argument adds/edits the subtitle of the plot.</li>
+<li><code>caption=</code>: This argument adds/edits the caption of the plot.</li>
+</ul>
+<p>Each of these arguments takes a text string (i.e., enclosed in quotation marks) that gives the text you want to appear in that label. As an example consider the rendered plot using the following labels.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mn, <span class="fu">aes</span>(<span class="at">x =</span> accept_rate)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"yellow"</span>, <span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Acceptance rate"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Acceptance Rates for Institutions of Higher Learning"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Rates for the 33 institutions of higher learning in Minnesota"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: College Scorecard"</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="03-03-labels_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="03-03-labels_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. Labels have been added to help readers better understand the visualization." width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Writing good labels is a process, and much like essays or papers, your first draft may not be the final draft. Looking at our labels, there are several improvements that can be made: (1) The title doesn’t capture the visualization well. The current title and subtitle could be merged. (2) the title needs to stand out more from the subtitle. (3) The new subtitle could include more description of the visualization.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mn, <span class="fu">aes</span>(<span class="at">x =</span> accept_rate)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"yellow"</span>, <span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Acceptance rate"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"ACCEPTANCE RATES FOR THE 33 INSTITUTIONS OF HIGHER LEARNING IN MINNESOTA"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Most institutions admit a high proportion of applicants. A typical institution in the distribution admits around 65% of its applicants (±10%). There are, however, a few institutions that are quite selective, admitting fewer than 30% of the students who apply. Similarly there are some institutions that accept almost all of their applicants."</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: College Scorecard"</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="03-03-labels_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="03-03-labels_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. We updated the title and subtitle." width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This draft is better, but (1) our subtitle runs off the page, and (2) we might want to add vertical space between the title and subtitle, and between the <em>x</em>-axis label and the caption.</p>
+<div class="fyi">
+<p><strong>PROTIP</strong></p>
+<p>In long labels, you can add a line break with <code>\n</code>. This means newline. You can add as many of these as you need to make sure that text doesn’t run off the page. They can also be added at the beginning of the label to add vertical space between elements in the visualization.</p>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mn, <span class="fu">aes</span>(<span class="at">x =</span> accept_rate)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"yellow"</span>, <span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Acceptance rate"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"ACCEPTANCE RATES FOR THE 33 INSTITUTIONS OF HIGHER LEARNING IN MINNESOTA"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">Most institutions admit a high proportion of applicants. A typical institution in the distribution admits around 65% of its applicants (±10%).</span><span class="sc">\n</span><span class="st">There are, however, a few institutions that are quite selective, admitting fewer than 30% of the students who apply. Similarly there are</span><span class="sc">\n</span><span class="st">some institutions that accept almost all of their applicants."</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: College Scorecard"</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="03-03-labels_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="03-03-labels_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota.  We fixed the subtitle to include linebreaks and added verticla space after the title." width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<!-- ## Exercises: Your Turn {-} -->
+<!-- Consider the following data visualization that shows the amount of playing time for each of the Minnesota Lynx players for the 2025 regular season.  -->
+<!-- ```{r} -->
+<!-- #| label: fig-mn-lynx-playing-time -->
+<!-- #| fig-caption: "A heatmap showing the amount of playing time for each of the Minnesota Lynx players for the 2025 regular season." -->
+<!-- #| fig-alt: "A heatmap showing the amount of playing time for each of the Minnesota Lynx players for the 2025 regular season." -->
+<!-- #| out-width: "90%" -->
+<!-- #| echo: false -->
+<!-- knitr::include_graphics("figs/04-02-03-mn-lynx-playing-time.png") -->
+<!-- ``` -->
+<!-- 1. This visualization does not have a label for either the *x*- or *y*-axis. Explain why this is probably an okay decision for this visulaization. -->
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-02-01');">Show/Hide Solution</button> -->
+<!-- <div id="exercise_04-02-01" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- In this visualization it is fairly obvious from the title and subtitle what the values being plotted on the *x*- and *y*-axis are; players and month. Because of this it isn't strictly necessary to label these axes.  -->
+<!-- </div> -->
+<!-- 2. Write the syntax you would add into the `labs()` function if you were creating this plot using R. -->
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-02-02');">Show/Hide Solution</button> -->
+<!-- <div id="exercise_04-02-02" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- labs( -->
+<!--   x = "", -->
+<!--   name = "", -->
+<!--   title = "2025 MINNESOTA LYNX PLAYING TIME", -->
+<!--   subtitle = "The number of minutes played in each of the 53 regular season games of 2025.\n", -->
+<!--   caption = "Data Source: ESPN via wehoops R package" -->
+<!-- ) -->
+<!-- ``` -->
+<!-- </div> -->
+<!-- Consider the following data from the *umn-bike-amenities.csv* file.  -->
+<!-- ```{r} -->
+<!-- #| label: import-bike-amenities-data -->
+<!-- #| message: false -->
+<!-- #| echo: false -->
+<!-- # Import data -->
+<!-- bike_amenities <- read_csv("data/umn-bike-amenities.csv") -->
+<!-- # View data -->
+<!-- DT::datatable(bike_amenities) -->
+<!-- ``` -->
+<!-- Imagine that this has been imported into a data object called `bike_amenities`. Also suppose we wanted to create a bar chart of the `campus` attribute, which provides the campus location (East Bank, West Bank, or St. Paul) of the bike amenities in the data. -->
+<!-- 3. Write out the syntax to create a horizontal bar chart of the `campus` attribute. Also color the bar borders black and fill the bars with yellow. Lastly, add labels to help readers better interpret the plot. -->
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-02-03');">Show/Hide Solution</button> -->
+<!-- <div id="exercise_04-02-03" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- ```{r} -->
+<!-- ggplot(data = bike_amenities, aes(y = campus)) + -->
+<!--   geom_bar( -->
+<!--     color = "black",  -->
+<!--     fill = "yellow" -->
+<!--   ) + -->
+<!--   labs( -->
+<!--     x = "Number of bike amenities", -->
+<!--     y = "", -->
+<!--     title = "BIKE AMENITIES BY CAMPUS LOCATION", -->
+<!--     subtitle = "\nThe number of bike amenities (e.g., air stations, bike lockers) on each of the \nthree UMN Twin Cities campuses.", -->
+<!--     caption = "\nSource: UMN Facility Information Services" -->
+<!--   ) -->
+<!-- ``` -->
+<!-- </div> -->
 <p><br></p>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>When internet used to be dial-up (i.e., super slow), you wanted to choose a mirror site that was closest in proximity to your location as it sped up the download. This is less of a concern now that internet download speeds are much faster.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>There are other arguments that can also be added to <code>gf_labs()</code> that you will learn about later in the textbook. These helps us change the labels for our plot legends, etc. <a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

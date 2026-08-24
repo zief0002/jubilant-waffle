@@ -24,18 +24,22 @@ book:
         - 01-02-introduction-to-rstudio.qmd
         - 01-03-r-packages.qmd
         - 01-04-script-files.qmd
+        - 01-05-ggplot2.qmd
     - part: 02-00-data.qmd
       chapters:
         - 02-01-questions-to-ask-about-data.qmd
         - 02-02-importing-data.qmd
-    - part: 03-00-visualizing-and-describing-univariate-data.qmd
+    - part: 03-00-visualizing-and-describing-quantitative-attributes.qmd
       chapters:
-        - 03-01-visualizing-quantitative-attributes.qmd
-        - 03-02-visualizing-categorical-attributes.qmd
+        - 03-01-quantitative-distributions.qmd
+        - 03-02-histograms-in-r.qmd
+        - 03-03-labels.qmd
+        - 03-04-computing-and-plotting-typical-values.qmd
+        - 03-05-facetting.qmd
+        # - 03-02-visualizing-categorical-attributes.qmd
         - 04-01-color.qmd
     # - part: 04-00-plot-enhancement.qmd
     #   chapters:
-    #     - 04-02-labels.qmd
     #     - 04-03-annotations.qmd
     #     - 04-04-scales.qmd
     #     - 04-05-themes.qmd

@@ -1,0 +1,32 @@
+# Visualizing and Describing Quantitative Attributes {#sec-visualize-describe-data}
+
+The chapters in this section will introduce methods for visualizing and describing the distribution of a quantitative attribute. 
+
+
+<br />
+
+
+
+## College Scorecard Data
+
+Throughout the chapters in this section we will use the College Scorecard data to illustrate the methods of visualization. These data were collected and made available by the U.S. Department of Education (DOE). The DOE publishes data on institutions of higher education in their [College Scorecard](https://collegescorecard.ed.gov/) to facilitate transparency and provide information for interested stakeholders (e.g., parents, students, educators). A subset of this data is provided in the file *college-scorecard.csv*. 
+
+- [CSV File](https://raw.githubusercontent.com/zief0002/epsy-5261/main/data/college-scorecard.csv)
+- [Data Codebook](http://zief0002.github.io/epsy-5261/codebooks/college-scorecard.html)
+
+<br />
+
+```{r}
+#| label: import-data
+#| message: false
+#| echo: false
+
+# Import data
+colleges <- readr::read_csv("https://raw.githubusercontent.com/zief0002/epsy-5261/main/data/college-scorecard.csv")
+
+# View data
+DT::datatable(colleges)
+```
+
+<br />
+

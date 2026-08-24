@@ -1,0 +1,193 @@
+# Creating Histograms in R {#sec-hist-in-r}
+
+This chapter will focus on how we create histograms in R. To illustrate this, we will use the **mn-colleges.csv** data. This data includes admissions related data for the 33 institutions of higher learning in Minnesota. 
+
+```{r}
+#| label: load-packages
+#| message: false
+
+# Load libraries
+library(tidyverse)
+
+# Import data
+mn <- read_csv("data/mn-colleges.csv")
+
+# View data
+DT::datatable(mn)
+```
+
+
+In these data each case is an institution of higher education in the state of Minnesota. There are 33 institutions in our sample. There are several quantitative attributes in the data, including: the number of applicants, the number of applicants who were admitted, and the acceptance rate. We will focus on the acceptance rate attribute in this chapter.
+
+<br />
+
+
+## Using R to Create Histograms
+
+To create a histogram or a density plot, we will use functions from the `{tidyverse}` library. As a reminder, in the first code chunk of your script file, load the `{tidyverse}` library. In a second code chunk use the `read_csv()` function to import the *mn-colleges.csv* data and assign the data into an object called `mn`. You also might want to view the data to ensure that it imported into RStudio correctly. (Don't forget to add code comments as well!)
+
+
+```{r}
+#| label: load-packages2
+#| eval: false
+
+######################
+# Import data
+######################
+
+library(tidyverse)
+
+
+######################
+# Import data
+######################
+
+mn <- read_csv("data/mn-colleges.csv")
+
+# View data
+mn
+```
+
+
+To create a histogram of the acceptance rates, we will first create a new code chunk in your script file. In the ggplot syntax we will use two layers in our plot: `ggplot()` and `geom_histogram()`. Remember that the `ggplot()` layer (the global layer) indicates the data object and sets the primary aesthetic mapping for the plot. The `geom_histogram()` layer will use the information in the global layer to create the histogram.
+
+In the global layer we will indicate the data object is `mn` using the argument `data=mn`. We will also set the aesthetic mapping for the *x*-position using `x=accept_rate` to indicate that we want to use the `accept_rate` attribute when we create the histogram. Also, remember that since we are mapping a column in the data set, the aesthetic mapping needs to be enclosed in the `aes()` function. The syntax is as follows:
+
+```{r}
+#| eval: false
+#######################################
+# Create histogram of acceptance rates
+#######################################
+
+ggplot(data = mn, aes(x = accept_rate)) +
+  geom_histogram()
+```
+
+
+This should result in the following histogram:
+
+
+```{r}
+#| label: fig-hist-01
+#| fig-cap: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota."
+#| fig-alt: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota."
+#| out-width: "70%"
+#| echo: false
+#| message: false
+
+ggplot(data = mn, aes(x = accept_rate)) +
+  geom_histogram()
+```
+
+A couple things to note.
+
+1. While the bars in the histogram are there, because we haven't made their border visible, some bars look wider than others.
+2. You will likely have a message saying: `stat_bin()  using bins = 30. Pick better value binwidth`. This is because R by default chooses to create the bin width so that there are 30 bins in the histogram. Sometimes this is fine, other times we want more control over the bins.
+
+<br />
+
+
+## Adding Border and Bin Color
+
+To show the histogram bins more clearly, we can color the bin lines (the bar borders) to highlight the different bins. To do this we include an additional argument, `color=`, in the `geom_histogram()` function. We can also set the color for the bars themselves using the `fill=` argument. Here we color the bin lines black and set the bar color to yellow. Recall that since "black" and "yellow" are strings, we enclose them in quotation marks in the function. Also note that these mappings are NOT enclosed in an `aes()` functions since "black" and "yellow" are not column names in the `mn` data object.
+
+
+```{r}
+#| label: fig-hist-02
+#| fig-cap: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. The bin lines are now colored black and the bars are colored yellow."
+#| fig-alt: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. The bin lines are now colored black and the bars are colored yellow."
+#| out-width: "70%"
+#| echo: true
+#| message: false
+#######################################
+# Create histogram of acceptance rates
+# Change the bin outline and fill color
+#######################################
+
+ggplot(data = mn, aes(x = accept_rate)) +
+  geom_histogram(color = "black", fill = "yellow")
+```
+
+There are 657 different color names that R knows. These are depicted in @fig-named-colors.
+
+
+```{r}
+#| label: fig-named-colors
+#| fig-cap: "The 657 color names that R knows."
+#| fig-alt: "The 657 color names that R knows."
+#| out-width: "100%"
+#| echo: false
+
+knitr::include_graphics("figs/03-01-03-r-colors.png")
+```
+
+<br />
+
+
+
+## Changing the Bin Width
+
+
+To change the number of bins, we add the argument `bins=` to the `geom_histogram()` function. For example, if we wanted there to be 10 bins rather than the 30 default bins, we would use the following syntax:
+
+```{r}
+#| label: fig-hist-03
+#| fig-cap: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has 10 bins."
+#| fig-alt: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has 10 bins."
+#| out-width: "70%"
+#| message: false
+#######################################
+# Create histogram of acceptance rates
+# Change the bin outline and fill color
+# Change the number of bins to 10
+#######################################
+
+ggplot(data = mn, aes(x = accept_rate)) +
+  geom_histogram(color = "black", fill = "yellow", bins = 10)
+```
+
+By changing the number of bins we are changing how wide each bin actually is. The way R computes the bin width is to take the maximum value in the data and subtract the minimum value in the data, and then divide it by the number of bins. In our example, the maximum acceptance rate in the data is 96.90 and the minimum acceptance rate is 19.10. So for the default of 30 bins:
+
+$$
+\mathrm{Bin~Width} = \frac{96.90 - 19.10}{30} \approx 2.59
+$$
+So the first bin would include values between 19.10 and 21.69. The second bin would include values from 21.69 and 24.28. Etc.
+
+When we used 10 bins the bin width was:
+
+$$
+\mathrm{Bin~Width} = \frac{96.90 - 19.10}{10} \approx 7.78
+$$
+In this histogram the first bin would include values between 19.10 and 26.88. The second bin would include values from 26.88 and 34.66. Etc.
+
+
+Rather than choosing the number of bins, you can instead choose the desired bin width by including the argument `binwidth=` in the `geom_histogram()` function. For example, to choose a bin width of 1, we could use the following:
+
+```{r}
+#| label: fig-hist-04
+#| fig-cap: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has a bin width of 1."
+#| fig-alt: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has a bin width of 1."
+#| out-width: "70%"
+#######################################
+# Create histogram of acceptance rates
+# Change the bin outline and fill color
+# Change the binwidth to 1
+#######################################
+ggplot(data = mn, aes(x = accept_rate)) +
+  geom_histogram(color = "black", fill = "yellow", binwidth = 1)
+```
+
+:::fyi
+**PROTIP**
+
+In the `geom_histogram()` function you cannot include both `bins=` and `binwidth=`. Use one or the other. If you include both, R will use whichever one appears first in the function and will ignore the other argument.
+:::
+
+
+
+As the storyteller of the data, it is up to you to determine an appropriate bin width or number of bins for the quantitative attribute you are visualizing. There is no one correct bin width or number of bins. Usually the main concept being communicated with a histogram is its shape. So the key is to choose the bin width/number of bins so that we can get a good sense of the shape of the distribution.
+
+To do that, you generally want to find the middle ground between each data value being its own bar in the graph (`binwidth=1`) and the data being grouped so there is only a single bar (`binwidth=` the range of the data). It is common to try different bin widths/number of bars and see how the histogram changes. You will notice when you are close to an appropriate bin width that making the bin a little wider or narrower really does not change the overall appearance of the graph.
+
+
+<br />

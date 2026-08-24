@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Importing Data into an RMD Document – Data Visualization: Summarizing and Communicating Patterns in Data</title>
+<title>7&nbsp; Importing Data into RStudio – Data Visualization: Summarizing and Communicating Patterns in Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,16 +117,6 @@ function toggle_visibility(id) {
       e.style.display = 'block';
 }
 </script>
-<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
-<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
@@ -146,7 +136,7 @@ function toggle_visibility(id) {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Importing Data into an RMD Document</span></h1>
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importing Data into RStudio</span></h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -209,6 +199,12 @@ function toggle_visibility(id) {
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Script Files: Saving Your Syntax</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05-ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Building Blocks of <code>{ggplot2}</code></span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -223,21 +219,21 @@ function toggle_visibility(id) {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-01-questions-to-ask-about-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Questions to Ask About Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Questions to Ask About Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-02-importing-data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Importing Data into an RMD Document</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importing Data into RStudio</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./03-00-visualizing-and-describing-univariate-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualizing and Describing Univariate Data</span></a>
+            <a href="./03-00-visualizing-and-describing-quantitative-attributes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualizing and Describing Quantitative Attributes</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -245,20 +241,38 @@ function toggle_visibility(id) {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-01-visualizing-quantitative-attributes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Visualizing and Describing Quantitative Attributes</span></span></a>
+  <a href="./03-01-quantitative-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quantitative Distributions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-02-visualizing-categorical-attributes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Visualizing and Describing Categorical Attributes</span></span></a>
+  <a href="./03-02-histograms-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Creating Histograms in R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03-labels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Labels: Improving Interpretation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04-computing-and-plotting-typical-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Computing and Plotting Typical Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-05-facetting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Facetting: Creating Small Multiples for Comparisons</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-01-color.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></a>
   </div>
 </li>
       </ul>
@@ -274,7 +288,7 @@ function toggle_visibility(id) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Importing Data into an RMD Document</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importing Data into RStudio</span></h1>
 </div>
 
 
@@ -291,42 +305,120 @@ function toggle_visibility(id) {
 </header>
 
 
-<p>To be able to create a data visualization, we need to be able to import a dataset into our RMD document. In this chapter, you will learn how to prepare a dataset in a spreadsheet application (e.g., Microsoft Excel) and save it as a CSV file. You will also learn how to import the CSV file into your RMD document.</p>
+<p>To be able to create a data visualization, we need to be able to import a dataset into RStudio. In this chapter, you will learn how to import a CSV file into RStudio. You will also learn how to prepare a dataset in a spreadsheet application (e.g., Microsoft Excel) and save it as a CSV file.</p>
 <p><br></p>
-<section id="spice-girls-data" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="spice-girls-data"><span class="header-section-number">6.1</span> Spice Girls Data</h2>
-<p>Recall that the data structure that is useful for our data visualization tools is tabular in that the data are organized into rows and columns. Remember also that in this structure, the rows represent <strong>cases</strong> and the columns represent <strong>attributes</strong>. Consider the data below about the 1990’s band The Spice Girls.</p>
+<section id="csv-files-a-format-for-tabular-data" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="csv-files-a-format-for-tabular-data"><span class="header-section-number">7.1</span> CSV Files: A Format for Tabular Data</h2>
+<p>Data are stored in many formats. For example, some data are stored in databases. Other data is stored in JavaScript Object Notation (JSON). One common format for storing data for statistical analysis is the <em>Comma Separated Value</em> (CSV) file. (CSV files generally have the file suffix .csv.) A CSV file is a <em>plain text</em> file. Plain text simply means a file that doesn’t include any formatting—it is only text. Files that have formatting are referred to as <em>rich text</em> files. (An example of a rich text file would be an Excel file (.xslx) or a Google Sheet file (GSHEET). These files often include formatting information (e.g., bold, italics, color) that is irrelevant to the raw data.)</p>
+<p>Below is a screenshot of a CSV file after it is opened in a text editor. You can see that the file is just text with no formatting. Each row of the CSV file corresponds to the a different case. Each attribute is separated by a comma. This is how the comma separated value file gets its name!</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-e3da9f37b6992bcb0572" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-e3da9f37b6992bcb0572">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["Scary","Sporty","Baby","Ginger","Posh"],[19,20,18,22,20],["Yes","Yes","No","Yes","No"],[4,26,14,13,12],["Mel B","Mel C","Emma","Geri","Victoria"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>spice_name<\/th>\n      <th>age<\/th>\n      <th>original_member<\/th>\n      <th>solo_nominations<\/th>\n      <th>real_name<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,4]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"spice_name","targets":1},{"name":"age","targets":2},{"name":"original_member","targets":3},{"name":"solo_nominations","targets":4},{"name":"real_name","targets":5}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="fig-csv-plain-text" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Screenshot of the *spice-girls.csv* file after it is opened in a text editor. Data values in each row are separated by a comma.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-csv-plain-text-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figs/02-02-09-plain-text.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;7.1: Screenshot of the spice-girls.csv file after it is opened in a text editor. Data values in each row are separated by a comma."><img src="figs/02-02-09-plain-text.png" class="img-fluid figure-img" alt="Screenshot of the *spice-girls.csv* file after it is opened in a text editor. Data values in each row are separated by a comma." width="413"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-csv-plain-text-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: Screenshot of the <em>spice-girls.csv</em> file after it is opened in a text editor. Data values in each row are separated by a comma.
+</figcaption>
+</figure>
 </div>
 </div>
-<p>In this data, each row indicates a different Spice Girl (cases) and the five attributes include information (e.g., name, age, number of solo award nominations, and whether they were an original band member) about each of them. We are going to create a CSV file of these data and import that CSV file into a RMD document.</p>
+</div>
+<p>:::</p>
 <p><br></p>
 </section>
-<section id="data-creation-using-a-spreadsheet-application" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="data-creation-using-a-spreadsheet-application"><span class="header-section-number">6.2</span> Data Creation Using a Spreadsheet Application</h2>
-<p>Spreadsheets are incredibly useful for organizing and preparing tabular data. This is because the spreadsheet is essentially a table of rows and columns. Open your spreadsheet application and create a new document.</p>
+<section id="locating-the-data-on-your-computer" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="locating-the-data-on-your-computer"><span class="header-section-number">7.2</span> Locating the Data on Your Computer</h2>
+<p>Before we import the data, you need to locate the CSV file on your computer. To do this, enter the following syntax into the console pane:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.choose</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Hit enter. This will bring up a new window from which you can navigate to the CSV file you want to import. Once you select that file, some text will be printed in the console. When I did this, the text printed in my console was:</p>
+<pre><code>/Users/zief0002/Desktop/epsy-1261/data/spice-girls.csv</code></pre>
+<p>This text includes two things: (1) the file path and (2) file name for your data. The file name is <code>spice-girls.csv</code>. This is the actual name of your data file, including the file suffix (.csv). The other part of this, <code>/Users/zief0002/Desktop/epsy-1261/data/</code>, is called the file path. This is the syntactic address of where the data file lives on your computer.</p>
+<p>While the file path might look complicated, it’s not. When you read a file path, every time you see a <code>/</code> say the words “go into the folder called…”. (Note. If you are on a Windows machine you might have <code>\\</code> instead of <code>/</code>.) For example, my file path says:</p>
+<blockquote class="blockquote">
+<p>Start at the root of the computer (the very first <code>/</code>), then go into the Users folder, then go into the zief0002 folder, then go into the Desktop folder, then go into the epsy-1261 folder, then go into the data folder. That is where the <code>spice-girls.csv</code> file lives.</p>
+</blockquote>
+<p><br></p>
+</section>
+<section id="importing-the-data" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="importing-the-data"><span class="header-section-number">7.3</span> Importing the Data</h2>
+<p>To import the data we will use the <code>read_csv()</code> function. This function, which is part of the <code>{tidyverse}</code> package, will read in a CSV file. This function takes the argument <code>file=</code>. We provide this argument the path and file name of the data. Because the path and file name is a string (i.e., words/letters) it is enclosed in quotation marks. We also need to assign the output of the <code>read_csv()</code> function into an object. If we don’t do that, R will read the CSV file and immediately forget it.</p>
+<p>In your script file, create a new code chunk. In this code chunk you will load the <code>{tidyverse}</code> package. We need to do this so we have access to the <code>read_csv()</code> function. In a second code chunk import the data using the <code>read_csv()</code> function. The syntax looks like this:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>spice_girls <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"/Users/zief0002/Desktop/epsy-1261/data/spice-girls.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>If you imported the data successfully, you should now see your data object in RStudio’s environment tab.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-blank-sheet" class="quarto-float quarto-figure quarto-figure-center anchored" alt="After creating a new spreadsheet document you will see a blank array of rows and columns---perfect for entering tabular data.">
+<div id="fig-spice-env" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The `spice_girls` object shows up in the RStudio environment tab after the data has been successfully imported.">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-blank-sheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/02-02-01-blank-spreadsheet.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;6.1: After creating a new spreadsheet document you will see a blank array of rows and columns—perfect for entering tabular data."><img src="figs/02-02-01-blank-spreadsheet.png" class="img-fluid figure-img" alt="After creating a new spreadsheet document you will see a blank array of rows and columns---perfect for entering tabular data." width="478"></a>
+<div aria-describedby="fig-spice-env-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figs/02-02-02-spice-girls-environment.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;7.2: The spice_girls object shows up in the RStudio environment tab after the data has been successfully imported."><img src="figs/02-02-02-spice-girls-environment.png" class="img-fluid figure-img" alt="The `spice_girls` object shows up in the RStudio environment tab after the data has been successfully imported." width="427"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-blank-sheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: After creating a new spreadsheet document you will see a blank array of rows and columns—perfect for entering tabular data.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spice-env-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: The <code>spice_girls</code> object shows up in the RStudio environment tab after the data has been successfully imported.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p><br></p>
-<section id="attribute-names" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="attribute-names"><span class="header-section-number">6.2.1</span> Attribute Names</h3>
-<p>When we enter data into a spreadsheet to use with data visualization applications, the attribute names are entered into the first row of the spreadsheet.</p>
-<p>To mimic the Spice Girls data enter the following attribute names into the first row of your spreadsheet. Be sure to enter each attribute name into a separate column.</p>
+<section id="data-frames" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">7.3.1</span> Data Frames</h3>
+<p>When we import data into an object, that object is called a <em>data frame</em>. A data frame is R’s name for data stored in a tabular structure (rows and columns). To view the data after it is imported, you double-click on the object name in the environment tab. it opens RStudio’s data viewer where you can browse the data.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-data-viewer" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The `spice_girls` object viewed in the data viewer.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-viewer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figs/02-02-03-data-viewer.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;7.3: The spice_girls object viewed in the data viewer."><img src="figs/02-02-03-data-viewer.png" class="img-fluid figure-img" alt="The `spice_girls` object viewed in the data viewer." width="891"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-viewer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: The <code>spice_girls</code> object viewed in the data viewer.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In the data viewer you will see the tabular structure of the data. You can also see the attribute names. On the right-side of the viewer you can also learn more information about each of the attributes. One thing you can learn about is the attribute type. This is seen inside the <code>&lt;&gt;</code>. For example, the attribute <code>spice_name</code> is <code>&lt;chr&gt;</code>. This is a character attribute. In contrast <code>age</code> is <code>&lt;dbl&gt;</code>, a double attribute. Character and double are formal ways that the data is being stored in R. <strong>For us it isn’t important how the attributes are being stored, but rather that we can identify that the attribute as quantitative or categorical.</strong></p>
+<p><br></p>
+</section>
+</section>
+<section id="creating-new-data-in-a-spreadsheet" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="creating-new-data-in-a-spreadsheet"><span class="header-section-number">7.4</span> Creating New Data in a Spreadsheet</h2>
+<p>Spreadsheets are incredibly useful for organizing and preparing tabular data. This is because the spreadsheet is essentially a table of rows and columns. Open your spreadsheet application and create a new document.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-blank-sheet" class="quarto-float quarto-figure quarto-figure-center anchored" alt="After creating a new spreadsheet document you will see a blank array of rows and columns---perfect for entering tabular data.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-blank-sheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figs/02-02-01-blank-spreadsheet.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;7.4: After creating a new spreadsheet document you will see a blank array of rows and columns—perfect for entering tabular data."><img src="figs/02-02-01-blank-spreadsheet.png" class="img-fluid figure-img" alt="After creating a new spreadsheet document you will see a blank array of rows and columns---perfect for entering tabular data." width="478"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-blank-sheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.4: After creating a new spreadsheet document you will see a blank array of rows and columns—perfect for entering tabular data.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<section id="attribute-names" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="attribute-names"><span class="header-section-number">7.4.1</span> Attribute Names</h3>
+<p>When we enter data into a spreadsheet to use with data visualization applications, the attribute names are entered into the first row of the spreadsheet. To mimic the Spice Girls data enter the following attribute names into the first row of your spreadsheet. Be sure to enter each attribute name into a separate column.</p>
 <ul>
 <li><code>spice_name</code></li>
 <li><code>age</code></li>
@@ -339,10 +431,10 @@ Figure&nbsp;6.1: After creating a new spreadsheet document you will see a blank 
 <div id="fig-attribute-names" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Attribute names are entered in the first row of a spreadsheet, each in a separate column.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-attribute-names-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/02-02-02-attribute-names.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;6.2: Attribute names are entered in the first row of a spreadsheet, each in a separate column."><img src="figs/02-02-02-attribute-names.png" class="img-fluid figure-img" alt="Attribute names are entered in the first row of a spreadsheet, each in a separate column." width="770"></a>
+<a href="figs/02-02-02-attribute-names.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;7.5: Attribute names are entered in the first row of a spreadsheet, each in a separate column."><img src="figs/02-02-02-attribute-names.png" class="img-fluid figure-img" alt="Attribute names are entered in the first row of a spreadsheet, each in a separate column." width="770"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-attribute-names-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.2: Attribute names are entered in the first row of a spreadsheet, each in a separate column.
+Figure&nbsp;7.5: Attribute names are entered in the first row of a spreadsheet, each in a separate column.
 </figcaption>
 </figure>
 </div>
@@ -363,8 +455,8 @@ Figure&nbsp;6.2: Attribute names are entered in the first row of a spreadsheet, 
 <p>The choice of uppercase or lowercase letters is also a choice. While different data scientists may choose different conventions for writing attribute names, it is important to be consistent with your choice. For example, in this book and in the data you encounter in EPSY 1261, we will always use lowercase letters and snake case for attribute names.</p>
 <p><br></p>
 </section>
-<section id="entering-the-data" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="entering-the-data"><span class="header-section-number">6.2.2</span> Entering the Data</h3>
+<section id="entering-the-data" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="entering-the-data"><span class="header-section-number">7.4.2</span> Entering the Data</h3>
 <p>After adding the attribute names to the spreadsheet, you can enter in the actual data. Recall that each row is a case, so all the data in a particular row should be associated with that case. For example, the first case in our Spice Girls data is associated with Scary Spice. Her data values are:</p>
 <ul>
 <li><code>spice_name</code>: Scary</li>
@@ -379,10 +471,10 @@ Figure&nbsp;6.2: Attribute names are entered in the first row of a spreadsheet, 
 <div id="fig-scary-spice" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Scary Spice's data is entered into the row after the attribute names.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scary-spice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/02-02-03-scary-spice.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;6.3: Scary Spice’s data is entered into the row after the attribute names."><img src="figs/02-02-03-scary-spice.png" class="img-fluid figure-img" alt="Scary Spice's data is entered into the row after the attribute names." width="771"></a>
+<a href="figs/02-02-03-scary-spice.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;7.6: Scary Spice’s data is entered into the row after the attribute names."><img src="figs/02-02-03-scary-spice.png" class="img-fluid figure-img" alt="Scary Spice's data is entered into the row after the attribute names." width="771"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scary-spice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.3: Scary Spice’s data is entered into the row after the attribute names.
+Figure&nbsp;7.6: Scary Spice’s data is entered into the row after the attribute names.
 </figcaption>
 </figure>
 </div>
@@ -426,10 +518,10 @@ Figure&nbsp;6.3: Scary Spice’s data is entered into the row after the attribut
 <div id="fig-all-spice-girls" class="quarto-float quarto-figure quarto-figure-center anchored" alt="All five Spice Girl's data is entered into spreadsheet. Each Spice Girl's data appears in a different row.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-all-spice-girls-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/02-02-04-all-spice-girls.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;6.4: All five Spice Girl’s data is entered into spreadsheet. Each Spice Girl’s data appears in a different row."><img src="figs/02-02-04-all-spice-girls.png" class="img-fluid figure-img" alt="All five Spice Girl's data is entered into spreadsheet. Each Spice Girl's data appears in a different row." width="769"></a>
+<a href="figs/02-02-04-all-spice-girls.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7.7: All five Spice Girl’s data is entered into spreadsheet. Each Spice Girl’s data appears in a different row."><img src="figs/02-02-04-all-spice-girls.png" class="img-fluid figure-img" alt="All five Spice Girl's data is entered into spreadsheet. Each Spice Girl's data appears in a different row." width="769"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-all-spice-girls-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.4: All five Spice Girl’s data is entered into spreadsheet. Each Spice Girl’s data appears in a different row.
+Figure&nbsp;7.7: All five Spice Girl’s data is entered into spreadsheet. Each Spice Girl’s data appears in a different row.
 </figcaption>
 </figure>
 </div>
@@ -441,10 +533,10 @@ Figure&nbsp;6.4: All five Spice Girl’s data is entered into spreadsheet. Each 
 <div id="fig-blank-cell" class="quarto-float quarto-figure quarto-figure-center anchored" alt="If Sporty Spice's age were unknown or missing, we would leave that cell blank in the spreadsheet.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-blank-cell-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/02-02-05-blank-age.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;6.5: If Sporty Spice’s age were unknown or missing, we would leave that cell blank in the spreadsheet."><img src="figs/02-02-05-blank-age.png" class="img-fluid figure-img" alt="If Sporty Spice's age were unknown or missing, we would leave that cell blank in the spreadsheet." width="772"></a>
+<a href="figs/02-02-05-blank-age.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;7.8: If Sporty Spice’s age were unknown or missing, we would leave that cell blank in the spreadsheet."><img src="figs/02-02-05-blank-age.png" class="img-fluid figure-img" alt="If Sporty Spice's age were unknown or missing, we would leave that cell blank in the spreadsheet." width="772"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-blank-cell-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.5: If Sporty Spice’s age were unknown or missing, we would leave that cell blank in the spreadsheet.
+Figure&nbsp;7.8: If Sporty Spice’s age were unknown or missing, we would leave that cell blank in the spreadsheet.
 </figcaption>
 </figure>
 </div>
@@ -452,9 +544,8 @@ Figure&nbsp;6.5: If Sporty Spice’s age were unknown or missing, we would leave
 </div>
 <p><br></p>
 </section>
-</section>
-<section id="csv-files-a-format-for-tabular-data" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="csv-files-a-format-for-tabular-data"><span class="header-section-number">6.3</span> CSV Files: A Format for Tabular Data</h2>
+<section id="exporting-the-data-to-a-csv-file" class="level3" data-number="7.4.3">
+<h3 data-number="7.4.3" class="anchored" data-anchor-id="exporting-the-data-to-a-csv-file"><span class="header-section-number">7.4.3</span> Exporting the Data to a CSV File</h3>
 <p>Once you have your data entered, we need to export the data from the spreadsheet into a file that is compatible with the data visualization application. R can read many different file types, but we will save our data file as a <em>Comma Separated Value</em> (CSV) file. To save your spreadsheet as a CSV file:</p>
 <p><strong>Using Excel:</strong> Select <code>File &gt; Save As...</code> Then in the “File Format” dropdown menu, select “CSV UTF-8 (Comma delimited)(.csv)”. Give your filename the name “spice-girls.csv” and click “Save”.</p>
 <p><strong>Using Google Sheets:</strong> Select <code>File &gt; Download &gt; Comma Separated Values (.csv)</code>. This will download the CSV file to your computer. Find the file and rename it to “spice-girls.csv”.</p>
@@ -462,111 +553,7 @@ Figure&nbsp;6.5: If Sporty Spice’s age were unknown or missing, we would leave
 <p><strong>FYI</strong></p>
 <p>Your filename should not have any spaces in it.</p>
 </div>
-<p><br></p>
-<div class="mathnote">
-<p><strong>LEARN MORE: What is a CSV File?</strong></p>
-<p>When you save this work, many spreadsheet programs use a proprietary format for saving the information (e.g., Excel saves as a XLSX file; Google Sheets saves as a GSHEET file). These often include extraneous information (e.g., formatting such as bold, italics, color) that is irrelevant to the raw data. A CSV file, which is short for comma separated value, removes all of that extra formatting and creates a <em>plain text</em> file. (Plain text simply means a file that doesn’t include any formatting—it is only text. Files that have formatting are referred to as <em>rich text</em> files.)</p>
-<p>Below is a screenshot of the <em>spice-girls.csv</em> file after it is opened in a text editor. You can see that the table-like structure of the spreadsheet is no longer there—it is all just text. But, similar to the spreadsheet each row of the CSV file corresponds to the rows we created in the spreadsheet. However, unlike the spreadsheet, each attribute is not in a separate column in the CSV file. Instead, the data in each “column” is separated by a comma. This is how the comma separated value file gets its name!</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-csv-plain-text" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Screenshot of the *spice-girls.csv* file after it is opened in a text editor. Data values in each row are separated by a comma.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-csv-plain-text-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/02-02-09-plain-text.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6.6: Screenshot of the spice-girls.csv file after it is opened in a text editor. Data values in each row are separated by a comma."><img src="figs/02-02-09-plain-text.png" class="img-fluid figure-img" alt="Screenshot of the *spice-girls.csv* file after it is opened in a text editor. Data values in each row are separated by a comma." width="413"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-csv-plain-text-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.6: Screenshot of the <em>spice-girls.csv</em> file after it is opened in a text editor. Data values in each row are separated by a comma.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-</section>
-<section id="importing-data-into-a-rmd-file" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="importing-data-into-a-rmd-file"><span class="header-section-number">6.4</span> Importing Data into a RMD File</h2>
-<p>After you have saved your data, place it in the same folder as your RMD file. This is where R will look for the data when you give it the syntax to import the CSV file.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-import-rmd" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The RMD and CSV files should be located in the same folder on your computer.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-import-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/02-02-07-same-folder.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;6.7: The RMD and CSV files should be located in the same folder on your computer."><img src="figs/02-02-07-same-folder.png" class="img-fluid figure-img" alt="The RMD and CSV files should be located in the same folder on your computer." width="498"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-import-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.7: The RMD and CSV files should be located in the same folder on your computer.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>In your RMD file, create a new code chunk. This code chunk should be immediately after the YAML in your RMD file. This code chunk is your setup code chunk, and in it you will (1) load all the libraries you will need to use in the RMD document, and (2) import the data. The syntax you will enter into this chunk is as follows:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load all libraries</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>spice_girls <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"spice-girls.csv"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>spice_girls</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>The first part of the syntax is <code>library(tidyverse)</code>. Remember, this loads the <code>{tidyverse}</code> library. This is important because the <code>read_csv()</code> function lives is part of the <code>{tidyverse}</code> library, and we cannot use it until the library is loaded.</p>
-<p>The second part of the code chunk—<code>spice_girls = read_csv("spice-girls.csv")</code>—is actually importing the data. The <code>read_csv()</code> function is being used to read and import a CSV file. The argument in this function tells the function the name of the CSV file that you want to import. In this case the file is called <em>spice-girls.csv</em>. This needs to go inside quotation marks since it is a character string. The imported data is then being assigned to an object called <code>spice_girls</code>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-rmd-document" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An RMD document with a setup code chunk loading libraries and importing the data. This code chunk is immediately after the YAML.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rmd-document-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/02-02-06-rmd-import.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;6.8: An RMD document with a setup code chunk loading libraries and importing the data. This code chunk is immediately after the YAML."><img src="figs/02-02-06-rmd-import.png" class="img-fluid figure-img" alt="An RMD document with a setup code chunk loading libraries and importing the data. This code chunk is immediately after the YAML." width="903"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rmd-document-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.8: An RMD document with a setup code chunk loading libraries and importing the data. This code chunk is immediately after the YAML.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Note that at the top of the code chunk, I have included a code chunk option. Code chunk options are included at the top of the code chunk and begin with <code>#|</code>. The code chunk options are then written in the same “key: value” method that we write YAML, and always are in lowercase. The code chunk option <code>message: false</code> suppresses messages that R prints out when you run certain syntax. This just keeps the output in your knitted file cleaner, it isn’t necessary to run the syntax.</p>
-<p><br></p>
-<section id="data-frames" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">6.4.1</span> Data Frames</h3>
-<p>When we import data into an object, that object is called a <em>data frame</em>. A data frame is R’s name for data stored in a tabular structure. To view the data after it is imported, we just type the name of the data frame object, in our example <code>spice_girls</code>. This will give you a preview of the data. Here is what the printed data frame looks like after viewing it.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 5
-  spice_name   age original_member solo_nominations real_name
-  &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt; &lt;chr&gt;    
-1 Scary         19 Yes                            4 Mel B    
-2 Sporty        20 Yes                           26 Mel C    
-3 Baby          18 No                            14 Emma     
-4 Ginger        22 Yes                           13 Geri     
-5 Posh          20 No                            12 Victoria </code></pre>
-</div>
-</div>
-<p>The first line tells us that this is a data frame: <code>A tibble: 5 × 5</code>—a tibble is just another name for a data frame. It also tells us the number of rows and columns (row x columns). In our data frame we have 5 rows and 5 columns.</p>
-<p>Then we see the data saved in the data frame object. The top line indicates the attribute names. (If there are a lot of attributes in your data, R may not show you all of them, but instead list the other attribute names at the bottom of the data.) The second line informs you about the attribute type. In our data we see we have <code>&lt;chr&gt;</code> and <code>&lt;dbl&gt;</code> attributes. These are character and double attributes. As you might suspect, character attributes are categorical because they are made up of strings or characters. Double attributes are numbers or quantitative attributes. Note that computers and applications have different ways of storing numbers in their memory. Double is one way that R stores numbers in its memory. <strong>For us it isn’t important how the numbers are being stored, but rather that we can identify that the attribute is quantitative.</strong></p>
-<p>Finally, we see the data itself. This is printed in a tabular way, similar to how we saw it in the spreadsheet. Usually only the first 6 rows of the data will print out to save space on your computer screen—you usually do not want to print out thousands of cases!</p>
-<p><br></p>
-</section>
-<section id="knitting-the-rmd-document" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="knitting-the-rmd-document"><span class="header-section-number">6.4.2</span> Knitting the RMD Document</h3>
-<p>Once you click the <code>knit</code> button, your RMD document should render into an HTML file. This should include the syntax you used to load the <code>{tidyverse}</code> library, import the data, and view the data. The rendered html document looks like the following:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-rendered-rmd" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The rendered RMD file should show your syntax and the output of viewing the data.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rendered-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/02-02-08-rendered-rmd.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;6.9: The rendered RMD file should show your syntax and the output of viewing the data."><img src="figs/02-02-08-rendered-rmd.png" class="img-fluid figure-img" alt="The rendered RMD file should show your syntax and the output of viewing the data." width="653"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rendered-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.9: The rendered RMD file should show your syntax and the output of viewing the data.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p>Once it has been exported you can import the data into RStudio!</p>
 <p><br></p>
 
 

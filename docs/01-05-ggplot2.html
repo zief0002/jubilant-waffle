@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Installing and Loading R Packages – Data Visualization: Summarizing and Communicating Patterns in Data</title>
+<title>5&nbsp; The Building Blocks of {ggplot2} – Data Visualization: Summarizing and Communicating Patterns in Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,7 +156,7 @@ function toggle_visibility(id) {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing and Loading R Packages</span></h1>
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Building Blocks of <code>{ggplot2}</code></span></h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -209,7 +209,7 @@ function toggle_visibility(id) {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-03-r-packages.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01-03-r-packages.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing and Loading R Packages</span></span></a>
   </div>
 </li>
@@ -221,7 +221,7 @@ function toggle_visibility(id) {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-05-ggplot2.html" class="sidebar-item-text sidebar-link">
+  <a href="./01-05-ggplot2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Building Blocks of <code>{ggplot2}</code></span></span></a>
   </div>
 </li>
@@ -245,7 +245,7 @@ function toggle_visibility(id) {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-02-importing-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importing Data into RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importing Data into an RMD Document</span></span></a>
   </div>
 </li>
       </ul>
@@ -308,7 +308,7 @@ function toggle_visibility(id) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing and Loading R Packages</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Building Blocks of <code>{ggplot2}</code></span></h1>
 </div>
 
 
@@ -325,174 +325,310 @@ function toggle_visibility(id) {
 </header>
 
 
-<p>Every R function is housed in a <em>package</em>, also sometimes referred to as a <em>library</em>. I like to think of a package as an apartment building for functions; different functions live in different buildings (packages). We will denote a package by enclosing the package name in curly braces. For example <code>{tidyverse}</code> is the <code>tidyverse</code> package. To use the functions in a particular package, the package needs to be (1) installed, and (2) loaded into memory.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-packages" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Packages need to be installed and loaded.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/01-03-install-vs-load.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;3.1: Packages need to be installed and loaded."><img src="figs/01-03-install-vs-load.png" class="img-fluid figure-img" style="width:70.0%" alt="Packages need to be installed and loaded."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1: Packages need to be installed and loaded.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p><span class="citation" data-cites="Ismay:2024">Ismay et al. (<a href="#ref-Ismay:2024" role="doc-biblioref">2024</a>)</span> give the following analogy for thinking about the difference between installing and loading a package.</p>
-<blockquote class="blockquote">
-<p>A good analogy for R packages is they are like apps you can download onto a mobile phone…while it has a certain amount of features when you use it for the first time, it doesn’t have everything. R packages are like the apps you can download onto your phone from Apple’s App Store or Android’s Google Play.</p>
-<p>Let’s continue this analogy by considering the Instagram app for editing and sharing pictures. Say you have purchased a new phone and you would like to share a photo you have just taken with friends on Instagram. You need to:</p>
-<ul>
-<li><em>Install the app:</em> Since your phone is new and does not include the Instagram app, you need to download the app from either the App Store or Google Play. You do this once and you’re set for the time being. You might need to do this again in the future when there is an update to the app.</li>
-<li><em>Open the app:</em> After you’ve installed Instagram, you need to open it.</li>
-</ul>
-<p>Once Instagram is open on your phone, you can then proceed to share your photo with your friends and family. The process is very similar for using an R package. You need to:</p>
-<ul>
-<li><em>Install the package:</em> This is like installing an app on your phone. Most packages are not installed by default when you install R and RStudio. Thus if you want to use a package for the first time, you need to install it first. Once you’ve installed a package, you likely won’t install it again unless you want to update it to a newer version.</li>
-<li><em>“Load” the package:</em> “Loading” a package is like opening an app on your phone. Packages are not “loaded” by default when you start RStudio on your computer; you need to “load” each package you want to use every time you start RStudio.</li>
-</ul>
-</blockquote>
-<p><br></p>
-<section id="the-packages-tab-viewing-the-installed-and-loaded-packages" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="the-packages-tab-viewing-the-installed-and-loaded-packages"><span class="header-section-number">3.1</span> The Packages Tab: Viewing the Installed and Loaded Packages</h2>
-<p>You can see which packages are installed by clicking on the <code>Packages</code> tab in RStudio. Every package listed there has been installed. You will also be able to see the version number of the package that is installed. Some of those packages may be checked. These are the packages that are currently loaded into memory.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-packages2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-packages2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/01-03-package-tab.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;3.2: The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory."><img src="figs/01-03-package-tab.png" class="img-fluid figure-img" style="width:50.0%" alt="The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-packages2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.2: The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Twenty-nine packages were included when you installed R on your computer. When you start an R session by opening RStudio, some of those packages are also loaded into memory.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-packages3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-packages3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/01-03-default-packages.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3.3: The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory."><img src="figs/01-03-default-packages.png" class="img-fluid figure-img" style="width:70.0%" alt="The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-packages3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.3: The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p><br></p>
-</section>
-<section id="installing-packages" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="installing-packages"><span class="header-section-number">3.2</span> Installing Packages</h2>
-<p>You can install other packages onto your R system. R, in fact, has a repository called CRAN<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, that includes 24,700 different packages (as of August 2026). The easiest way to install a package from CRAN onto your computer is to use the <code>Install</code> button in the `Packages tab of RStudio.</p>
-<p>This will open a pop-up window where you can type the CRAN package you want to install in a text box. Ensure that the “Install dependencies” box is checked (this will also install any package dependencies), and then click “Install”.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-install" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Pop-up window to install packages. Here we are installing the `{tidyverse}` package. Note that the 'Install dependencies' box is checked.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-install-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/01-03-install-package.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;3.4: Pop-up window to install packages. Here we are installing the {tidyverse} package. Note that the ‘Install dependencies’ box is checked."><img src="figs/01-03-install-package.png" class="img-fluid figure-img" style="width:50.0%" alt="Pop-up window to install packages. Here we are installing the `{tidyverse}` package. Note that the 'Install dependencies' box is checked."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.4: Pop-up window to install packages. Here we are installing the <code>{tidyverse}</code> package. Note that the ‘Install dependencies’ box is checked.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>You may be prompted to choose a nearest mirror. If so, choose a mirror location. If you are successful in installing the package, you will get a message like the following:</p>
-<pre><code>Installing package into ‘/Users/zief0002/Library/R/4.6/library’
-(as ‘lib’ is unspecified)
-trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.6/tidyverse_2.0.0.tgz'
-Content type 'application/x-gzip' length 1209135 bytes (1.2 MB)
-==================================================
-downloaded 1.2 MB
-
-
-The downloaded binary packages are in
-    /var/folders/s3/sqlc9xw92w54166w86dgkd000000gr/T//Rtmps80Uf8/downloaded_packages</code></pre>
-<p>The message you get on Windows may be slightly different, but <strong>the key is that there is not an error</strong> (the message does not say “Error”).</p>
+<p>In this chapter, you will begin to learn about using the <code>{ggplot2}</code> functions to visualize your data. While there are multiple ways to plot data in R, the functions from ggplot2 are not only simpler to use than base R, but it also produces far more aesthetically pleasing plots.</p>
 <div class="fyi">
-<p><strong>FYI</strong></p>
-<p>If the installation was successful, you should now be able to see the installed package show up in the list of packages in RStudio’s <code>Packages</code> tab.</p>
+<p>The ggplot2 functions are all available when we load the <code>{tidyverse}</code> package.</p>
+</div>
+<p><br></p>
+<section id="ggplot2" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">5.1</span> ggplot2</h2>
+<p>The <code>gg</code> in <code>{ggplot2</code>} stands for <em>grammar of graphics</em>. The grammar of graphics <span class="citation" data-cites="wilkinson:2005">(<a href="#ref-wilkinson:2005" role="doc-biblioref">Wilkinson, 2005</a>)</span> is a formal system of expressive grammatical rules for creating perceivable graphs. The grammar of graphics includes things such as aesthetics, geometries, scales, facets, and guides. Hadley Wickham adopted this grammar into the initial <code>{ggplot}</code> package, which he then re-wrote and updated to create the <code>{ggplot2}</code> package. As you learn how to create plots using <code>{ggplot2}</code>, you will also begin to learn the grammar of graphics. Understanding this grammar will help you describe, and create almost any visualization you can imagine.</p>
+<div class="fyi">
+<p><strong>IMPORTANT</strong></p>
+<p>As you read the remainder of this chapter do not worry about the specific syntax/code. Instead focus on the ideas that are being presented. You will learn the specific code later as we encounter it in class.</p>
 </div>
 <p><br></p>
 </section>
-<section id="loading-packages" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="loading-packages"><span class="header-section-number">3.3</span> Loading Packages</h2>
-<p>To load a package that is installed, you use the <code>library()</code> function and include the name of the package you want to load in as the sole argument. For example, to load the <code>{ggplot2}</code> package, type the following syntax into the console:</p>
+<section id="understanding-the-basic-syntax" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="understanding-the-basic-syntax"><span class="header-section-number">5.2</span> Understanding the Basic Syntax</h2>
+<p>We will use the <strong>gapminder.csv</strong> data to illustrate how to create and modify visualizations using functionality in <code>{ggplot2}</code>. As a reminder, in the first code chunk of your script file, load the <code>{tidyverse}</code> library. In a second code chunk, use the <code>read_csv()</code> function to import the <em>gapminder.csv</em> data and assign the data into an object called <code>gapminder</code>. (You also might want to view the data to ensure that it imported into RStudio correctly.)</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/gapminder.csv"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>gapminder</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 193 × 8
+   country      region income income_level life_exp    co2 co2_change population
+   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+ 1 Afghanistan  Asia     2.03 Level 1          62.7  0.254 increase      37.2   
+ 2 Albania      Europe  13.3  Level 3          78.4  1.59  increase       2.88  
+ 3 Algeria      Africa  11.6  Level 3          76    3.69  increase      42.2   
+ 4 Andorra      Europe  58.3  Level 4          82.1  6.12  decrease       0.077 
+ 5 Angola       Africa   6.93 Level 2          64.6  1.12  decrease      30.8   
+ 6 Antigua and… Ameri…  21    Level 3          76.2  5.88  increase       0.0963
+ 7 Argentina    Ameri…  22.7  Level 3          76.5  4.41  decrease      44.4   
+ 8 Armenia      Europe  12.7  Level 3          75.6  1.89  decrease       2.95  
+ 9 Australia    Asia    49    Level 4          82.9 16.9   decrease      24.9   
+10 Austria      Europe  55.3  Level 4          82.1  7.75  decrease       8.89  
+# ℹ 183 more rows</code></pre>
+</div>
+</div>
+<p>Plots in <code>{ggplot2</code>} are built by <em>layering</em> different components. For example, consider the following syntax which creates a scatterplot using the income and CO2 emissions attributes:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> co2)) <span class="sc">+</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.2.1     ✔ readr     2.2.0
-✔ forcats   1.0.1     ✔ stringr   1.6.0
-✔ ggplot2   4.0.3     ✔ tibble    3.3.1
-✔ lubridate 1.9.5     ✔ tidyr     1.3.2
-✔ purrr     1.2.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-understand" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Scatterplot of CO2 emissions versus income.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-understand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="01-05-ggplot2_files/figure-html/fig-understand-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;5.1: Scatterplot of CO2 emissions versus income."><img src="01-05-ggplot2_files/figure-html/fig-understand-1.png" class="img-fluid figure-img" alt="Scatterplot of CO2 emissions versus income." width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-understand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Scatterplot of CO2 emissions versus income.
+</figcaption>
+</figure>
 </div>
 </div>
-<p>In general if the package loaded successfully there will be no error message printed to the console. Sometimes there will be a messgae, but as long as it doesn’t say “Error”, it shouldn’t be a problem. For example, here is what happens when we load the <code>{tidyverse}</code> package.</p>
+</div>
+<p>In this syntax there are three layers used to create the plot:</p>
+<ol type="1">
+<li>a global layer,</li>
+<li>a geometric layer drawing points, and</li>
+<li>a geometric layer drawing a smoother.</li>
+</ol>
+<p>The layers are literally <em>summed</em> together with the <code>+</code> operator to form the plot. We will look at each of these layers in turn.</p>
+<p><br></p>
+<section id="the-global-layer" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="the-global-layer"><span class="header-section-number">5.2.1</span> The Global Layer</h3>
+<p>The first layer (referred to as the global layer) in every plot you create employs the function <code>ggplot()</code>. It contains a reference to the source data (<code>data=</code>) and any <em>global aesthetic mappings</em> (more about this later). The first layer only sets up the plot, it doesn’t actually plot anything.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Running the global layer</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> co2))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-global" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The background layer for the plot is drawn. The domain (x-values) and range (y-values) is based on data in the income and co2 attributes.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-global-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="01-05-ggplot2_files/figure-html/fig-global-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;5.2: The background layer for the plot is drawn. The domain (x-values) and range (y-values) is based on data in the income and co2 attributes."><img src="01-05-ggplot2_files/figure-html/fig-global-1.png" class="img-fluid figure-img" alt="The background layer for the plot is drawn. The domain (x-values) and range (y-values) is based on data in the income and co2 attributes." width="672"></a>
 </div>
-<p>The message that <code>{tidyverse}</code> was “attaching core tidyverse packages” informed us that the dependent packages were also loaded in addition to the <code>{tidyverse}</code> package.</p>
-<div class="fyi">
-<p><strong>FYI</strong></p>
-<p>You can check the <code>Packages</code> tab to see that your package was successfully loaded. If so, a check mark will appear in the box next to the package name. Note that packages will need to be loaded every time you launch a new R session.</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-global-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: The background layer for the plot is drawn. The domain (x-values) and range (y-values) is based on data in the income and co2 attributes.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The <code>data=</code> argument indicates the source data frame.</li>
+<li>The <code>aes=</code> argument sets the aesthetic mapping(s).</li>
+</ul>
+<p><br></p>
+</section>
+<section id="aesthetics-and-aesthetic-mappings" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="aesthetics-and-aesthetic-mappings"><span class="header-section-number">5.2.2</span> Aesthetics and Aesthetic Mappings</h3>
+<p>Aesthetics define what we, as humans, perceive in a given plot; that is the visual properties of a plot. For example, the position of certain elements in the plot (where they are located), or the color or transparency of an element. These aesthetics can be fixed or variable. For example, consider the color of a set of points. If the color is fixed, it would be the same for all the points. If the color is variable, it might be red for some points and blue for other points. Often, this variability in the aesthetic is based on some attribute in our dataset (e.g., points representing Democrats are colored blue, while those representing Republicans are colored red).</p>
+<p>Linking an aesthetic to an attribute in the data, is referred to as an <em>aesthetic mapping</em>. That is because aesthetic mappings map visual properties in the plot (e.g., position, color) to the values in a particular attributes in the data. Aesthetic mappings are specified in an <code>aes()</code> function. In our earlier example syntax, there were two aesthetic mappings that were defined:</p>
+<ol type="1">
+<li>Income values from the data will be mapped to the <em>x</em>-position.</li>
+<li>CO2 values from the data will be mapped to the <em>y</em>-position.</li>
+</ol>
+<p>These mappings were used to define the domain (<em>x</em>-values) and range (<em>y</em>-values) for the blank plot created by the <code>ggplot()</code> global layer.</p>
+<div class="protip">
+<p><strong>IMPORTANT</strong></p>
+<p>All aesthetic mappings need to be specified in an <code>aes()</code> function. Because aesthetic mappings use information in the attribute to apply the specified visual properties, the aesthetics (e.g., <code>x=</code>, <code>y=</code>) need to be set to an attribute name in the data frame. For example, both <code>income</code> and <code>co2</code> are attribute names in the <code>gapminder</code> data object.</p>
 </div>
 <p><br></p>
-<!-- #### Conflicts or Masked Objects -->
-<!-- Sometimes you will get a message about conflicts or objects being *masked*. **This is not a problem.** It is just informative and means that the  package you just loaded has a function that has the *exact same name* as a previously loaded package. If you use that particular function, the most recently loaded package's version of the function will be used. For example, after loading the `{tidyverse}` library the following message is printed: -->
+</section>
+<section id="adding-geometric-layers" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="adding-geometric-layers"><span class="header-section-number">5.2.3</span> Adding Geometric Layers</h3>
+<p>After starting with the global layer, we can modify our visualization by adding layers to the global layer. For example, the layer that includes the function <code>geom_point()</code> is being added to the global layer in the syntax below.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Global layer + geometric layer adding points</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> co2)) <span class="sc">+</span> </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-adding" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Points are added on top of the plot's background layer.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="01-05-ggplot2_files/figure-html/fig-adding-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;5.3: Points are added on top of the plot’s background layer."><img src="01-05-ggplot2_files/figure-html/fig-adding-1.png" class="img-fluid figure-img" alt="Points are added on top of the plot's background layer." width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: Points are added on top of the plot’s background layer.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Geometric layers (<code>geom_*</code>) are used to add things like points, lines, histograms, densities, etc. The <code>geom_point()</code> layer in our plot is actually drawing the points of the scatter plot. These layers draw on the aesthetic mappings defined in the global layer to know where to draw these geometric objects. For example, the data in the <code>income</code> and <code>co2</code> variables define the <em>x</em>- and <em>y</em>-positions of the points, respectively.</p>
+<p>When layers are added they are “stacked” on top of previous layers. For example, consider the two sets of syntax below. Each will again create our scatterplot by adding a set of points based on the data in the global layer. Each will also draw a smoother (a sort of trend line). However, in the first set of syntax, the smoother is drawn on top of the points, and in the second set of syntax, the points are drawn on top of the smoother.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># LEFT: Draw smoother on top of points</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> co2)) <span class="sc">+</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># RIGHT: Draw points on top of smoother</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> co2)) <span class="sc">+</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'
+`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-layer" class="quarto-float quarto-figure quarto-figure-center anchored" alt="LEFT: The smoother is drawn on top of the points. RIGHT: The points are drawn on top of the smoother.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="01-05-ggplot2_files/figure-html/fig-layer-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;5.4: LEFT: The smoother is drawn on top of the points. RIGHT: The points are drawn on top of the smoother."><img src="01-05-ggplot2_files/figure-html/fig-layer-1.png" class="img-fluid figure-img" style="width:100.0%" alt="LEFT: The smoother is drawn on top of the points. RIGHT: The points are drawn on top of the smoother."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: LEFT: The smoother is drawn on top of the points. RIGHT: The points are drawn on top of the smoother.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A useful metaphor might be to imagine putting together a collage of many different photographs. Some parts of some of the photographs (especially those you put down first) might be covered up by photographs that you add later.</p>
+<div class="protip">
+<p><strong>PROTIP</strong></p>
+<p>When you are creating plots, you might need to switch the order of some of the layers to get the visualization you want.</p>
+</div>
+<p><br></p>
+<!-- ### Adding the Theme Layer -->
+<!-- The third layer in our initial scatterplot (`theme_minimal()`) is referred to as a theme layer. It changes the entire theme of the plot (e.g., color scheme, font, axes, gridlines).  -->
+<!-- ```{r} -->
+<!-- #| label: fig-layer -->
+<!-- #| fig-cap: "LEFT: The default grey theme. RIGHT: The minimal theme." -->
+<!-- #| fig-alt: "LEFT: The default grey theme. RIGHT: The minimal theme." -->
+<!-- #| fig-width: 6 -->
+<!-- #| fig-height: 6 -->
+<!-- #| fig-show: "hold" -->
+<!-- #| out-width: "45%" -->
+<!-- ########################## -->
+<!-- # Plot with the default theme -->
+<!-- ########################## -->
+<!-- ggplot(data = gapminder, aes(x = income, y = co2)) +  -->
+<!--   geom_point() -->
+<!-- ########################## -->
+<!-- # Plot with the minimal theme -->
+<!-- ########################## -->
+<!-- ggplot(data = gapminder, aes(x = income, y = co2)) +  -->
+<!--   geom_point() + -->
+<!--   theme_minimal() -->
 <!-- ``` -->
-<!-- ── Conflicts ────────────────────────────────────────── -->
-<!-- ✖ dplyr::filter() masks stats::filter() -->
-<!-- ✖ dplyr::lag()    masks stats::lag() -->
-<!-- ℹ Use the conflicted package to force all conflicts to become errors -->
-<!-- ```     -->
-<!-- This tells me that the `{dplyr}` package includes two functions (`filter()` and `lag()`) that have the same name as functions included in other packages that have already been loaded into memory (both from the `{stats}` package.) Since `{dplyr}` was the most recently loaded package (it loaded when you loaded `{tidyverse}`), if you were to use the `filter()` function, R would use `{dplyr}`'s `filter()` function rather than that from the `{stats}` package^[If you really wanted to use the `filter()` function from the `{stats}` package you could specify this in the syntax using the `::` operator, `stats::filter()`. This operator also allows you to use a function without loading the package with the `library()` function.]. -->
 <!-- <br /> -->
-<section id="error-loading-a-package" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="error-loading-a-package"><span class="header-section-number">3.3.1</span> Error Loading a Package</h3>
-<p>Once in a while, when loading a package, you may get an error message (it will say “Error” in the message.). <strong>Don’t panic.</strong> There are two errors that are common. The first error you may get indicates that the package did not get installed. For example, if the <code>{tidyverse}</code> package was not installed, trying to use the <code>library()</code> function to load that package would result in an error.</p>
+</section>
+</section>
+<section id="good-syntactic-habits" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="good-syntactic-habits"><span class="header-section-number">5.3</span> Good Syntactic Habits</h2>
+<p>As we add multiple layers to build up our plot, it is a good habit to use multiple lines for the syntax. Generally we put one layer on each line.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple layers -- One on each line</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> co2)) <span class="sc">+</span>  </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<pre><code>Error in library(tidyverse) : there is no package called ‘tidyverse’</code></pre>
-<p>Simply install the package and then re-try loading it.</p>
-<p>The second error that you might run across when trying to load a package occurs when the installation did not include the package dependencies. For example,</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>+</code> sign needs to be at the end of the line (not at the beginning). If you are using a script file (which you should be), highlight ALL layers in the plot and click <code>Run</code> to create the plot.</p>
+<div class="protip">
+<p><strong>PROTIP</strong></p>
+<p>If you write your <code>{ggplot2}</code> syntax across multiple lines, it makes it not only easier to read, but also easier to try out different layers or features. For example, you can comment out lines to remove layers as you are building the plot without losing the syntax you wrote.</p>
+<p>You can also debug syntax by highlighting all lines up to a given <code>+</code> sign and running the syntax. By subsequently highlighting and running additional lines of syntax, you can often figure out where any errors show up!</p>
 </div>
-<pre><code>Error: package or namespace load failed for ‘tidyverse’ in loadNamespace(j &lt;- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
-there is no package called ‘ggplot2’</code></pre>
-<p>Again, don’t panic! Here the error message is saying that the <code>{ggplot2}</code> package is a dependency and it is not installed. To fix this, install the <code>{ggplot2}</code> package and then try again. (You may need to open a new R session first.) You may need to install more than one dependency, so just keep installing what is missing until it works.</p>
 <p><br></p>
+<!-- ## Global vs. Local Aesthetic Mappings -->
+<!-- As you learned earlier, we use the `aes()` function to set aesthetic mappings (i.e., linking attributes to aesthetics). Aesthetic mappings are often set globally (in the initial `ggplot()` layer). When we include aesthetic mappings in the global layer they are applied to *all layers* in the plot. For example, the syntax below maps data in the `income` attribute to the *x*-position, data from the `co2` attribute to the *y*-position, and data from the `region` attribute to color for both the loess smoother and the points. -->
+<!-- ```{r} -->
+<!-- #| label: fig-aes -->
+<!-- #| fig-cap: "The global aesthetic mappings of x- and y-positioning, as well as, color are applied to the smoother and point layers." -->
+<!-- #| fig-alt: "The global aesthetic mappings of x- and y-positioning, as well as, color are applied to the smoother and point layers." -->
+<!-- #| fig-width: 8 -->
+<!-- #| fig-height: 6 -->
+<!-- #| out-width: '80%' -->
+<!-- ########################## -->
+<!-- # All aesthetic mappings are global -->
+<!-- ########################## -->
+<!-- ggplot(data = gapminder, aes(x = income, y = co2, color = region)) +   -->
+<!--   geom_smooth() + -->
+<!--   geom_point() -->
+<!-- ``` -->
+<!-- :::protip -->
+<!-- **FYI** -->
+<!-- Notice when we use non-positional aesthetic mappings (e.g., color) a legend, or guide in the grammar of graphics, will be automatically added to our plot for each aesthetic mapping. -->
+<!-- ::: -->
+<!-- Aesthetic mappings can also be set locally in a specific layer. Aesthetic mappings set in a specific layer only apply to that particular layer. Below, we continue to globally map data from the `income` attribute to the *x*-position, and data from the `co2` attribute to the *y*-position. Both the smoother layer and point layer will utilize that. However, only the point layer will map data from the `region` attribute to color. Note that regardless of whether the aesthetic mapping is global or local, we still make this mapping inside an `aes()` function. -->
+<!-- ```{r} -->
+<!-- #| label: fig-aes2 -->
+<!-- #| fig-cap: "The global aesthetic mappings of x- and y-positioning are applied to the smoother and point layers. The aesthetic mapping of color is only applied to the point layer." -->
+<!-- #| fig-alt: "The global aesthetic mappings of x- and y-positioning are applied to the smoother and point layers. The aesthetic mapping of color is only applied to the point layer." -->
+<!-- #| fig-width: 8 -->
+<!-- #| fig-height: 6 -->
+<!-- #| out-width: '80%' -->
+<!-- ########################## -->
+<!-- # Aesthetic mappings for x- and y-position are global -->
+<!-- # Aesthetic mapping for color only applies to the points layer -->
+<!-- ########################## -->
+<!-- ggplot(data = gapminder, aes(x = income, y = co2)) +   -->
+<!--   geom_smooth() + -->
+<!--   geom_point(aes(color = region)) -->
+<!-- ``` -->
+<!-- <br /> -->
+<!-- ## Fixed Aesthetics -->
+<!-- Fixed aesthetics assign the exact same value for the visual property for **all** the observations; it is not based on the data. Fixed aesthetics do not go inside of the `aes()` function. (Remember: Inside of the `aes()` function the mapping has to be to an attribute name!) The following syntax uses the following aesthetics: -->
+<!-- -   **Global aesthetic mapping:** Data from the `income` attribute mapped to the *x*-position. -->
+<!-- -   **Global aesthetic mapping:** Data from the `co2` attribute mapped to the *y*-position. -->
+<!-- -   **Fixed local aesthetic:** All points are given a shape of `22` (filled square with a border). You can see all the shape options [here](http://www.sthda.com/english/wiki/ggplot2-point-shapes). -->
+<!-- -   **Fixed local aesthetic:** All points are given a size of `4` (slightly bigger). The default size is 3. -->
+<!-- -   **Local aesthetic mapping:** Data from the `region` attribute mapped to fill for the points layer only. Because we are using a different shape we use `fill=` rather than `color=` to color the observations. -->
+<!-- -   **Fixed local aesthetic:** All points are given a border color of black (for this shape border color is set using `color=`). -->
+<!-- ```{r} -->
+<!-- #| label: fig-aes3 -->
+<!-- #| fig-cap: "The global aesthetic mappings of x- and y-positioning are applied to the smoother and point layers. The aesthetic mapping of color is only applied to the point layer. The point layer also includes several fixed aesthetics." -->
+<!-- #| fig-alt: "The global aesthetic mappings of x- and y-positioning are applied to the smoother and point layers. The aesthetic mapping of color is only applied to the point layer. The point layer also includes several fixed aesthetics." -->
+<!-- #| fig-width: 8 -->
+<!-- #| fig-height: 6 -->
+<!-- #| out-width: '80%' -->
+<!-- ########################## -->
+<!-- # Aesthetic mappings for x- and y-position are global -->
+<!-- # Aesthetic mapping for color only applies to the points layer -->
+<!-- # All points are the same shape, size, and border color -->
+<!-- ########################## -->
+<!-- ggplot(data = gapminder, aes(x = income, y = co2)) +   -->
+<!--   geom_smooth() + -->
+<!--   geom_point(aes(fill = region), shape = 22, size = 4, color = "black") -->
+<!-- ``` -->
+<!-- <br /> -->
+</section>
+<section id="references" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="references"><span class="header-section-number">5.4</span> References</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-Ismay:2024" class="csl-entry" role="listitem">
-Ismay, C., Kim, A. Y., &amp; Valdivia, A. (2024). <em>Statistical inference via data science: A ModernDive into r and the tidyverse</em> (2nd ed.). CRC Press.
+<div id="ref-wilkinson:2005" class="csl-entry" role="listitem">
+Wilkinson, L. (2005). <em>The grammar of graphics</em> (2nd ed.). Springer.
 </div>
 </div>
-</section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>“CRAN is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->

@@ -1,0 +1,254 @@
+# Facetting: Creating Small Multiples for Comparisons {#sec-facetting}
+
+This chapter will focus on how we can create histograms for subsets of the data in R. To illustrate this, we will use the **mn-colleges.csv** data. This data includes admissions related data for the 33 institutions of higher learning in Minnesota. 
+
+```{r}
+#| label: load-packages
+#| message: false
+#| echo: false
+
+# Load libraries
+library(tidyverse)
+
+# Import data
+mn <- read_csv("data/mn-colleges.csv")
+
+# View data
+DT::datatable(mn)
+```
+
+
+<br />
+
+
+## Questions about Group Differences
+
+The types of questions that require subsetting are often questions related to group differences or comparisons. For example:
+
+> I wonder if the distribution of acceptance rates is different across educational sectors (i.e., public and private institutions)?
+
+Here we are asking whether there are differences between private and public universities in there acceptance rates. Notice that in this question, there are two different attributes that are being referenced: (1) acceptance rates and (2) educational sector. Moreover, the attribute we are looking for differences in (acceptance rates) is a quantitative attribute, and the attribute that is composing the different groups, or subsets, is a categorical attribute. This is important; group differences questions are of this type:
+
+> I wonder if the distribution of <u>some quantitative attribute</u> is different across <u>groups in a categorical attribute</u>?
+
+
+In order to answer this type of question we need both attributes in our data. For our question we need a quantitative attribute of acceptance rates (`accept_rate`) and a categorical attribute composed of the groups private and public (`sector`).
+
+<br />
+
+
+## Using R to Subset a Plot by Groups
+
+Subsetting means that we are going to create a separate plot for each of the groups in question. In our example, we want to create a histogram of the acceptance rates for public institutions and a separate histogram of acceptance rates for private institutions. Then we can compare the two distributions to answer our question. 
+
+One method we can use to subset groups in a plot is referred to as *facetting*. Facetting literally splits the plot into multiple "smaller" plots (sometimes called *small multiples*) based on your group attribute. So we will be facetting our histogram by educational sector. The way we do that is to create our histogram of acceptance rates and then add the `facet_wrap()` layer. This layer includes the tilde operator (`~`) followed by the name of the attribute that you want to facet over. Since we want to facet by educational sector, the synatax in this layer would be: `facet_wrap(~sector)`. The syntax to create the plot looks like this:
+
+```{r}
+#| fig-alt: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This plot is facetted by educational sector."
+#| fig-width: 12
+#| fig-height: 6
+#################################
+# Histogram of acceptance rates
+# Facetted on educational sector
+#################################
+
+ggplot(data = mn, aes(x = accept_rate)) +
+  geom_histogram(color = "black", fill = "yellow", binwidth = 5) +
+  facet_wrap(~sector) +
+  labs(
+    x = "Acceptance rate",
+    y = "Count",
+    title = "ACCEPTANCE RATES FOR THE 33 INSTITUTIONS OF HIGHER LEARNING IN MINNESOTA",
+    subtitle = "\nThis plot is facetted by educational sector.",
+    caption = "Source: College Scorecard"
+  )
+```
+
+
+If you would rather have the plots stacked vertically rather than side-by-side, you can add the argument `ncol=` (indicating the number of columns in the pot) or `nrow=` (indicating the number of rows in the plot) to the `facet_wrap()` layer. For example, to stack our plots, we could either include `ncol=1` or `nrow=2`. (You don't need to add both!)
+
+```{r}
+#| fig-alt: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This plot is facetted by educational sector."
+#| fig-width: 6
+#| fig-height: 12
+#################################
+# Histogram of acceptance rates
+# Facetted on educational sector in 1 column
+#################################
+
+ggplot(data = mn, aes(x = accept_rate)) +
+  geom_histogram(color = "black", fill = "yellow", binwidth = 5) +
+  facet_wrap(~sector, ncol = 1) +
+  labs(
+    x = "Acceptance rate",
+    y = "Count",
+    title = "ACCEPTANCE RATES FOR THE 33 INSTITUTIONS OF HIGHER\nLEARNING IN MINNESOTA",
+    subtitle = "\nThis plot is facetted by educational sector.",
+    caption = "Source: College Scorecard"
+  )
+```
+
+:::fyi
+**PROTIP**
+
+The vertical stacked orientation makes the plots easier to compare when the data values are on the *x*-axis.
+:::
+
+<br />
+
+
+### Coloring the Bins by Educational Sector
+
+While facetting creates a different plot for each group, because we used `fill="yellow"`, all of the histograms have the same bin fill color. Sometimes it is nice to have each group have their own fill color. This helps readers quickly differentiate among the different groups. To do this, we put the `fill=` argument in an `aes()` function inside the `geom_histogram()` layer. We provide the `fill=` argument the name of our grouping attribute that we want to color by. For example, to subset by educational sector, our `geom_histogram()` layer would look like this: `geom_histogram(aes(fill = sector), color = "black", binwidth = 5)`. (Note that we omitted the original `fill="yellow"`.) Note that only the `fill=` was included inside the `aes()` function. The other arguments, `binwidth=`, and `color=`, were in the `geom_histogram()` layer but not in the `aes()` function (see the FYI below). The entire syntax looks like this:
+
+```{r}
+#| fig-alt: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This plot is facetted by educational sector."
+#| fig-width: 8
+#| fig-height: 12
+#################################
+# Histogram of acceptance rates
+# Facetted on educational sector
+# Different fill colors for each sector
+#################################
+
+ggplot(data = mn, aes(x = accept_rate)) +
+  geom_histogram(aes(fill = sector), color = "black", binwidth = 5) +
+  facet_wrap(~sector, ncol = 1) +
+  labs(
+    x = "Acceptance rate",
+    y = "Count",
+    title = "ACCEPTANCE RATES FOR THE 33 INSTITUTIONS OF HIGHER\nLEARNING IN MINNESOTA",
+    subtitle = "\nThis plot is facetted by educational sector.",
+    caption = "Source: College Scorecard"
+  )
+```
+
+
+
+:::fyi
+**FYI**
+
+How do you know whether an argument goes inside an `aes()` function or not?
+
+Only when the value for the argument is an attribute name in the data does it go in an `aes()` function. For example, in the first layer we put `x=accept_rate` in an `aes()` function. That is because `accept_rate` (the value we are assigning to `x=`) is an attribute name in the data. Similarly, we put `fill=sector` in an `aes()` function since `sector` (the value we are assigning to `fill=`) is also an attribute in the data.
+
+In contrast, when we assigned `color="black"` and `binwidth=5` the values `"black"` and `5` are not attributes in the data. So they do not go inside an `aes()` function. Any argument not in an `aes()` function gets assigned to all the groups. So the bar outline color is black for both the private and public institutions. Similarly both histograms are using a binwidth of 5.
+
+:::
+
+<br />
+
+
+## Comparing the Distributions: Answering the Question 
+
+To answer our question about whether the distribution of acceptance rates is different across educational sectors, we need to compare the two distributions. As with our description of a distribution, we want to compare the shapes, typical values, and variation. We also need to bring in the context of the data in this comparison. 
+
+> In our example, we can see that the distribution of acceptance rates for private institutions is left-skewed with a typical acceptance rate around 80%. Most private institutions are accepting between 70%--90% of applicants, although there are a couple highly selective institutions that accept only around 25% of their applicants. In contrast, the distribution of acceptance rates for public institutions is right-skewed with a typical acceptance rate around 65% with most public institutions are accepting between 55%--80% of applicants.
+
+This is a good start, but we haven't actually compared these yet---we have only described the distributions separately. Let's add the comparison.
+
+> This suggests that private institutions are generally accepting a higher percentage of their applicants than public univeristies are. However, there are four private universities that are much more selective than every public university, accepting 50% or fewer of their applicants.
+
+One last thing you can add, if you have the content knowledge, is why these differences are what they are. For example, why would public universities typically accept a lower percentage of their applicants than private universities? Why would private universities have a much lower minimum acceptance rate than any of the public universities? Here is one way to modify that comparison.
+
+> This suggests that private institutions are generally accepting a higher percentage of their applicants than public univeristies are. One explanation for this is that public institutions get many more students applicants than private institutions (~7300 vs 2800, on average). Even though they are often larger, public universities by necessity would have to turn away a high percentage of students because of seat space. However, there are four private universities that are much more selective than every public university, accepting 50% or fewer of their applicants. Because public universities have a shared commitment to accessible, affordable, and inclusive higher education these institutions will always have a higher acceptance rate than institutions like Carleton College (19% acceptance rate) or Macalester College (32% acceptance rate) that have a highly selective orientation for admitting students.
+
+Notice that in making these explanations, the data scientist needs to draw on their own content knowledge (e.g., understanding the public mission of institutions, recognizing that public institutions have more applicants). They also supplement that with information from the data (e.g., average number of applicants, acceptance rate of individual institutions).
+
+<br />
+
+
+<!-- ## Method 2: Both Histograms on the Same Plot -->
+
+<!-- A second method to subset the data is to include both groups' histograms on the same plot. To do this, instead of including a `facet_wrap()` layer, we instead include a `fill=` in an `aes()` function of the `geom_histogram()` layer. We provide the `fill=` argument the name of our grouping attribute. For example, to subset by educational sector, our `geom_histogram()` layer would look like this: `geom_histogram(aes(fill = sector))`. The entire syntax to create the plot looks like this: -->
+
+<!-- ```{r} -->
+<!-- #| fig-alt: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This plot is facetted by educational sector." -->
+<!-- #| fig-width: 12 -->
+<!-- #| fig-height: 6 -->
+
+<!-- ggplot(data = mn, aes(x = accept_rate)) + -->
+<!--   geom_histogram(aes(fill = sector)) + -->
+<!--   labs( -->
+<!--     x = "Acceptance rate", -->
+<!--     y = "Count", -->
+<!--     title = "ACCEPTANCE RATES FOR THE 33 INSTITUTIONS OF HIGHER LEARNING IN MINNESOTA", -->
+<!--     subtitle = "\nThis plot is shown for both private and public institutions.", -->
+<!--     caption = "Source: College Scorecard" -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- This creates a single plot but plots the histograms for public and private institutions using a different fill color for the bins. (We can also include other arguments in the `geom_histogram()` layer such as `binwidth=` and `color=`.) One thing that makes this plot difficult to read is that some bars are on top of other bars, hiding some features of the distributions. To fix this, we can make the bars more transparent. To do this we add the argument `alpha=` to `geom_histogram()` layer. This sets the transparency level of the histogram bars with the value `1` being fully opaque (the default), and the value `0` being fully transparent. (Use trial-and-error to find an alpha value that looks good.)  -->
+
+<!-- The syntax now looks like this: -->
+
+<!-- ```{r} -->
+<!-- #| fig-alt: "Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This plot is shown for both private and public institutions." -->
+<!-- #| fig-width: 12 -->
+<!-- #| fig-height: 6 -->
+
+<!-- ggplot(data = mn, aes(x = accept_rate)) + -->
+<!--   geom_histogram(aes(fill = sector), alpha = 0.3, binwidth = 5, color = "black") + -->
+<!--   labs( -->
+<!--     x = "Acceptance rate", -->
+<!--     y = "Count", -->
+<!--     title = "ACCEPTANCE RATES FOR THE 33 INSTITUTIONS OF HIGHER LEARNING IN MINNESOTA", -->
+<!--     subtitle = "\nThis plot is shown for both private and public institutions.", -->
+<!--     caption = "Source: College Scorecard" -->
+<!--   ) -->
+<!-- ``` -->
+
+
+
+
+<!-- --- -->
+
+
+<!-- <br /> -->
+
+
+<!-- ## Method 3: Frequency Polygons -->
+
+<!-- Even when using a high transparency level, the last plot was difficult to read. One alternative is to create a *frequency polygon*. A frequency polygon is essentially a line graph that outlines the shape of the histogram. To create this, we replace the `geom_histogram()` layer with the `geom_freqpoly()` layer. Here is the syntax for the frequency polygon for all 33 institutions (private and public combined.) -->
+
+<!-- ```{r} -->
+<!-- #| fig-alt: "Frequency polygon of acceptance rates for the 33 institutions of higher learning in Minnesota." -->
+<!-- #| fig-width: 12 -->
+<!-- #| fig-height: 6 -->
+
+<!-- ggplot(data = mn, aes(x = accept_rate)) + -->
+<!--   geom_freqpoly(binwidth = 15) + -->
+<!--   labs( -->
+<!--     x = "Acceptance rate", -->
+<!--     y = "Count", -->
+<!--     title = "ACCEPTANCE RATES FOR THE 33 INSTITUTIONS OF HIGHER LEARNING IN MINNESOTA", -->
+<!--     subtitle = "\n", -->
+<!--     caption = "Source: College Scorecard" -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- Note that similar to `geom_histogram()`, the `geom_freqpoly()` layer takes a `binwidth=` arguement that dictates how smooth/jagged the outline is. As we saw with the histogram, the frequency polygon is indicating a slightly left-skewed distribution with a typical value around 75%.  -->
+
+<!-- Similar to how we used `aes(fill=sector)` to include two histograms in the same plot, we will use `aes(color=sector)` to include two frequency polygons in the same plot. The only difference is that we indicate a lines color using `color=` rather than `fill=`. -->
+
+<!-- ```{r} -->
+<!-- #| fig-alt: "Frequency polygon of acceptance rates for the 33 institutions of higher learning in Minnesota." -->
+<!-- #| fig-width: 12 -->
+<!-- #| fig-height: 6 -->
+
+<!-- ggplot(data = mn, aes(x = accept_rate)) + -->
+<!--   geom_freqpoly(aes(color = sector), binwidth = 15) + -->
+<!--   labs( -->
+<!--     x = "Acceptance rate", -->
+<!--     y = "Count", -->
+<!--     title = "ACCEPTANCE RATES FOR THE 33 INSTITUTIONS OF HIGHER LEARNING IN MINNESOTA", -->
+<!--     subtitle = "\n", -->
+<!--     caption = "Source: College Scorecard" -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- <br /> -->
+
+
+
+

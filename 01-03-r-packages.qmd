@@ -89,35 +89,26 @@ The downloaded binary packages are in
 	/var/folders/s3/sqlc9xw92w54166w86dgkd000000gr/T//Rtmps80Uf8/downloaded_packages
 ```
 
-The message you get on Windows may be slightly different, but **the key is that there is not an error** (the message does not say "Error"). Furthermore, if the installation was successful, you should now be able to see the installed package show up in your `Packages` tab.
+The message you get on Windows may be slightly different, but **the key is that there is not an error** (the message does not say "Error"). 
 
 :::fyi
 **FYI**
 
-An equivalent manner of installing a package via syntax is to use the `install.packages()` function. For example, to install the `{ggplot2}` package we could have used the following syntax:
-
-```{r}
-#| eval: false
-
-install.packages("ggplot2", dependencies = TRUE)
-```
-
-Note that the name of the package is included in quotation marks (it is a character string). The argument `dependencies=TRUE` installs all package dependencies, similar to checking the "Install dependencies" box in the pop-up menu.
+If the installation was successful, you should now be able to see the installed package show up in the list of packages in RStudio's `Packages` tab.
 :::
 
 <br />
 
 
-### Loading Packages
+## Loading Packages
 
-To load a package that is installed, you use the `library()` function and include the name of the package you want to load in as the sole argument. For example, to load the `{ggplot2}` package, use the following syntax:
+To load a package that is installed, you use the `library()` function and include the name of the package you want to load in as the sole argument. For example, to load the `{ggplot2}` package, type the following syntax into the console:
 
 ```{r}
-# Load tidyverse package
 library(tidyverse)
 ```
 
-Some packages requires other packages (dependencies) to work. For example, the `{tidyverse}` package is dependent on several other packages, including `{dplyr}`, `{readr}`, `{ggplot2`}, and many others. When you load packages that have dependencies, R will also load the dependencies. When it does this, a message will be printed after you execute `library()`. For example, here is what happens when we load the `{tidyverse}` package.
+In general if the package loaded successfully there will be no error message printed to the console. Sometimes there will be a messgae, but as long as it doesn't say "Error", it shouldn't be a problem. For example, here is what happens when we load the `{tidyverse}` package.
 
 ```{r}
 #| message: true
@@ -129,34 +120,34 @@ The message that `{tidyverse}` was "attaching core tidyverse packages" informed 
 
 
 
-:::protip
+:::fyi
 **FYI**
 
-Once the package is loaded, all of the functions, data sets, etc. in that package are available to you. Packages will need to be loaded every time you launch a new R session. 
+You can check the `Packages` tab to see that your package was successfully loaded. If so, a check mark will appear in the box next to the package name. Note that packages will need to be loaded every time you launch a new R session. 
 :::
 
 <br />
 
 
-#### Conflicts or Masked Objects
+<!-- #### Conflicts or Masked Objects -->
 
-Sometimes you will get a message about conflicts or objects being *masked*. **This is not a problem.** It is just informative and means that the  package you just loaded has a function that has the *exact same name* as a previously loaded package. If you use that particular function, the most recently loaded package's version of the function will be used. For example, after loading the `{tidyverse}` library the following message is printed:
+<!-- Sometimes you will get a message about conflicts or objects being *masked*. **This is not a problem.** It is just informative and means that the  package you just loaded has a function that has the *exact same name* as a previously loaded package. If you use that particular function, the most recently loaded package's version of the function will be used. For example, after loading the `{tidyverse}` library the following message is printed: -->
 
-```
-── Conflicts ──────────────────────────────────────────
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package to force all conflicts to become errors
-```    
+<!-- ``` -->
+<!-- ── Conflicts ────────────────────────────────────────── -->
+<!-- ✖ dplyr::filter() masks stats::filter() -->
+<!-- ✖ dplyr::lag()    masks stats::lag() -->
+<!-- ℹ Use the conflicted package to force all conflicts to become errors -->
+<!-- ```     -->
 
-This tells me that the `{dplyr}` package includes two functions (`filter()` and `lag()`) that have the same name as functions included in other packages that have already been loaded into memory (both from the `{stats}` package.) Since `{dplyr}` was the most recently loaded package (it loaded when you loaded `{tidyverse}`), if you were to use the `filter()` function, R would use `{dplyr}`'s `filter()` function rather than that from the `{stats}` package^[If you really wanted to use the `filter()` function from the `{stats}` package you could specify this in the syntax using the `::` operator, `stats::filter()`. This operator also allows you to use a function without loading the package with the `library()` function.].
+<!-- This tells me that the `{dplyr}` package includes two functions (`filter()` and `lag()`) that have the same name as functions included in other packages that have already been loaded into memory (both from the `{stats}` package.) Since `{dplyr}` was the most recently loaded package (it loaded when you loaded `{tidyverse}`), if you were to use the `filter()` function, R would use `{dplyr}`'s `filter()` function rather than that from the `{stats}` package^[If you really wanted to use the `filter()` function from the `{stats}` package you could specify this in the syntax using the `::` operator, `stats::filter()`. This operator also allows you to use a function without loading the package with the `library()` function.]. -->
 
-<br />
+<!-- <br /> -->
 
 
 ### Error Loading a Package
 
-Once in a while, when loading a package, you may get an error. **Don't panic.** There are two errors that are common. The first error you may get indicates that the package did not get installed. For example, if the `{tidyverse}` package was not installed, trying to use the `library()` function to load that package would result in an error.
+Once in a while, when loading a package, you may get an error message (it will say "Error" in the message.). **Don't panic.** There are two errors that are common. The first error you may get indicates that the package did not get installed. For example, if the `{tidyverse}` package was not installed, trying to use the `library()` function to load that package would result in an error.
 
 ```{r}
 #| eval: false

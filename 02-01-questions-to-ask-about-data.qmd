@@ -191,141 +191,141 @@ The larger dataset was obtained by scraping Hawes Publications, an online reposi
 
 
 
-## Exercises: Your Turn {-}
+<!-- ## Exercises: Your Turn {-} -->
 
-Inside Airbnb is a mission driven project that provides data and advocacy about Airbnb's impact on residential communities. The data below constitutes a random sample of Airbnb listings from the Twin Cities scraped by Inside Airbnb. Use these data along with information form the data dictionary to answer questions 1--4 below.
-
-
-```{r}
-#| label: airbnb-data
-#| echo: false
-#| message: false
-
-airbnb = readr::read_csv("data/airbnb.csv")
-DT::datatable(airbnb)
-```
+<!-- Inside Airbnb is a mission driven project that provides data and advocacy about Airbnb's impact on residential communities. The data below constitutes a random sample of Airbnb listings from the Twin Cities scraped by Inside Airbnb. Use these data along with information form the data dictionary to answer questions 1--4 below. -->
 
 
-<br />
+<!-- ```{r} -->
+<!-- #| label: airbnb-data -->
+<!-- #| echo: false -->
+<!-- #| message: false -->
+
+<!-- airbnb = readr::read_csv("data/airbnb.csv") -->
+<!-- DT::datatable(airbnb) -->
+<!-- ``` -->
 
 
-1. What are the cases and how many are in the data?
-
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_01');">Show/Hide Solution</button>
-
-<div id="exercise_01" style="display:none; margin: -40px 0 40px 40px;">
-A case in this data set is an individual Airbnb listing. There are 500 cases (listings) in the data.
-</div>
+<!-- <br /> -->
 
 
-2. What are the attribute names and how many attributes are included in the data?
+<!-- 1. What are the cases and how many are in the data? -->
 
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_02');">Show/Hide Solution</button>
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_01');">Show/Hide Solution</button> -->
 
-<div id="exercise_02" style="display:none; margin: -40px 0 40px 40px;">
-There are 11 attributes in the data. These include:
-
-- `id`
-- `name`
-- `host_response_rate`
-- `host_acceptance_rate`
-- `host_is_superhost`
-- `host_listings_count`
-- `room_type`
-- `accommodates`
-- `beds`
-- `price`
-- `minimum_nights`
-</div>
+<!-- <div id="exercise_01" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- A case in this data set is an individual Airbnb listing. There are 500 cases (listings) in the data. -->
+<!-- </div> -->
 
 
-3. What does each attribute represent? 
+<!-- 2. What are the attribute names and how many attributes are included in the data? -->
 
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03');">Show/Hide Solution</button>
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_02');">Show/Hide Solution</button> -->
 
-<div id="exercise_03" style="display:none; margin: -40px 0 40px 40px;">
-There are 11 attributes in the data. These include:
+<!-- <div id="exercise_02" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- There are 11 attributes in the data. These include: -->
 
-- `id`: Airbnb's unique identifier for the listing
-- `name`: Name of the listing
-- `host_response_rate`: The percentage of guest inquiries responded to by the host within 24 hours (from 1--100 percent).
-- `host_acceptance_rate`: The percentage of booking requests accepted by the host (from 1--100 percent).
-- `host_is_superhost`: The host has is an Airbnb Superhost (TRUE or FALSE)
-- `host_listings_count`: The number of listings the host has
-- `room_type`: Airbnb's classification of the type of room for the listing ("Entire home/apt"; "Private room"; "Shared room"; or "Hotel room")
-- `accommodates`: The maximum capacity of the listing.
-- `beds`: The number of bed(s).
-- `price`: Daily price in local currency; in these data it is in U.S. dollars.
-- `minimum_nights`: The minimum number of night stay for the listing.
-</div>
-
-
-4. Which attributes are categorical? Which are quantitative? 
-
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04');">Show/Hide Solution</button>
-
-<div id="exercise_04" style="display:none; margin: -40px 0 40px 40px;">
-Categorical attributes include:
-
-- id
-- name
-- host_is_superhost
-- room_type
-
-Quantitative attributes include:
-
-- host_response_rate
-- host_acceptance_rate
-- host_listings_count
-- accommodates
-- beds
-- price
-- minimum_nights
-</div>
+<!-- - `id` -->
+<!-- - `name` -->
+<!-- - `host_response_rate` -->
+<!-- - `host_acceptance_rate` -->
+<!-- - `host_is_superhost` -->
+<!-- - `host_listings_count` -->
+<!-- - `room_type` -->
+<!-- - `accommodates` -->
+<!-- - `beds` -->
+<!-- - `price` -->
+<!-- - `minimum_nights` -->
+<!-- </div> -->
 
 
+<!-- 3. What does each attribute represent?  -->
 
-Inside Airbnb listings includes a lot of [information about the data](https://insideairbnb.com/get-the-data/) in "Data Resources" on their website. In particular the "Data Dictionary" and "Data Assumptions" pages have a great deal of useful information.
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_03" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- There are 11 attributes in the data. These include: -->
+
+<!-- - `id`: Airbnb's unique identifier for the listing -->
+<!-- - `name`: Name of the listing -->
+<!-- - `host_response_rate`: The percentage of guest inquiries responded to by the host within 24 hours (from 1--100 percent). -->
+<!-- - `host_acceptance_rate`: The percentage of booking requests accepted by the host (from 1--100 percent). -->
+<!-- - `host_is_superhost`: The host has is an Airbnb Superhost (TRUE or FALSE) -->
+<!-- - `host_listings_count`: The number of listings the host has -->
+<!-- - `room_type`: Airbnb's classification of the type of room for the listing ("Entire home/apt"; "Private room"; "Shared room"; or "Hotel room") -->
+<!-- - `accommodates`: The maximum capacity of the listing. -->
+<!-- - `beds`: The number of bed(s). -->
+<!-- - `price`: Daily price in local currency; in these data it is in U.S. dollars. -->
+<!-- - `minimum_nights`: The minimum number of night stay for the listing. -->
+<!-- </div> -->
 
 
-5. Who/what organization collected the data? 
+<!-- 4. Which attributes are categorical? Which are quantitative?  -->
 
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_05');">Show/Hide Solution</button>
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04');">Show/Hide Solution</button> -->
 
-<div id="exercise_05" style="display:none; margin: -40px 0 40px 40px;">
-The data were collected by Inside Airbnb
-</div>
+<!-- <div id="exercise_04" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- Categorical attributes include: -->
 
+<!-- - id -->
+<!-- - name -->
+<!-- - host_is_superhost -->
+<!-- - room_type -->
 
-6. For what purpose (why) were the data collected?
+<!-- Quantitative attributes include: -->
 
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_06');">Show/Hide Solution</button>
-
-<div id="exercise_06" style="display:none; margin: -40px 0 40px 40px;">
-The data were collected as part of Inside Airbnb's a mission driven project to provides data and advocacy about Airbnb's impact on residential communities in an effort to empower communities to understand, decide and control the role of renting residential homes to tourists.
-</div>
-
-
-7. How and where were the data collected?
-
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_07');">Show/Hide Solution</button>
-
-<div id="exercise_07" style="display:none; margin: -40px 0 40px 40px;">
-The data were collected from public information compiled from the Airbnb web-site including the availabiity calendar for 365 days in the future, and the reviews for each listing. Data is verified, cleansed, analyzed and aggregated by Inside Airbnb.
-</div>
+<!-- - host_response_rate -->
+<!-- - host_acceptance_rate -->
+<!-- - host_listings_count -->
+<!-- - accommodates -->
+<!-- - beds -->
+<!-- - price -->
+<!-- - minimum_nights -->
+<!-- </div> -->
 
 
 
-8. Are there any issues or ethical considerations to be aware of with the data?
+<!-- Inside Airbnb listings includes a lot of [information about the data](https://insideairbnb.com/get-the-data/) in "Data Resources" on their website. In particular the "Data Dictionary" and "Data Assumptions" pages have a great deal of useful information. -->
 
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_08');">Show/Hide Solution</button>
 
-<div id="exercise_08" style="display:none; margin: -40px 0 40px 40px;">
-- Location information for listings are anonymized by Airbnb.
-- Listings can be deleted in the Airbnb platform. The data presented here is a snapshot of listings available at a particular time.
-- The Airbnb calendar for a listing does not differentiate between a booked night vs an unavailable night, therefore these bookings have been counted as "unavailable". This serves to understate the Availability metric because popular listings will be "booked" rather than being "blacked out" by a host.
-- Some hosts might not keep their calendar updated, or have it highly available even though they live in the entire home/apartment.
-</div>
+<!-- 5. Who/what organization collected the data?  -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_05');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_05" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- The data were collected by Inside Airbnb -->
+<!-- </div> -->
+
+
+<!-- 6. For what purpose (why) were the data collected? -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_06');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_06" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- The data were collected as part of Inside Airbnb's a mission driven project to provides data and advocacy about Airbnb's impact on residential communities in an effort to empower communities to understand, decide and control the role of renting residential homes to tourists. -->
+<!-- </div> -->
+
+
+<!-- 7. How and where were the data collected? -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_07');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_07" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- The data were collected from public information compiled from the Airbnb web-site including the availabiity calendar for 365 days in the future, and the reviews for each listing. Data is verified, cleansed, analyzed and aggregated by Inside Airbnb. -->
+<!-- </div> -->
+
+
+
+<!-- 8. Are there any issues or ethical considerations to be aware of with the data? -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_08');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_08" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- - Location information for listings are anonymized by Airbnb. -->
+<!-- - Listings can be deleted in the Airbnb platform. The data presented here is a snapshot of listings available at a particular time. -->
+<!-- - The Airbnb calendar for a listing does not differentiate between a booked night vs an unavailable night, therefore these bookings have been counted as "unavailable". This serves to understate the Availability metric because popular listings will be "booked" rather than being "blacked out" by a host. -->
+<!-- - Some hosts might not keep their calendar updated, or have it highly available even though they live in the entire home/apartment. -->
+<!-- </div> -->
 
 
 <br />

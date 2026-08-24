@@ -54,13 +54,13 @@ How do you denote a code chunk? I type several hashtags on a line, then on the n
 ######################################
 ```
 
-I typically separate each code chunk by three or four blank lines in the script file. This gives me a visual cue for easily finding different code chunks.
+
 
 
 :::fyi
 **FYI**
 
-When you hit `<enter>` in the script file, the cursor moves to a new line, but doesn't execute the computation like it did in the console.
+I typically separate each code chunk by three or four blank lines in the script file. This gives me a visual cue for easily finding different code chunks. Note that when you hit `<enter>` in the script file, the cursor moves to a new line, but doesn't execute the computation like it did in the console.
 :::
 
 <br />

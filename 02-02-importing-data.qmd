@@ -1,29 +1,116 @@
-# Importing Data into an RMD Document
+# Importing Data into RStudio
 
-To be able to create a data visualization, we need to be able to import a dataset into our RMD document. In this chapter, you will learn how to prepare a dataset in a spreadsheet application (e.g., Microsoft Excel) and save it as a CSV file. You will also learn how to import the CSV file into your RMD document.
+To be able to create a data visualization, we need to be able to import a dataset into RStudio. In this chapter, you will learn how to import a CSV file into RStudio. You will also learn how to prepare a dataset in a spreadsheet application (e.g., Microsoft Excel) and save it as a CSV file. 
 
 <br />
 
 
-## Spice Girls Data
+## CSV Files: A Format for Tabular Data
 
-Recall that the data structure that is useful for our data visualization tools is tabular in that the data are organized into rows and columns. Remember also that in this structure, the rows represent **cases** and the columns represent **attributes**. Consider the data below about the 1990's band The Spice Girls.
+Data are stored in many formats. For example, some data are stored in databases. Other data is stored in JavaScript Object Notation (JSON). One common format for storing data for statistical analysis is the *Comma Separated Value* (CSV) file. (CSV files generally have the file suffix .csv.) A CSV file is a *plain text* file. Plain text simply means a file that doesn't include any formatting---it is only text. Files that have formatting are referred to as *rich text* files. (An example of a rich text file would be an Excel file (.xslx) or a Google Sheet file (GSHEET). These files often include formatting information (e.g., bold, italics, color) that is irrelevant to the raw data.)
+
+Below is a screenshot of a CSV file after it is opened in a text editor. You can see that the file is just text with no formatting. Each row of the CSV file corresponds to the a different case. Each attribute is separated by a comma. This is how the comma separated value file gets its name! 
 
 ```{r}
-#| label: spice-girls-data
+#| label: fig-csv-plain-text
+#| fig-cap: "Screenshot of the *spice-girls.csv* file after it is opened in a text editor. Data values in each row are separated by a comma."
+#| fig-alt: "Screenshot of the *spice-girls.csv* file after it is opened in a text editor. Data values in each row are separated by a comma."
 #| echo: false
-#| message: false
 
-spice = readr::read_csv("data/spice-girls.csv")
-DT::datatable(spice)
+knitr::include_graphics("figs/02-02-09-plain-text.png")
 ```
+:::
 
-In this data, each row indicates a different Spice Girl (cases) and the five attributes include information (e.g., name, age, number of solo award nominations, and whether they were an original band member) about each of them. We are going to create a CSV file of these data and import that CSV file into a RMD document.
 
 <br />
 
 
-## Data Creation Using a Spreadsheet Application
+## Locating the Data on Your Computer
+
+Before we import the data, you need to locate the CSV file on your computer. To do this, enter the following syntax into the console pane:
+
+```{r}
+#| eval: false
+
+file.choose()
+```
+
+Hit enter. This will bring up a new window from which you can navigate to the CSV file you want to import. Once you select that file, some text will be printed in the console. When I did this, the text printed in my console was:
+
+```
+/Users/zief0002/Desktop/epsy-1261/data/spice-girls.csv
+```
+
+This text includes two things: (1) the file path and (2) file name for your data. The file name is `spice-girls.csv`. This is the actual name of your data file, including the file suffix (.csv). The other part of this, `/Users/zief0002/Desktop/epsy-1261/data/`, is called the file path. This is the syntactic address of where the data file lives on your computer.
+
+While the file path might look complicated, it's not. When you read a file path, every time you see a `/` say the words "go into the folder called...". (Note. If you are on a Windows machine you might have `\\` instead of `/`.) For example, my file path says:
+
+> Start at the root of the computer (the very first `/`), then go into the Users folder, then go into the zief0002 folder, then go into the Desktop folder, then go into the epsy-1261 folder, then go into the data folder. That is where the `spice-girls.csv` file lives. 
+
+
+<br />
+
+
+## Importing the Data
+
+To import the data we will use the `read_csv()` function. This function, which is part of the `{tidyverse}` package, will read in a CSV file. This function takes the argument `file=`. We provide this argument the path and file name of the data. Because the path and file name is a string (i.e., words/letters) it is enclosed in quotation marks. We also need to assign the output of the `read_csv()` function into an object. If we don't do that, R will read the CSV file and immediately forget it.
+
+In your script file, create a new code chunk. In this code chunk you will load the `{tidyverse}` package. We need to do this so we have access to the `read_csv()` function. In a second code chunk import the data using the `read_csv()` function. The syntax looks like this:
+
+```{r}
+#| label: code-chunk-syntax
+#| eval: false
+
+######################
+# Load libraries
+######################
+
+library(tidyverse)
+
+
+######################
+# Import data
+######################
+
+spice_girls = read_csv(file = "/Users/zief0002/Desktop/epsy-1261/data/spice-girls.csv")
+```
+
+If you imported the data successfully, you should now see your data object in RStudio's environment tab.
+
+```{r}
+#| label: fig-spice-env
+#| fig-cap: "The `spice_girls` object shows up in the RStudio environment tab after the data has been successfully imported."
+#| fig-alt: "The `spice_girls` object shows up in the RStudio environment tab after the data has been successfully imported."
+#| echo: false
+
+knitr::include_graphics("figs/02-02-02-spice-girls-environment.png")
+```
+
+
+<br />
+
+
+### Data Frames
+
+When we import data into an object, that object is called a *data frame*. A data frame is R's name for data stored in a tabular structure (rows and columns). To view the data after it is imported, you double-click on the object name in the environment tab. it opens RStudio's data viewer where you can browse the data.
+
+
+```{r}
+#| label: fig-data-viewer
+#| fig-cap: "The `spice_girls` object viewed in the data viewer."
+#| fig-alt: "The `spice_girls` object viewed in the data viewer."
+#| echo: false
+
+knitr::include_graphics("figs/02-02-03-data-viewer.png")
+```
+
+In the data viewer you will see the tabular structure of the data. You can also see the attribute names. On the right-side of the viewer you can also learn more information about each of the attributes. One thing you can learn about is the attribute type. This is seen inside the `<>`. For example, the attribute `spice_name` is `<chr>`. This is a character attribute. In contrast `age` is `<dbl>`, a double attribute. Character and double are formal ways that the data is being stored in R. **For us it isn't important how the attributes are being stored, but rather that we can identify that the attribute as quantitative or categorical.**
+
+<br />
+
+
+
+## Creating New Data in a Spreadsheet 
 
 Spreadsheets are incredibly useful for organizing and preparing tabular data. This is because the spreadsheet is essentially a table of rows and columns. Open your spreadsheet application and create a new document.
 
@@ -42,11 +129,7 @@ knitr::include_graphics("figs/02-02-01-blank-spreadsheet.png")
 
 ### Attribute Names
 
-When we enter data into a spreadsheet to use with data visualization applications, the attribute names are entered into the first row of the spreadsheet. 
-
-
-
-To mimic the Spice Girls data enter the following attribute names into the first row of your spreadsheet. Be sure to enter each attribute name into a separate column.
+When we enter data into a spreadsheet to use with data visualization applications, the attribute names are entered into the first row of the spreadsheet. To mimic the Spice Girls data enter the following attribute names into the first row of your spreadsheet. Be sure to enter each attribute name into a separate column.
 
 - `spice_name`
 - `age`
@@ -168,8 +251,7 @@ knitr::include_graphics("figs/02-02-05-blank-age.png")
 <br />
 
 
-
-## CSV Files: A Format for Tabular Data
+### Exporting the Data to a CSV File
 
 Once you have your data entered, we need to export the data from the spreadsheet into a file that is compatible with the data visualization application. R can read many different file types, but we will save our data file as a *Comma Separated Value* (CSV) file. To save your spreadsheet as a CSV file:
 
@@ -185,124 +267,7 @@ Your filename should not have any spaces in it.
 :::
 
 
-<br />
-
-:::mathnote
-**LEARN MORE: What is a CSV File?**
-
-When you save this work, many spreadsheet programs use a proprietary format for saving the information (e.g., Excel saves as a XLSX file; Google Sheets saves as a GSHEET file). These often include extraneous information (e.g., formatting such as bold, italics, color) that is irrelevant to the raw data. A CSV file, which is short for comma separated value, removes all of that extra formatting and creates a *plain text* file. (Plain text simply means a file that doesn't include any formatting---it is only text. Files that have formatting are referred to as *rich text* files.) 
-
-Below is a screenshot of the *spice-girls.csv* file after it is opened in a text editor. You can see that the table-like structure of the spreadsheet is no longer there---it is all just text. But, similar to the spreadsheet each row of the CSV file corresponds to the rows we created in the spreadsheet. However, unlike the spreadsheet, each attribute is not in a separate column in the CSV file. Instead, the data in each "column" is separated by a comma. This is how the comma separated value file gets its name!
-
-```{r}
-#| label: fig-csv-plain-text
-#| fig-cap: "Screenshot of the *spice-girls.csv* file after it is opened in a text editor. Data values in each row are separated by a comma."
-#| fig-alt: "Screenshot of the *spice-girls.csv* file after it is opened in a text editor. Data values in each row are separated by a comma."
-#| echo: false
-
-knitr::include_graphics("figs/02-02-09-plain-text.png")
-```
-:::
-
-<br />
-
-
-## Importing Data into a RMD File
-
-After you have saved your data, place it in the same folder as your RMD file. This is where R will look for the data when you give it the syntax to import the CSV file.
-
-
-
-```{r}
-#| label: fig-import-rmd
-#| fig-cap: "The RMD and CSV files should be located in the same folder on your computer."
-#| fig-alt: "The RMD and CSV files should be located in the same folder on your computer."
-#| echo: false
-
-knitr::include_graphics("figs/02-02-07-same-folder.png")
-```
-
-
-In your RMD file, create a new code chunk. This code chunk should be immediately after the YAML in your RMD file. This code chunk is your setup code chunk, and in it you will (1) load all the libraries you will need to use in the RMD document, and (2) import the data. The syntax you will enter into this chunk is as follows:
-
-```{r}
-#| label: code-chunk-syntax
-#| eval: false
-
-# Load all libraries
-library(tidyverse)
-
-# Import data
-spice_girls = read_csv("spice-girls.csv")
-
-# View data
-spice_girls
-```
-
-
-The first part of the syntax is `library(tidyverse)`. Remember, this loads the `{tidyverse}` library. This is important because the `read_csv()` function lives is part of the `{tidyverse}` library, and we cannot use it until the library is loaded.
-
-The second part of the code chunk---`spice_girls = read_csv("spice-girls.csv")`---is actually importing the data. The `read_csv()` function is being used to read and import a CSV file. The argument in this function tells the function the name of the CSV file that you want to import. In this case the file is called *spice-girls.csv*. This needs to go inside quotation marks since it is a character string. The imported data is then being assigned to an object called `spice_girls`. 
-
-```{r}
-#| label: fig-rmd-document
-#| fig-cap: "An RMD document with a setup code chunk loading libraries and importing the data. This code chunk is immediately after the YAML."
-#| fig-alt: "An RMD document with a setup code chunk loading libraries and importing the data. This code chunk is immediately after the YAML."
-#| echo: false
-
-knitr::include_graphics("figs/02-02-06-rmd-import.png")
-```
-
-
-Note that at the top of the code chunk, I have included a code chunk option. Code chunk options are included at the top of the code chunk and begin with `#|`. The code chunk options are then written in the same "key: value" method that we write YAML, and always are in lowercase. The code chunk option `message: false` suppresses messages that R prints out when you run certain syntax. This just keeps the output in your knitted file cleaner, it isn't necessary to run the syntax.
-
-
-<br />
-
-
-### Data Frames
-
-When we import data into an object, that object is called a *data frame*. A data frame is R's name for data stored in a tabular structure. To view the data after it is imported, we just type the name of the data frame object, in our example `spice_girls`. This will give you a preview of the data. Here is what the printed data frame looks like after viewing it.
-
-```{r}
-#| label: view-data2
-#| echo: false
-#| message: false
-
-# Load all libraries
-library(tidyverse)
-
-# Import data
-spice_girls = read_csv("data/spice-girls.csv")
-
-# View data
-spice_girls
-```
-
-
-The first line tells us that this is a data frame: `A tibble: 5 × 5`---a tibble is just another name for a data frame. It also tells us the number of rows and columns (row x columns). In our data frame we have 5 rows and 5 columns. 
-
-Then we see the data saved in the data frame object. The top line indicates the attribute names. (If there are a lot of attributes in your data, R may not show you all of them, but instead list the other attribute names at the bottom of the data.) The second line informs you about the attribute type. In our data we see we have `<chr>` and `<dbl>` attributes. These are character and double attributes. As you might suspect, character attributes are categorical because they are made up of strings or characters. Double attributes are numbers or quantitative attributes. Note that computers and applications have different ways of storing numbers in their memory. Double is one way that R stores numbers in its memory. **For us it isn't important how the numbers are being stored, but rather that we can identify that the attribute is quantitative.**
-
-Finally, we see the data itself. This is printed in a tabular way, similar to how we saw it in the spreadsheet. Usually only the first 6 rows of the data will print out to save space on your computer screen---you usually do not want to print out thousands of cases!
-
-<br />
-
-
-### Knitting the RMD Document
-
-
-Once you click the `knit` button, your RMD document should render into an HTML file. This should include the syntax you used to load the `{tidyverse}` library, import the data, and view the data. The rendered html document looks like the following:
-
-
-```{r}
-#| label: fig-rendered-rmd
-#| fig-cap: "The rendered RMD file should show your syntax and the output of viewing the data."
-#| fig-alt: "The rendered RMD file should show your syntax and the output of viewing the data."
-#| echo: false
-
-knitr::include_graphics("figs/02-02-08-rendered-rmd.png")
-```
+Once it has been exported you can import the data into RStudio!
 
 
 <br />
