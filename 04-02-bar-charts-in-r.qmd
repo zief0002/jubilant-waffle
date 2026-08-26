@@ -1,0 +1,211 @@
+# Creating Bar Charts in R
+
+This chapter will focus on how we create bar charts in R. To illustrate this, we will use the *umn-buildings.csv* data. This dataset includes information on all the buildings owned by the University of Minnesota. 
+
+As a reminder, in the first code chunk of your script file, load the `{tidyverse}` library. In a second code chunk use the `read_csv()` function to import the *umn-buildings.csv* data and assign the data into an object called `umn`. You also might want to view the data to ensure that it imported into RStudio correctly. (Don't forget to add code comments as well!)
+
+
+```{r}
+#| label: load-packages2
+#| message: false
+
+######################
+# Load library
+######################
+
+library(tidyverse)
+
+
+######################
+# Import data
+######################
+
+umn <- read_csv("data/umn-buildings.csv")
+
+# View data
+umn
+```
+
+These data include information on 393 different buildings owned by the University of Minnesota. While there are several attributes included in the data for these buildings, we are most interested in the `type` attribute. This attribute includes information about the primary use of the building as classified by the university (e.g., parking, residential).
+
+<br />
+
+
+## Using R to Create Bar Charts
+
+To create a bar chart of the number (count) of each of the building types, first create a new code chunk in your script file. Bar charts use the `geom_bar()` function from the `{tidyverse}` library. Similar to the other plots we have created we need to start with a global `ggplot()` layer that indicates the data object using `data=` and maps the attribute we want to plot to the `x=` argument. The mapping will be placed inside an `aes()` function since the mapping uses a column name from the data set. The syntax in our code chunk will be:
+
+```{r}
+#| label: fig-buildings
+#| fig-cap: "Bar chart of the number of each building type owned by UMN."
+#| fig-alt: "Bar chart of the number of each building type owned by UMN."
+
+######################
+# Bar chart
+######################
+
+ggplot(data = umn, aes(x = type)) +
+  geom_bar()
+```
+
+
+We can also add border and fill color to our bars, as well as labels similar to how we did for histograms. For example, to add a black border and a maroon fill to the bars in our plot, and labels we can use the following syntax.
+
+```{r}
+#| fig-alt: "Bar chart of the number of each building type owned by UMN. This plot includes a border and fill color and labels."
+
+######################
+# Bar chart with color and labels
+######################
+
+ggplot(data = umn, aes(x = type)) +
+  geom_bar(color = "black", fill = "maroon") +
+  labs(
+    title = "UMN BUILDINGS",
+    subtitle = "\nThe number of each building type owned by UMN.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Building Type",
+    y = "Count"
+  )
+```
+
+
+One issue in our plot is that some of the data labels overlap each other. This makes the labels difficult to read (and some of them might be impossible to read). There are a few ways we can fix this:
+
+- First, we could try to make the figure wider. By making it wide enough, we could get the labels so that they do not overlap. However, by stretching the figure to be wider, we change the aspect ratio of the figure, which may distort other things.
+- Second, we could go back and change the labels in the original CSV file to make them shorter. For example we could change the label of "Performance / Exhibition / Conference" to "Perf/Exb/Conf". Sometimes this is a reasonable thing to do, but other times changing the label is not appropriate. (Would you know the "Perf/Exb/Conf" meant that the building type is designated as performance, exhibition, or conference space without additional text?)
+- The third option is to flip plot so that the bars are horizontal rather than vertical. This would mean that the data labels would each be on a separate line of text and therefore would not overlap.
+
+
+<br />
+
+
+## Using R to Create a Horizontal Bar Chart
+
+To create a horizontal bar chart, instead of using the aesthetic mapping of `x=` (which maps the attribute to the *x*-axis), we use `y=`. The syntax to create a horizontal bar chart of the building type data is shown below.
+
+
+```{r}
+#| fig-alt: "Horizontal Bar chart of the number of each building type owned by UMN. This plot includes a border and fill color and labels."
+
+######################
+# Horizontal bar chart
+######################
+
+ggplot(data = umn, aes(y = type)) +
+  geom_bar(color = "black", fill = "maroon") +
+  labs(
+    title = "UMN BUILDINGS",
+    subtitle = "\nThe number of each building type owned by UMN.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  )
+```
+
+Notice that by putting the data labels on the *y*-axis, we avoid having the labels overlapping each other! This makes our plot easier for others to understand by removing the cognitive load associated with overlapping labels. We also changed the axis labels to reflect the new orientation of the plot. Lastly, we omitted the label on the *y*-axis since the type of building is obvious from the subtitle.
+
+:::fyi
+**FYI**
+
+To omit a label, do not include any text inside the quotation marks for that label. For example, to omit the label on the *y*-axis, use `y = ""`. 
+:::
+
+
+<!-- <br /> -->
+
+
+
+
+
+
+
+<!-- ## Using R to Create a Bar Chart of Percentages -->
+
+<!-- We can use a similar method for computing percentages rather than proportions. To create a horizontal bar chart summarizing the percentage of each building type, we use the `gf_percents()` function. -->
+
+<!-- ```{r} -->
+<!-- #| label: fig-buildings-perc -->
+<!-- #| fig-cap: "Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color." -->
+<!-- #| fig-alt: "Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color." -->
+
+<!-- ggplot(data = umn, aes(y = type, x = after_stat(count / sum(count) * 100) )) + -->
+<!--   geom_bar(color = "black", fill = "maroon") -->
+<!-- ``` -->
+
+<!-- <br /> -->
+
+
+<!-- ## Exercises: Your Turn {-} -->
+
+<!-- Consider the following data from the *umn-bike-amenities.csv* file.  -->
+
+<!-- ```{r} -->
+<!-- #| label: import-bike-amenities-data -->
+<!-- #| message: false -->
+
+<!-- # Import data -->
+<!-- bike_amenities <- read_csv("data/umn-bike-amenities.csv") -->
+
+<!-- # View data -->
+<!-- DT::datatable(bike_amenities) -->
+<!-- ``` -->
+
+<!-- Imagine that this has been imported into a data object called `bike_amenities`. Also suppose we wanted to create a bar chart of the `campus` attribute, which provides the campus location (East Bank, West Bank, or St. Paul) of the bike amenities in the data. -->
+
+
+<!-- 1. This is raw data, not summary data. Explain why. -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03-02-01');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_03-02-01" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- This is raw data. The attribute `campus` includes data for each of the cases and it is does not include a summarizarion (e.g., counts, percents) in the data itself. -->
+<!-- </div> -->
+
+
+<!-- 2. Write out the syntax to create a bar chart of the counts for the `campus` attribute. -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03-02-02');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_03-02-02" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+
+<!-- ggplot(data = bike_amenities, aes(x = campus)) + -->
+<!--   geom_bar() -->
+<!-- ``` -->
+<!-- </div> -->
+
+
+<!-- 3. Describe the distribution of the bar chart you created in Exercise #2. -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03-02-03');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_03-02-03" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- The bar heights imply that there is a low amount of variability (diversity) in the bike amenity locations. The East Bank has the most bike amenities of the three campus locations. Both the West Bank and St. Paul campus have a similar number of bike amenities, but way fewer amenities than the East Bank. -->
+<!-- </div> -->
+
+
+<!-- 4. Write out the syntax to create a horizontal bar chart of the percentages for the `campus` attribute. Also color the bar borders black and fill the bars with yellow.  -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03-02-04');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_03-02-04" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- ```{r} -->
+<!-- ggplot( -->
+<!--   data = bike_amenities,  -->
+<!--   aes( -->
+<!--     y = campus,  -->
+<!--     x = after_stat(count / sum(count) * 100) -->
+<!--     ) -->
+<!--   ) + -->
+<!--   geom_bar( -->
+<!--     color = "black",  -->
+<!--     fill = "yellow" -->
+<!--     ) -->
+<!-- ``` -->
+<!-- </div> -->
+
+
+
+<br />

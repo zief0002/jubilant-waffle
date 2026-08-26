@@ -5,6 +5,7 @@ This chapter will focus on the visualization and description of quantitative att
 ```{r}
 #| label: load-packages
 #| message: false
+#| echo: false
 
 ######################
 # Load libraries
@@ -20,7 +21,7 @@ library(tidyverse)
 mn <- read_csv("data/mn-colleges.csv")
 
 # View data
-mn
+DT::datatable(mn)
 ```
 
 

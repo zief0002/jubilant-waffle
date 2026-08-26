@@ -1,0 +1,234 @@
+# Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts
+
+This chapter will focus on how we can compare categorical distributions by creating facetted, stacked or side-by-side bar charts. To illustrate this, we will use the *umn-buildings.csv* data.
+
+
+```{r}
+#| label: load-packages2
+#| message: false
+
+######################
+# Load library
+######################
+
+library(tidyverse)
+
+
+######################
+# Import data
+######################
+
+umn <- read_csv("data/umn-buildings.csv")
+
+# View data
+umn
+```
+
+These data include information on 393 different buildings owned by the University of Minnesota. While there are several attributes included in the data for these buildings, we are most interested in the `type` attribute. This attribute includes information about the primary use of the building as classified by the university (e.g., parking, residential).
+
+<br />
+
+
+## Facetted Bar Charts
+
+One way to compare categorical distributions is to facet the plot, similar to how we facetted histograms. This creates different bar charts for all the values of the categorical attribute we facet on. For example, suppose we wanted to compare the types of buildings across the different parts of the UMN campus. One way to do this is to facet on the `campus` attribute.
+
+```{r}
+#| fig-alt: "Horizontal Bar chart of the number of each building type owned by UMN facetted by campus."
+#| fig-height: 12
+#| fig-width: 10
+
+
+######################
+# Horizontal bar chart
+######################
+
+ggplot(data = umn, aes(y = type)) +
+  geom_bar(color = "black", fill = "maroon") +
+  labs(
+    title = "UMN BUILDINGS BY CAMPUS",
+    subtitle = "\nThe number of each building type owned by UMN facetted by campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  ) +
+  facet_wrap(~campus)
+```
+
+
+
+<br />
+
+
+## Comparing Categorical Distributions
+
+Similar to our description of a categorical attribute's distribution, when we compare two (or more) distributions, we want to compare/contrast describe the center (mode) and the variability of the distributions. For example in comparing the buildings on the Minneapolis and St. Paul campuses, we might say:
+
+> The most common type of building on both the Minneapolis and St. Paul campuses are those purposed for academic/administration. Relative to St. Paul, the Minneapolis campus seems to have a higher prevalence of residential buildings and parking structures (both bars are much higher on the Minneapolis campus). Moreover the diversity of building types is much higher on the Minneapolis campus. On the St. Paul campus, almost all of the buildings are academic/administration, while on the Minneapolis campus although the academic/administration bar is the tallest, the other bars indicate that there are several other building types as well.
+
+<br />
+
+
+## Stacked Bar Charts
+
+With bar charts, there are other methods aside from facetting that are often used by data scientists to compare categorical distributions. One of those methods is creating a *stacked bar chart*, also sometimes called a *segmented bar chart*. This is exactly like it sounds. Rather than separating the bar charts into two separate plots, we instead create the original bar chart, but separate each bar into segments based on the count of buildings on each campus. Each segment is  colored differently to help readers see the segments.
+
+To create a stacked bar chart we will map the attribute we want to compare to the `fill=` attribute. Because we are mapping a column in the data to `fill=`, it goes inside an `aes()` function. Below we map the `campus` attribute to `fill=` inside the `aes()` function in the global layer. (We also omit the `fill="maroon` from the `geom_bar()` layer. We don't want all of the campuses to have the same color segments!)
+
+
+```{r}
+#| fig-alt: "Horizontal stacked bar chart showing the number of each building type owned by UMN by campus."
+#| fig-height: 6
+#| fig-width: 12
+
+
+######################
+# Horizontal stacked bar chart
+######################
+
+ggplot(data = umn, aes(y = type, fill = campus)) +
+  geom_bar(color = "black") +
+  labs(
+    title = "UMN BUILDINGS BY CAMPUS",
+    subtitle = "\nThe number of each building type owned by UMN. Each bar is segmented by campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  )
+```
+
+
+If you look at the bars (ignoring the color) this is the exact same bar chart we created in the previous chapter. For example the total number of athletic/recreation buildings is 26. The difference is now that bar is segmented into two parts: 19 of those buildings are on the Minneapolis campus and 7 are on the St. Paul Campus. This is reflected in the different colored segments.
+
+With stacked bar charts, the **comparisons within a single bar are easy**. It is, for example, easy to compare the number of buildings of a particular type across campuses by comparing how large the segments are in that one bar. As an example, look at the academic/administration buildings bar. We can see that most are on the Minneapolis campus, with the St. Paul campus also having quite a few of these. There are only a couple of these building types in other St. Paul area leases. 
+
+Comparisons across bars are a bit more difficult. Try to compare the distribution of building types between the St. Paul and Mineapolis campuses (like we did with facetting). This is hard! If the goal is to compare across different bars, the stacked bar chart is not a good choice.
+
+<br />
+
+
+## Proportional Stacked Bar Charts
+
+Because comparing within bars is easy, data scientists often use the stacked bar chart for this purpose. To make it even easier to read, they often change the measure from counts to proportions and make each bar extend all the way to 1. To do this we take our syntax that we used to create the stacked bar chart and add `position="fill"` to the `geom_bar()` layer. For example:
+
+```{r}
+#| fig-alt: "Horizontal proportional stacked bar chart showing the proportion of each building type by campus."
+#| fig-height: 6
+#| fig-width: 12
+
+######################
+# Horizontal proportional stacked bar chart
+######################
+
+ggplot(data = umn, aes(y = type, fill = campus)) +
+  geom_bar(color = "black", position = "fill") +
+  labs(
+    title = "UMN BUILDINGS BY CAMPUS",
+    subtitle = "\nThe proportion of each building type owned by UMN based on campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Proportion",
+    y = ""
+  )
+```
+
+Again, looking at the academic/administration buildings bar. We can see that most are on the Minneapolis campus, with the St. Paul campus also having quite a few of these. There are only a couple of these building types in other St. Paul area leases. Now, however, we can see that **of all the academic/administration buildings**, roughly 0.55 are on the Minneapolis campus, 0.40 are on the St. Paul campus, and 0.05 are located in other St. Paul leases.
+
+One thing we lose in this plot is that we cannot compare across bars. Since all of the bars go to 1, we don't know that there are more academic/administration buildings than there are Residential buildings.
+
+:::fyi
+**BE CAREFUL**
+
+If you try to compare across bars in a proportional stacked bar chart, you might come to erroneous conclusions. For example, if you tried to compare the Athletics/Recreation bar to the Library bar, you might conclude that on the Minneapolis campus (green) there are more libraries than athletic/recreation buildings since the green part of the bar is longer in the libraries bar than in the athletics/recreation bar. This conclusion is wrong. On the Minneapolis campus there are 3 libraries and 19 athletic/recreation buildings.  
+
+Remember that the segment in this chart represents the proportion of a particular building type that is on a particular campus. For libraries, the green segment represents the proportion of all 4 libraries that are on the Minneapolis campus (3 of them); that is 0.75. For athletics/recreation buildings, the green segment represents the proportion of all 26 athletics/recreation buildings that are on the Minneapolis campus (19 of them); that is 0.73. This does not indicate there are more libraries than athletics/recreation buildings on the Minneapolis campus!
+:::
+
+<br />
+
+<!-- ## Using R to Create a Bar Chart of Proportions -->
+
+<!-- Notice that in the bar charts we have created, there are two axes---one includes the categories of the attribute that we mapped in the `aes()` function, and the other indicates the count. For example in our horizontal bar charts, the categories of building type  are being mapped to the *y*-axis (we coded this with `y=type`) and the *x*-axis indicates the count of each type of building. It turns out that when we use `geom_bar()`, there is some implicit code in the `aes()` and `geom_bar()` functions that maps the counts to the opposite axis. For example, in our horizontal bar charts it is this: -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+
+<!-- ggplot(data = umn, aes(y = type, x = after_stat(count) )) + -->
+<!--   geom_bar(stat = "count") -->
+<!-- ``` -->
+
+<!-- The `stat="count` argument in `geom_bar()` is actually being used to compute a summary from the raw data, in this case counts. The `after_stat()` function  then uses those counts in the bar chart to map the counts to the *x*-axis. To summarize the proportion of each category (rather than counts) we can make use of this mapping in our bar chart and change what summary is being computed. For example, to compute proportions, we divide the count of each category by the sum of counts across all categories. Thus, the syntax to create a horizontal bar chart summarizing the proportion of each building type is shown below. -->
+
+<!-- ```{r} -->
+<!-- #| label: fig-buildings-prop -->
+<!-- #| fig-cap: "Horizontal bar chart of the proportion of each building type owned by UMN. This plot includes a border and fill color." -->
+<!-- #| fig-alt: "Horizontal bar chart of the proportion of each building type owned by UMN. This plot includes a border and fill color." -->
+
+<!-- ggplot(data = umn, aes(y = type, x = after_stat(count / sum(count)) )) + -->
+<!--   geom_bar(color = "black", fill = "maroon") -->
+<!-- ``` -->
+
+<!-- <br /> -->
+
+<!-- Note we don't have to include `stat="count` in the `geom_bar()` function as this is the default action---unless told otherwise it will create counts. -->
+
+
+## Side-by-Side Bar Charts
+
+Another alternative method for comparing categorical distributions is the *side-by-side* bar chart. The side-by-side bar chart creates different bars for each group being compared similar to facetting, but it puts them all in the same plot. To create a side-by-side bar chart, we include `position="didge"` to the `geom_bar()` layer. For example:
+
+```{r}
+#| fig-alt: "Horizontal side-by-side bar chart showing the count of each building type by campus."
+#| fig-height: 6
+#| fig-width: 12
+
+######################
+# Horizontal side-by-side bar chart
+######################
+
+ggplot(data = umn, aes(y = type, fill = campus)) +
+  geom_bar(color = "black", position = "dodge") +
+  labs(
+    title = "UMN BUILDINGS BY CAMPUS",
+    subtitle = "\nThe number of each building type owned by UMN for each campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  )
+```
+
+This type of plot is ideal for comparing within building types (e.g., there are more athletic/recreation buildings on the Minneapolis campus than on the St. Paul campus) and comparing across building types (e.g.,  there are more athletic/recreation buildings than libraries on the Minneapolis campus).
+
+Note that you can get a slightly different plot with the EXACT SAME information by switching the `y=` and `fill=` attributes in the global layer. So rather than `aes(y = type, fill = campus)` we could also do `aes(y = campus, fill = type)`.
+
+
+```{r}
+#| fig-alt: "Horizontal side-by-side bar chart showing the count of each building type by campus."
+#| fig-height: 6
+#| fig-width: 12
+
+######################
+# Horizontal side-by-side bar chart
+######################
+
+ggplot(data = umn, aes(y = campus, fill = type)) +
+  geom_bar(color = "black", position = "dodge") +
+  labs(
+    title = "UMN BUILDINGS BY CAMPUS",
+    subtitle = "\nThe number of each building type owned by UMN for each campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  )
+```
+
+The difference is how the bars are grouped. In the first plot we grouped by building type. In the second plot we grouped by campus. (The group is based on the `y=` or `x=` (in vertical bar plots) mapping.) That is the only thing that changed between the two plots. Since it is a little bit easier to compare bars within a group, you choose which attribute to use to make the group based on which comparisons is most critical to the research question. For example if someone really wanted to compare the type of buildings across campuses---does Minneapolis have more of a certain building type than St. Paul---then group by building type. If someone was more interested in compare the type of buildings within campuses---does Minneapolis have more libraries or residential buildings---then group by campus.
+
+<br />
+
+
+
+<br />
+
+
+
+

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data – Data Visualization: Summarizing and Communicating Patterns in Data</title>
+<title>14&nbsp; Creating Bar Charts in R – Data Visualization: Summarizing and Communicating Patterns in Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -41,6 +76,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-9efa02ec1c9fc2ae2ff3301d4cc10a3d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -98,7 +136,7 @@ function toggle_visibility(id) {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><span id="sec-data" class="quarto-section-identifier">Data</span></h1>
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Creating Bar Charts in R</span></h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -130,8 +168,8 @@ function toggle_visibility(id) {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./01-00-computational-tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tools for Visualization</span></a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Computational Tools for Visualization</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -171,7 +209,7 @@ function toggle_visibility(id) {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./02-00-data.html" class="sidebar-item-text sidebar-link active">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -187,14 +225,14 @@ function toggle_visibility(id) {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-02-importing-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importing Data into an RMD Document</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importing Data into RStudio</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./03-00-visualizing-and-describing-quantitative-attributes.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Visualizing and Describing Quantitative Attributes</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -231,10 +269,51 @@ function toggle_visibility(id) {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Facetting: Creating Small Multiples for Comparisons</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Visualizing and Describing Categorical Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-01-color.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></a>
+  <a href="./04-01-categorical-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing and Describing Categorical Attributes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02-bar-charts-in-r.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Creating Bar Charts in R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03-conditioning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04-color.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05-scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Scales: Customizing Axes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-06-bar-charts-from-summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Bar Charts from Summary Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -250,7 +329,7 @@ function toggle_visibility(id) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span id="sec-data" class="quarto-section-identifier">Data</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Creating Bar Charts in R</span></h1>
 </div>
 
 
@@ -267,12 +346,192 @@ function toggle_visibility(id) {
 </header>
 
 
-<!-- The American Statistical Association defines statistics as, "the science of learning from data, and of measuring, controlling and communicating uncertainty" [@ASA:2023]. The methods you learn throughout this textbook, and the EPSY 1261 course, will help you to learn from data and to measure, control, and communicate about uncertainty.  -->
-<p>An important learning goal of any course on data visualization is to understand the vocabulary and ideas related to data. To this end, in <span class="quarto-unresolved-ref">?sec-data-structure</span> you will learn about the structure of data and attribute classification. You will also learn how to judge the quality of data including questions you should ask about the data.</p>
-<!-- @sec-importing-data will introduce the syntax we use to import data into R. Finally, @sec-design will introduce how the collection of the data impacts the type of inferences and conclusions we can draw. -->
+<p>This chapter will focus on how we create bar charts in R. To illustrate this, we will use the <em>umn-buildings.csv</em> data. This dataset includes information on all the buildings owned by the University of Minnesota.</p>
+<p>As a reminder, in the first code chunk of your script file, load the <code>{tidyverse}</code> library. In a second code chunk use the <code>read_csv()</code> function to import the <em>umn-buildings.csv</em> data and assign the data into an object called <code>umn</code>. You also might want to view the data to ensure that it imported into RStudio correctly. (Don’t forget to add code comments as well!)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load library</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>umn <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/umn-buildings.csv"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>umn</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 393 × 33
+   bldg_num name     legal_name abbr  campus address type  TRI_BLDG_T TRI_TRITEN
+   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;     
+ 1 332      Cattle … Cattle Fe… CFS1  St. P… 1894 B… Acad… Agricultu… Owned     
+ 2 333      Cattle … Cattle Fe… CFS2  St. P… 1896 B… Acad… Agricultu… Owned     
+ 3 302      Beef Ca… Beef Catt… BCB   St. P… 1920 B… Acad… Agricultu… Owned     
+ 4 343      Botany … Botany Fi… BFH   St. P… 2033 F… Acad… Agricultu… Owned     
+ 5 345      Agronom… Agronomy … AGRSH St. P… 1472 G… Acad… Agricultu… Owned     
+ 6 346      Bee Lab… Bee Lab S… BLAB… St. P… 1634 G… Acad… Agricultu… Owned     
+ 7 347      Bee Res… Bee Resea… BRF   St. P… 1634 G… Acad… Agricultu… Owned     
+ 8 351      Hog Bar… Hog Barn … HOGB3 St. P… 1845 B… Acad… Agricultu… Owned     
+ 9 355      Farm Cr… Farm Crop… FCFH  St. P… 1922 H… Acad… Agricultu… Owned     
+10 392      Sheep R… Sheep Res… SHEE… St. P… 1794 D… Acad… Agricultu… Owned     
+# ℹ 383 more rows
+# ℹ 24 more variables: TRI_YEAR_O &lt;dbl&gt;, TRI_DATE_O &lt;chr&gt;, TRI_YEAR_L &lt;dbl&gt;,
+#   mortenson_dates &lt;dbl&gt;, ada &lt;chr&gt;, nrhp_status &lt;chr&gt;, gross_sqft &lt;dbl&gt;,
+#   assignable_sqft &lt;dbl&gt;, net_sqft &lt;dbl&gt;, structural_sqft &lt;dbl&gt;,
+#   usable_sqft &lt;dbl&gt;, BLDG_DETAI &lt;chr&gt;, BLDG_PHOTO &lt;chr&gt;,
+#   women_restrooms &lt;dbl&gt;, men_restrooms &lt;dbl&gt;, undesignated_restrooms &lt;dbl&gt;,
+#   classrooms &lt;dbl&gt;, laboratories &lt;dbl&gt;, offices_spaces &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+<p>These data include information on 393 different buildings owned by the University of Minnesota. While there are several attributes included in the data for these buildings, we are most interested in the <code>type</code> attribute. This attribute includes information about the primary use of the building as classified by the university (e.g., parking, residential).</p>
 <p><br></p>
-<section id="references" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<section id="using-r-to-create-bar-charts" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="using-r-to-create-bar-charts"><span class="header-section-number">14.1</span> Using R to Create Bar Charts</h2>
+<p>To create a bar chart of the number (count) of each of the building types, first create a new code chunk in your script file. Bar charts use the <code>geom_bar()</code> function from the <code>{tidyverse}</code> library. Similar to the other plots we have created we need to start with a global <code>ggplot()</code> layer that indicates the data object using <code>data=</code> and maps the attribute we want to plot to the <code>x=</code> argument. The mapping will be placed inside an <code>aes()</code> function since the mapping uses a column name from the data set. The syntax in our code chunk will be:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">x =</span> type)) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-buildings" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Bar chart of the number of each building type owned by UMN.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-buildings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="04-02-bar-charts-in-r_files/figure-html/fig-buildings-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;14.1: Bar chart of the number of each building type owned by UMN."><img src="04-02-bar-charts-in-r_files/figure-html/fig-buildings-1.png" class="img-fluid figure-img" alt="Bar chart of the number of each building type owned by UMN." width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-buildings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.1: Bar chart of the number of each building type owned by UMN.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We can also add border and fill color to our bars, as well as labels similar to how we did for histograms. For example, to add a black border and a maroon fill to the bars in our plot, and labels we can use the following syntax.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart with color and labels</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">x =</span> type)) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"maroon"</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"UMN BUILDINGS"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">The number of each building type owned by UMN."</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"SOURCE: University of Minnesota"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Building Type"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="04-02-bar-charts-in-r_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="04-02-bar-charts-in-r_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" alt="Bar chart of the number of each building type owned by UMN. This plot includes a border and fill color and labels." width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>One issue in our plot is that some of the data labels overlap each other. This makes the labels difficult to read (and some of them might be impossible to read). There are a few ways we can fix this:</p>
+<ul>
+<li>First, we could try to make the figure wider. By making it wide enough, we could get the labels so that they do not overlap. However, by stretching the figure to be wider, we change the aspect ratio of the figure, which may distort other things.</li>
+<li>Second, we could go back and change the labels in the original CSV file to make them shorter. For example we could change the label of “Performance / Exhibition / Conference” to “Perf/Exb/Conf”. Sometimes this is a reasonable thing to do, but other times changing the label is not appropriate. (Would you know the “Perf/Exb/Conf” meant that the building type is designated as performance, exhibition, or conference space without additional text?)</li>
+<li>The third option is to flip plot so that the bars are horizontal rather than vertical. This would mean that the data labels would each be on a separate line of text and therefore would not overlap.</li>
+</ul>
+<p><br></p>
+</section>
+<section id="using-r-to-create-a-horizontal-bar-chart" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="using-r-to-create-a-horizontal-bar-chart"><span class="header-section-number">14.2</span> Using R to Create a Horizontal Bar Chart</h2>
+<p>To create a horizontal bar chart, instead of using the aesthetic mapping of <code>x=</code> (which maps the attribute to the <em>x</em>-axis), we use <code>y=</code>. The syntax to create a horizontal bar chart of the building type data is shown below.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Horizontal bar chart</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">y =</span> type)) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"maroon"</span>) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"UMN BUILDINGS"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">The number of each building type owned by UMN."</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"SOURCE: University of Minnesota"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Count"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="04-02-bar-charts-in-r_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="04-02-bar-charts-in-r_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" alt="Horizontal Bar chart of the number of each building type owned by UMN. This plot includes a border and fill color and labels." width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Notice that by putting the data labels on the <em>y</em>-axis, we avoid having the labels overlapping each other! This makes our plot easier for others to understand by removing the cognitive load associated with overlapping labels. We also changed the axis labels to reflect the new orientation of the plot. Lastly, we omitted the label on the <em>y</em>-axis since the type of building is obvious from the subtitle.</p>
+<div class="fyi">
+<p><strong>FYI</strong></p>
+<p>To omit a label, do not include any text inside the quotation marks for that label. For example, to omit the label on the <em>y</em>-axis, use <code>y = ""</code>.</p>
+</div>
+<!-- <br /> -->
+<!-- ## Using R to Create a Bar Chart of Percentages -->
+<!-- We can use a similar method for computing percentages rather than proportions. To create a horizontal bar chart summarizing the percentage of each building type, we use the `gf_percents()` function. -->
+<!-- ```{r} -->
+<!-- #| label: fig-buildings-perc -->
+<!-- #| fig-cap: "Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color." -->
+<!-- #| fig-alt: "Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color." -->
+<!-- ggplot(data = umn, aes(y = type, x = after_stat(count / sum(count) * 100) )) + -->
+<!--   geom_bar(color = "black", fill = "maroon") -->
+<!-- ``` -->
+<!-- <br /> -->
+<!-- ## Exercises: Your Turn {-} -->
+<!-- Consider the following data from the *umn-bike-amenities.csv* file.  -->
+<!-- ```{r} -->
+<!-- #| label: import-bike-amenities-data -->
+<!-- #| message: false -->
+<!-- # Import data -->
+<!-- bike_amenities <- read_csv("data/umn-bike-amenities.csv") -->
+<!-- # View data -->
+<!-- DT::datatable(bike_amenities) -->
+<!-- ``` -->
+<!-- Imagine that this has been imported into a data object called `bike_amenities`. Also suppose we wanted to create a bar chart of the `campus` attribute, which provides the campus location (East Bank, West Bank, or St. Paul) of the bike amenities in the data. -->
+<!-- 1. This is raw data, not summary data. Explain why. -->
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03-02-01');">Show/Hide Solution</button> -->
+<!-- <div id="exercise_03-02-01" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- This is raw data. The attribute `campus` includes data for each of the cases and it is does not include a summarizarion (e.g., counts, percents) in the data itself. -->
+<!-- </div> -->
+<!-- 2. Write out the syntax to create a bar chart of the counts for the `campus` attribute. -->
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03-02-02');">Show/Hide Solution</button> -->
+<!-- <div id="exercise_03-02-02" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- ggplot(data = bike_amenities, aes(x = campus)) + -->
+<!--   geom_bar() -->
+<!-- ``` -->
+<!-- </div> -->
+<!-- 3. Describe the distribution of the bar chart you created in Exercise #2. -->
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03-02-03');">Show/Hide Solution</button> -->
+<!-- <div id="exercise_03-02-03" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- The bar heights imply that there is a low amount of variability (diversity) in the bike amenity locations. The East Bank has the most bike amenities of the three campus locations. Both the West Bank and St. Paul campus have a similar number of bike amenities, but way fewer amenities than the East Bank. -->
+<!-- </div> -->
+<!-- 4. Write out the syntax to create a horizontal bar chart of the percentages for the `campus` attribute. Also color the bar borders black and fill the bars with yellow.  -->
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_03-02-04');">Show/Hide Solution</button> -->
+<!-- <div id="exercise_03-02-04" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- ```{r} -->
+<!-- ggplot( -->
+<!--   data = bike_amenities,  -->
+<!--   aes( -->
+<!--     y = campus,  -->
+<!--     x = after_stat(count / sum(count) * 100) -->
+<!--     ) -->
+<!--   ) + -->
+<!--   geom_bar( -->
+<!--     color = "black",  -->
+<!--     fill = "yellow" -->
+<!--     ) -->
+<!-- ``` -->
+<!-- </div> -->
+<p><br></p>
 
 
 </section>
@@ -679,6 +938,38 @@ function toggle_visibility(id) {
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

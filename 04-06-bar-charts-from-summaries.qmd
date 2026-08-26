@@ -1,0 +1,117 @@
+# Bar Charts from Summary Data
+
+This chapter will focus on how we can create a bar chart when we are given summary counts rather than raw data. To illustrate this, we will use the *pet-count.csv* data to create a side-by-side bar chart to plot the number of different bike amenities on each campus.
+
+
+
+## Raw vs. Summary Data
+
+Sometimes you are provided with summaries of data rather than the actual raw data itself. For example in our pet ownership example the raw data would look like this:
+
+
+```{r}
+#| label: fig-data-types
+#| fig-cap: "The raw data and summary data for the number of pets owned for 11 pet owners."
+#| fig-alt: "The raw data and summary data for the number of pets owned for 11 pet owners."
+#| fig-subcap:
+#|   - "The raw data."
+#|   - "The summary data."
+#| out-width: "100%"
+#| layout-ncol: 2
+#| echo: false
+#| lightbox:
+#|   group: histograms
+#|   description:
+#|     - The raw data.
+#|     - The summary data.
+
+knitr::include_graphics("figs/03-02-09-raw-pet-data.png")
+knitr::include_graphics("figs/03-02-10-summary-pet-data.png")
+```
+
+
+Notice that in the raw data, a case is an individual person and the `pet_owned` attribute indicates the pet that is owned by each of the 10 people in the data. The summary data summarizes the raw data by indicating how many people own each type of pet. In the summary data a case is the type of pet that is owned. This is also designated in the `pet_owned` attribute. The summary data also indicates the number of people that own each type of pet in the `number` attribute. A bar chart is essentially a plot of the summarized data---each bar indicates the type of pet owned, and the height of the bar indicates the count or number of people who own that type of pet.
+
+So far, we have used raw data to create our bar charts, but is we have summary data instead of raw data we can also create a bar chart using R. 
+
+<br />
+
+
+## Using R to Create a Bar Chart with Summaries of Data
+
+We bgin by loading the `{tidyverse}` package and importing the *pet-count.csv* data into an object called `pets`:
+
+
+```{r}
+#| label: import-pet-data
+#| message: false
+
+######################
+# Load library
+######################
+
+library(tidyverse)
+
+
+######################
+# Import data
+######################
+
+pets <- read_csv("data/pet-counts.csv")
+
+# View data
+pets
+```
+
+To create a bar chart of these data we are going to again use the `geom_bar()` function to plot the categorical attribute (`pets_owned`) from the summary data object.
+
+
+```{r}
+#| label: fig-summary-bar1
+#| fig-cap: "Bar chart of the `pets_owned` attribute from the summary data."
+#| fig-alt: "Bar chart of the `pets_owned` attribute from the summary data."
+
+ggplot(data = pets, aes(x = pet_owned)) +
+  geom_bar()
+```
+
+
+This creates a bar chart of the pets owned attribute. In this data there is literally one word that says "cat", one that says "dog", one that says "fish", and one that says "turtle". So the resulting bar chart creates a bar for each of these and all of them have a count (bar height) of 1. 
+
+:::fyi
+**IMPORTANT**
+
+The functions for creating plots in R always assume you have raw data and will plot accordingly!
+:::
+
+To inform R that we have summary data, we need to include some additional arguments to the two layers. 
+
+- The first thing we need to do is also include a `y=` argument in the global layer. (If we were creating a horizontal bar chart we would create a `x=` argument.) This argument will name another attribute in the data that R will query to know how high to draw the bars. In our data, the `number` attribute indicates how high the bars should be drawn so the argument we include will be: `y = number`. Remember, any time we are using an attribute name in a mapping, that needs to be placed inside the `aes()` function!
+- The second argument we need to include in the `geom_bar()` function is `stat = "identity"`. Because the `gf_count()` function (and others like `gf_percent()`) assume that we have raw data, the function will try to summarize the data (count it) in order to know the bar height. The argument `stat = "identity"` tells the function to not summarize, but instead use the information in the `y=` argument to know how high the bars should be. 
+
+To create the bar chart of the summarized data, we can use the following code:
+
+
+```{r}
+#| label: fig-summary-bar2
+#| fig-cap: "Bar chart of the `pets_owned` attribute from the summary data. The counts from the `number` column are being used to indicate the bar height."
+#| fig-alt: "Bar chart of the `pets_owned` attribute from the summary data. The counts from the `number` column are being used to indicate the bar height."
+
+ggplot(data = pets, aes(x = pet_owned, y = number)) +
+  geom_bar(stat = "identity")
+```
+
+As with other bar charts, we can also add border color, bar fill, and make it a horizontal bar chart. (Note that in this case the count will be on the *x*-axis instead of the *y*-axis, so we need to assign the `number` attribute to `x=` rather than `y=`.)
+
+
+```{r}
+#| label: fig-summary-bar3
+#| fig-cap: "Horizontal bar chart of the `pets_owned` attribute from the summary data. The counts from the `number` column are being used to indicate the bar length."
+#| fig-alt: "Horizontal bar chart of the `pets_owned` attribute from the summary data. The counts from the `number` column are being used to indicate the bar length."
+
+ggplot(data = pets, aes(y = pet_owned, x = number)) +
+  geom_bar(stat = "identity", color = "black", fill = "maroon")
+```
+
+<br />
+

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Creating Histograms in R – Data Visualization: Summarizing and Communicating Patterns in Data</title>
+<title>15&nbsp; Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts – Data Visualization: Summarizing and Communicating Patterns in Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,49 +117,10 @@ function toggle_visibility(id) {
       e.style.display = 'block';
 }
 </script>
-<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
-<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="assets/sticky-notes.css">
 <link rel="stylesheet" href="assets/table-styles.css">
@@ -175,7 +136,7 @@ window.Quarto = {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><span id="sec-hist-in-r" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Creating Histograms in R</span></span></h1>
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -286,7 +247,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-02-histograms-in-r.html" class="sidebar-item-text sidebar-link active">
+  <a href="./03-02-histograms-in-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Creating Histograms in R</span></span></a>
   </div>
 </li>
@@ -333,7 +294,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-03-conditioning.html" class="sidebar-item-text sidebar-link">
+  <a href="./04-03-conditioning.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></span></a>
   </div>
 </li>
@@ -368,7 +329,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span id="sec-hist-in-r" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Creating Histograms in R</span></span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></h1>
 </div>
 
 
@@ -385,177 +346,217 @@ window.Quarto = {
 </header>
 
 
-<p>This chapter will focus on how we create histograms in R. To illustrate this, we will use the <strong>mn-colleges.csv</strong> data. This data includes admissions related data for the 33 institutions of higher learning in Minnesota.</p>
+<p>This chapter will focus on how we can compare categorical distributions by creating facetted, stacked or side-by-side bar charts. To illustrate this, we will use the <em>umn-buildings.csv</em> data.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>mn <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/mn-colleges.csv"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load library</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(mn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-b1334380c56dc9bd2cfd" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b1334380c56dc9bd2cfd">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33"],["Carleton College","Macalester College","St Olaf College","Crown College","Metro State University","University of Minnesota-Morris","University of Minnesota-Twin Cities (U of M)","Minneapolis College of Art and Design (MCAD)","University of Minnesota-Rochester","Minnesota State University-Mankato (msu)","Southwest Minnesota State University (SMSU)","Bemidji State University (BSU)","Minnesota State University Moorhead (MSU Moorhead)","St Catherine University (St. Kate)","Hamline University","Winona State University (WSU)","University of Minnesota-Crookston","Concordia College at Moorhead","Gustavus Adolphus College","Bethany Lutheran College (BLC)","University of Minnesota-Duluth (UMD)","The College of Saint Scholastica (CSS)","Augsburg College","Saint Johns University","Bethel University","College of Saint Benedict (Saint Benedict)","University of St. Thomas (UST)","Martin Luther College (MLC)","North Central University","Saint Cloud State University (SCSU)","Northwestern College","Saint Mary's University of Minnesota (SMU)","Dunwoody College of Technology"],["Private","Private","Private","Private","Public","Public","Public","Private","Public","Public","Public","Public","Public","Private","Private","Public","Public","Private","Private","Private","Public","Private","Private","Private","Private","Private","Private","Private","Private","Public","Private","Private","Private"],[7324,6598,5694,825,1092,3265,40673,747,1121,10349,2245,3404,3963,2458,4602,7663,1182,3395,4957,636,8614,1956,2643,1746,2435,2052,7232,266,653,5171,1243,1498,448],[1401,2129,2705,411,614,1852,23076,437,674,6490,1442,2211,2591,1655,3117,5204,809,2321,3432,462,6518,1494,2013,1367,1912,1651,5824,223,587,4656,1141,1378,434],[19.1,32.3,47.5,49.8,56.2,56.7,56.7,58.5,60.1,62.7,64.2,65,65.40000000000001,67.3,67.7,67.90000000000001,68.40000000000001,68.40000000000001,69.2,72.59999999999999,75.7,76.40000000000001,76.2,78.3,78.5,80.5,80.5,83.8,89.90000000000001,90,91.8,92,96.90000000000001]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>school<\/th>\n      <th>sector<\/th>\n      <th>applicants<\/th>\n      <th>admitted<\/th>\n      <th>accept_rate<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"school","targets":1},{"name":"sector","targets":2},{"name":"applicants","targets":3},{"name":"admitted","targets":4},{"name":"accept_rate","targets":5}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>umn <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/umn-buildings.csv"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>umn</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 393 × 33
+   bldg_num name     legal_name abbr  campus address type  TRI_BLDG_T TRI_TRITEN
+   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;     
+ 1 332      Cattle … Cattle Fe… CFS1  St. P… 1894 B… Acad… Agricultu… Owned     
+ 2 333      Cattle … Cattle Fe… CFS2  St. P… 1896 B… Acad… Agricultu… Owned     
+ 3 302      Beef Ca… Beef Catt… BCB   St. P… 1920 B… Acad… Agricultu… Owned     
+ 4 343      Botany … Botany Fi… BFH   St. P… 2033 F… Acad… Agricultu… Owned     
+ 5 345      Agronom… Agronomy … AGRSH St. P… 1472 G… Acad… Agricultu… Owned     
+ 6 346      Bee Lab… Bee Lab S… BLAB… St. P… 1634 G… Acad… Agricultu… Owned     
+ 7 347      Bee Res… Bee Resea… BRF   St. P… 1634 G… Acad… Agricultu… Owned     
+ 8 351      Hog Bar… Hog Barn … HOGB3 St. P… 1845 B… Acad… Agricultu… Owned     
+ 9 355      Farm Cr… Farm Crop… FCFH  St. P… 1922 H… Acad… Agricultu… Owned     
+10 392      Sheep R… Sheep Res… SHEE… St. P… 1794 D… Acad… Agricultu… Owned     
+# ℹ 383 more rows
+# ℹ 24 more variables: TRI_YEAR_O &lt;dbl&gt;, TRI_DATE_O &lt;chr&gt;, TRI_YEAR_L &lt;dbl&gt;,
+#   mortenson_dates &lt;dbl&gt;, ada &lt;chr&gt;, nrhp_status &lt;chr&gt;, gross_sqft &lt;dbl&gt;,
+#   assignable_sqft &lt;dbl&gt;, net_sqft &lt;dbl&gt;, structural_sqft &lt;dbl&gt;,
+#   usable_sqft &lt;dbl&gt;, BLDG_DETAI &lt;chr&gt;, BLDG_PHOTO &lt;chr&gt;,
+#   women_restrooms &lt;dbl&gt;, men_restrooms &lt;dbl&gt;, undesignated_restrooms &lt;dbl&gt;,
+#   classrooms &lt;dbl&gt;, laboratories &lt;dbl&gt;, offices_spaces &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
-<p>In these data each case is an institution of higher education in the state of Minnesota. There are 33 institutions in our sample. There are several quantitative attributes in the data, including: the number of applicants, the number of applicants who were admitted, and the acceptance rate. We will focus on the acceptance rate attribute in this chapter.</p>
+<p>These data include information on 393 different buildings owned by the University of Minnesota. While there are several attributes included in the data for these buildings, we are most interested in the <code>type</code> attribute. This attribute includes information about the primary use of the building as classified by the university (e.g., parking, residential).</p>
 <p><br></p>
-<section id="using-r-to-create-histograms" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="using-r-to-create-histograms"><span class="header-section-number">9.1</span> Using R to Create Histograms</h2>
-<p>To create a histogram or a density plot, we will use functions from the <code>{tidyverse}</code> library. As a reminder, in the first code chunk of your script file, load the <code>{tidyverse}</code> library. In a second code chunk use the <code>read_csv()</code> function to import the <em>mn-colleges.csv</em> data and assign the data into an object called <code>mn</code>. You also might want to view the data to ensure that it imported into RStudio correctly. (Don’t forget to add code comments as well!)</p>
+<section id="facetted-bar-charts" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="facetted-bar-charts"><span class="header-section-number">15.1</span> Facetted Bar Charts</h2>
+<p>One way to compare categorical distributions is to facet the plot, similar to how we facetted histograms. This creates different bar charts for all the values of the categorical attribute we facet on. For example, suppose we wanted to compare the types of buildings across the different parts of the UMN campus. One way to do this is to facet on the <code>campus</code> attribute.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>mn <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/mn-colleges.csv"</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>mn</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>To create a histogram of the acceptance rates, we will first create a new code chunk in your script file. In the ggplot syntax we will use two layers in our plot: <code>ggplot()</code> and <code>geom_histogram()</code>. Remember that the <code>ggplot()</code> layer (the global layer) indicates the data object and sets the primary aesthetic mapping for the plot. The <code>geom_histogram()</code> layer will use the information in the global layer to create the histogram.</p>
-<p>In the global layer we will indicate the data object is <code>mn</code> using the argument <code>data=mn</code>. We will also set the aesthetic mapping for the <em>x</em>-position using <code>x=accept_rate</code> to indicate that we want to use the <code>accept_rate</code> attribute when we create the histogram. Also, remember that since we are mapping a column in the data set, the aesthetic mapping needs to be enclosed in the <code>aes()</code> function. The syntax is as follows:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create histogram of acceptance rates</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Horizontal bar chart</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mn, <span class="fu">aes</span>(<span class="at">x =</span> accept_rate)) <span class="sc">+</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>This should result in the following histogram:</p>
-<div class="cell">
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">y =</span> type)) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"maroon"</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"UMN BUILDINGS BY CAMPUS"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">The number of each building type owned by UMN facetted by campus location."</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"SOURCE: University of Minnesota"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Count"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>campus)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-hist-01" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-hist-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="03-02-histograms-in-r_files/figure-html/fig-hist-01-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;9.1: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota."><img src="03-02-histograms-in-r_files/figure-html/fig-hist-01-1.png" class="img-fluid figure-img" style="width:70.0%" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9.1: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>A couple things to note.</p>
-<ol type="1">
-<li>While the bars in the histogram are there, because we haven’t made their border visible, some bars look wider than others.</li>
-<li>You will likely have a message saying: <code>stat_bin()  using bins = 30. Pick better value binwidth</code>. This is because R by default chooses to create the bin width so that there are 30 bins in the histogram. Sometimes this is fine, other times we want more control over the bins.</li>
-</ol>
-<p><br></p>
-</section>
-<section id="adding-border-and-bin-color" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="adding-border-and-bin-color"><span class="header-section-number">9.2</span> Adding Border and Bin Color</h2>
-<p>To show the histogram bins more clearly, we can color the bin lines (the bar borders) to highlight the different bins. To do this we include an additional argument, <code>color=</code>, in the <code>geom_histogram()</code> function. We can also set the color for the bars themselves using the <code>fill=</code> argument. Here we color the bin lines black and set the bar color to yellow. Recall that since “black” and “yellow” are strings, we enclose them in quotation marks in the function. Also note that these mappings are NOT enclosed in an <code>aes()</code> functions since “black” and “yellow” are not column names in the <code>mn</code> data object.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create histogram of acceptance rates</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Change the bin outline and fill color</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mn, <span class="fu">aes</span>(<span class="at">x =</span> accept_rate)) <span class="sc">+</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"yellow"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="fig-hist-02" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. The bin lines are now colored black and the bars are colored yellow.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-hist-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="03-02-histograms-in-r_files/figure-html/fig-hist-02-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;9.2: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. The bin lines are now colored black and the bars are colored yellow."><img src="03-02-histograms-in-r_files/figure-html/fig-hist-02-1.png" class="img-fluid figure-img" style="width:70.0%" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. The bin lines are now colored black and the bars are colored yellow."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9.2: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. The bin lines are now colored black and the bars are colored yellow.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>There are 657 different color names that R knows. These are depicted in <a href="#fig-named-colors" class="quarto-xref">Figure&nbsp;<span>9.3</span></a>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-named-colors" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The 657 color names that R knows.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-named-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/03-01-03-r-colors.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;9.3: The 657 color names that R knows."><img src="figs/03-01-03-r-colors.png" class="img-fluid figure-img" style="width:100.0%" alt="The 657 color names that R knows."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-named-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9.3: The 657 color names that R knows.
-</figcaption>
+<div>
+<figure class="figure">
+<p><a href="04-03-conditioning_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="04-03-conditioning_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" alt="Horizontal Bar chart of the number of each building type owned by UMN facetted by campus." width="960"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p><br></p>
 </section>
-<section id="changing-the-bin-width" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="changing-the-bin-width"><span class="header-section-number">9.3</span> Changing the Bin Width</h2>
-<p>To change the number of bins, we add the argument <code>bins=</code> to the <code>geom_histogram()</code> function. For example, if we wanted there to be 10 bins rather than the 30 default bins, we would use the following syntax:</p>
+<section id="comparing-categorical-distributions" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="comparing-categorical-distributions"><span class="header-section-number">15.2</span> Comparing Categorical Distributions</h2>
+<p>Similar to our description of a categorical attribute’s distribution, when we compare two (or more) distributions, we want to compare/contrast describe the center (mode) and the variability of the distributions. For example in comparing the buildings on the Minneapolis and St.&nbsp;Paul campuses, we might say:</p>
+<blockquote class="blockquote">
+<p>The most common type of building on both the Minneapolis and St.&nbsp;Paul campuses are those purposed for academic/administration. Relative to St.&nbsp;Paul, the Minneapolis campus seems to have a higher prevalence of residential buildings and parking structures (both bars are much higher on the Minneapolis campus). Moreover the diversity of building types is much higher on the Minneapolis campus. On the St.&nbsp;Paul campus, almost all of the buildings are academic/administration, while on the Minneapolis campus although the academic/administration bar is the tallest, the other bars indicate that there are several other building types as well.</p>
+</blockquote>
+<p><br></p>
+</section>
+<section id="stacked-bar-charts" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="stacked-bar-charts"><span class="header-section-number">15.3</span> Stacked Bar Charts</h2>
+<p>With bar charts, there are other methods aside from facetting that are often used by data scientists to compare categorical distributions. One of those methods is creating a <em>stacked bar chart</em>, also sometimes called a <em>segmented bar chart</em>. This is exactly like it sounds. Rather than separating the bar charts into two separate plots, we instead create the original bar chart, but separate each bar into segments based on the count of buildings on each campus. Each segment is colored differently to help readers see the segments.</p>
+<p>To create a stacked bar chart we will map the attribute we want to compare to the <code>fill=</code> attribute. Because we are mapping a column in the data to <code>fill=</code>, it goes inside an <code>aes()</code> function. Below we map the <code>campus</code> attribute to <code>fill=</code> inside the <code>aes()</code> function in the global layer. (We also omit the <code>fill="maroon</code> from the <code>geom_bar()</code> layer. We don’t want all of the campuses to have the same color segments!)</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create histogram of acceptance rates</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Change the bin outline and fill color</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Change the number of bins to 10</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mn, <span class="fu">aes</span>(<span class="at">x =</span> accept_rate)) <span class="sc">+</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"yellow"</span>, <span class="at">bins =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Horizontal stacked bar chart</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">y =</span> type, <span class="at">fill =</span> campus)) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"UMN BUILDINGS BY CAMPUS"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">The number of each building type owned by UMN. Each bar is segmented by campus location."</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"SOURCE: University of Minnesota"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Count"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-hist-03" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has 10 bins.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-hist-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="03-02-histograms-in-r_files/figure-html/fig-hist-03-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;9.4: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has 10 bins."><img src="03-02-histograms-in-r_files/figure-html/fig-hist-03-1.png" class="img-fluid figure-img" style="width:70.0%" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has 10 bins."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9.4: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has 10 bins.
-</figcaption>
+<div>
+<figure class="figure">
+<p><a href="04-03-conditioning_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="04-03-conditioning_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" alt="Horizontal stacked bar chart showing the number of each building type owned by UMN by campus." width="1152"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<p>By changing the number of bins we are changing how wide each bin actually is. The way R computes the bin width is to take the maximum value in the data and subtract the minimum value in the data, and then divide it by the number of bins. In our example, the maximum acceptance rate in the data is 96.90 and the minimum acceptance rate is 19.10. So for the default of 30 bins:</p>
-<p><span class="math display">\[
-\mathrm{Bin~Width} = \frac{96.90 - 19.10}{30} \approx 2.59
-\]</span> So the first bin would include values between 19.10 and 21.69. The second bin would include values from 21.69 and 24.28. Etc.</p>
-<p>When we used 10 bins the bin width was:</p>
-<p><span class="math display">\[
-\mathrm{Bin~Width} = \frac{96.90 - 19.10}{10} \approx 7.78
-\]</span> In this histogram the first bin would include values between 19.10 and 26.88. The second bin would include values from 26.88 and 34.66. Etc.</p>
-<p>Rather than choosing the number of bins, you can instead choose the desired bin width by including the argument <code>binwidth=</code> in the <code>geom_histogram()</code> function. For example, to choose a bin width of 1, we could use the following:</p>
+<p>If you look at the bars (ignoring the color) this is the exact same bar chart we created in the previous chapter. For example the total number of athletic/recreation buildings is 26. The difference is now that bar is segmented into two parts: 19 of those buildings are on the Minneapolis campus and 7 are on the St.&nbsp;Paul Campus. This is reflected in the different colored segments.</p>
+<p>With stacked bar charts, the <strong>comparisons within a single bar are easy</strong>. It is, for example, easy to compare the number of buildings of a particular type across campuses by comparing how large the segments are in that one bar. As an example, look at the academic/administration buildings bar. We can see that most are on the Minneapolis campus, with the St.&nbsp;Paul campus also having quite a few of these. There are only a couple of these building types in other St.&nbsp;Paul area leases.</p>
+<p>Comparisons across bars are a bit more difficult. Try to compare the distribution of building types between the St.&nbsp;Paul and Mineapolis campuses (like we did with facetting). This is hard! If the goal is to compare across different bars, the stacked bar chart is not a good choice.</p>
+<p><br></p>
+</section>
+<section id="proportional-stacked-bar-charts" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="proportional-stacked-bar-charts"><span class="header-section-number">15.4</span> Proportional Stacked Bar Charts</h2>
+<p>Because comparing within bars is easy, data scientists often use the stacked bar chart for this purpose. To make it even easier to read, they often change the measure from counts to proportions and make each bar extend all the way to 1. To do this we take our syntax that we used to create the stacked bar chart and add <code>position="fill"</code> to the <code>geom_bar()</code> layer. For example:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create histogram of acceptance rates</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Change the bin outline and fill color</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Change the binwidth to 1</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mn, <span class="fu">aes</span>(<span class="at">x =</span> accept_rate)) <span class="sc">+</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"yellow"</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Horizontal proportional stacked bar chart</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">y =</span> type, <span class="at">fill =</span> campus)) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"UMN BUILDINGS BY CAMPUS"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">The proportion of each building type owned by UMN based on campus location."</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"SOURCE: University of Minnesota"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Proportion"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-hist-04" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has a bin width of 1.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-hist-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="03-02-histograms-in-r_files/figure-html/fig-hist-04-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;9.5: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has a bin width of 1."><img src="03-02-histograms-in-r_files/figure-html/fig-hist-04-1.png" class="img-fluid figure-img" style="width:70.0%" alt="Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has a bin width of 1."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9.5: Histogram of acceptance rates for the 33 institutions of higher learning in Minnesota. This histogram has a bin width of 1.
-</figcaption>
+<div>
+<figure class="figure">
+<p><a href="04-03-conditioning_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="04-03-conditioning_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" alt="Horizontal proportional stacked bar chart showing the proportion of each building type by campus." width="1152"></a></p>
 </figure>
 </div>
 </div>
 </div>
+<p>Again, looking at the academic/administration buildings bar. We can see that most are on the Minneapolis campus, with the St.&nbsp;Paul campus also having quite a few of these. There are only a couple of these building types in other St.&nbsp;Paul area leases. Now, however, we can see that <strong>of all the academic/administration buildings</strong>, roughly 0.55 are on the Minneapolis campus, 0.40 are on the St.&nbsp;Paul campus, and 0.05 are located in other St.&nbsp;Paul leases.</p>
+<p>One thing we lose in this plot is that we cannot compare across bars. Since all of the bars go to 1, we don’t know that there are more academic/administration buildings than there are Residential buildings.</p>
 <div class="fyi">
-<p><strong>PROTIP</strong></p>
-<p>In the <code>geom_histogram()</code> function you cannot include both <code>bins=</code> and <code>binwidth=</code>. Use one or the other. If you include both, R will use whichever one appears first in the function and will ignore the other argument.</p>
+<p><strong>BE CAREFUL</strong></p>
+<p>If you try to compare across bars in a proportional stacked bar chart, you might come to erroneous conclusions. For example, if you tried to compare the Athletics/Recreation bar to the Library bar, you might conclude that on the Minneapolis campus (green) there are more libraries than athletic/recreation buildings since the green part of the bar is longer in the libraries bar than in the athletics/recreation bar. This conclusion is wrong. On the Minneapolis campus there are 3 libraries and 19 athletic/recreation buildings.</p>
+<p>Remember that the segment in this chart represents the proportion of a particular building type that is on a particular campus. For libraries, the green segment represents the proportion of all 4 libraries that are on the Minneapolis campus (3 of them); that is 0.75. For athletics/recreation buildings, the green segment represents the proportion of all 26 athletics/recreation buildings that are on the Minneapolis campus (19 of them); that is 0.73. This does not indicate there are more libraries than athletics/recreation buildings on the Minneapolis campus!</p>
 </div>
-<p>As the storyteller of the data, it is up to you to determine an appropriate bin width or number of bins for the quantitative attribute you are visualizing. There is no one correct bin width or number of bins. Usually the main concept being communicated with a histogram is its shape. So the key is to choose the bin width/number of bins so that we can get a good sense of the shape of the distribution.</p>
-<p>To do that, you generally want to find the middle ground between each data value being its own bar in the graph (<code>binwidth=1</code>) and the data being grouped so there is only a single bar (<code>binwidth=</code> the range of the data). It is common to try different bin widths/number of bars and see how the histogram changes. You will notice when you are close to an appropriate bin width that making the bin a little wider or narrower really does not change the overall appearance of the graph.</p>
+<p><br></p>
+<!-- ## Using R to Create a Bar Chart of Proportions -->
+<!-- Notice that in the bar charts we have created, there are two axes---one includes the categories of the attribute that we mapped in the `aes()` function, and the other indicates the count. For example in our horizontal bar charts, the categories of building type  are being mapped to the *y*-axis (we coded this with `y=type`) and the *x*-axis indicates the count of each type of building. It turns out that when we use `geom_bar()`, there is some implicit code in the `aes()` and `geom_bar()` functions that maps the counts to the opposite axis. For example, in our horizontal bar charts it is this: -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- ggplot(data = umn, aes(y = type, x = after_stat(count) )) + -->
+<!--   geom_bar(stat = "count") -->
+<!-- ``` -->
+<!-- The `stat="count` argument in `geom_bar()` is actually being used to compute a summary from the raw data, in this case counts. The `after_stat()` function  then uses those counts in the bar chart to map the counts to the *x*-axis. To summarize the proportion of each category (rather than counts) we can make use of this mapping in our bar chart and change what summary is being computed. For example, to compute proportions, we divide the count of each category by the sum of counts across all categories. Thus, the syntax to create a horizontal bar chart summarizing the proportion of each building type is shown below. -->
+<!-- ```{r} -->
+<!-- #| label: fig-buildings-prop -->
+<!-- #| fig-cap: "Horizontal bar chart of the proportion of each building type owned by UMN. This plot includes a border and fill color." -->
+<!-- #| fig-alt: "Horizontal bar chart of the proportion of each building type owned by UMN. This plot includes a border and fill color." -->
+<!-- ggplot(data = umn, aes(y = type, x = after_stat(count / sum(count)) )) + -->
+<!--   geom_bar(color = "black", fill = "maroon") -->
+<!-- ``` -->
+<!-- <br /> -->
+<!-- Note we don't have to include `stat="count` in the `geom_bar()` function as this is the default action---unless told otherwise it will create counts. -->
+</section>
+<section id="side-by-side-bar-charts" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="side-by-side-bar-charts"><span class="header-section-number">15.5</span> Side-by-Side Bar Charts</h2>
+<p>Another alternative method for comparing categorical distributions is the <em>side-by-side</em> bar chart. The side-by-side bar chart creates different bars for each group being compared similar to facetting, but it puts them all in the same plot. To create a side-by-side bar chart, we include <code>position="didge"</code> to the <code>geom_bar()</code> layer. For example:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Horizontal side-by-side bar chart</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">y =</span> type, <span class="at">fill =</span> campus)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"UMN BUILDINGS BY CAMPUS"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">The number of each building type owned by UMN for each campus location."</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"SOURCE: University of Minnesota"</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Count"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="04-03-conditioning_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="04-03-conditioning_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" alt="Horizontal side-by-side bar chart showing the count of each building type by campus." width="1152"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This type of plot is ideal for comparing within building types (e.g., there are more athletic/recreation buildings on the Minneapolis campus than on the St.&nbsp;Paul campus) and comparing across building types (e.g., there are more athletic/recreation buildings than libraries on the Minneapolis campus).</p>
+<p>Note that you can get a slightly different plot with the EXACT SAME information by switching the <code>y=</code> and <code>fill=</code> attributes in the global layer. So rather than <code>aes(y = type, fill = campus)</code> we could also do <code>aes(y = campus, fill = type)</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Horizontal side-by-side bar chart</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">y =</span> campus, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"UMN BUILDINGS BY CAMPUS"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">The number of each building type owned by UMN for each campus location."</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"SOURCE: University of Minnesota"</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Count"</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="04-03-conditioning_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="04-03-conditioning_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" alt="Horizontal side-by-side bar chart showing the count of each building type by campus." width="1152"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The difference is how the bars are grouped. In the first plot we grouped by building type. In the second plot we grouped by campus. (The group is based on the <code>y=</code> or <code>x=</code> (in vertical bar plots) mapping.) That is the only thing that changed between the two plots. Since it is a little bit easier to compare bars within a group, you choose which attribute to use to make the group based on which comparisons is most critical to the research question. For example if someone really wanted to compare the type of buildings across campuses—does Minneapolis have more of a certain building type than St.&nbsp;Paul—then group by building type. If someone was more interested in compare the type of buildings within campuses—does Minneapolis have more libraries or residential buildings—then group by campus.</p>
+<p><br></p>
 <p><br></p>
 
 

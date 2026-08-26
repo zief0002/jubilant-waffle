@@ -18,26 +18,32 @@ book:
     background: '#3F4C64'
   chapters:
     - index.qmd
-    - part: 01-00-computational-tools.qmd
+    - part: "Computational Tools for Visualization"
       chapters:
         - 01-01-r-and-rstudio-installation.qmd
         - 01-02-introduction-to-rstudio.qmd
         - 01-03-r-packages.qmd
         - 01-04-script-files.qmd
         - 01-05-ggplot2.qmd
-    - part: 02-00-data.qmd
+    - part: "Data"
       chapters:
         - 02-01-questions-to-ask-about-data.qmd
         - 02-02-importing-data.qmd
-    - part: 03-00-visualizing-and-describing-quantitative-attributes.qmd
+    - part: "Visualizing and Describing Quantitative Attributes"
       chapters:
         - 03-01-quantitative-distributions.qmd
         - 03-02-histograms-in-r.qmd
         - 03-03-labels.qmd
         - 03-04-computing-and-plotting-typical-values.qmd
         - 03-05-facetting.qmd
-        # - 03-02-visualizing-categorical-attributes.qmd
-        - 04-01-color.qmd
+    - part: "Visualizing and Describing Categorical Attributes"
+      chapters:
+        - 04-01-categorical-distributions.qmd
+        - 04-02-bar-charts-in-r.qmd
+        - 04-03-conditioning.qmd
+        - 04-04-color.qmd
+        - 04-05-scales.qmd
+        - 04-06-bar-charts-from-summaries.qmd
     # - part: 04-00-plot-enhancement.qmd
     #   chapters:
     #     - 04-03-annotations.qmd

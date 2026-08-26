@@ -19,7 +19,7 @@ Below is a screenshot of a CSV file after it is opened in a text editor. You can
 
 knitr::include_graphics("figs/02-02-09-plain-text.png")
 ```
-:::
+
 
 
 <br />

@@ -1,0 +1,470 @@
+# Scales: Customizing Axes
+
+This chapter will focus on how we can continue to improve our plot by customizing the scales for different mapped aesthetics. This customization again plays a large role in improving readability of a plot. To illustrate this, we will use the *umn-bike-amenities,csv* data to create a side-by-side bar chart to plot the number of different bike amenities on each campus.
+
+
+```{r}
+#| label: load-packages2
+#| message: false
+#| fig-alt: "Horizontal side-by-side bar chart showing the number of each type of bike amenity on each UMN campus location."
+#| fig-height: 6
+#| fig-width: 12
+
+######################
+# Load library
+######################
+
+library(tidyverse)
+
+
+######################
+# Import data
+######################
+
+bike_amenities <- read_csv("data/umn-bike-amenities.csv")
+
+# View data
+bike_amenities
+
+
+######################
+# Horizontal side-by-side bar chart
+######################
+
+ggplot(data = bike_amenities, aes(y = type, fill = campus)) +
+  geom_bar(color = "black", position = "dodge") +
+  labs(
+    title = "UMN BIKE AMENITIES BY CAMPUS",
+    subtitle = "\nThe number of each type of bike amenity on each UMN campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  )
+
+```
+
+
+<br />
+
+
+## Scales and Aesthetic Mappings
+
+Every aesthetic mapping in ggplot is associated with a scale. For example in the syntax for the bike amenities plot above there are three aesthetic mappings. The first aesthetic mapping, `y=` is explicitly indicated in the `aes()` function---we are mapping the `type` attribute to the *y*-position on the plot. The second mapping is also explicitly indicated in the `aes()` function---we are mapping the `campus` attribute to fill on the plot. The third mapping is implicit and maps counts to the *x*-position---it is happening even though we didn't explicitly include it in the syntax.
+
+Each of those two mappings is associated with a different scale, namely `scale_x`, `scale_y`, and `scale_fill`. Each scale is further defined by the type of attribute that is being mapped. For the position scales (`scale_x` and `scale_y`) ggplot differentiates between two types of attributes: *continuous* attributes, and *discrete* attributes. You can think of continuous attributes as numbers (quantitative) and discrete attributes as categories (categorical). (Note. `scale_fill` is a little different and we will describe it later on.)
+
+In our example, the `type` attribute, which is mapped to the *y*-position, is a categorical attribute; in the vocabulary of ggplot this is a discrete attribute. Whereas, counts, which is being mapped to the *x*-position is a continuous attribute. The scale layers are defined by the word "scale", the name of the aesthetic (e.g., x, y, color), and the type of attribute being mapped to the aesthetic (all separated by underscores). 
+
+```{r}
+#| fig-alt: "Scale syntax."
+#| out-width: "50%"
+#| fig-align: "center"
+#| echo: false
+
+knitr::include_graphics("figs/04-04-02-scale-syntax.png")
+```
+
+
+So the two scale layers we can use in our example for the position mappings are:
+
+- `scale_x_continuous()`
+- `scale_y_discrete()`
+
+The first layer will customize plot elements associated with the *x*-axis, and the second will customize plot elements associated with the *y*-axis. We can add these to our ggplot syntax. If the plot also has labels, the bones of the code will look like this:
+
+
+
+```{r}
+#| eval: false
+
+ggplot() +
+  geom_bar() +
+  scale_x_continuous() +
+  scale_y_discrete()
+```
+
+<br />
+
+
+## Three Useful Arguments for Scales
+
+While there are many arguments that you can use in the scales layers, the three most common arguments are:
+
+- `limits=`,
+- `breaks=`, and
+- `labels=`
+
+
+The `limits=` argument sets the minimum and maximum limits of the values associated with the axis. The `breaks=` argument sets the data values where a tick mark will be located in the plot. Finally, the `labels=` argument gives the names of the labels associated with each tick mark.
+
+To illustrate these three arguments, let's adapt the information in the *x*-axis on the bike amenities plot.
+
+<br />
+
+
+### The `limits=` Argument
+
+Currently, the values on the *x*-axis span from 0 to 12.5. These limits are chosen based on the values in the data set. Suppose we wanted to change the limits to span from 0 to 15 instead. To do this we employ the `limits=` argument in the scale layer. This argument takes a vector that includes the value for the minimum limit and the value for the maximum limit---in our example, 0 and 15. Because there are multiple values being given to the argument we enclose those values in the `c()` function. For example:
+
+```
+limits = c(0, 15)
+```
+
+So adding the `limits=` argument tothe `scale_x_continuous()` layer, the syntax now looks like this:
+
+
+
+```{r}
+#| fig-alt: "Changing axis limits in `limits=` in the scale layer associated with the *x*-axis."
+#| out-width: "90%"
+
+######################
+# Horizontal side-by-side bar chart
+# Limits on y-axis updated
+######################
+ggplot(data = bike_amenities, aes(y = type, fill = campus)) +
+  geom_bar(color = "black", position = "dodge") +
+  labs(
+    title = "UMN BIKE AMENITIES BY CAMPUS",
+    subtitle = "\nThe number of each type of bike amenity on each UMN campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  ) +
+  scale_x_continuous(
+    limits = c(0, 15)
+  )
+```
+
+<br />
+
+
+### The `breaks=` Argument
+
+In the plot, there are now tick marks at the data values of 0, 5, 10, and 15 on the *x*-axis (after expanding our maximum value to 15). On the *y*-axis, the tick marks are at each of the data values in the `type` attribute (e.g., "ZAP Station", "Sheltered bike parking"). Note that in discrete/categorical attributes the data values are strings not numbers and they are plotted in alphabetical order. 
+
+Although the values for the tick marks on the *x*-axis seem reasonable, as an example, let's include tick marks every three rather than every values values; at 0, 3, 6, 9, 12, and 15. To do this we include the `breaks=` argument in the `scale_x_continuous()` layer. Since we are giving this argument multiple values, similar to our `limits=` argument, we need to include all the values where we want tick marks inside a `c()` function.
+
+
+
+
+```{r}
+#| fig-alt: "Changing the tick mark locations in `breaks=` in the layer asociated with the *x*-axis."
+#| out-width: "90%"
+
+######################
+# Horizontal side-by-side bar chart
+# Changing tick marks with breaks=
+######################
+ggplot(data = bike_amenities, aes(y = type, fill = campus)) +
+  geom_bar(color = "black", position = "dodge") +
+  labs(
+    title = "UMN BIKE AMENITIES BY CAMPUS",
+    subtitle = "\nThe number of each type of bike amenity on each UMN campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  ) +
+  scale_x_continuous(
+    limits = c(0, 15),
+    breaks = c(0, 3, 6, 9, 12, 15)
+  )
+```
+
+
+One thing to note is that gridlines are also added to each value that you define in the `breaks=` argument. If you have many tick marks defined on the axis, the number of gridlines might overwhelm the plot. The inclusion of gridlines in a plot is somewhat contentious. Edward Tufte has argued that gridlines are "chart clutter" and that because they compete with the data being visualized, they should be omitted from most plots. Others argue that because they help readers better estimate values in the plot they should be included, but should be made as subtle as possible (i.e., light in color and thin).
+
+There are two different types of gridlines: major gridlines and minor gridlines. Major gridlines occur where there are tick marks on the axes. Minor gridlines are in-between the major gridlines. For example, in @fig-gridlines the major horizontal gridlines are at 0, 1000, 2000, and 3000. The minor horizontal gridlines are at 500, 1500, and 2500.
+
+
+```{r}
+#| label: fig-gridlines
+#| fig-cap: "A plot indicating horizontal major and minor gridlines."
+#| fig-alt: "A plot indicating horizontal major and minor gridlines."
+#| out-width: "90%"
+#| echo: false
+
+knitr::include_graphics("figs/04-03-04-gridlines.png")
+```
+
+We can also differentiate between major and minor breaks in the scale layer. We define where the tick marks, major gridlines, and value labelswill be  using the  `breaks=` argument. To define where the minor gridlines will be (but no labels or tick marks), we use the `minor_breaks=` argument . Suppose we want to have gridlines at every values along the *x*-axis, but only want tick marks at the values of 0, 3, 6, 9, 12, and 15. Then we can employ both `breaks=` and `minor_breaks=` in the scale layer associated with the *x*-axis:
+
+
+
+```{r}
+#| fig-alt: "Changing the tick mark locations/labels in `breaks=` and adding minor gridlines in the layer asociated with the *x*-axis."
+#| out-width: "90%"
+
+######################
+# Horizontal side-by-side bar chart
+# Changing tick marks with breaks=
+# Adding minor gridlines
+######################
+ggplot(data = bike_amenities, aes(y = type, fill = campus)) +
+  geom_bar(color = "black", position = "dodge") +
+  labs(
+    title = "UMN BIKE AMENITIES BY CAMPUS",
+    subtitle = "\nThe number of each type of bike amenity on each UMN campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  ) +
+  scale_x_continuous(
+    limits = c(0, 15),
+    breaks = c(0, 3, 6, 9, 12, 15),
+    minor_breaks = c(1, 2, 4, 5, 7, 8, 10, 11, 13, 14)
+  )
+```
+
+
+<br />
+
+
+
+### The `labels=` Argument
+
+In our current plot, the tick labels on the *x*-axis are "0", "3", "6", "9", "12", and "15". On the *y*-axis, our tick labels are "ZAP Station", "Sheltered bike parking", "Shared bike locker", "Individual bike locker", "Gopher Bikes hub", "Gopher Bikes daily check out", "Fix-it station", "Bike Center", and "Air Station". Suppose we wanted to change the tick labels on the *y*-axis in the following way:
+
+- Remove "bike" from "Shelterd bike parking", "Shared bike locker", and "Individual bike locker"
+- Add a line break to the "Gopher Bikes hub" so that "Gopher Bikes" is on top of "(Hub)" and similarly to "Gopher Bikes daily check out" so "Gopher Bikes" is on top of "(Daily Check Out)"
+
+To do this we will include the `labels=` argument in the scale layer associated with the *y*-axis. This takes an argument like this:
+
+```
+"old_label" = "new_label"
+```
+
+If you have more than one label to replace, they are all put inside the `c()` function. (Note that we include `\n` in some of the labels to break the line.) For our example:
+
+
+```{r}
+#| fig-alt: "Changing the tick mark labels in the `labels=` argument in the layer asociated with the *y*-axis."
+#| out-width: "90%"
+
+######################
+# Horizontal side-by-side bar chart
+# Changing labels on y-axis
+######################
+ggplot(data = bike_amenities, aes(y = type, fill = campus)) +
+  geom_bar(color = "black", position = "dodge") +
+  labs(
+    title = "UMN BIKE AMENITIES BY CAMPUS",
+    subtitle = "\nThe number of each type of bike amenity on each UMN campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  ) +
+  scale_x_continuous(
+    limits = c(0, 15),
+    breaks = c(0, 3, 6, 9, 12, 15),
+    minor_breaks = c(1, 2, 4, 5, 7, 8, 10, 11, 13, 14)
+  ) +
+  scale_y_discrete(
+    labels = c(
+      "Sheltered bike parking" = "Sheltered parking", 
+      "Shared bike locker" = "Shared locker", 
+      "Individual bike locker" = "Individual locker", 
+      "Gopher Bikes hub" = "Gopher Bikes\n(Hub)", 
+      "Gopher Bikes daily check out" = "Gopher Bikes\n(Daily Check Out"
+    )
+  )
+```
+
+
+
+<br />
+
+
+## Pro Tip: Breaking Up Long Code
+
+One pro coding tip is to pay attention to how long the lines of code are that you are writing. We know from research that humans are worse at cognitively parsing longer lines of code than they are at parsing shorter lines of code. The code in many of the previous examples is starting to get long---it includes a lot of arguments. When you use functions that contain a lot of arguments, consider breaking this code up into multiple lines. For example, the same code as above could be broken up in the following way:
+
+
+```{r}
+#| eval: false
+
+ggplot(
+  data = bike_amenities, 
+  aes(
+    y = type, 
+    fill = campus
+    )
+  ) +
+  geom_bar(
+    color = "black", 
+    position = "dodge"
+    ) +
+  labs(
+    title = "UMN BIKE AMENITIES BY CAMPUS",
+    subtitle = "\nThe number of each type of bike amenity on each UMN campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  ) +
+  scale_x_continuous(
+    limits = c(0, 15),
+    breaks = c(0, 3, 6, 9, 12, 15),
+    minor_breaks = c(1, 2, 4, 5, 7, 8, 10, 11, 13, 14)
+  ) +
+  scale_y_discrete(
+    labels = c(
+      "Sheltered bike parking" = "Sheltered parking", 
+      "Shared bike locker" = "Shared locker", 
+      "Individual bike locker" = "Individual locker", 
+      "Gopher Bikes hub" = "Gopher Bikes\n(Hub)", 
+      "Gopher Bikes daily check out" = "Gopher Bikes\n(Daily Check Out"
+    )
+  )
+```
+
+
+This helps us see which parentheses go together to ensure we haven't forgotten any! It is also way easier to read and debug. 
+
+
+<!-- ## Changing from Counts to Percentages -->
+
+<!-- If you want to change from counts to percentages, we can use  `labels=label_percent()` in the appropriate axis scale. The `percent()` function lives in the `{scales}` package, so we need to load that package in our "Load libraries" code chunk. Here we create a bar chart of the percentage of bike amenities across the three campuses. -->
+
+<!-- ```{r} -->
+<!-- ###################### -->
+<!-- # Load library -->
+<!-- ###################### -->
+
+<!-- library(tidyverse) -->
+<!-- library(scales) -->
+
+
+<!-- ###################### -->
+<!-- # Horizontal side-by-side bar chart -->
+<!-- # Changing from counts to percentage -->
+<!-- ###################### -->
+<!-- ggplot(data = bike_amenities, aes(y = campus, fill = campus)) + -->
+<!--   geom_bar(color = "black") + -->
+<!--   labs( -->
+<!--     title = "UMN BIKE AMENITIES BY CAMPUS", -->
+<!--     subtitle = "\nThe number of each type of bike amenity on each UMN campus location.", -->
+<!--     caption = "SOURCE: University of Minnesota", -->
+<!--     x = "Count", -->
+<!--     y = "" -->
+<!--   ) + -->
+<!--   scale_x_continuous( -->
+<!--     # labels = label_percent() -->
+<!--     # limits = c(0, 15), -->
+<!--     # breaks = c(0, 3, 6, 9, 12, 15), -->
+<!--     # minor_breaks = c(1, 2, 4, 5, 7, 8, 10, 11, 13, 14) -->
+<!--   )  -->
+<!-- ``` -->
+
+
+## Color/Fill Scales
+
+We can also use a scale layer to customize the attribute mappings we have with either `fill=` or `color=`. The respective scale layers we can use are:
+
+- `scale_color_manual()`
+- `scale_fill_manual()`
+
+In our example, the mapping we used was `fill=campus`, so we would use `scale_fill_manual()`. There are three primary arguments we will use within this function:
+
+- `name=`: Changes the main label associated with the fill legend that was added to the plot. This argument takes a string indicating the new legend label.
+- `values=`: Changes the colors used for the fill/color. This argument takes a vector of `"old_label" = "HEX color value"` inside the `c()` function.
+- `labels=`: Changes the labels associated with each color. This argument takes a vector of `"old_label" = "new_label"` inside the `c()` function.
+
+Below we see these in action:
+
+
+```{r}
+#| fig-alt: "Changing the tick mark labels in the `labels=` argument in the layer asociated with the *y*-axis."
+#| out-width: "90%"
+
+######################
+# Horizontal side-by-side bar chart
+# Changing the fill scale
+######################
+ggplot(data = bike_amenities, aes(y = type, fill = campus)) +
+  geom_bar(color = "black", position = "dodge") +
+  labs(
+    title = "UMN BIKE AMENITIES BY CAMPUS",
+    subtitle = "\nThe number of each type of bike amenity on each UMN campus location.",
+    caption = "SOURCE: University of Minnesota",
+    x = "Count",
+    y = ""
+  ) +
+  scale_x_continuous(
+    limits = c(0, 15),
+    breaks = c(0, 3, 6, 9, 12, 15),
+    minor_breaks = c(1, 2, 4, 5, 7, 8, 10, 11, 13, 14)
+  ) +
+  scale_y_discrete(
+    labels = c(
+      "Sheltered bike parking" = "Sheltered parking", 
+      "Shared bike locker" = "Shared locker", 
+      "Individual bike locker" = "Individual locker", 
+      "Gopher Bikes hub" = "Gopher Bikes\n(Hub)", 
+      "Gopher Bikes daily check out" = "Gopher Bikes\n(Daily Check Out"
+    )
+  ) +
+  scale_fill_manual(
+    name = "Campus Location",
+    values = c(
+      "East Bank" = "#7a0019",
+      "St. Paul" = "#00759a",
+      "West Bank" = "#ffcc33"
+    ),
+    labels = c(
+      "St. Paul" = "Saint Paul"
+    )
+  )
+```
+
+<!-- ## Exercises: Your Turn {-} -->
+
+
+
+
+<!-- 1. Use the *bls-earnings.csv* to create a histogram of the median weekly earnings for women who work an occupation in a professional occupation.  -->
+
+<!-- - Use a binwidth of 200 to create this histogram.  -->
+<!-- - Add a title, subtitle, and caption using the `labs()` layer.  -->
+<!-- - Also update the axes labels using appropriate `scale_` layers. -->
+<!-- - Add major gridlines at every $500. -->
+<!-- - Label the *x*-axis tick labels so that they include the dollar sign (e.g., $500). -->
+
+<!-- *Note.* You may get a warning about removed rows when you create this plot. This is just informing you that some rows in the data have NAs and are not being included in the visualization. -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-04-01');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_04-04-01" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- ```{r} -->
+<!-- #| fig-alt: "Histogram of the acceptance rates for the 33 institutions of higher learning in Minnesota." -->
+<!-- #| out-width: "100%" -->
+<!-- #| message: false -->
+<!-- #| warning: false -->
+<!-- # Import data -->
+<!-- bls = read_csv("data/bls-earnings.csv") -->
+
+<!-- # Histogram -->
+<!-- ggplot(data = bls, aes(x = med_weeklypay_women)) + -->
+<!--   geom_histogram( -->
+<!--     breaks = seq(from = 0, to = 3000, by = 200), -->
+<!--     color = "black",  -->
+<!--     fill = "#FFB71E" -->
+<!--   ) + -->
+<!--   labs( -->
+<!--     title = "Female Empowerment: Bringing Home the Bacon", -->
+<!--     subtitle = "The median weekly earnings for women in 195 professional occupations.\n", -->
+<!--     caption = "\nSOURCE: Bureau of Labor Statistics" -->
+<!--   ) + -->
+<!--   scale_x_continuous( -->
+<!--     name = "Median weekly earnings", -->
+<!--     breaks = c(0, 500, 1000, 1500, 2000, 2500, 3000), -->
+<!--     labels = c("$0", "$500", "$1000", "$1500", "$2000", "$2500", "$3000") -->
+<!--   ) + -->
+<!--   scale_y_continuous( -->
+<!--     name = "Count" -->
+<!--   ) -->
+<!-- ``` -->
+<!-- </div> -->
+
+
+
+<br />

@@ -1,7 +1,7 @@
 # More Colors with RGB and HEX  {#sec-labels}
 
 
-In the previous chapters, you learned how to add color to a plot using names that R recognizes (e.g., maroon, black). While there are many color names that R recognizes, there are many times that you want to use a more specific color in your data visualization for aesthetic reasons or branding. For example, suppose we were creating a data visualization for the University of Minnesota. The color name "maroon" (<span style="color: #B03060; font-size: 2em; vertical-align: middle;">■</span>) is not the official maroon of the university (<span style="color: #7A0019;font-size: 2em; vertical-align: middle;">■</span>). In this chapter, you will learn how color is interpreted by computers and how we can use the RGB color model and HEX notation to express up to 16 million different colors.
+In previous chapters, you have added color to your plot using names that R recognizes (e.g., maroon, black). While there are many color names that R recognizes, there are many times that you want to use a more specific color in your data visualization for aesthetic reasons or branding. For example, suppose we were creating a data visualization for the University of Minnesota. The color name "maroon" (<span style="color: #B03060; font-size: 2em; vertical-align: middle;">■</span>) is not the official maroon of the university (<span style="color: #7A0019;font-size: 2em; vertical-align: middle;">■</span>). In this chapter, you will learn how color is interpreted by computers and how we can use the RGB color model and HEX notation to express up to 16 million different colors.
 
 <br />
 
@@ -374,169 +374,169 @@ ggplot(data = mn, aes(x = accept_rate)) +
 <br />
 
 
-## Exercises: Your Turn {-}
+<!-- ## Exercises: Your Turn {-} -->
 
 
-1. The primary gold color of the University of Minnesota has an RGB notation of (255, 204, 51). Convert this to binary notation. Show your work.
+<!-- 1. The primary gold color of the University of Minnesota has an RGB notation of (255, 204, 51). Convert this to binary notation. Show your work. -->
 
 
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-01');">Show/Hide Solution</button>
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-01');">Show/Hide Solution</button> -->
 
-<div id="exercise_04-01-01" style="display:none; margin: -40px 0 40px 40px;">
-**R channel**
+<!-- <div id="exercise_04-01-01" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- **R channel** -->
 
-$$
-\begin{split}
-255 &= (? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\
-&~~~~~(? \times 2^2) + (? \times 2^1) + (? \times 2^0) \\[1ex]
-&= (? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) +\\
-&~~~~~(? \times 4) + (? \times 2) + (? \times 1) \\[1ex]
-&= (1 \times 128) + (1 \times 64) + (1 \times 32) + (1 \times 16) + (1 \times 8) +\\
-&~~~~~(1 \times 4) + (1 \times 2) + (1 \times 1) \\[1ex]
-&= 11111111
-\end{split}
-$$
+<!-- $$ -->
+<!-- \begin{split} -->
+<!-- 255 &= (? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\ -->
+<!-- &~~~~~(? \times 2^2) + (? \times 2^1) + (? \times 2^0) \\[1ex] -->
+<!-- &= (? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) +\\ -->
+<!-- &~~~~~(? \times 4) + (? \times 2) + (? \times 1) \\[1ex] -->
+<!-- &= (1 \times 128) + (1 \times 64) + (1 \times 32) + (1 \times 16) + (1 \times 8) +\\ -->
+<!-- &~~~~~(1 \times 4) + (1 \times 2) + (1 \times 1) \\[1ex] -->
+<!-- &= 11111111 -->
+<!-- \end{split} -->
+<!-- $$ -->
 
-**G channel**
+<!-- **G channel** -->
 
-$$
-\begin{split}
-204 &= (? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\
-&~~~~~(? \times 2^2) + (? \times 2^1) + (? \times 2^0) \\[1ex]
-&= (? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) +\\
-&~~~~~(? \times 4) + (? \times 2) + (? \times 1) \\[1ex]
-&= (1 \times 128) + (1 \times 64) + (0 \times 32) + (0 \times 16) + (1 \times 8) +\\
-&~~~~~(1 \times 4) + (0 \times 2) + (0 \times 1) \\[1ex]
-&= 11001100
-\end{split}
-$$
+<!-- $$ -->
+<!-- \begin{split} -->
+<!-- 204 &= (? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\ -->
+<!-- &~~~~~(? \times 2^2) + (? \times 2^1) + (? \times 2^0) \\[1ex] -->
+<!-- &= (? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) +\\ -->
+<!-- &~~~~~(? \times 4) + (? \times 2) + (? \times 1) \\[1ex] -->
+<!-- &= (1 \times 128) + (1 \times 64) + (0 \times 32) + (0 \times 16) + (1 \times 8) +\\ -->
+<!-- &~~~~~(1 \times 4) + (0 \times 2) + (0 \times 1) \\[1ex] -->
+<!-- &= 11001100 -->
+<!-- \end{split} -->
+<!-- $$ -->
 
-**B channel**
+<!-- **B channel** -->
 
-$$
-\begin{split}
-51 &= (? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\
-&~~~~~(? \times 2^2) + (? \times 2^1) + (? \times 2^0) \\[1ex]
-&= (? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) +\\
-&~~~~~(? \times 4) + (? \times 2) + (? \times 1) \\[1ex]
-&= (0 \times 128) + (0 \times 64) + (1 \times 32) + (1 \times 16) + (0 \times 8) +\\
-&~~~~~(0 \times 4) + (1 \times 2) + (1 \times 1) \\[1ex]
-&= 00110011
-\end{split}
-$$
+<!-- $$ -->
+<!-- \begin{split} -->
+<!-- 51 &= (? \times 2^7) + (? \times 2^6) + (? \times 2^5) + (? \times 2^4) + (? \times 2^3) +\\ -->
+<!-- &~~~~~(? \times 2^2) + (? \times 2^1) + (? \times 2^0) \\[1ex] -->
+<!-- &= (? \times 128) + (? \times 64) + (? \times 32) + (? \times 16) + (? \times 8) +\\ -->
+<!-- &~~~~~(? \times 4) + (? \times 2) + (? \times 1) \\[1ex] -->
+<!-- &= (0 \times 128) + (0 \times 64) + (1 \times 32) + (1 \times 16) + (0 \times 8) +\\ -->
+<!-- &~~~~~(0 \times 4) + (1 \times 2) + (1 \times 1) \\[1ex] -->
+<!-- &= 00110011 -->
+<!-- \end{split} -->
+<!-- $$ -->
 
-So the binary notation for (255, 204, 51) is 11111111 11001100 00110011.
+<!-- So the binary notation for (255, 204, 51) is 11111111 11001100 00110011. -->
 
-</div>
-
-
-
-2. The primary gold color of the University of Minnesota has an RGB notation of (255, 204, 51). Convert this to HEX notation. Show your work.
-
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-02');">Show/Hide Solution</button>
-
-<div id="exercise_04-01-02" style="display:none; margin: -40px 0 40px 40px;">
-**R channel**
-
-$$
-\begin{split}
-255 &= (? \times 16^1) + (? \times 16^0) \\[1ex]
-&= (? \times 16) + (? \times 1) \\[1ex]
-&= (15 \times 16) + (15 \times 1) \\[1ex]
-&= \textrm{FF}
-\end{split}
-$$
-
-**G channel**
-
-$$
-\begin{split}
-204 &= (? \times 16^1) + (? \times 16^0) \\[1ex]
-&= (? \times 16) + (? \times 1) \\[1ex]
-&= (12 \times 16) + (12 \times 1) \\[1ex]
-&= \textrm{CC}
-\end{split}
-$$
-
-**B channel**
-
-$$
-\begin{split}
-51 &= (? \times 16^1) + (? \times 16^0) \\[1ex]
-&= (? \times 16) + (? \times 1) \\[1ex]
-&= (3 \times 16) + (3 \times 1) \\[1ex]
-&= \textrm{33}
-\end{split}
-$$
-
-So the HEX notation for (255, 204, 51) is #FFCC33.
-
-</div>
-
-
-3. The HEX notation for the University of Minnesota's secondary light gold is #FFB71E. Convert this to RGB notation. Show your work.
-
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-03');">Show/Hide Solution</button>
-
-<div id="exercise_04-01-03" style="display:none; margin: -40px 0 40px 40px;">
-**R channel**
-
-$$
-\begin{split}
-\mathrm{FF} &= (\mathrm{F} \times 16^1) + (\mathrm{F} \times 16^0) \\[1ex]
-&= (15 \times 16^1) + (15 \times 16^0) \\[1ex]
-&= 240 + 15 \\[1ex]
-&= 255
-\end{split}
-$$
-
-**G channel**
-
-$$
-\begin{split}
-\mathrm{B7} &= (\mathrm{B} \times 16^1) + (\mathrm{7} \times 16^0) \\[1ex]
-&= (11 \times 16^1) + (7 \times 16^0) \\[1ex]
-&= 176 + 7 \\[1ex]
-&= 183
-\end{split}
-$$
-
-**B channel**
-
-$$
-\begin{split}
-\mathrm{1E} &= (\mathrm{1} \times 16^1) + (\mathrm{E} \times 16^0) \\[1ex]
-&= (1 \times 16^1) + (14 \times 16^0) \\[1ex]
-&= 16 + 14 \\[1ex]
-&= 30
-\end{split}
-$$
-
-#FFB71E is (255, 183, 30)
-</div>
+<!-- </div> -->
 
 
 
+<!-- 2. The primary gold color of the University of Minnesota has an RGB notation of (255, 204, 51). Convert this to HEX notation. Show your work. -->
 
-4. Use the *mn-colleges.csv* data to create a density plot of the acceptance rates. Color the interior of the plot using #CBA67B and the border with #695645.
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-02');">Show/Hide Solution</button> -->
 
-<button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-04');">Show/Hide Solution</button>
+<!-- <div id="exercise_04-01-02" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- **R channel** -->
 
-<div id="exercise_04-01-04" style="display:none; margin: -40px 0 40px 40px;">
-```{r}
-#| label: fig-hist-umn
-#| fig-cap: "Density plot of acceptance rates for the 33 institutions of higher learning in Minnesota."
-#| fig-alt: "Density plot of acceptance rates for the 33 institutions of higher learning in Minnesota."
-#| out-width: "70%"
-#| message: false
+<!-- $$ -->
+<!-- \begin{split} -->
+<!-- 255 &= (? \times 16^1) + (? \times 16^0) \\[1ex] -->
+<!-- &= (? \times 16) + (? \times 1) \\[1ex] -->
+<!-- &= (15 \times 16) + (15 \times 1) \\[1ex] -->
+<!-- &= \textrm{FF} -->
+<!-- \end{split} -->
+<!-- $$ -->
 
-ggplot(data = mn, aes(x = accept_rate)) +
-  geom_density(
-    color = "#695645", 
-    fill = "#CBA67B"
-  )
-```
-</div>
+<!-- **G channel** -->
+
+<!-- $$ -->
+<!-- \begin{split} -->
+<!-- 204 &= (? \times 16^1) + (? \times 16^0) \\[1ex] -->
+<!-- &= (? \times 16) + (? \times 1) \\[1ex] -->
+<!-- &= (12 \times 16) + (12 \times 1) \\[1ex] -->
+<!-- &= \textrm{CC} -->
+<!-- \end{split} -->
+<!-- $$ -->
+
+<!-- **B channel** -->
+
+<!-- $$ -->
+<!-- \begin{split} -->
+<!-- 51 &= (? \times 16^1) + (? \times 16^0) \\[1ex] -->
+<!-- &= (? \times 16) + (? \times 1) \\[1ex] -->
+<!-- &= (3 \times 16) + (3 \times 1) \\[1ex] -->
+<!-- &= \textrm{33} -->
+<!-- \end{split} -->
+<!-- $$ -->
+
+<!-- So the HEX notation for (255, 204, 51) is #FFCC33. -->
+
+<!-- </div> -->
+
+
+<!-- 3. The HEX notation for the University of Minnesota's secondary light gold is #FFB71E. Convert this to RGB notation. Show your work. -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-03');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_04-01-03" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- **R channel** -->
+
+<!-- $$ -->
+<!-- \begin{split} -->
+<!-- \mathrm{FF} &= (\mathrm{F} \times 16^1) + (\mathrm{F} \times 16^0) \\[1ex] -->
+<!-- &= (15 \times 16^1) + (15 \times 16^0) \\[1ex] -->
+<!-- &= 240 + 15 \\[1ex] -->
+<!-- &= 255 -->
+<!-- \end{split} -->
+<!-- $$ -->
+
+<!-- **G channel** -->
+
+<!-- $$ -->
+<!-- \begin{split} -->
+<!-- \mathrm{B7} &= (\mathrm{B} \times 16^1) + (\mathrm{7} \times 16^0) \\[1ex] -->
+<!-- &= (11 \times 16^1) + (7 \times 16^0) \\[1ex] -->
+<!-- &= 176 + 7 \\[1ex] -->
+<!-- &= 183 -->
+<!-- \end{split} -->
+<!-- $$ -->
+
+<!-- **B channel** -->
+
+<!-- $$ -->
+<!-- \begin{split} -->
+<!-- \mathrm{1E} &= (\mathrm{1} \times 16^1) + (\mathrm{E} \times 16^0) \\[1ex] -->
+<!-- &= (1 \times 16^1) + (14 \times 16^0) \\[1ex] -->
+<!-- &= 16 + 14 \\[1ex] -->
+<!-- &= 30 -->
+<!-- \end{split} -->
+<!-- $$ -->
+
+<!-- #FFB71E is (255, 183, 30) -->
+<!-- </div> -->
+
+
+
+
+<!-- 4. Use the *mn-colleges.csv* data to create a density plot of the acceptance rates. Color the interior of the plot using #CBA67B and the border with #695645. -->
+
+<!-- <button class="solution-btn solution-btn-default" onclick="toggle_visibility('exercise_04-01-04');">Show/Hide Solution</button> -->
+
+<!-- <div id="exercise_04-01-04" style="display:none; margin: -40px 0 40px 40px;"> -->
+<!-- ```{r} -->
+<!-- #| label: fig-hist-umn -->
+<!-- #| fig-cap: "Density plot of acceptance rates for the 33 institutions of higher learning in Minnesota." -->
+<!-- #| fig-alt: "Density plot of acceptance rates for the 33 institutions of higher learning in Minnesota." -->
+<!-- #| out-width: "70%" -->
+<!-- #| message: false -->
+
+<!-- ggplot(data = mn, aes(x = accept_rate)) + -->
+<!--   geom_density( -->
+<!--     color = "#695645",  -->
+<!--     fill = "#CBA67B" -->
+<!--   ) -->
+<!-- ``` -->
+<!-- </div> -->
 
 
 

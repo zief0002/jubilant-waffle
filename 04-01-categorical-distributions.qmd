@@ -1,0 +1,292 @@
+# Visualizing and Describing Categorical Attributes  {#sec-categorical-attributes}
+
+This chapter will focus on the visualization and description of categorical attributes. To illustrate this, imagine you have surveyed 10 pet owners about the type of pet they own.^[To keep it simple, assume each pet owner only has a single pet.] The data you collected is shown in @fig-pets.
+
+```{r}
+#| label: fig-pets
+#| fig-cap: "Data collected from 10 pet owners about the type of pet the own."
+#| fig-alt: "Data collected from 10 pet owners about the type of pet the own."
+#| echo: false
+
+knitr::include_graphics("figs/03-02-01-pet-sample.png")
+```
+
+Our goal in exploratory analysis is to describe the data. One way of describing the data is to list all of the values. For example here we could say the sample included a turtle, a fish, a cat, a dog, another dog, another fish, another cat, another cat, another cat, and another dog. While this is an accurate description, it isn't very generalizable. (Imagine trying to describe the data from 1000 pet owners or 10,000 pet owners!)
+
+<br />
+
+
+## Describing Categorical Attributes
+
+A more natural way to describe these data is to summarize them by providing **counts** of each pet type. For example, describing our sample data using counts:
+
+- 1 of the pet owners sampled owned a turtle, 
+- 2 of the pet pet owners sampled owned a fish, 
+- 3 of the pet pet owners sampled owned a dog, and 
+- 4 of the pet pet owners sampled owned a cat.
+
+Summarizing each type of pet owned by reporting counts of them is a much more natural way of describing the data. (This is  also useful when the sample size is much larger.) We also use this summary to viualize the data.
+
+<br />
+
+
+## Visualizing Categorical Attributes
+
+To visualize categorical attributes we typically use a **bar chart**. A bar chart (also known as a bar graph or a bar plot) shows a bar for each category of the categorical attribute. The height of the bar indicates the count (or proportion or percentage) of each category. @fig-pet-barchart shows a bar chart of the pet data.
+
+```{r}
+#| label: fig-pet-barchart
+#| fig-cap: Bar chart indicating the counts of each type of pet owned.
+#| fig-alt: Bar chart indicating the counts of each type of pet owned.
+#| echo: false
+
+knitr::include_graphics("figs/03-02-02-pet-barchart.png")
+```
+
+
+The bar chart in @fig-pet-barchart, includes four bars, one for each pet type. This bar chart is summarizing counts which is depicted on the *y*-axis. Each bar indicates the count of pet owners who own that type of pet. For example, the bar for cats has a height of four on the *y*-axis since four pet owners own a cat. 
+
+Sometimes the axes in the bar chart are transposed; categories are placed on the *y*-axis and counts on the *x* axis. This is referred to as a *horizontal bar chart*. @fig-pet-barchart2 shows a horizontal bar chart indicating the number (count) of each pet type.
+
+```{r}
+#| label: fig-pet-barchart2
+#| fig-cap: Horizontal bar chart indicating the counts of each type of pet owned. In this plot the categories are placed on the *y*-axis and the scale on the the *x* axis indicates the number of pet owners for each pet type.
+#| fig-alt: Horizontal bar chart indicating the counts of each type of pet owned. In this plot the categories are placed on the *y*-axis and the scale on the the *x* axis indicates the number of pet owners for each pet type.
+#| echo: false
+
+knitr::include_graphics("figs/03-02-03-pet-horz-barchart.png")
+```
+
+
+<br />
+
+
+## Two Alternative Methods to Summarize Categorical Attributes
+
+Two other ways in which we summarize and visualize categorical attributes are to use proportions or percentages rather than counts.
+
+<br />
+
+
+### Proportions
+
+To compute the **proportion** of each pet type owned, we take the count of each type of pet owned, and divide it by the total sample size.
+
+$$
+\mathrm{Proportion} = \frac{\mathrm{Count~of~Pet~Type}}{\mathrm{Total~Sample~Size}}
+$$
+
+
+
+For example, to compute the proportion of pet owners in our sample that owned a dog, we use:
+
+$$
+\mathrm{Proportion~of~Dogs} = \frac{3}{10} = 0.30
+$$
+
+:::fyi
+**FYI**
+
+Proportions will always be between 0 and 1. If you add all of the proportions of each category  together you will get 1, so long as values can only belong to one category.
+:::
+
+Describing our sample data using proportions:
+
+- 0.10 of the pet owners sampled owned a turtle, 
+- 0.20 of the pet pet owners sampled owned a fish, 
+- 0.30 of the pet pet owners sampled owned a dog, and 
+- 0.40 of the pet pet owners sampled owned a cat.
+
+@tbl-pets indicates the counts and proportions of values in our hypothetical pet example.
+
+```{r}
+#| label: tbl-pets
+#| tbl-cap: "Counts and proportions of pet owners who own each type of pet."
+#| echo: false
+#| tbl-colwidths: false
+
+library(gt)
+library(gtExtras)
+dplyr::tibble(
+  Pet = c("figs/dog.png", "figs/cat.png", "figs/fish.png", "figs/turtle.png"),
+    #162, 155, 127, 144
+  Count = c(3, 4, 2, 1),
+  Proportion = c(.3, .4, .2, .1)
+) |>
+  gt() |>
+  gt_img_rows(columns = Pet, height = 50) |>
+  fmt_number(
+    columns = Proportion,
+    decimals = 2
+  ) |>
+  cols_align(
+    align = "center",
+    columns = c(Count, Proportion)
+  ) |>
+  tab_options(
+    table.width = pct(60)
+    ) |>
+  as_raw_html()
+```
+
+
+We can also create a bar chart that visualizes the proportions rather than the counts. Similar to the bar charts of counts a bar chart of the proportions can be vertical or horizontal. @fig-pet-barchart3 shows a horizontal bar chart of the proportion of each pet type owned.
+
+```{r}
+#| label: fig-pet-barchart3
+#| fig-cap: Horizontal bar chart indicating the proportion of each type of pet owned.
+#| fig-alt: Horizontal bar chart indicating the proportion of each type of pet owned.
+#| echo: false
+
+knitr::include_graphics("figs/03-02-04-pet-horz-barchart-prop.png")
+```
+
+
+
+
+
+<br />
+
+
+### Percentages
+
+We know from research on people's reasoning that proportions are difficult for people to reason about. Because of this, we often summarize categorical attributes using **percentages** rather than proportions. To compute the percentage of each pet type owned, we take the count of each type of pet owned, and divide it by the total sample size and then multiply this by 100.
+
+$$
+\mathrm{Percentage} = \frac{\mathrm{Count~of~Pet~Type}}{\mathrm{Total~Sample~Size}} \times 100
+$$
+
+
+
+For example, to compute the percentage of pet owners in our sample that owned a dog, we use:
+
+$$
+\mathrm{Percentage~of~Dogs} = \frac{3}{10} \times 100 = 30\%
+$$
+
+```{r}
+#| label: tbl-pets-percent
+#| tbl-cap: "Counts, proportions and percentages of pet owners who own each type of pet."
+#| echo: false
+#| tbl-colwidths: false
+
+dplyr::tibble(
+  Pet = c("figs/dog.png", "figs/cat.png", "figs/fish.png", "figs/turtle.png"),
+    #162, 155, 127, 144
+  Count = c(3, 4, 2, 1),
+  Proportion = c(.3, .4, .2, .1),
+  Percentage = c(30, 40, 20, 10)
+) |>
+  gt() |>
+  gt_img_rows(columns = Pet, height = 50) |>
+  fmt_number(
+    columns = Proportion,
+    decimals = 2
+  ) |>
+  fmt_percent(
+    columns = Percentage,
+    decimals = 0
+  ) |>
+  cols_align(
+    align = "center",
+    columns = c(Count, Proportion, Percentage)
+  ) |>
+  tab_options(
+    table.width = pct(60)
+    ) |>
+  as_raw_html()
+```
+
+
+:::fyi
+**FYI**
+
+Percentages will always be between 0 and 100. If you add all of the percentages of each category you will get 100, so long as values can only belong to one category.
+:::
+
+
+We can also create a bar chart using percentages. @fig-pet-barchart4 shows a horizontal bar chart of the percentage of each pet type owned.
+
+```{r}
+#| label: fig-pet-barchart4
+#| fig-cap: Horizontal bar chart indicating the percentage of each type of pet owned.
+#| fig-alt: Horizontal bar chart indicating the percentage of each type of pet owned.
+#| echo: false
+
+knitr::include_graphics("figs/03-02-05-pet-horz-barchart-perc.png")
+```
+
+<br />
+
+
+### Counts, Proportions, or Percentages: Deciding How to Summarize the Data
+
+How you summarize a categorical attribute---using counts, proportions, or percentages---is up to you. Each has advantages and pitfalls. Using proportions or percentages are useful since they provide a standard scale for measuring size. This can be especially useful if you are comparing two different groups that have different sizes. However, counts are often better for communication or when dealing with very small samples where a percentage might misrepresent the scale of the data. This is a choice that you need to make based on what makes the most sense given the context of the data and the question you are trying to answer with your data.
+
+
+Looking at the bar chart for each summarization, the overall distribution looks the same. The bars are the same relative lengths regardless of whether you use counts, proportions of percentages. This implies that our description of the distribution will essentially be the same regardless of the summary measure we choose.
+
+
+<br />
+
+
+
+## Describing the Distribution
+
+With quantitative attributes we described the distribution using shape, center (typical value), and variation. With categorical variables we are more restricted in how we can describe the distribution. To begin with, we cannot describe the shape of a categorical attribute. This is because the order of bars is arbitrary. To illustrate consider the initial bar chart of pets we considered and the variation of this below.
+
+
+```{r}
+#| label: fig-two-bar-plots
+#| fig-cap: "Two bar charts of the number of pets."
+#| fig-alt: "Two bar charts of the number of pets."
+#| fig-subcap:
+#|   - "Original bar chart of the number of pets."
+#|   - "Another possible bar chart of the number of pets."
+#| out-width: "100%"
+#| layout-ncol: 2
+#| echo: false
+#| lightbox:
+#|   group: histograms
+#|   description:
+#|     - Original bar chart of the number of pets.
+#|     - Another possible bar chart of the number of pets.
+
+knitr::include_graphics("figs/03-02-02-pet-barchart.png")
+knitr::include_graphics("figs/03-02-06-pet-barchart2.png")
+```
+
+Because the attribute being plotted on the *x*-axis is categorical, the order we put it in is irrelevant. Cats could be the first bar. dogs could be the first bar. Or fish or turtles. (This is quite different from a histogram of a quantitative attribute in which the values being plotted (numbers) have a distinct order.) Depending on which order we put the pets in the plot, the shape would change. That is why we cannot describe the shape of a categorical attribute.
+
+Despite not being able to describe the shape, we can describe the center of a distribution of a categorical attribute. The typical value (center) that we describe with a categorical attribute is the mode. In our pet example cats are the pet that is owned most often. 
+
+The way we described variation for a quantitative attribute---describing the overall range and the range for most cases---does not work as well for categorical attributes. Instead, we need to think about how similar or dissimilar the counts/proportions for the different categories compare. For example, consider the following two plots of pet ownership.
+
+```{r}
+#| label: fig-variation-bar-plots
+#| fig-cap: "Two bar charts of the number of pets owned for 11 pet owners."
+#| fig-alt: "Two bar charts of the number of pets owned for 11 pet owners."
+#| fig-subcap:
+#|   - "This bar chart shows low variability in the number of pets owned."
+#|   - "This bar chart shows high variability in the number of pets owned."
+#| out-width: "100%"
+#| layout-ncol: 2
+#| echo: false
+#| lightbox:
+#|   group: histograms
+#|   description:
+#|     - Original bar chart of the number of pets.
+#|     - Another possible bar chart of the number of pets.
+
+knitr::include_graphics("figs/03-02-07-low-variability.png")
+knitr::include_graphics("figs/03-02-08-high-variability.png")
+
+```
+
+In both plots, there are 11 total pet owners and cats are the typical (modal) pet owned. The best way to think about variation in a categorical attribute is to think of it like "diversity". In our example, we would ask "how diverse are the types of pets that people own?"
+
+The left bar chart shows a distribution that has a **low** amount of variability. That is, there is not a lot of diversity in the types of pets these 11 people own---almost all of the pets owned are cats. When you see a bar chart with one very tall bar and the rest are relatively short, that indicates a lack of diversity across the categories and low variability. In contrast, the bars in the bar chart on the right are all of similar heights. This plot indicates there is a lot of diversity in the types of pets these people own. Some own cats, some own dogs, some fish, and others turtles. We would say that there is a **high** amount of variability in this distribution. 
+
+<br />
+
+
