@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>15&nbsp; Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts – Data Visualization: Summarizing and Communicating Patterns in Data</title>
+<title>16&nbsp; Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts – Data Visualization: Summarizing and Communicating Patterns in Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,7 +136,7 @@ function toggle_visibility(id) {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></h1>
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -294,14 +294,14 @@ function toggle_visibility(id) {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-03-conditioning.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></span></a>
+  <a href="./04-03-color.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-04-color.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></a>
+  <a href="./04-04-conditioning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -329,7 +329,7 @@ function toggle_visibility(id) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></h1>
 </div>
 
 
@@ -388,8 +388,8 @@ function toggle_visibility(id) {
 </div>
 <p>These data include information on 393 different buildings owned by the University of Minnesota. While there are several attributes included in the data for these buildings, we are most interested in the <code>type</code> attribute. This attribute includes information about the primary use of the building as classified by the university (e.g., parking, residential).</p>
 <p><br></p>
-<section id="facetted-bar-charts" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="facetted-bar-charts"><span class="header-section-number">15.1</span> Facetted Bar Charts</h2>
+<section id="facetted-bar-charts" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="facetted-bar-charts"><span class="header-section-number">16.1</span> Facetted Bar Charts</h2>
 <p>One way to compare categorical distributions is to facet the plot, similar to how we facetted histograms. This creates different bar charts for all the values of the categorical attribute we facet on. For example, suppose we wanted to compare the types of buildings across the different parts of the UMN campus. One way to do this is to facet on the <code>campus</code> attribute.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
@@ -409,23 +409,23 @@ function toggle_visibility(id) {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="04-03-conditioning_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="04-03-conditioning_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" alt="Horizontal Bar chart of the number of each building type owned by UMN facetted by campus." width="960"></a></p>
+<p><a href="04-04-conditioning_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="04-04-conditioning_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" alt="Horizontal Bar chart of the number of each building type owned by UMN facetted by campus." width="960"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p><br></p>
 </section>
-<section id="comparing-categorical-distributions" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="comparing-categorical-distributions"><span class="header-section-number">15.2</span> Comparing Categorical Distributions</h2>
+<section id="comparing-categorical-distributions" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="comparing-categorical-distributions"><span class="header-section-number">16.2</span> Comparing Categorical Distributions</h2>
 <p>Similar to our description of a categorical attribute’s distribution, when we compare two (or more) distributions, we want to compare/contrast describe the center (mode) and the variability of the distributions. For example in comparing the buildings on the Minneapolis and St.&nbsp;Paul campuses, we might say:</p>
 <blockquote class="blockquote">
 <p>The most common type of building on both the Minneapolis and St.&nbsp;Paul campuses are those purposed for academic/administration. Relative to St.&nbsp;Paul, the Minneapolis campus seems to have a higher prevalence of residential buildings and parking structures (both bars are much higher on the Minneapolis campus). Moreover the diversity of building types is much higher on the Minneapolis campus. On the St.&nbsp;Paul campus, almost all of the buildings are academic/administration, while on the Minneapolis campus although the academic/administration bar is the tallest, the other bars indicate that there are several other building types as well.</p>
 </blockquote>
 <p><br></p>
 </section>
-<section id="stacked-bar-charts" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="stacked-bar-charts"><span class="header-section-number">15.3</span> Stacked Bar Charts</h2>
+<section id="stacked-bar-charts" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="stacked-bar-charts"><span class="header-section-number">16.3</span> Stacked Bar Charts</h2>
 <p>With bar charts, there are other methods aside from facetting that are often used by data scientists to compare categorical distributions. One of those methods is creating a <em>stacked bar chart</em>, also sometimes called a <em>segmented bar chart</em>. This is exactly like it sounds. Rather than separating the bar charts into two separate plots, we instead create the original bar chart, but separate each bar into segments based on the count of buildings on each campus. Each segment is colored differently to help readers see the segments.</p>
 <p>To create a stacked bar chart we will map the attribute we want to compare to the <code>fill=</code> attribute. Because we are mapping a column in the data to <code>fill=</code>, it goes inside an <code>aes()</code> function. Below we map the <code>campus</code> attribute to <code>fill=</code> inside the <code>aes()</code> function in the global layer. (We also omit the <code>fill="maroon</code> from the <code>geom_bar()</code> layer. We don’t want all of the campuses to have the same color segments!)</p>
 <div class="cell">
@@ -445,7 +445,7 @@ function toggle_visibility(id) {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="04-03-conditioning_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="04-03-conditioning_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" alt="Horizontal stacked bar chart showing the number of each building type owned by UMN by campus." width="1152"></a></p>
+<p><a href="04-04-conditioning_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="04-04-conditioning_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" alt="Horizontal stacked bar chart showing the number of each building type owned by UMN by campus." width="1152"></a></p>
 </figure>
 </div>
 </div>
@@ -455,8 +455,8 @@ function toggle_visibility(id) {
 <p>Comparisons across bars are a bit more difficult. Try to compare the distribution of building types between the St.&nbsp;Paul and Mineapolis campuses (like we did with facetting). This is hard! If the goal is to compare across different bars, the stacked bar chart is not a good choice.</p>
 <p><br></p>
 </section>
-<section id="proportional-stacked-bar-charts" class="level2" data-number="15.4">
-<h2 data-number="15.4" class="anchored" data-anchor-id="proportional-stacked-bar-charts"><span class="header-section-number">15.4</span> Proportional Stacked Bar Charts</h2>
+<section id="proportional-stacked-bar-charts" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="proportional-stacked-bar-charts"><span class="header-section-number">16.4</span> Proportional Stacked Bar Charts</h2>
 <p>Because comparing within bars is easy, data scientists often use the stacked bar chart for this purpose. To make it even easier to read, they often change the measure from counts to proportions and make each bar extend all the way to 1. To do this we take our syntax that we used to create the stacked bar chart and add <code>position="fill"</code> to the <code>geom_bar()</code> layer. For example:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
@@ -475,7 +475,7 @@ function toggle_visibility(id) {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="04-03-conditioning_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="04-03-conditioning_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" alt="Horizontal proportional stacked bar chart showing the proportion of each building type by campus." width="1152"></a></p>
+<p><a href="04-04-conditioning_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="04-04-conditioning_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" alt="Horizontal proportional stacked bar chart showing the proportion of each building type by campus." width="1152"></a></p>
 </figure>
 </div>
 </div>
@@ -506,8 +506,8 @@ function toggle_visibility(id) {
 <!-- <br /> -->
 <!-- Note we don't have to include `stat="count` in the `geom_bar()` function as this is the default action---unless told otherwise it will create counts. -->
 </section>
-<section id="side-by-side-bar-charts" class="level2" data-number="15.5">
-<h2 data-number="15.5" class="anchored" data-anchor-id="side-by-side-bar-charts"><span class="header-section-number">15.5</span> Side-by-Side Bar Charts</h2>
+<section id="side-by-side-bar-charts" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="side-by-side-bar-charts"><span class="header-section-number">16.5</span> Side-by-Side Bar Charts</h2>
 <p>Another alternative method for comparing categorical distributions is the <em>side-by-side</em> bar chart. The side-by-side bar chart creates different bars for each group being compared similar to facetting, but it puts them all in the same plot. To create a side-by-side bar chart, we include <code>position="didge"</code> to the <code>geom_bar()</code> layer. For example:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
@@ -526,7 +526,7 @@ function toggle_visibility(id) {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="04-03-conditioning_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="04-03-conditioning_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" alt="Horizontal side-by-side bar chart showing the count of each building type by campus." width="1152"></a></p>
+<p><a href="04-04-conditioning_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="04-04-conditioning_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" alt="Horizontal side-by-side bar chart showing the count of each building type by campus." width="1152"></a></p>
 </figure>
 </div>
 </div>
@@ -550,7 +550,7 @@ function toggle_visibility(id) {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="04-03-conditioning_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="04-03-conditioning_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" alt="Horizontal side-by-side bar chart showing the count of each building type by campus." width="1152"></a></p>
+<p><a href="04-04-conditioning_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="04-04-conditioning_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" alt="Horizontal side-by-side bar chart showing the count of each building type by campus." width="1152"></a></p>
 </figure>
 </div>
 </div>

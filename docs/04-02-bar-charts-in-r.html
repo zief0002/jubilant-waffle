@@ -294,14 +294,14 @@ function toggle_visibility(id) {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-03-conditioning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></span></a>
+  <a href="./04-03-color.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-04-color.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></a>
+  <a href="./04-04-conditioning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -473,17 +473,104 @@ Figure&nbsp;14.1: Bar chart of the number of each building type owned by UMN.
 <p><strong>FYI</strong></p>
 <p>To omit a label, do not include any text inside the quotation marks for that label. For example, to omit the label on the <em>y</em>-axis, use <code>y = ""</code>.</p>
 </div>
-<!-- <br /> -->
-<!-- ## Using R to Create a Bar Chart of Percentages -->
-<!-- We can use a similar method for computing percentages rather than proportions. To create a horizontal bar chart summarizing the percentage of each building type, we use the `gf_percents()` function. -->
-<!-- ```{r} -->
-<!-- #| label: fig-buildings-perc -->
-<!-- #| fig-cap: "Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color." -->
-<!-- #| fig-alt: "Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color." -->
-<!-- ggplot(data = umn, aes(y = type, x = after_stat(count / sum(count) * 100) )) + -->
-<!--   geom_bar(color = "black", fill = "maroon") -->
-<!-- ``` -->
-<!-- <br /> -->
+<p><br></p>
+</section>
+<section id="using-r-to-create-a-bar-chart-of-proportions" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="using-r-to-create-a-bar-chart-of-proportions"><span class="header-section-number">14.3</span> Using R to Create a Bar Chart of Proportions</h2>
+<p>Notice that in the bar charts we have created, there are two axes—one includes the categories of the attribute that we mapped in the <code>aes()</code> function, and the other indicates the count. For example in our horizontal bar charts, the categories of building type are being mapped to the <em>y</em>-axis (we coded this with <code>y=type</code>) and the <em>x</em>-axis indicates the count of each type of building. It turns out that when we use <code>geom_bar()</code>, there is some <em>implicit code</em> in the <code>aes()</code> and <code>geom_bar()</code> functions that maps the counts to the opposite axis. For example, in our horizontal bar charts it is this:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart with implicit code shown</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">y =</span> type, <span class="at">x =</span> <span class="fu">after_stat</span>(count) )) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The <code>stat="count</code> argument in <code>geom_bar()</code> is actually being used to compute a summary from the raw data, in this case counts. The <code>after_stat()</code> function then uses those counts in the bar chart to map the counts to the <em>x</em>-axis. To summarize the proportion of each category (rather than counts) we can make use of this mapping in our bar chart and change what summary is being computed.</p>
+<p>For example, to compute proportions, we can explicitly add <code>x = after_stat(prop)</code> to map proportions to the <em>x</em>-axis.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart with proportions (INCORRECT)</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">y =</span> type, <span class="at">x =</span> <span class="fu">after_stat</span>(prop))) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"maroon"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-buildings-prop-bad" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Horizontal bar chart mapping the proportion to the *x*-axis.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-buildings-prop-bad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="04-02-bar-charts-in-r_files/figure-html/fig-buildings-prop-bad-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;14.2: Horizontal bar chart mapping the proportion to the x-axis."><img src="04-02-bar-charts-in-r_files/figure-html/fig-buildings-prop-bad-1.png" class="img-fluid figure-img" alt="Horizontal bar chart mapping the proportion to the *x*-axis." width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-buildings-prop-bad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.2: Horizontal bar chart mapping the proportion to the <em>x</em>-axis.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This is not quite right. The syntax treats each individual bar as its own group, resulting in every bar showing a proportion of 1. To fix this, we also need to include <code>group = 1</code> inside the <code>aes()</code> function. This makes the calculation consider all categories when computing the proportions (e.g., the denominator in computing the proportion is correct).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart with proportions (CORRECT)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">y =</span> type, <span class="at">x =</span> <span class="fu">after_stat</span>(prop), <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"maroon"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-buildings-prop" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Horizontal bar chart mapping the proportion to the *x*-axis. `group=1` also needs to be added inside the `aes()` function.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-buildings-prop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="04-02-bar-charts-in-r_files/figure-html/fig-buildings-prop-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;14.3: Horizontal bar chart mapping the proportion to the x-axis. group=1 also needs to be added inside the aes() function."><img src="04-02-bar-charts-in-r_files/figure-html/fig-buildings-prop-1.png" class="img-fluid figure-img" alt="Horizontal bar chart mapping the proportion to the *x*-axis. `group=1` also needs to be added inside the `aes()` function." width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-buildings-prop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.3: Horizontal bar chart mapping the proportion to the <em>x</em>-axis. <code>group=1</code> also needs to be added inside the <code>aes()</code> function.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="fyi">
+<p><strong>NOTE</strong></p>
+<p>We don’t have to include <code>stat="count</code> in the <code>geom_bar()</code> function as this is the default action—unless told otherwise it will create counts.</p>
+</div>
+<p><br></p>
+</section>
+<section id="using-r-to-create-a-bar-chart-of-percentages" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="using-r-to-create-a-bar-chart-of-percentages"><span class="header-section-number">14.4</span> Using R to Create a Bar Chart of Percentages</h2>
+<p>We can also compute percentages rather than proportions. To do this, we use the same syntax we used to create the bar chart with proportions. Then, we add the following layer to the plot:</p>
+<pre><code>scale_x_continuous(labels = label_percent())</code></pre>
+<p>If the proportions are being mapped to the <em>y</em>-axis, you would use <code>scale_y_continuous(labels = label_percent())</code> instead. The <code>label_percent()</code> function is part of the <code>{scales}</code> package, so you will need to load that package before this will work. (Load the <code>{scales}</code> package in the same code chunk where you load the <code>{tidyverse}</code> package.)</p>
+<p>create a horizontal bar chart summarizing the percentage of each building type, we use the <code>gf_percents()</code> function.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart with proportions (INCORRECT)</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart with percents</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> umn, <span class="fu">aes</span>(<span class="at">y =</span> type, <span class="at">x =</span> <span class="fu">after_stat</span>(prop), <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"maroon"</span>) <span class="sc">+</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> <span class="fu">label_percent</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-buildings-perc" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-buildings-perc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="04-02-bar-charts-in-r_files/figure-html/fig-buildings-perc-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;14.4: Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color."><img src="04-02-bar-charts-in-r_files/figure-html/fig-buildings-perc-1.png" class="img-fluid figure-img" alt="Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color." width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-buildings-perc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.4: Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
 <!-- ## Exercises: Your Turn {-} -->
 <!-- Consider the following data from the *umn-bike-amenities.csv* file.  -->
 <!-- ```{r} -->

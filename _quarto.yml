@@ -40,8 +40,8 @@ book:
       chapters:
         - 04-01-categorical-distributions.qmd
         - 04-02-bar-charts-in-r.qmd
-        - 04-03-conditioning.qmd
-        - 04-04-color.qmd
+        - 04-03-color.qmd
+        - 04-04-conditioning.qmd
         - 04-05-scales.qmd
         - 04-06-bar-charts-from-summaries.qmd
     # - part: 04-00-plot-enhancement.qmd

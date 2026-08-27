@@ -112,28 +112,103 @@ To omit a label, do not include any text inside the quotation marks for that lab
 :::
 
 
-<!-- <br /> -->
+<br />
+
+
+## Using R to Create a Bar Chart of Proportions
+
+Notice that in the bar charts we have created, there are two axes---one includes the categories of the attribute that we mapped in the `aes()` function, and the other indicates the count. For example in our horizontal bar charts, the categories of building type  are being mapped to the *y*-axis (we coded this with `y=type`) and the *x*-axis indicates the count of each type of building. It turns out that when we use `geom_bar()`, there is some *implicit code* in the `aes()` and `geom_bar()` functions that maps the counts to the opposite axis. For example, in our horizontal bar charts it is this:
+
+```{r}
+#| eval: false
+
+######################
+# Bar chart with implicit code shown
+######################
+
+ggplot(data = umn, aes(y = type, x = after_stat(count) )) +
+  geom_bar(stat = "count")
+```
+
+The `stat="count` argument in `geom_bar()` is actually being used to compute a summary from the raw data, in this case counts. The `after_stat()` function then uses those counts in the bar chart to map the counts to the *x*-axis. To summarize the proportion of each category (rather than counts) we can make use of this mapping in our bar chart and change what summary is being computed. 
+
+For example, to compute proportions, we can explicitly add `x = after_stat(prop)` to map proportions to the *x*-axis.
+
+```{r}
+#| label: fig-buildings-prop-bad
+#| fig-cap: "Horizontal bar chart mapping the proportion to the *x*-axis."
+#| fig-alt: "Horizontal bar chart mapping the proportion to the *x*-axis."
+
+######################
+# Bar chart with proportions (INCORRECT)
+######################
+
+ggplot(data = umn, aes(y = type, x = after_stat(prop))) +
+  geom_bar(color = "black", fill = "maroon")
+```
+
+This is not quite right. The syntax treats each individual bar as its own group, resulting in every bar showing a proportion of 1. To fix this, we also need to include `group = 1` inside the `aes()` function. This makes the calculation consider all categories when computing the proportions (e.g., the denominator in computing the proportion is correct).
+
+
+```{r}
+#| label: fig-buildings-prop
+#| fig-cap: "Horizontal bar chart mapping the proportion to the *x*-axis. `group=1` also needs to be added inside the `aes()` function."
+#| fig-alt: "Horizontal bar chart mapping the proportion to the *x*-axis. `group=1` also needs to be added inside the `aes()` function."
+
+######################
+# Bar chart with proportions (CORRECT)
+######################
+
+ggplot(data = umn, aes(y = type, x = after_stat(prop), group = 1)) +
+  geom_bar(color = "black", fill = "maroon")
+```
+
+:::fyi
+**NOTE**
+
+We don't have to include `stat="count` in the `geom_bar()` function as this is the default action---unless told otherwise it will create counts.
+:::
+
+<br />
 
 
 
+## Using R to Create a Bar Chart of Percentages
+
+We can also compute percentages rather than proportions. To do this, we use the same syntax we used to create the bar chart with proportions. Then, we add the following layer to the plot:
+
+```
+scale_x_continuous(labels = label_percent())
+```
+
+If the proportions are being mapped to the *y*-axis, you would use `scale_y_continuous(labels = label_percent())` instead. The `label_percent()` function is part of the `{scales}` package, so you will need to load that package before this will work. (Load the `{scales}` package in the same code chunk where you load the `{tidyverse}` package.)
+
+create a horizontal bar chart summarizing the percentage of each building type, we use the `gf_percents()` function.
+
+```{r}
+#| label: fig-buildings-perc
+#| fig-cap: "Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color."
+#| fig-alt: "Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color."
+#| message: false
+
+######################
+# Bar chart with proportions (INCORRECT)
+######################
+
+library(tidyverse)
+library(scales)
 
 
+######################
+# Bar chart with percents
+######################
 
+ggplot(data = umn, aes(y = type, x = after_stat(prop), group = 1)) +
+  geom_bar(color = "black", fill = "maroon") +
+  scale_x_continuous(labels = label_percent())
+```
 
-<!-- ## Using R to Create a Bar Chart of Percentages -->
-
-<!-- We can use a similar method for computing percentages rather than proportions. To create a horizontal bar chart summarizing the percentage of each building type, we use the `gf_percents()` function. -->
-
-<!-- ```{r} -->
-<!-- #| label: fig-buildings-perc -->
-<!-- #| fig-cap: "Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color." -->
-<!-- #| fig-alt: "Horizontal bar chart of the percentage of each building type owned by UMN. This plot includes a border and fill color." -->
-
-<!-- ggplot(data = umn, aes(y = type, x = after_stat(count / sum(count) * 100) )) + -->
-<!--   geom_bar(color = "black", fill = "maroon") -->
-<!-- ``` -->
-
-<!-- <br /> -->
+<br />
 
 
 <!-- ## Exercises: Your Turn {-} -->
