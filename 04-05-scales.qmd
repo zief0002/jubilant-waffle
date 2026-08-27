@@ -1,4 +1,4 @@
-# Scales: Customizing Axes
+# Scales: Customizing Mapped Aesthetics
 
 This chapter will focus on how we can continue to improve our plot by customizing the scales for different mapped aesthetics. This customization again plays a large role in improving readability of a plot. To illustrate this, we will use the *umn-bike-amenities,csv* data to create a side-by-side bar chart to plot the number of different bike amenities on each campus.
 

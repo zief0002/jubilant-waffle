@@ -1,4 +1,4 @@
-# Comparing Categorical Distributions: Conditioning and Side-by-Side Bar Charts
+# Comparing Categorical Distributions
 
 This chapter will focus on how we can compare categorical distributions by creating facetted, stacked or side-by-side bar charts. To illustrate this, we will use the *umn-buildings.csv* data.
 
