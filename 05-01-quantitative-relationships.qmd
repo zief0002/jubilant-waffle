@@ -1,0 +1,483 @@
+# Quantitative Relationships
+
+This chapter will focus on the visualization and description of quantitative relationships. To illustrate how we can summarize and visualize quantitative attributes using R, we will use the **world-happiness.csv** data. This data includes 2019 indices of happiness, wealth, and life expectancy for 156 countries. 
+
+```{r}
+#| label: load-packages
+#| message: false
+#| echo: false
+
+######################
+# Load libraries
+######################
+
+library(tidyverse)
+
+
+######################
+# Import data
+######################
+
+happy <- read_csv("data/world-happiness.csv")
+
+# View data
+DT::datatable(happy)
+```
+
+
+## Scatterplot: Plotting a Relationship Between Quantitative Attributes
+
+We will ask the question: *What is the relationship between life expectancy and happiness?* A plot that helps us answer relationship questions is a *scatterplot*. A scatterplot is a plot that incorporates two attributes simultaneously. It does this by plotting *ordered pairs* of attributes---one on the *x*-axis and the other on the *y*-axis. Below is a scatterplot of happiness versus life expectancy for the 156 countries in our dataset.
+
+```{r}
+#| label: fig-scatterplot
+#| fig-cap: "Scatterplot displaying the relationship between life expectancy and happiness. The Unied States (USA) is also indicated."
+#| fig-alt: "Scatterplot displaying the relationship between life expectancy and happiness. The Unied States (USA) is also indicated."
+#| out-width: "90%"
+#| message: false
+#| echo: false
+all = happy |> filter(country != "United States")
+us = happy |> filter(country == "United States")
+
+ggplot(data = all, aes(x = life_exp, y = happiness)) +
+  geom_point(size = 2.7) +
+  geom_point(data = us, color = "#ff2f92", size = 2.7) +
+  theme_bw() +
+  xlab("Life expectancy (in years)") +
+  ylab("Happiness") +
+  annotate("segment", x = 78.6, y = 6.94, xend = 77, yend = 7.2, linewidth = 0.3, color = "#ff2f92") +
+  annotate("text", x = 77, y = 7.3, label = "USA", color = "#ff2f92", hjust = 1)
+```
+
+Each point indicates a different country. Here we have highlighted the United States to illustrate the idea of an ordered pair. The point for the USA is plotted at (78.9, 6.892). These are the life expectancy and happiness values, respectively. In an ordered pair, the first value is the *x*-coordinate, and the second value is the *y*-coordinate. Each case has an ordered pair which indicates the location of that case on the scatterplot. 
+
+<br />
+
+
+## Describing the Relationship
+
+When describing the relationship we want to touch on four characteristics of the relationship:
+
+- Functional form of the relationship
+- Direction
+- Strength
+- Observations that do not fit the trend (outliers)
+
+<br />
+
+
+### Functional Form of the Relationship
+
+A *functional form* refers to the algebraic (mathematical) description of the relationship between the two attributes included in the relationship. Common functional forms used in the social and educational sciences are linear, quadratic, exponential, and cyclical (e.g., sinusoidal). @fig-functional-forms shows examples of these four functional forms.
+
+```{r}
+#| label: fig-functional-forms
+#| fig-cap: "Four functional forms commonly used to describe relationships in the educational and social sciences."
+#| fig-alt: "Four functional forms commonly used to describe relationships in the educational and social sciences."
+#| fig-width: 8
+#| fig-height: 8
+#| out-width: "100%"
+#| echo: false
+
+library(patchwork)
+
+set.seed(150)
+x = rnorm(n = 50, mean = 5.5, sd = 1.5)
+
+
+# Linear
+y = 0 + 1*x + rnorm(n = 50, mean = 0, sd = 0.7)
+d = data.frame(x = x, y = y)
+p1 = ggplot(data = d, aes(x = x, y = y)) +
+  geom_point(size = 3, alpha = 0.5) +
+  geom_abline(intercept = 0, slope = 1, color = "#56b4e9", linewidth = 1.5) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  xlim(0, 10) +
+  ylim(0, 10) +
+  ggtitle("Linear Function")
+
+# Quadratic
+y2 = 1 * (x - 5.5)^2 + 1 + rnorm(n = 50, mean = 0, sd = 0.7)
+d = data.frame(x = x, y = y2)
+p2 = ggplot(data = d, aes(x = x, y = y)) +
+  geom_point(size = 3, alpha = 0.5) +
+  geom_function(
+    fun = function(x) {1 * (x - 5.5)^2 + 1},
+    #color = "#ff9f1c",
+    linetype = "solid",
+    color = "#56b4e9", 
+    linewidth = 1.5
+    ) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  ggtitle("Quadratic Function")
+
+# Exponential
+y3 = 4 * exp(.7*x + rnorm(n = 50, mean = 0, sd = 0.2)) 
+d = data.frame(x = x, y = y3)
+p3 = ggplot(data = d, aes(x = x, y = y)) +
+  geom_point(size = 3, alpha = 0.5) +
+  geom_function(
+    fun = function(x) {4 * exp(.7*x)},
+    #color = "#ff9f1c",
+    linetype = "solid",
+    color = "#56b4e9", 
+    linewidth = 1.5
+    ) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  ggtitle("Exponential Function")
+
+# Cyclic
+y4 = sin(2*x) + rnorm(n = 50, mean = 0, sd = 0.1)
+d = data.frame(x = x, y = y4)
+p4 = ggplot(data = d, aes(x = x, y = y)) +
+  geom_point(size = 3, alpha = 0.5) +
+  geom_function(
+    fun = function(x) {sin(2*x)},
+    #color = "#ff9f1c",
+    linetype = "solid",
+    color = "#56b4e9", 
+    linewidth = 1.5
+    ) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  ggtitle("Cyclic Function")
+
+(p1 | p2) / (p3 | p4)
+```
+
+Note that the data in a scatterplot won't follow these patterns perfectly, but you want to pick out the general form of the function. 
+
+<br />
+
+
+### Direction/Trend
+
+Once we pick the functional form, the next thing we want to do is identify the *direction/trend* of the relationship. The direction/trend describes the overall "slope" of the data and can be positive, negative, or flat. @fig-direction shows examples of a positive, negative, and flat linear relationship.
+
+
+```{r}
+#| label: fig-direction
+#| fig-cap: "A positive, negative, and flat linear relationship."
+#| fig-alt: "A positive, negative, and flat linear relationship."
+#| fig-width: 9
+#| fig-height: 3
+#| out-width: "100%"
+#| echo: false
+
+set.seed(150)
+x = rnorm(n = 50, mean = 5.5, sd = 1.5)
+
+
+# Positive
+y = 0 + 1*x + rnorm(n = 50, mean = 0, sd = 0.7)
+d = data.frame(x = x, y = y)
+p1 = ggplot(data = d, aes(x = x, y = y)) +
+  geom_point(size = 3, alpha = 0.5) +
+  geom_abline(intercept = 0, slope = 1, color = "#56b4e9", linewidth = 1.5) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  xlim(0, 10) +
+  ylim(0, 10) +
+  ggtitle("Positive Relationship")
+
+# Negative
+y2 = 0 + -1*x + rnorm(n = 50, mean = 0, sd = 0.7)
+d = data.frame(x = x, y = y2)
+p2 = ggplot(data = d, aes(x = x, y = y)) +
+  geom_point(size = 3, alpha = 0.5) +
+  geom_abline(intercept = 0, slope = -1, color = "#56b4e9", linewidth = 1.5) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  xlim(0, 10) +
+  ylim(-10, 0) +
+  ggtitle("Negative Relationship")
+
+# Flat
+y3 = 5 + 0*x + rnorm(n = 50, mean = 0, sd = 0.4)
+d = data.frame(x = x, y = y3)
+p3 = ggplot(data = d, aes(x = x, y = y)) +
+  geom_point(size = 3, alpha = 0.5) +
+  geom_abline(intercept = 5, slope = 0, color = "#56b4e9", linewidth = 1.5) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  xlim(0, 10) +
+  ylim(0, 10) +
+  ggtitle("Flat (No) Relationship")
+
+p1 | p2 | p3
+```
+
+A positive relationship would imply that lower values of *x* are associated with lower values of *y* and higher values of *x* are associated with higher values of *y*. A negative relationship, on the other hand, would imply that lower values of *x* are associated with higher values of *y* and higher values of *x* are associated with lower values of *y*. A flat relationship implies there is no relationship between *x* and *y* since all values of *x* are associated with the same *y* value.
+
+
+:::fyi
+**FYI**
+
+When you describe what the direction/trend implies, be careful about the language you use. For example, we would not want to say "when *x* goes up, *y* goes up" when describing a positive relationship. This is because that statement is not true for all of our cases. The trend describes the general pattern in the relationship, which does not apply to all cases. That is why we use the wording "is associated with", which to other researchers indicates the general pattern. Other ways to describe a positive relationship would be that:
+
+- Observations that have higher values of *x* **tend to have** higher values of *y*.
+- Observations with higher values of *x* **yypically** have higher values of *y*.
+- Higher values of *x* **are typically associated with** higher values of *y*.
+:::
+
+<br />
+
+
+### Strength
+
+The strength of the relationship describes how well the data adhere to the functional form. For example a strong linear relationship would be one in which the observations lie close to the line. @fig-strength shows three positive linear relationships, one that has weak, one that is moderate, and one that is strong.
+
+```{r}
+#| label: fig-strength
+#| fig-cap: "A weak, moderate, and strong positive linear relationship."
+#| fig-alt: "A weak, moderate, and strong positive linear relationship."
+#| fig-width: 9
+#| fig-height: 3
+#| out-width: "100%"
+#| echo: false
+#| warning: false
+
+set.seed(150)
+x = rnorm(n = 50, mean = 5.5, sd = 1.5)
+
+# moderate
+y = 0 + 1*x + rnorm(n = 50, mean = 0, sd = 8.15)
+d = data.frame(x = x, y = y)
+p1 = ggplot(data = d, aes(x = x, y = y)) +
+  geom_point(size = 3, alpha = 0.5) +
+  geom_abline(intercept = 0, slope = 1, color = "#56b4e9", linewidth = 1.5) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  xlim(0, 10) +
+  ylim(-10, 20) +
+  ggtitle("Weak, Positive Relationship")
+
+# moderate
+y2 = 0 + 1*x + rnorm(n = 50, mean = 0, sd = 3.26)
+d = data.frame(x = x, y = y2)
+p2 = ggplot(data = d, aes(x = x, y = y)) +
+  geom_point(size = 3, alpha = 0.5) +
+  geom_abline(intercept = 0, slope = 1, color = "#56b4e9", linewidth = 1.5) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  xlim(0, 10) +
+  ylim(-10, 20) +
+  ggtitle("Moderately Strong, Positive Relationship")
+
+# strong
+y3 = 0 + 1*x + rnorm(n = 50, mean = 0, sd = 0.7)
+d = data.frame(x = x, y = y3)
+p3 = ggplot(data = d, aes(x = x, y = y)) +
+  geom_point(size = 3, alpha = 0.5) +
+  geom_abline(intercept = 0, slope = 1, color = "#56b4e9", linewidth = 1.5) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  xlim(0, 10) +
+  ylim(-10, 20) +
+  ggtitle("Strong Positive Relationship")
+
+
+p1 | p2 | p3
+```
+
+As you describe the strength of a relationship, know that the qualifiers 'weak', 'moderate', and 'strong' are somewhat subjective. For now, use your best judgment.
+
+
+
+:::fyi
+**PROTIP**
+
+After positing the functional form, put that line or curve on the scatterplot in your mind. This will help you better consider and describe the strength of the relationship. In a later chapter, we will actually learn how to do this in R.
+:::
+
+
+### Potential Outliers
+
+Lastly, you also want to identify any observations that do not fit the trend. These are potential outliers. For example, the reddish, purple observation is @fig-outlier would be a potential outlier.
+
+```{r}
+#| label: fig-outlier
+#| fig-cap: "The reddish, purple observation does not fit the trend."
+#| fig-alt: "The reddish, purple observation does not fit the trend."
+#| out-width: "60%"
+#| echo: false
+
+set.seed(150)
+x = rnorm(n = 50, mean = 5.5, sd = 1.5)
+y = 0 + 1*x + rnorm(n = 50, mean = 0, sd = 0.7)
+d = data.frame(x = x, y = y)
+
+ggplot(data = d, aes(x = x, y = y)) +
+  geom_point(size = 3, alpha = 0.5) +
+  geom_abline(intercept = 0, slope = 1, color = "#56b4e9", linewidth = 1.5) +
+  annotate(geom = "point", x = 6, y = 17, color = "#cc79a7", size = 3) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  xlim(0, 10) +
+  ylim(-5, 20)
+```
+
+Remember, we identify potential outliers because they have extreme values (either high or low) relative to the other observations in the data. In a scatterplot, there are now two dimensions that an observation can be extreme on:
+
+- A potential outlier might have an extreme *x*-value.
+- A potential outlier might have an extreme *y*-value.
+- A potential outlier might have both an extreme *x*-value and an extreme *y*-value.
+
+When we identify potential outliers, we do so by referencing their coordinates in the scatterplot. For example, to describe the reddish, purple observation that is a potential outlier in @fig-outlier, we might say, *"The observation with the coordinates (6, 17) is a potential outlier. This observation has a very large y-value relative to the other observations in the data."*
+
+<br />
+
+
+### Back to the Example
+
+Let's return to the scatterplot showing the relationship between life expectancy and happiness and use what we have learned to describe that relationship using the context of the data.
+
+```{r}
+#| label: fig-scatterplot-2
+#| fig-cap: "Scatterplot displaying the relationship between life expectancy and happiness."
+#| fig-alt: "Scatterplot displaying the relationship between life expectancy and happiness."
+#| out-width: "90%"
+#| message: false
+#| echo: false
+all = happy |> filter(country != "United States")
+us = happy |> filter(country == "United States")
+
+ggplot(data = happy, aes(x = life_exp, y = happiness)) +
+  geom_point(size = 2.7) +
+  theme_bw() +
+  xlab("Life expectancy (in years)") +
+  ylab("Happiness")
+```
+
+> The scatterplot suggests that there is a positive, linear relationship between life expectancy and happiness for the 156 countries in our data. This suggests that countries that have higher life expectiancies tend to also have higher levels of happiness. This relationship seems pretty strong, with the data clustered somewhat close to the line that describes this relationship. Lastly, there do not seem to be any potential outliers or extreme observations in the data.
+
+</br />
+
+
+## Plot Scale, Aspect Ratio, and Human Perception
+
+One issue that arises when we describe the strength of the relationship is that our guesstimate for the strength of the relationship can be influenced by the *x*- and *y*-scale on our scatterplot. To illustrate this, @fig-scale shows a plot of the relationship between life expectancy and happiness with two different scales on the axes.
+
+```{r}
+#| label: fig-scale
+#| fig-cap: "The two plots show the exact same data plotted using different scales on the x- and y-axis. This difference in scales can influence how we perceive both the magnitude and the strength of the relationship."
+#| fig-alt: "The two plots show the exact same data plotted using different scales on the x- and y-axis. This difference in scales can influence how we perceive both the magnitude and the strength of the relationship."
+#| fig-width: 6
+#| fig-height: 3
+#| out-width: "100%"
+#| echo: false
+p1 = ggplot(data = happy, aes(x = life_exp, y = happiness)) +
+  geom_point(size = 2.7) +
+  theme_bw() +
+  xlab("Life expectancy (in years)") +
+  ylab("Happiness")
+p2 = ggplot(data = happy, aes(x = life_exp, y = happiness)) +
+  geom_point(size = 2.7) +
+  theme_bw() +
+  xlab("Life expectancy (in years)") +
+  ylab("Happiness") +
+  xlim(0, 100) +
+  ylim(0, 10)
+
+p1 | p2
+```
+
+In the right-hand graph of @fig-scale, we may perceive a stronger relationship than in the left-hand graph. This is problematic as the strength of the relationship is exactly the same in both graphs as it is the same data that is plotted. 
+
+Another thing that can impact your perception of the relationship in a scatterplot is the *aspect ratio* of the plot. The aspect ratio is the proportional relationship between the width and height of an image. Below are two scatterplots of the relationship between life expectancy and happiness. They both have the same scale, but different aspect ratios.
+
+
+```{r}
+#| label: fig-aspect-ratio-1
+#| fig-cap: "This plot uses a square aspect ratio. The width and height of the plot are the same."
+#| fig-alt: "This plot uses a square aspect ratio. The width and height of the plot are the same."
+#| fig-width: 6
+#| fig-height: 6
+#| out-width: "90%"
+#| echo: false
+ggplot(data = happy, aes(x = life_exp, y = happiness)) +
+  geom_point(size = 1.8) +
+  theme_bw() +
+  xlab("Life expectancy (in years)") +
+  ylab("Happiness")
+```
+
+```{r}
+#| label: fig-aspect-ratio-2
+#| fig-cap: "This plot uses a rectangular aspect ratio. The width is triple that of the height."
+#| fig-alt: "This plot uses a rectangular aspect ratio. The width is triple that of the height."
+#| fig-width: 12
+#| fig-height: 4
+#| out-width: "90%"
+#| echo: false
+ggplot(data = happy, aes(x = life_exp, y = happiness)) +
+  geom_point(size = 4) +
+  theme_bw() +
+  xlab("Life expectancy (in years)") +
+  ylab("Happiness")
+```
+
+The relationship looks stronger in the rectangular aspect ratio than in the square aspect ratio. However, again, the strength of the relationship is exactly the same in both graphs as it is the same data that is plotted.
+
+
+<!-- Because of this, we often compute and report a numerical summary measures to quantify both the strength and the magnitude of the relationship. These measures are useful as they are not impacted by the scale we use to plot the data. In the next chapter, you will learn how to quantify the magnitude of the effect and the strength of the linear relationship. -->
+
+<br />

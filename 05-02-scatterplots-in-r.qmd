@@ -1,0 +1,144 @@
+# Creating Scatterplots in R
+
+
+This chapter will focus on how we create scatterplots in R. To illustrate this, we will use the **world-happiness.csv** data.  This data includes 2019 indices of happiness, wealth, and life expectancy for 156 countries.
+
+To create a scatterplot, we will use functions from the `{tidyverse}` library. As a reminder, in the first code chunk of your script file, load the `{tidyverse}` library. In a second code chunk use the `read_csv()` function to import the *world-happiness.csv* data and assign the data into an object called `happy`. You also might want to view the data in the data viewer to ensure that it imported into RStudio correctly. (Don't forget to add code comments as well!)
+
+
+```{r}
+#| label: load-packages2
+#| message: false
+
+######################
+# Import data
+######################
+
+library(tidyverse)
+
+
+######################
+# Import data
+######################
+
+happy <- read_csv("data/world-happiness.csv")
+```
+
+
+To create a scatterplot to visualize the relationship between life expectancy and happiness, we will first create a new code chunk in your script file. In the ggplot syntax we will use two layers in our plot: `ggplot()` and `geom_point()`. Remember that the `ggplot()` layer (the global layer) indicates the data object and sets the primary aesthetic mapping for the plot. The `geom_point()` layer will use the information in the global layer to create the scatterplot.
+
+In the global layer we will indicate the data object is `happy` using the argument `data=happy`. In a scatterplot, we also set the aesthetic mapping for the *x*- and *y*-positions using `x=` and `y=` in the `aes()` function. Here we will map life expectancy to the *x*-coordinate and happiness to the *y*-coordinate. The syntax is as follows:
+
+```{r}
+#| label: fig-scat-01
+#| fig-cap: "Scatterplot displaying the relationship between life expectancy and happiness."
+#| fig-alt: "Scatterplot displaying the relationship between life expectancy and happiness."
+#| out-width: "90%"
+#| message: false
+
+#######################################
+# Create scatterplot
+#######################################
+
+ggplot(data = happy, aes(x = life_exp, y = happiness)) +
+  geom_point()
+```
+
+<br />
+
+
+## Changing the Point Shape, Size, Color and Fill
+
+The default point shape for the scatterplot is a small, filled in circle. This shape has a value of 19 (see below). So in the `geom_point()` layer it is implicitly using `geom_point(shape=19)`. Here are all of the point shapes and their corresponding values:
+
+```{r}
+#| label: fig-shapes
+#| fig-cap: "Point shapes and their corresponding values."
+#| fig-alt: ""
+#| echo: false
+
+pch_ref <- data.frame(
+  shape = 0:25,
+  x = rep(0:6, length.out = 26),
+  y = -rep(0:3, each = 7, length.out = 26)
+)
+ggplot(pch_ref, aes(x = x, y = y)) +
+  geom_point(aes(shape = shape), size = 5, colour = "#3a86d4",
+             fill = "grey80") +
+  geom_text(aes(label = shape), vjust = 2.4, size = 3.5) +
+  scale_shape_identity() +
+  labs(title = "ggplot2 point shapes (shape= 0–25)") +
+  theme_minimal() +
+  theme(axis.title = element_blank(), axis.text = element_blank(),
+        panel.grid = element_blank())
+```
+
+Each of these shapes has different possibilities for `color=` and `fill=`. For example, with the default shape of 19, there is no border on the point and to change the point color you would use `color=`. In contrast, for shape 21 (which is also a circle), `color=` would change the border color and `fill=` would chnage the interior color. 
+
+Here we change the point shape to 21 and add both a border and interior color for the points. We also make the points larger by adding `size=` to the `geom_point()` layer. (The default size is 1.5.) We also add labels to our plot. 
+
+
+```{r}
+#| fig-alt: "Scatterplot displaying the relationship between life expectancy and happiness."
+#| out-width: "90%"
+#| message: false
+
+#######################################
+# Create scatterplot
+# Change point shape, color, fill, and size
+#######################################
+
+ggplot(data = happy, aes(x = life_exp, y = happiness)) +
+  geom_point(shape = 21, color = "black", fill = "#ffde7a", size = 3) +
+  labs(
+    title = "LIFE EXPECTANCY AND HAPPINESS",
+    subtitle = "\nCountries with higher life expectancies tend to be happier.",
+    caption = "SOURCE: 2019 World Happiness Report",
+    x = "Life expectancy (in years)",
+    y = "Happiness (on a scale from 0-10)"
+  )
+```
+
+
+<br />
+
+
+## Axis Limits
+
+To change the axis limits, we will use the `scale_x_continuous()` and `scale_y_continuous()` layers. (Remember we use the continuous scales since the attributes mapped to *x* and *y* are quantitative!) One argument we can add to these layers is `limits=`. This argument takes a vector (`c()` function) giving the minimum and maximum values for the axis. 
+
+For example, below we re-create our scatterplot and change the *x*-axis to have limits from 50--90 and the *y*-axis to have limits from 0--10. We also use the `breaks=` argument to add tick marks at every two values on the *y*-axis.
+
+
+```{r}
+#| fig-alt: "Scatterplot displaying the relationship between life expectancy and happiness."
+#| out-width: "90%"
+#| message: false
+
+#######################################
+# Create scatterplot
+# Change axis limits and breaks
+#######################################
+
+ggplot(data = happy, aes(x = life_exp, y = happiness)) +
+  geom_point(shape = 21, color = "black", fill = "#ffde7a", size = 3) +
+  labs(
+    title = "LIFE EXPECTANCY AND HAPPINESS",
+    subtitle = "\nCountries with higher life expectancies tend to be happier.",
+    caption = "SOURCE: 2019 World Happiness Report",
+    x = "Life expectancy (in years)",
+    y = "Happiness (on a scale from 0-10)"
+  ) +
+  scale_x_continuous(
+    limits = c(50, 90)
+  ) +
+  scale_y_continuous(
+    limits = c(0, 10),
+    breaks = c(0, 2, 4, 6, 8, 10)
+  ) 
+```
+
+<br />
+
+
+

@@ -1,0 +1,51 @@
+﻿state,state_code,region,division,expend,ratio,salary,frac,frac_cat,frac_mdn,verbal,math,sat
+Mississippi,MS,South,East South Central,4.08,17.5,26.818,4,Low,Extremely Low,496,540,1036
+Utah,UT,West,Mountain,3.656,24.3,29.082,4,Low,Extremely Low,513,563,1076
+Iowa,IA,Midwest,West North Central,5.483,15.8,31.511,5,Low,Extremely Low,516,583,1099
+North Dakota,ND,Midwest,West North Central,4.775,15.3,26.327,5,Low,Extremely Low,515,592,1107
+South Dakota,SD,Midwest,West North Central,4.775,14.4,25.994,5,Low,Extremely Low,505,563,1068
+Arkansas,AR,South,West South Central,4.459,17.1,28.934,6,Low,Extremely Low,482,523,1005
+Alabama,AL,South,East South Central,4.405,17.2,31.144,8,Low,Extremely Low,491,538,1029
+Kansas,KS,Midwest,West North Central,5.817,15.1,34.652,9,Low,Low,503,557,1060
+Louisiana,LA,South,West South Central,4.761,16.8,26.461,9,Low,Low,486,535,1021
+Minnesota,MN,Midwest,West North Central,6,17.5,35.948,9,Low,Low,506,579,1085
+Missouri,MO,Midwest,West North Central,5.383,15.5,31.189,9,Low,Low,495,550,1045
+Nebraska,NE,Midwest,West North Central,5.935,14.5,30.922,9,Low,Low,494,556,1050
+Oklahoma,OK,South,West South Central,4.845,15.5,28.172,9,Low,Low,491,536,1027
+Wisconsin,WI,Midwest,East North Central,6.93,15.9,37.746,9,Low,Low,501,572,1073
+Wyoming,WY,West,Mountain,6.16,14.9,31.285,10,Low,Low,476,525,1001
+Kentucky,KY,South,East South Central,5.217,17,32.257,11,Low,Low,477,522,999
+Michigan,MI,Midwest,East North Central,6.994,20.1,41.895,11,Low,Low,484,549,1033
+New Mexico,NM,West,Mountain,4.586,17.2,28.493,11,Low,Low,485,530,1015
+Tennessee,TN,South,East South Central,4.388,18.6,32.477,12,Low,Low,497,543,1040
+Illinois,IL,Midwest,East North Central,6.136,17.3,39.431,13,Low,Low,488,560,1048
+Idaho,ID,West,Mountain,4.21,19.1,29.783,15,Low,Low,468,511,979
+West Virginia,WV,South,South Atlantic,6.107,14.8,31.944,17,Low,Low,448,484,932
+Montana,MT,West,Mountain,5.692,16.3,28.785,21,Low,Low,473,536,1009
+Ohio,OH,Midwest,East North Central,6.162,16.6,36.802,23,Low,Low,460,515,975
+Arizona,AZ,West,Mountain,4.778,19.3,32.175,27,Low,Median,448,496,944
+Colorado,CO,West,Mountain,5.443,18.4,34.571,29,Low,Median,462,518,980
+Nevada,NV,West,Mountain,5.16,18.7,34.836,30,Mid,Median,434,483,917
+California,CA,West,Pacific,4.992,24,41.078,45,Mid,High,417,485,902
+Alaska,AK,West,Pacific,8.963,17.6,47.951,47,Mid,High,445,489,934
+Texas,TX,South,West South Central,5.222,15.7,31.223,47,Mid,High,419,474,893
+Florida,FL,South,South Atlantic,5.718,19.1,32.588,48,Mid,High,420,469,889
+Washington,WA,West,Pacific,5.906,20.2,36.151,48,Mid,High,443,494,937
+Oregon,OR,West,Pacific,6.436,19.9,38.555,51,Mid,High,448,499,947
+Hawaii,HI,West,Pacific,6.078,17.9,38.518,57,Mid,High,407,482,889
+Indiana,IN,Midwest,East North Central,5.826,17.5,36.785,58,Mid,High,415,467,882
+South Carolina,SC,South,South Atlantic,4.797,16.4,30.279,58,Mid,High,401,443,844
+North Carolina,NC,South,South Atlantic,5.077,16.2,30.793,60,Mid,High,411,454,865
+Maryland,MD,South,South Atlantic,7.245,17,40.661,64,Mid,Extremely High,430,479,909
+Georgia,GA,South,South Atlantic,5.193,16.3,32.291,65,Mid,Extremely High,406,448,854
+Virginia,VA,South,South Atlantic,5.327,14.6,33.987,65,Mid,Extremely High,428,468,896
+Delaware,DE,South,South Atlantic,7.03,16.6,39.076,68,Mid,Extremely High,429,468,897
+Maine,ME,Northeast,New England,6.428,13.8,31.972,68,Mid,Extremely High,427,469,896
+Vermont,VT,Northeast,New England,6.75,13.8,35.406,68,Mid,Extremely High,429,472,901
+New Hampshire,NH,Northeast,New England,5.859,15.6,34.72,70,High,Extremely High,444,491,935
+New Jersey,NJ,Northeast,Middle Atlantic,9.774,13.8,46.087,70,High,Extremely High,420,478,898
+Pennsylvania,PA,Northeast,Middle Atlantic,7.109,17.1,44.51,70,High,Extremely High,419,461,880
+Rhode Island,RI,Northeast,New England,7.469,14.7,40.729,70,High,Extremely High,425,463,888
+New York,NY,Northeast,Middle Atlantic,9.623,15.2,47.612,74,High,Extremely High,419,473,892
+Massachusetts,MA,Northeast,New England,7.287,14.8,40.795,80,High,Extremely High,430,477,907
+Connecticut,CT,Northeast,New England,8.817,14.4,50.045,81,High,Extremely High,431,477,908

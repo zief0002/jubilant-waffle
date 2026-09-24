@@ -44,9 +44,14 @@ book:
         - 04-04-conditioning.qmd
         - 04-05-scales.qmd
         - 04-06-bar-charts-from-summaries.qmd
-    # - part: 04-00-plot-enhancement.qmd
-    #   chapters:
-    #     - 04-03-annotations.qmd
+    - part: "Visualizing and Describing Quantitative Relationships"
+      chapters:
+        - 05-01-quantitative-relationships.qmd
+        - 05-02-scatterplots-in-r.qmd
+        - 05-03-themes.qmd
+        - 05-04-conditioning-relationships.qmd
+        - 05-05-color-palettes.qmd
+        - 05-06-annotations.qmd
     #     - 04-04-scales.qmd
     #     - 04-05-themes.qmd
     #     - 04-06-blast.qmd

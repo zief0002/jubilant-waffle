@@ -1,0 +1,183 @@
+﻿Occupation,med_weeklypay_men,med_weeklypay_women,occupation_subcat
+Computer and mathematical occupations,2138,1828,Professional and related
+Computer and information research scientists,,,Professional and related
+Computer systems analysts,1947,1658,Professional and related
+Information security analysts,2255,,Professional and related
+Computer programmers,2131,1406,Professional and related
+Software developers,2523,2383,Professional and related
+Software quality assurance analysts and testers,,,Professional and related
+Web developers,,,Professional and related
+Web and digital interface designers,,,Professional and related
+Computer support specialists,1452,1348,Professional and related
+Database administrators and architects,2581,,Professional and related
+Network and computer systems administrators,1908,,Professional and related
+Computer network architects,2248,,Professional and related
+"Computer occupations, all other",1791,1507,Professional and related
+Actuaries,,,Professional and related
+Mathematicians,,,Professional and related
+Operations research analysts,1819,1573,Professional and related
+Statisticians,,,Professional and related
+Other mathematical science occupations,2279,1844,Professional and related
+"Architects, except landscape and naval",2367,1521,Architecture and engineering
+Landscape architects,,,Architecture and engineering
+"Surveyors, cartographers, and photogrammetrists",,,Architecture and engineering
+Aerospace engineers,2248,,Architecture and engineering
+Agricultural engineers,,,Architecture and engineering
+Bioengineers and biomedical engineers,,,Architecture and engineering
+Chemical engineers,2519,,Architecture and engineering
+Civil engineers,2094,1706,Architecture and engineering
+Computer hardware engineers,2295,,Architecture and engineering
+Electrical and electronics engineers,2229,,Architecture and engineering
+Environmental engineers,,,Architecture and engineering
+"Industrial engineers, including health and safety",2001,1613,Architecture and engineering
+Marine engineers and naval architects,,,Architecture and engineering
+Materials engineers,,,Architecture and engineering
+Mechanical engineers,2091,1915,Architecture and engineering
+"Mining and geological engineers, including mining safety engineers",,,Architecture and engineering
+Nuclear engineers,,,Architecture and engineering
+Petroleum engineers,,,Architecture and engineering
+"Engineers, all other",2190,2079,Architecture and engineering
+Architectural and civil drafters,,,Architecture and engineering
+Other drafters,1191,,Architecture and engineering
+Electrical and electronic engineering technologists and technicians,1635,,Architecture and engineering
+"Other engineering technologists and technicians, except drafters",1368,1027,Architecture and engineering
+Surveying and mapping technicians,,,Architecture and engineering
+Agricultural and food scientists,,,"Life, physical, and social science"
+Biological scientists,1634,,"Life, physical, and social science"
+Conservation scientists and foresters,,,"Life, physical, and social science"
+Medical scientists,,1875,"Life, physical, and social science"
+"Life scientists, all other",,,"Life, physical, and social science"
+Astronomers and physicists,,,"Life, physical, and social science"
+Atmospheric and space scientists,,,"Life, physical, and social science"
+Chemists and materials scientists,2309,,"Life, physical, and social science"
+"Environmental scientists and specialists, including health",,,"Life, physical, and social science"
+"Geoscientists and hydrologists, except geographers",,,"Life, physical, and social science"
+"Physical scientists, all other",1977,1566,"Life, physical, and social science"
+Economists,,,"Life, physical, and social science"
+Survey researchers,,,"Life, physical, and social science"
+Clinical and counseling psychologists,,,"Life, physical, and social science"
+School psychologists,,,"Life, physical, and social science"
+Other psychologists,,,"Life, physical, and social science"
+Sociologists,,,"Life, physical, and social science"
+Urban and regional planners,,,"Life, physical, and social science"
+Miscellaneous social scientists and related workers,,,"Life, physical, and social science"
+Agricultural and food science technicians,,,"Life, physical, and social science"
+Biological technicians,,,"Life, physical, and social science"
+Chemical technicians,,,"Life, physical, and social science"
+Environmental science and geoscience technicians,,,"Life, physical, and social science"
+Nuclear technicians,,,"Life, physical, and social science"
+Social science research assistants,,,"Life, physical, and social science"
+"Other life, physical, and social science technicians",1440,1147,"Life, physical, and social science"
+Occupational health and safety specialists and technicians,,,"Life, physical, and social science"
+,1356,1225,Community and social service
+Substance abuse and behavioral disorder counselors,,1155,Community and social service
+"Educational, guidance, and career counselors and advisors",1160,1396,Community and social service
+Marriage and family therapists,,,Community and social service
+Mental health counselors,,1341,Community and social service
+Rehabilitation counselors,,,Community and social service
+"Counselors, all other",1073,1155,Community and social service
+"Child, family, and school social workers",,1427,Community and social service
+Healthcare social workers,,1347,Community and social service
+Mental health and substance abuse social workers,,,Community and social service
+"Social workers, all other",1536,1255,Community and social service
+Probation officers and correctional treatment specialists,,,Community and social service
+Social and human service assistants,,992,Community and social service
+Other community and social service specialists,,1196,Community and social service
+Clergy,1379,1267,Community and social service
+"Directors, religious activities and education",,,Community and social service
+"Religious workers, all other",,,Community and social service
+Lawyers,2890,2321,Legal
+Judicial law clerks,,,Legal
+"Judges, magistrates, and other judicial workers",,,Legal
+Paralegals and legal assistants,1896,1166,Legal
+"Title examiners, abstractors, and searchers",,962,Legal
+"Legal support workers, all other",,,Legal
+Postsecondary teachers,1967,1739,"Education, training, and library"
+Preschool and kindergarten teachers,,835,"Education, training, and library"
+Elementary and middle school teachers,1386,1259,"Education, training, and library"
+Secondary school teachers,1504,1405,"Education, training, and library"
+Special education teachers,1429,1261,"Education, training, and library"
+Tutors,,,"Education, training, and library"
+Other teachers and instructors,1401,1117,"Education, training, and library"
+"Archivists, curators, and museum technicians",,,"Education, training, and library"
+Librarians and media collections specialists,,1162,"Education, training, and library"
+Library technicians,,,"Education, training, and library"
+Teaching assistants,879,745,"Education, training, and library"
+Other educational instruction and library workers,,1274,"Education, training, and library"
+Artists and related workers,,,"Arts, design, entertainment, sports, and media"
+Commercial and industrial designers,,,"Arts, design, entertainment, sports, and media"
+Fashion designers,,,"Arts, design, entertainment, sports, and media"
+Floral designers,,,"Arts, design, entertainment, sports, and media"
+Graphic designers,1253,1166,"Arts, design, entertainment, sports, and media"
+Interior designers,,1402,"Arts, design, entertainment, sports, and media"
+Merchandise displayers and window trimmers,,,"Arts, design, entertainment, sports, and media"
+Other designers,1632,1429,"Arts, design, entertainment, sports, and media"
+Actors,,,"Arts, design, entertainment, sports, and media"
+Producers and directors,1773,1802,"Arts, design, entertainment, sports, and media"
+Athletes and sports competitors,,,"Arts, design, entertainment, sports, and media"
+Coaches and scouts,1280,1128,"Arts, design, entertainment, sports, and media"
+"Umpires, referees, and other sports officials",,,"Arts, design, entertainment, sports, and media"
+Dancers and choreographers,,,"Arts, design, entertainment, sports, and media"
+Music directors and composers,,,"Arts, design, entertainment, sports, and media"
+Musicians and singers,,,"Arts, design, entertainment, sports, and media"
+"Disc jockeys, except radio",,,"Arts, design, entertainment, sports, and media"
+"Entertainers and performers, sports and related workers, all other",,,"Arts, design, entertainment, sports, and media"
+Broadcast announcers and radio disc jockeys,,,"Arts, design, entertainment, sports, and media"
+"News analysts, reporters, and journalists",,,"Arts, design, entertainment, sports, and media"
+Public relations specialists,,1540,"Arts, design, entertainment, sports, and media"
+Editors,,,"Arts, design, entertainment, sports, and media"
+Technical writers,,,"Arts, design, entertainment, sports, and media"
+Writers and authors,,1469,"Arts, design, entertainment, sports, and media"
+Interpreters and translators,,,"Arts, design, entertainment, sports, and media"
+Court reporters and simultaneous captioners,,,"Arts, design, entertainment, sports, and media"
+"Media and communication workers, all other",,,"Arts, design, entertainment, sports, and media"
+"Broadcast, sound, and lighting technicians",1573,,"Arts, design, entertainment, sports, and media"
+Photographers,,,"Arts, design, entertainment, sports, and media"
+"Television, video, and film camera operators and editors",1775,,"Arts, design, entertainment, sports, and media"
+"Media and communication equipment workers, all other",,,"Arts, design, entertainment, sports, and media"
+Chiropractors,,,Healthcare practitioners and technical
+Dentists,,,Healthcare practitioners and technical
+Dietitians and nutritionists,,1397,Healthcare practitioners and technical
+Optometrists,,,Healthcare practitioners and technical
+Pharmacists,2520,2471,Healthcare practitioners and technical
+Emergency medicine physicians,,,Healthcare practitioners and technical
+Radiologists,,,Healthcare practitioners and technical
+Other physicians,3133,2915,Healthcare practitioners and technical
+Surgeons,,,Healthcare practitioners and technical
+Physician assistants,,2303,Healthcare practitioners and technical
+Podiatrists,,,Healthcare practitioners and technical
+Audiologists,,,Healthcare practitioners and technical
+Occupational therapists,,1595,Healthcare practitioners and technical
+Physical therapists,1828,1710,Healthcare practitioners and technical
+Radiation therapists,,,Healthcare practitioners and technical
+Recreational therapists,,,Healthcare practitioners and technical
+Respiratory therapists,,,Healthcare practitioners and technical
+Speechlanguage pathologists,,1546,Healthcare practitioners and technical
+Exercise physiologists,,,Healthcare practitioners and technical
+"Therapists, all other",,1331,Healthcare practitioners and technical
+Veterinarians,,,Healthcare practitioners and technical
+Registered nurses,1900,1517,Healthcare practitioners and technical
+Nurse anesthetists,,,Healthcare practitioners and technical
+Nurse midwives,,,Healthcare practitioners and technical
+Nurse practitioners,,2339,Healthcare practitioners and technical
+Acupuncturists,,,Healthcare practitioners and technical
+"Healthcare diagnosing or treating practitioners, all other",,,Healthcare practitioners and technical
+Clinical laboratory technologists and technicians,1438,1183,Healthcare practitioners and technical
+Dental hygienists,,1421,Healthcare practitioners and technical
+Cardiovascular technologists and technicians,,,Healthcare practitioners and technical
+Diagnostic medical sonographers,,1786,Healthcare practitioners and technical
+Radiologic technologists and technicians,1478,1221,Healthcare practitioners and technical
+Magnetic resonance imaging technologists,,1425,Healthcare practitioners and technical
+Nuclear medicine technologists and medical dosimetrists,,,Healthcare practitioners and technical
+Emergency medical technicians,1016,,Healthcare practitioners and technical
+Paramedics,1627,,Healthcare practitioners and technical
+Pharmacy technicians,1030,909,Healthcare practitioners and technical
+Psychiatric technicians,,917,Healthcare practitioners and technical
+Surgical technologists,,1198,Healthcare practitioners and technical
+Veterinary technologists and technicians,,849,Healthcare practitioners and technical
+Dietetic technicians and ophthalmic medical technicians,,,Healthcare practitioners and technical
+Licensed practical and licensed vocational nurses,,1085,Healthcare practitioners and technical
+Medical records specialists,,1006,Healthcare practitioners and technical
+"Opticians, dispensing",,,Healthcare practitioners and technical
+Miscellaneous health technologists and technicians,,1172,Healthcare practitioners and technical
+Other healthcare practitioners and technical occupations,,1262,Healthcare practitioners and technical
