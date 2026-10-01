@@ -1,4 +1,4 @@
-# Visualizations to Address Change Over Time {#sec-plot-enhance}
+# Visualizations to Address Change Over Time
 
 One common type of research question that gets asked are questions about change over time. For example:
 
@@ -6,7 +6,7 @@ One common type of research question that gets asked are questions about change 
 - How has inflation changed from decade-to-decade?
 - How have political parties shifted over time?
 
-To answer these questions we need *temporal* or *longitudinal*  data. This simply means that we need data that has been collected over time. There are several visualizations that are used for plotting temporal data. 
+To answer these questions we need *temporal* or *time series* data. This simply means that we need data that has been collected over time. There are several visualizations that are used for plotting temporal data. 
 
 <br />
 
@@ -77,6 +77,7 @@ The slope graph is useful for showing the change over time when you have multipl
 
 library(tidyverse)
 library(ggimage)
+options(HTTPUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36")
 #https://www.spotrac.com/nhl/cap/_/year/2024
 nhl = read_csv("data/nhl-salary.csv")
 

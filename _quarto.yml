@@ -52,13 +52,10 @@ book:
         - 05-04-conditioning-relationships.qmd
         - 05-05-color-palettes.qmd
         - 05-06-annotations.qmd
-    #     - 04-04-scales.qmd
-    #     - 04-05-themes.qmd
-    #     - 04-06-blast.qmd
-    # - part: 06-00-temporal-visualizations.qmd
-      # chapters:
-    #     - 05-01-introduction-to-mixed-effects-models.qmd
-    #     - 05-02-lmer-average-change-over-time.qmd
+    - part: "Visualizations to Address Change Over Time"
+      chapters:
+        - 06-01-temporal-visualizations.qmd
+        - 06-02-line-graphs-in-r.qmd
     #     - 05-03-lmer-other-random-effects-and-covariates.qmd
     #     - 05-04-lmer-alt-representations-and-assumptions.qmd
 

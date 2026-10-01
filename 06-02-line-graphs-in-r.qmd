@@ -1,0 +1,218 @@
+# Creating Line Graphs in R
+
+
+This chapter will focus on how we create line graphs in R. To illustrate this, we will use the **minnesota-fci.csv** data to explore the cost of attending a men's professional sporting event in Minnesota over time.
+
+As a reminder, in the first code chunk of your script file, load the `{tidyverse}` library. In a second code chunk use the `read_csv()` function to import the *minnesota-fci.csv* data and assign the data into an object called `mn_fci`. You also might want to view the data in the data viewer to ensure that it imported into RStudio correctly. (Don't forget to add code comments as well!)
+
+
+```{r}
+#| label: load-packages2
+#| message: false
+
+######################
+# Import data
+######################
+
+library(tidyverse)
+
+
+######################
+# Import data
+######################
+
+mn_fci <- read_csv("data/minnesota-fci.csv")
+```
+
+
+To create a line plot, we will begin by creating a scatterplot with time (`season`) on the *x-*axis and what we are tracking over time (`fci`) on the *y-*axis. We will also color (or fill) the points by team. The syntax is as follows:
+
+```{r}
+#| label: fig-lineplot-01
+#| fig-cap: "Scatterplot displaying the relationship between time and cost of attending a game. Points are colored by team."
+#| fig-alt: "Scatterplot displaying the relationship between time and cost of attending a game. Points are colored by team."
+#| out-width: "90%"
+#| message: false
+
+#######################################
+# Create scatterplot
+#######################################
+
+ggplot(data = mn_fci, aes(x = season, y = fci, color = team)) +
+  geom_point()
+```
+
+Note when you create this, you might get a warning message. This is okay...warnings are not errors! This particular warning is just informing you that the data has two missing values.
+
+
+To turn our scatterplot into a line graph, we need to connect the points for each team. To do this, we add a `geom_line()` layer. This layer will draw the lines. To ensure they are connected only within each team, we also add `group=team` to the global `aes()` function. This uses each team as a separate group when it draws the lines.^[Technically, you do not need `group=team` since we have specified `color=team`. By mapping `color=` to an attribute, it also implicitly sets the groups.]
+
+
+```{r}
+#| label: fig-lineplot-02
+#| fig-cap: "Line graph displaying the relationship between time and cost of attending a game for four Minnesota mens professional sports teams."
+#| fig-alt: "Line graph displaying the relationship between time and cost of attending a game for four Minnesota mens professional sports teams."
+#| out-width: "90%"
+#| message: false
+#| warning: false
+
+#######################################
+# Create scatterplot
+#######################################
+
+ggplot(data = mn_fci, aes(x = season, y = fci, group = team, color = team)) +
+  geom_point() +
+  geom_line()
+```
+
+
+Once you have the line graph, then we can jazz up the plot by modifying the labels, theme, colors, etc. Here I will use the [official team colors](https://teamcolorcodes.com/) for each team. I will also add team names by each line as annotations. Since the lines are now identified in the plot, the legend is moot and can be omitted using `guides(color = "none")`.
+
+
+
+```{r}
+#| label: fig-lineplot-03
+#| fig-cap: "Line graph displaying the relationship between time and cost of attending a game for four Minnesota mens professional sports teams."
+#| fig-alt: "Line graph displaying the relationship between time and cost of attending a game for four Minnesota mens professional sports teams."
+#| out-width: "90%"
+#| message: false
+#| warning: false
+#| fig-width: 8
+#| fig-height: 7
+
+#######################################
+# Create scatterplot
+#######################################
+
+ggplot(data = mn_fci, aes(x = season, y = fci, color = team)) +
+  geom_point() +
+  geom_line() +
+  annotate("text", x = 2016, y = 197, label = "Twins", color = "#D31145", hjust = 1) +
+  annotate("text", x = 2016, y = 296, label = "Timberwolves", color = "#78BE20", hjust = 1) +
+  annotate("text", x = 2016, y = 398, label = "Wild", color = "#154734", hjust = 1) +
+  annotate("text", x = 2016, y = 510, label = "Vikings", color = "#4F2683", hjust = 1) +
+  labs(
+    x = "Year/Season",
+    y = "Fan Cost Index",
+    title = "HOW MUCH DOES IT COST TO ATTEND A GAME?",
+    subtitle = "\nThe cost to take a family of four to a game over time. Cost includes tickets, drinks,\nhot dogs, programs, hats, and parking.",
+    caption = "SOURCE: Team Marketing Report"
+  ) +
+  scale_color_manual(
+    values = c("#78BE20", "#D31145", "#4F2683", "#154734")
+  ) +
+  theme_bw(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5)
+  ) +
+  guides(color = "none")
+```
+
+
+<br />
+
+
+## Percent Change
+
+One metric that is used to measure how much something changes over time is *percent change*. That is, how much has something changed as a percentage of the original value. To compute percent change we use:
+
+$$
+\mathrm{Percent~Change} = \frac{(\mathrm{New~Value} - \mathrm{Original~Value})}{\mathrm{Original~Value}} \times 100
+$$
+
+The numerator computes the difference between the new value and the original value. This is then divided by the original value. This division computes the proportional change from the original value. Multiplying by 100 converts the proportion to a percent.
+
+
+As an example, say we wanted to compute the percent change for Minnesota Twins tickets from 2000 (\$102.32) to 2016 (\$212.12). Then the formula is:
+
+
+$$
+\begin{split}
+\mathrm{Percent~Change} &= \frac{(212.12 - 102.32)}{102.32} \times 100 \\[2ex]
+&= \frac{109.80}{102.32} \times 100 \\[2ex]
+&= 1.073104 \times 100 \\[2ex]
+&= 107.3104
+\end{split}
+$$
+
+That is, from 2000 to 2016, the cost of attending a Minnesota Twins game increased by 107%.
+
+We can compute the percent change for each of the other teams as well:
+
+$$
+\begin{split}
+\mathbf{Vikings:~} &= \frac{(495.08 - 274.12)}{274.12} \times 100 = 80.60\%\\[2ex]
+\mathbf{Wild:~} &= \frac{(383.25 - 267.04)}{267.04} \times 100 = 43.51\%\\[2ex]
+\mathbf{Timberwolves:~} &= \frac{(281.06 - 225.72)}{225.72} \times 100 = 24.52\% \\[2ex]
+\end{split}
+$$
+
+
+<br />
+
+
+## Data Story of the Plot
+
+Remember, the data story with a line graph is to describe how something changes over time. The line graph we just created might be interpreted in the following way:
+
+> The cost of attending a Minnesota men's professional sports game has increased from 2000 to 2016 for each of the four teams. This increase in coast is primarily linear for the Twins, Timberwolves, and Wild. The Vikings have a slightly different profile, having a linear increase from 2000--2011 and then a sharper increase after that time. 
+>
+> The cost of a Twins game, which was the cheapest to attend in 2000 (at around \$100) has increased by 107\% to roughly $212 in 2016. While still the cheapest cost, it has nearly caught the cost of attending a Timberwolves game (~\$226). The Timberwolves have had the smallest increase over time, with the cost to attend a game increasing by only 25%. Both the Wild (\$267) and Vikings (\$274) had similar costs in 2000, but by 2016, the cost to attend a Vikings game (\$495; an 80% increase) has outpaced the cost to attend a Wild game (\$383; a 43% increase). 
+
+
+As you write your data story, it is a god idea to also look for interesting features or change points in the different lines. For example:
+
+- The Twins had sharp increases after the 2000 and 2009 seasons. Why is that? Did they have really good seasons and popularity was high? New management? 
+- The Wild have three places where they had no data. Why is that?
+- In which seasons did we see decreases in cost of attending a game? Why?
+- Why is the change in ticket prices so much lower for the Timberwolves than the other three teams during this time span?
+
+You will likely have to do some Google searching to understand the "why" questions, but connecting this type of contextual information to the interesting features of the plot make a more compelling data story. They also can make great annotations to add to the plot.
+
+
+
+
+```{r}
+#| label: fig-lineplot-04
+#| fig-cap: "Line graph displaying the relationship between time and cost of attending a game for four Minnesota mens professional sports teams."
+#| fig-alt: "Line graph displaying the relationship between time and cost of attending a game for four Minnesota mens professional sports teams."
+#| out-width: "90%"
+#| message: false
+#| warning: false
+#| fig-width: 8
+#| fig-height: 7
+
+#######################################
+# Create scatterplot
+#######################################
+
+ggplot(data = mn_fci, aes(x = season, y = fci, color = team)) +
+  geom_point() +
+  geom_line() +
+  annotate("text", x = 2016, y = 197, label = "Twins", color = "#D31145", hjust = 1) +
+  annotate("text", x = 2016, y = 296, label = "Timberwolves", color = "#78BE20", hjust = 1) +
+  annotate("text", x = 2016, y = 398, label = "Wild", color = "#154734", hjust = 1) +
+  annotate("text", x = 2016, y = 510, label = "Vikings", color = "#4F2683", hjust = 1) +
+  annotate("text", x = 2009.5, y = 165, label = "After finishing first in the AL Central\nin 2009 the cost to attend a Twins\ngame increased by $40.", color = "#777677", hjust = 0, size = 2.5) +
+  annotate("text", x = 2004, y = 273, label = "NHL\nLockout", color = "#777677", size = 2.5) +
+  annotate("text", x = 2012, y = 350, label = "Owner Imposed\nLockout", color = "#777677", size = 2.5) +
+  annotate("text", x = 2007, y = 440, label = "In 2012 and 2013, the Vikings started charging\na seat licensing fee to pay for their new stadium.", hjust = 0, color = "#777677", size = 2.5) +
+  annotate("text", x = 2013.5, y = 490, label = "In 2014, the Vikings raised prices by $45 to\naccount for the smaller capacity of TCF Stadium.", hjust = 1, color = "#777677", size = 2.5) +
+  annotate("text", x = 2011.5, y = 270, label = "The Timberwolves had the highest \nattendance jump in the NBA and\nraised ticket prices in 2012 by $45.", hjust = 1, color = "#777677", size = 2.5) +
+  labs(
+    x = "Year/Season",
+    y = "Fan Cost Index",
+    title = "HOW MUCH DOES IT COST TO ATTEND A GAME?",
+    subtitle = "\nThe cost to take a family of four to a game over time. Cost includes tickets, drinks,\nhot dogs, programs, hats, and parking.",
+    caption = "SOURCE: Team Marketing Report"
+  ) +
+  scale_color_manual(
+    values = c("#78BE20", "#D31145", "#4F2683", "#154734")
+  ) +
+  theme_bw(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5)
+  ) +
+  guides(color = "none")
+```
+
