@@ -56,8 +56,13 @@ book:
       chapters:
         - 06-01-temporal-visualizations.qmd
         - 06-02-line-graphs-in-r.qmd
-    #     - 05-03-lmer-other-random-effects-and-covariates.qmd
-    #     - 05-04-lmer-alt-representations-and-assumptions.qmd
+    - part: "Visualizations to Address Spatial Relationships"
+      chapters:
+        - 07-01-spatial-visualizations.qmd
+        - 07-02-maps-with-points-in-r.qmd
+        - 07-03-simple-features.qmd
+        - 07-05-shapefiles.qmd
+        - 07-04-choropleth-map.qmd
 
 lightbox: "auto"
 bibliography: ["assets/epsy-1261.bib"]

@@ -1,0 +1,8 @@
+---
+title: "07-02-choropleth-maps-in-r"
+format: html
+---
+
+Note: In this report, a geography is considered to be in persistent poverty if it maintained a poverty rate of 20.0% or more in the 1990 and 2000 Censuses and 2005–2009 and 2015–2019 American Community Survey 5-year estimates. Other governmental agencies have alternative deﬁnitions of persistent poverty for programmatic purposes and examples of such are described in the report.
+
+Source: U.S. Census Bureau, 1990 and 2000 Censuses; 2005–2009 and 2015–2019 American Community Survey, 5-year estimates

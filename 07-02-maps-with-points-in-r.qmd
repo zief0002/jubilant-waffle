@@ -1,0 +1,194 @@
+# Introduction to Maps with R
+
+
+This chapter will focus on one method of creating maps in R. To illustrate this, we will use the *walmart.csv* data. This dataset includes information on all the Walmart store locations in the United States in 2018. In addition to loading the `{tidyverse}` library, we will also load the `{maps}` library. (Note: You may need to install this---check the list of packages in your `Packages` tab to see if you have it installed.) This package includes several datasets and functions that are useful for mapping geographical data. Finally, we also load the `{ggthemes}` package to make use of a nice theme that is useful for maps.
+
+
+```{r}
+#| label: load-packages2
+#| message: false
+
+######################
+# Load library
+######################
+
+library(ggthemes)
+library(maps)
+library(tidyverse)
+
+
+######################
+# Import data
+######################
+
+walmart <- read_csv("data/walmart.csv")
+
+# View data
+walmart
+```
+
+
+The key to creating a map with points is to first create a base map and then add the locations to the base map.
+
+<br />
+
+
+## Creating a Base Map
+
+To create a base map, we will use the `map_data()` function (from the `{tidyverse}` library) to work with data from the`{maps}` package in `ggplot()`. This function takes a character string of the map name included in the maps data. There are several maps we can use including: 
+
+- `"county"`: a map of the United States with county borders, 
+- `"state"`: a map of the United States with state borders, 
+- `"usa"`: a map of the United States, 
+- `"world"`: a map of the World with country borders
+
+
+We assign this to an object so that it can be used in our `ggplot()` layers. Below, we obtain the map data of the United States with state borders and assign it into an object called `USA`.
+
+```{r}
+# Get USA map data
+USA = map_data("state")
+
+# Look at data
+head(USA)
+```
+
+
+Notice that there are several attributes in the `USA` dataset. Importantly, the first two attributes are the longitude (`long`) and latitude (`lat`) of each case in the data. 
+Maps help us understand spatial relationships by plotting locations in a two-dimensional coordinate system (longitude, latitude). Because of this, maps are a special type of scatterplot. Below we create a scatterplot of the geographic coordinates for the USA data:
+
+```{r}
+#| label: fig-usa
+#| fig-cap: "Scatterplot of the geographic coordinates of the USA data."
+#| fig-alt: "Scatterplot of the geographic coordinates of the USA data."
+
+######################
+# Scatterplot of USA
+######################
+
+ggplot(data = USA, aes(x = long, y = lat)) +
+  geom_point()
+```
+
+Rather than using `geom_point()` to create our map, we will use `geom_polygon()`. This connects the points in a particular order to draw a polygon. It uses the `order` attribute to determine how to connect the points.
+
+
+```{r}
+#| label: fig-usa2
+#| fig-cap: "Map of the geographic coordinates of the USA data."
+#| fig-alt: "Map of the geographic coordinates of the USA data."
+
+######################
+# Scatterplot of USA
+######################
+
+ggplot(data = USA, aes(x = long, y = lat)) +
+  geom_polygon()
+```
+
+
+There is one hitch. That is, that `geom_polygon()` will connect the points in order as it moves down the dataset. That is why there are crazy lines connecting different states. To fix this, we include `group=` in an `aes()` function in the `geom_ploygon()` layer. The `group=` argument will create a different polygon for each group (as defined in the `group=` argument) rather than connecting all the coordinates. Looking back at the data set, the attribute `group` includes information about how to group the coordinates. So we will set `group = group` in our syntax.
+
+
+
+```{r}
+#| label: fig-usa3
+#| fig-cap: "Map of the geographic coordinates of the USA data. Here we have used group= to set the different polygons."
+#| fig-alt: "Map of the geographic coordinates of the USA data. Here we have used group= to set the different polygons."
+
+######################
+# Map of USA
+######################
+
+ggplot(data = USA, aes(x = long, y = lat)) +
+  geom_polygon(aes(group = group))
+```
+
+
+We can also change the color of our base map using `color=` (borders) and `fill=` (interior of polygons) in the `geom_polygon()` layer. Lastly, we will use the `theme_map()` theme from the `{ggthemes}` package to create a nice theme for the map.
+
+```{r}
+#| label: fig-usa4
+#| fig-cap: "Map of the geographic coordinates of the USA data with a lightgrey fill."
+#| fig-alt: "Map of the geographic coordinates of the USA data with a lightgrey fill."
+
+######################
+# Map of USA
+######################
+
+ggplot(data = USA, aes(x = long, y = lat)) +
+  geom_polygon(aes(group = group), fill = "lightgrey", color = "black") +
+  theme_map()
+```
+
+<br />
+
+
+## Mapping Locations
+
+Below we plot the locations of the Walmart stores by adding points (with a `geom_point()` layer) to our base map of the store's longitudes and latitudes. Because the points are using data that is from a different object than is in our global `ggplot()` layer, we need to use `data=` in the `geom_point()` layer to tell R where the store data is. We also need to use `aes()` in the `geom_point()` layer to specify the name of the longitude and latitude attributes because the attribute names of the longitude and latitude are different in the `walmart` object than they are in the `USA` object.
+
+
+```{r}
+#| label: fig-walmarts
+#| fig-cap: "Map of the locations of Walmart stores in the continental United States in 2018."
+#| fig-alt: "Map of the locations of Walmart stores in the continental United States in 2018."
+
+######################
+# Map of Walmart stores
+######################
+
+ggplot(data = USA, aes(x = long, y = lat)) +
+  geom_polygon(aes(group = group), fill = "lightgrey", color = "black") +
+  theme_map() +
+  geom_point(data = walmart, aes(x = longitude, y = latitude), color = "darkred")
+```
+
+
+<br />
+
+
+## Data Story
+
+Where are the Walmart stores? 
+
+> Looking at the map, while there are Walmart stores in every state, the majority of Walmart stores are located in the southern and eastern parts of the United States. (These regions are closest to Walmart's headquarters, located in Bentonville Arkansas.) The Mountain West region and West North Central region of the Midwest have the fewest Walmart stores. The density of Walmarts in these regions is also much smaller than in other regions. This perhaps reflects the smaller populations and more rural areas in these regions.
+
+
+Here is a [YouTube video](https://www.youtube.com/watch?v=U5MtgdnUopQ) showing the expansion of Walmart from its first store in 1962 to the over 4,600 stores it has in 2026. The video is based on an animated map with points. It also features a bar chart showing the number of stores opened each year. Finally, annotations are added to explain the data story of Walmart's expansion.
+
+<br />
+
+
+## Zoom In on Part of the Map
+
+We can zoom in on part of the map by including the `coord_cartesion()` layer. This function takes two arguments: `xlim=` and `ylim=`. This sets the limits for the longitude (`xlim`) and latitude (`ylim`). We need to include the minimum and maximum values inside a `c()` function. For example, to zoom in on Minnesota, we can look back at @fig-usa3 (before we implemented the `theme_map()` layer). This shows that Minnesota is located roughly between the longitudes of $-97.5$ and $-89.5$ and between the latitudes of 43.5 and 49.5.  To zoom in on Minnesota we can use the following syntax.
+
+
+```{r}
+#| label: fig-walmarts-mn
+#| fig-cap: "Map of the locations of Walmart stores in Minnesota in 2018."
+#| fig-alt: "Map of the locations of Walmart stores in Minnesota in 2018."
+#| fig-width: 6
+#| fig-height: 7
+#| out-width: "90%"
+
+######################
+# Map of Walmart stores
+######################
+
+ggplot(data = USA, aes(x = long, y = lat)) +
+  geom_polygon(aes(group = group), fill = "lightgrey", color = "black") +
+  theme_map() +
+  geom_point(data = walmart, aes(x = longitude, y = latitude), color = "darkred") +
+  coord_cartesian(
+    xlim = c(-97.5, -89.5),
+    ylim = c(43.5, 49.5)
+  )
+```
+
+
+Note that getting your zoomed in map to be accurate might require some trial and error in the minimum and maximum values. You will also need to adjust the aspect ratio of the plot to get the map to look correct.
+
+<br />
+

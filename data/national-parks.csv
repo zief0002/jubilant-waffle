@@ -1,0 +1,62 @@
+name,state,nps,lat,lng,established,area,visitation,elevation_min,elevation_max
+Acadia National Park,ME,acad,44.3386,-68.2733,2/26/19,49075,3961661,0,1530
+Arches National Park,UT,arch,38.7331,-109.5925,11/12/71,76679,1463000,4085,5653
+Badlands National Park,SD,badl,43.8554,-102.3397,11/10/78,242756,1006809,2460,3340
+Big Bend National Park,TX,bibe,29.25,-103.25,6/12/44,801163,561459,1800,7825
+Biscayne National Park,FL,bisc,25.4824,-80.2083,6/28/80,172971,512213,0,8
+Black Canyon of the Gunnison National Park,CO,blca,38.5754,-107.7416,10/21/99,30750,357069,5440,8290
+Bryce Canyon National Park,UT,brca,37.593,-112.1871,2/25/28,35835,2498075,6620,9115
+Canyonlands National Park,UT,cany,38.2,-109.93,9/12/64,337598,818492,3700,6800
+Capitol Reef National Park,UT,care,38.367,-111.262,12/18/71,241904,1400000,3877,8960
+Carlsbad Caverns National Park,NM,cave,32.1479,-104.5567,5/14/30,46766,460474,3596,6370
+Channel Islands National Park,CA,chis,34.0069,-119.7785,3/5/80,249561,263000,0,2450
+Congaree National Park,SC,cong,33.7948,-80.7821,11/10/03,26692.6,242049,80,140
+Crater Lake National Park,OR,crla,42.9446,-122.109,5/22/02,183224,504942,3979,8929
+Cuyahoga Valley National Park,OH,cuva,41.2808,-81.5678,10/11/00,32783,2912454,,
+Death Valley National Park,CA,deva,36.5054,-117.0794,10/31/94,3422024,1440484,-282,11049
+Denali National Park and Preserve,AK,dena,63.0692,-151.007,12/2/80,6075030,498722,600,20310
+Dry Tortugas National Park,FL,drto,24.6286,-82.8732,10/26/92,64701,84873,0,10
+Everglades National Park,FL,ever,25.2866,-80.8987,12/6/47,1508976,741983,0,8
+Gates of the Arctic National Park and Preserve,AK,gaar,67.78,-153.3,12/2/80,8400000,11907,600,8510
+Gateway Arch National Park,MO,jeff,38.6247,-90.1848,2/22/18,91,2422836,,
+Glacier Bay National Park and Preserve,AK,glba,58.5,-136.9,12/2/80,3280840,703659,0,15300
+Glacier National Park,MT,glac,48.7596,-113.787,5/11/10,1013126,3208755,3150,10466
+Grand Canyon National Park,AZ,grca,36.107,-112.113,2/26/19,1218375,4919163,2400,8803
+Grand Teton National Park,WY,grte,43.7904,-110.6818,9/14/50,310000,3628222,6320,13770
+Great Basin National Park,NV,grba,38.9833,-114.3,10/27/86,77180,152068,6200,13065
+Great Sand Dunes National Park and Preserve,CO,grsa,37.7916,-105.5943,9/13/04,149028,437661,7515,13604
+Great Smoky Mountains,TN/NC,grsm,35.6131,-83.5532,6/15/34,522427,12191834,875,6643
+Guadalupe Mountains National Park,TX,gumo,31.92,-104.87,9/30/72,86367,226134,3650,8751
+Haleakala National Park,HI,hale,20.7204,-156.1552,7/1/61,33265,732477,0,10023
+Hawaii Volcanoes National Park,HI,havo,19.4194,-155.2885,8/1/16,354461,1433593,0,13679
+Hot Springs National Park,AR,hosp,34.5117,-93.0537,3/4/21,5550,2494611,600,1405
+Indiana Dunes National Park,IN,indu,41.6533,-87.0524,2/15/19,15349,2705209,580,780
+Isle Royale National Park,MI,ISRO,47.9959,-88.9094,4/3/40,571790,28965,602,1394
+Joshua Tree National Park,CA,jotr,33.8734,-115.901,10/31/94,792510,2991874,536,5814
+Katmai National Park and Preserve,AK,katm,58.54,-155.78,12/2/80,4093077,36230,,
+Kenai Fjords National Park,AK,kefj,59.9181,-149.6504,12/2/80,669984,425369,0,6450
+Kings Canyon National Park,CA,kica,36.8879,-118.5551,3/4/40,461901,700000,4600,14248
+Kobuk Valley National Park,AK,kova,67.55,-159.28,12/2/80,1750716,17233,,
+Lake Clark National Park and Preserve,AK,lacl,60.97,-153.42,12/2/80,4030015,18505,0,10197
+Lassen Volcanic National Park,CA,lavo,40.4977,-121.4207,8/9/16,106589,418978,5300,10457
+Mammoth Cave National Park,KY,maca,37.1869,-86.1009,7/1/41,52830,747042,,
+Mesa Verde National Park,CO,meve,37.2309,-108.4618,6/29/06,52485,463130,6900,8572
+Mount Rainier National Park,WA,mora,46.8523,-121.7603,1899-03-02,236381,2490729,1600,14410
+New River Gorge National Park and Preserve,WV,neri,38.0696,-81.081,12/27/20,72808,1811937,900,3000
+North Cascades National Park,WA,noca,48.7718,-121.2985,10/2/68,504654,16485,400,9220
+Olympic National Park,WA,olym,47.8021,-123.6044,6/29/38,922651,3717267,0,7980
+Petrified Forest National Park,AZ,pefo,34.91,-109.8068,12/9/62,221390,590334,5340,6235
+Pinnacles National Park,CA,pinn,36.4906,-121.1825,1/10/13,26606,350000,824,3304
+Redwood National and State Parks,CA,redw,41.2132,-124.0046,10/2/68,138999,600000,0,3262
+Rocky Mountain National Park,CO,romo,40.3428,-105.6836,1/26/15,265807,4108816,7500,14259
+Saguaro National Park,AZ,sagu,32.1797,-110.7361,10/14/94,91716,946058,2180,8664
+Sequoia National Park,CA,sequ,36.4864,-118.5658,1890-09-25,404064,1300000,1370,14505
+Shenandoah National Park,VA,shen,38.4755,-78.4537,12/26/35,198754,1682152,535,4051
+Theodore Roosevelt National Park,ND,thro,46.9789,-103.5387,11/10/78,70447,668679,1962,2855
+Voyageurs National Park,MN,voya,48.5,-92.8833,4/8/75,218054,199030,,
+White Sands National Park,NM,whsa,32.7872,-106.3257,12/20/19,146344,702236,3890,4116
+Wind Cave National Park,SD,wica,43.5562,-103.4794,1/9/03,33924,489399,3600,5013
+Wrangell-St. Elias National Park and Preserve,AK,wrst,61,-142,12/2/80,13200000,81670,0,18008
+Yellowstone National Park,WY/MT/ID,yell,44.428,-110.5885,1872-03-01,2219791,4744353,5282,11358
+Yosemite National Park,CA,yose,37.8651,-119.5383,1890-10-01,759620,4285729,2127,13114
+Zion National Park,UT,zion,37.2982,-113.0263,11/19/19,147242,4946592,3666,8726

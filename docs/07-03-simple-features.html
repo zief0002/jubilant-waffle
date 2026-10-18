@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>29&nbsp; Introduction to Simple Features Data – Data Visualization: Summarizing and Communicating Patterns in Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-d6a2ae2cb249da1580f0a11f71b8f854.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9efa02ec1c9fc2ae2ff3301d4cc10a3d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script id="quarto-axe-checker-options" type="text/plain">dHJ1ZQ==</script>
+<script type="text/javascript">
+// Function to toggle the visibility of solutions in exercises
+function toggle_visibility(id) {
+   var e = document.getElementById(id);
+   if(e.style.display == 'block')
+      e.style.display = 'none';
+   else
+      e.style.display = 'block';
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="assets/sticky-notes.css">
+<link rel="stylesheet" href="assets/table-styles.css">
+</head>
+
+<body class="nav-sidebar floating fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Introduction to Simple Features Data</span></h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Data Visualization: Summarizing and Communicating Patterns in Data</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Front Matter</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Computational Tools for Visualization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-r-and-rstudio-installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing the Computational Tools for the Course</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02-introduction-to-rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Using RStudio</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03-r-packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing and Loading R Packages</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04-script-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Script Files: Saving Your Syntax</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05-ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Building Blocks of <code>{ggplot2}</code></span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01-questions-to-ask-about-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Questions to Ask About Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02-importing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importing Data into RStudio</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Visualizing and Describing Quantitative Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01-quantitative-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quantitative Distributions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02-histograms-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Creating Histograms in R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03-labels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Labels: Improving Interpretation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04-computing-and-plotting-typical-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Computing and Plotting Typical Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-05-facetting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Facetting: Creating Small Multiples for Comparisons</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Visualizing and Describing Categorical Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01-categorical-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing and Describing Categorical Attributes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02-bar-charts-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Creating Bar Charts in R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03-color.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">More Colors with RGB and HEX</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04-conditioning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparing Categorical Distributions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05-scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Scales: Customizing Mapped Aesthetics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-06-bar-charts-from-summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Bar Charts from Summary Data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Visualizing and Describing Quantitative Relationships</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01-quantitative-relationships.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Quantitative Relationships</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02-scatterplots-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Creating Scatterplots in R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03-themes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Themes: Customizing the Background and Fonts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-04-conditioning-relationships.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Interactions: Different Quantitative Relationships Based on the Values of a Third Attribute</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-05-color-palettes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Color Palettes for Data Visualizations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-06-annotations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Annotations: Contextualing Interesting Findings</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Visualizations to Address Change Over Time</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-01-temporal-visualizations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Visualizations to Address Change Over Time</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-02-line-graphs-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Creating Line Graphs in R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Visualizations to Address Spatial Relationships</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-01-spatial-visualizations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Visualizations to Address Spatial Relationships</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-02-maps-with-points-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Introduction to Maps with R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-03-simple-features.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Introduction to Simple Features Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-05-shapefiles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Introduction to Mapping from Shapefiles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-04-choropleth-map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Choropleth Maps</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Introduction to Simple Features Data</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- This chapter will focus on the use of shapefiles to create maps in R. To illustrate this, we will use the *banned-books.csv* data. This dataset includes information the number of banned books in each state in the United States from 2021 to 2024.  -->
+<p>This chapter will focus on the use of simple features data to create maps in R. To do this we will use the <em>national-parks.csv</em> data. This dataset includes information on 61 national parks in the United States.</p>
+<p>In addition to loading the <code>{tidyverse}</code> library, we will also load the <code>{usmap}</code> and <code>{sf}</code> libraries. (Note: You may need to install these—check the list of packages in your <code>Packages</code> tab to see if you have it installed.)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load library</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usmap)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">######################</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>parks <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/national-parks.csv"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>parks</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 61 × 10
+   name     state nps     lat    lng established   area visitation elevation_min
+   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;
+ 1 Acadia … ME    acad   44.3  -68.3 2/26/19      49075    3961661             0
+ 2 Arches … UT    arch   38.7 -110.  11/12/71     76679    1463000          4085
+ 3 Badland… SD    badl   43.9 -102.  11/10/78    242756    1006809          2460
+ 4 Big Ben… TX    bibe   29.2 -103.  6/12/44     801163     561459          1800
+ 5 Biscayn… FL    bisc   25.5  -80.2 6/28/80     172971     512213             0
+ 6 Black C… CO    blca   38.6 -108.  10/21/99     30750     357069          5440
+ 7 Bryce C… UT    brca   37.6 -112.  2/25/28      35835    2498075          6620
+ 8 Canyonl… UT    cany   38.2 -110.  9/12/64     337598     818492          3700
+ 9 Capitol… UT    care   38.4 -111.  12/18/71    241904    1400000          3877
+10 Carlsba… NM    cave   32.1 -105.  5/14/30      46766     460474          3596
+# ℹ 51 more rows
+# ℹ 1 more variable: elevation_max &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Similar to how we previously created a map with points, we need to first create a base map and then add the locations to the base map.</p>
+<p><br></p>
+<section id="creating-a-base-map-from-a-simple-features-dataset" class="level2" data-number="29.1">
+<h2 data-number="29.1" class="anchored" data-anchor-id="creating-a-base-map-from-a-simple-features-dataset"><span class="header-section-number">29.1</span> Creating a Base Map from A Simple Features Dataset</h2>
+<p>The <code>{usmap}</code> package includes several datasets and functions for creating a map of the United States that includes the states of Alaska and Hawaii, along with Puerto Rico. The key function is <code>us_map()</code> This function takes the argument <code>region=</code>. To create a state-level map of the United States we will use <code>region="states"</code>. We will assign the output of this function into a data object called <code>my_usa</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get shapefile data for the USA map</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_usa <span class="ot">=</span> <span class="fu">us_map</span>(<span class="at">regions =</span> <span class="st">"states"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>my_usa</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 52 features and 3 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -2584074 ymin: -2602555 xmax: 2516258 ymax: 731628.1
+Projected CRS: NAD27 / US National Atlas Equal Area
+First 10 features:
+   fips abbr                 full                           geom
+1    02   AK               Alaska MULTIPOLYGON (((-2390688 -2...
+2    01   AL              Alabama MULTIPOLYGON (((1091785 -13...
+3    05   AR             Arkansas MULTIPOLYGON (((482022.2 -9...
+4    04   AZ              Arizona MULTIPOLYGON (((-1386064 -1...
+5    06   CA           California MULTIPOLYGON (((-1716581 -1...
+6    08   CO             Colorado MULTIPOLYGON (((-787705.6 -...
+7    09   CT          Connecticut MULTIPOLYGON (((2156162 -83...
+8    11   DC District of Columbia MULTIPOLYGON (((1950799 -40...
+9    10   DE             Delaware MULTIPOLYGON (((2037480 -28...
+10   12   FL              Florida MULTIPOLYGON (((1853163 -20...</code></pre>
+</div>
+</div>
+<p>The header of the data gives you information about the spatial data. The first line (<code>Simple feature collection with 52 features and 3 fields</code>) indicates that this is a <em>simple features</em> dataset. Simple features (SF) is a set of standards for storing geospatial data. In the geospatial data we saw previously, the data included columns giving the latitude and longitude of different locations. (We call that point data.) In SF data the geospatial information is provided by including a vector of <em>two-dimensional geometries</em> for each location. This allows for more complex mapping by expanding from points (which are still possible) to multipoint lines and polygons.</p>
+<p>In the <code>my_usa</code> data the <code>geom</code> column provides the two-dimensional geometries. Here you can see that each state/territory is a <code>MULTIPOLYGON</code>. This is a polygon that is defined by multiple points. (Note: A polygon is a series of points that closes back on itself.) Each state’s multipolygon geometry creates a set of connected points that draws the particular state. Since <code>my_usa</code> includes the geometry for all the states/territories, we can use this SF dataset to draw our base map.</p>
+<p>To plot simple features data we will use the <code>geom_sf()</code> layer in our <code>ggplot2</code> map. This function is available in the <code>{sf}</code> package. (That is why we loaded that package earlier.) Since we are provide a simple features dataset to the <code>data=</code> argument in the <code>ggplot()</code> layer, we don’t need to provide a mapping with the <code>aes()</code> function. To create our base map we can use:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create base map</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> my_usa) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="07-03-simple-features_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="07-03-simple-features_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can also use the <code>theme_map()</code> layer, from the <code>{ggthemes}</code> package, to include nice theme to use with our map.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a nice base map</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> my_usa) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_map</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="07-03-simple-features_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="07-03-simple-features_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="adding-points" class="level2" data-number="29.2">
+<h2 data-number="29.2" class="anchored" data-anchor-id="adding-points"><span class="header-section-number">29.2</span> Adding Points</h2>
+<p>Now that we have our base map, we need to add the national park locations to the map. You might try something similar to what we did in the last chapter:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a nice base map</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> my_usa) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_map</span>() <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> parks, <span class="fu">aes</span>(<span class="at">x =</span> lng, <span class="at">y =</span> lat), <span class="at">color =</span> <span class="st">"darkred"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="07-03-simple-features_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="07-03-simple-features_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This does not work! You only get a single point. This is because the longitudes and latitudes in the <code>parks</code> object use a different coordinate system than our simple features map.</p>
+<p><br></p>
+<section id="coordinate-reference-systems-crs" class="level3" data-number="29.2.1">
+<h3 data-number="29.2.1" class="anchored" data-anchor-id="coordinate-reference-systems-crs"><span class="header-section-number">29.2.1</span> Coordinate Reference Systems (CRS)</h3>
+<p>The coordinate system is a reference framework used to identify and measure the exact spatial location of features, images, and data on the Earth’s surface. The coordinate reference system (CRS) is the underlying mathematical model of the Earth used to create your map. There are two primary systems: Geographic Coordinate Systems (GCS) and Projected Coordinate Systems (PCS)</p>
+<p><br></p>
+<section id="geographic-coordinate-systems-gcs" class="level4" data-number="29.2.1.1">
+<h4 data-number="29.2.1.1" class="anchored" data-anchor-id="geographic-coordinate-systems-gcs"><span class="header-section-number">29.2.1.1</span> Geographic Coordinate Systems (GCS)</h4>
+<p>The longitude and latitude data (as in the <code>parks</code> object) use a geographic coordinate system. These systems use a three-dimensional spherical or ellipsoidal surface to map locations. This means the system does not flatten the Earth onto a map. Instead, it leaves the coordinates resting on a curved, three-dimensional mathematical model that mimics the real shape of the planet. In this model, instead of measuring locations in flat grid lines like a checkerboard (X and Y in meters or feet), a GCS measures locations using angles from the center of the Earth—the degrees given in the Latitude and Longitude.</p>
+<p>The GCS system used most commonly is the WGS 84 (<em>World Geodetic System 1984</em>) coordinate system. This particular CRS is the native coordinate system used by the global GPS network to give latitude and longitude coordinates. Since we have latitude and longitude for our national parks given in degrees, the CRS for these data is WGS 84.</p>
+<div class="fyi">
+<p><strong>FYI: What Exactly are Latitude and Longitude?</strong></p>
+<p>A Geographic Coordinate System (GCS) treats coordinates as angular measurements originating directly from the core of our spherical or ellipsoidal Earth. The system begins at the absolute center of Earth (think of it like the origin point). Now, imagine a flat horizontal sheet slicing the Earth right at the Equator. The Latitude of a specific point is the vertical angle measured upward or downward from that equatorial plane. Next, imagine a vertical sheet slicing the Earth through the Prime Meridian (Greenwich, England). The Longitude is the horizontal angle swept left or right from that starting line.</p>
+</div>
+<p><br></p>
+</section>
+<section id="projected-coordinate-systems-pcs" class="level4" data-number="29.2.1.2">
+<h4 data-number="29.2.1.2" class="anchored" data-anchor-id="projected-coordinate-systems-pcs"><span class="header-section-number">29.2.1.2</span> Projected Coordinate Systems (PCS)</h4>
+<p>The simple features map we created uses a different coordinate system. It uses a <em>projected coordinate system</em> called NAD27. A projected coordinate system is used to project the Earth’s curved surface onto a flat, two-dimensional planar surface that makes up our map. We need to use a projected coordinate system because we cannot take a curved surface and make it flat without distorting things or losing accuracy. To understand this, imagine Earth as an orange. If you peel an orange whole and try to press it completely flat onto a table, the peel will rip apart at the edges, or squish and stretch out of shape in the middle. This is illustrated in <a href="#fig-earth-orange" class="quarto-xref">Figure&nbsp;<span>29.1</span></a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"figs/07-03-earth-flat.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-earth-orange" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The world after flattening it.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-earth-orange-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figs/07-03-earth-flat.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;29.1: The world after flattening it."><img src="figs/07-03-earth-flat.png" class="img-fluid figure-img" alt="The world after flattening it." width="1806"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-earth-orange-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29.1: The world after flattening it.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Mapping software assumes that the grid lines (latitudes and longitudes) are perfectly uniform linear distances on our flat maps. In reality, lines of longitude get narrower as you approach the poles. Another issue is that when we map three-dimensional degrees onto a two-dimensional grid, it makes countries look progressively wider and shorter the further north or south they are from the equator. Projections use advanced mathematics to control this inevitable distortion.</p>
+<p>Each projected coordinate system allows you to pick exactly which geometric property—shape, area, or distance—remains 100% accurate and flat for your specific project area, slicing and stretching the map only where it won’t impact your analysis. For example, the NAD27 projection (North American Datum of 1927), anchors the map to a single physical location, namely Meades Ranch in Kansas. By doing this it optimizes the accuracy for mapping the United States.</p>
+<p>Google Maps uses the Mercator Projection system to projects the Earth onto a flat, two-dimensional square grid so that map tiles can be seamlessly loaded and navigated on computer screens and mobile devices. It crops the world at exactly 85.0511 degrees North and South latitude. By cutting off the poles, the mathematical projection creates a map that is a perfect square. This cropping preserves local angles and shapes perfectly, meaning that local roads intersect at a 90-degree angle on your screen just as they do in real life, making it highly intuitive for street-level navigation and driving directions.</p>
+<p><br></p>
+</section>
+</section>
+<section id="matching-coordinate-systems" class="level3" data-number="29.2.2">
+<h3 data-number="29.2.2" class="anchored" data-anchor-id="matching-coordinate-systems"><span class="header-section-number">29.2.2</span> Matching Coordinate Systems</h3>
+<p>In order to plot our national parks on our simple features map which uses the NAD27 CRS, we need to do two things: (1) turn our parks data into a simple features dataset; and (2) transform the data to use the NAD27 system.</p>
+<p>To convert our longitude and latitude data into a simple features dataset, we will use the <code>st_as_sf()</code> function from the <code>{sf}</code> package. We need to include the argument <code>coords=</code> which gives the names of the longitude and latitude columns (in that order) in a <code>c()</code> function. We also specify that the CRS is WGS 84 by including the argument <code>crs=4326</code>. (Note: The European Petroleum Survey Group (EPSG), an organization that originally published a standardized registry of spatial reference systems, datums, and coordinate transformations for the oil and gas industry. The value you supply to the <code>crs=</code> argument is the EPSG number that corresponds to the CRS. FOr WGS 84 the EPSG number is 4326)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the parks data to a simple features dataset</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>parks2 <span class="ot">=</span> <span class="fu">st_as_sf</span>(parks, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lng"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>parks2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 61 features and 8 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -159.28 ymin: 19.4194 xmax: -68.2733 ymax: 67.78
+Geodetic CRS:  WGS 84
+# A tibble: 61 × 9
+   name    state nps   established   area visitation elevation_min elevation_max
+ * &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+ 1 Acadia… ME    acad  2/26/19      49075    3961661             0          1530
+ 2 Arches… UT    arch  11/12/71     76679    1463000          4085          5653
+ 3 Badlan… SD    badl  11/10/78    242756    1006809          2460          3340
+ 4 Big Be… TX    bibe  6/12/44     801163     561459          1800          7825
+ 5 Biscay… FL    bisc  6/28/80     172971     512213             0             8
+ 6 Black … CO    blca  10/21/99     30750     357069          5440          8290
+ 7 Bryce … UT    brca  2/25/28      35835    2498075          6620          9115
+ 8 Canyon… UT    cany  9/12/64     337598     818492          3700          6800
+ 9 Capito… UT    care  12/18/71    241904    1400000          3877          8960
+10 Carlsb… NM    cave  5/14/30      46766     460474          3596          6370
+# ℹ 51 more rows
+# ℹ 1 more variable: geometry &lt;POINT [°]&gt;</code></pre>
+</div>
+</div>
+<p>Looking at the object that includes the transformed data, we can see that it has been transformed into a simple features dataset. The <code>geometry</code> column indicates that each geometric feature is a POINT. You can also see that the CRS is using WGS 84.</p>
+<p>Next, we will transform the CRS for the parks simple features data to NAD27. To do this we will use the <code>st_transform()</code> function. We provide this function the name of the simple features data we want to change the CRS for and the argument <code>crs=</code> giving the EPSG for the new CRS. The value for NAD27 is 9311.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform latitudes and longitudes to NAD27</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>parks_nad27 <span class="ot">=</span> <span class="fu">st_transform</span>(parks2, <span class="at">crs =</span> <span class="dv">9311</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View transformed data</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>parks_nad27 </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 61 features and 8 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -5501577 ymin: -2084210 xmax: 2442819 ymax: 3470600
+Projected CRS: NAD27 / US National Atlas Equal Area
+# A tibble: 61 × 9
+   name    state nps   established   area visitation elevation_min elevation_max
+ * &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+ 1 Acadia… ME    acad  2/26/19      49075    3961661             0          1530
+ 2 Arches… UT    arch  11/12/71     76679    1463000          4085          5653
+ 3 Badlan… SD    badl  11/10/78    242756    1006809          2460          3340
+ 4 Big Be… TX    bibe  6/12/44     801163     561459          1800          7825
+ 5 Biscay… FL    bisc  6/28/80     172971     512213             0             8
+ 6 Black … CO    blca  10/21/99     30750     357069          5440          8290
+ 7 Bryce … UT    brca  2/25/28      35835    2498075          6620          9115
+ 8 Canyon… UT    cany  9/12/64     337598     818492          3700          6800
+ 9 Capito… UT    care  12/18/71    241904    1400000          3877          8960
+10 Carlsb… NM    cave  5/14/30      46766     460474          3596          6370
+# ℹ 51 more rows
+# ℹ 1 more variable: geometry &lt;POINT [m]&gt;</code></pre>
+</div>
+</div>
+<p>From the header metadata, you can now see that the CRS for this simple features dataset is now NAD27. We can now plot the national parks using another <code>geom_sf()</code> layer.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a nice base map</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> my_usa) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_map</span>() <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> parks_nad27, <span class="at">color =</span> <span class="st">"darkred"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="07-03-simple-features_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="07-03-simple-features_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="protip-obtaining-the-epsg-number-for-a-simple-features-dataset" class="level3" data-number="29.2.3">
+<h3 data-number="29.2.3" class="anchored" data-anchor-id="protip-obtaining-the-epsg-number-for-a-simple-features-dataset"><span class="header-section-number">29.2.3</span> PROTIP: Obtaining the EPSG Number for a Simple Features Dataset</h3>
+<p>If you don’t know the EPSG number for the CRS, you can obtain it from the simple features data you use to create the base map using the <code>st_crs()</code> function. For example,</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get CRS Info</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(my_usa)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Coordinate Reference System:
+  User input: NAD27 / US National Atlas Equal Area 
+  wkt:
+PROJCRS["NAD27 / US National Atlas Equal Area",
+    BASEGEOGCRS["NAD27",
+        DATUM["North American Datum 1927",
+            ELLIPSOID["Clarke 1866",6378206.4,294.978698213898,
+                LENGTHUNIT["metre",1]]],
+        PRIMEM["Greenwich",0,
+            ANGLEUNIT["degree",0.0174532925199433]],
+        ID["EPSG",4267]],
+    CONVERSION["US National Atlas Equal Area",
+        METHOD["Lambert Azimuthal Equal Area (Spherical)",
+            ID["EPSG",1027]],
+        PARAMETER["Latitude of natural origin",45,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8801]],
+        PARAMETER["Longitude of natural origin",-100,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8802]],
+        PARAMETER["False easting",0,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8806]],
+        PARAMETER["False northing",0,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8807]]],
+    CS[Cartesian,2],
+        AXIS["easting (X)",east,
+            ORDER[1],
+            LENGTHUNIT["metre",1]],
+        AXIS["northing (Y)",north,
+            ORDER[2],
+            LENGTHUNIT["metre",1]],
+    USAGE[
+        SCOPE["Statistical analysis."],
+        AREA["United States (USA) - onshore and offshore."],
+        BBOX[15.56,167.65,74.71,-65.69]],
+    ID["EPSG",9311]]</code></pre>
+</div>
+</div>
+<p>The last line of this output indicates that the EPSG number is 9311.</p>
+<p><br></p>
+</section>
+</section>
+<section id="obtaining-other-maps-from-us_maps" class="level2" data-number="29.3">
+<h2 data-number="29.3" class="anchored" data-anchor-id="obtaining-other-maps-from-us_maps"><span class="header-section-number">29.3</span> Obtaining Other Maps From <code>us_maps()</code></h2>
+<p>Aside from the state map of the United States, we can also use the <code>us_map()</code> function to obtain simple features data for many other U.S. centric maps. For example instead of <code>regions = "states"</code>, we can use <code>regions = "counties"</code> to obtain a county-level map of the U.S.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain county-level data</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>us_counties <span class="ot">=</span> <span class="fu">us_map</span>(<span class="at">regions =</span> <span class="st">"counties"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>us_counties</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 3222 features and 4 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -2584074 ymin: -2602555 xmax: 2516258 ymax: 731628.1
+Projected CRS: NAD27 / US National Atlas Equal Area
+First 10 features:
+    fips abbr   full                       county
+1  02013   AK Alaska       Aleutians East Borough
+2  02016   AK Alaska   Aleutians West Census Area
+3  02020   AK Alaska       Anchorage Municipality
+4  02050   AK Alaska           Bethel Census Area
+5  02060   AK Alaska          Bristol Bay Borough
+6  02063   AK Alaska          Chugach Census Area
+7  02066   AK Alaska     Copper River Census Area
+8  02068   AK Alaska               Denali Borough
+9  02070   AK Alaska       Dillingham Census Area
+10 02090   AK Alaska Fairbanks North Star Borough
+                             geom
+1  MULTIPOLYGON (((-1757988 -2...
+2  MULTIPOLYGON (((-2390688 -2...
+3  MULTIPOLYGON (((-1513326 -2...
+4  MULTIPOLYGON (((-1899724 -2...
+5  MULTIPOLYGON (((-1681144 -2...
+6  MULTIPOLYGON (((-1472549 -2...
+7  MULTIPOLYGON (((-1452955 -2...
+8  MULTIPOLYGON (((-1581283 -1...
+9  MULTIPOLYGON (((-1788018 -2...
+10 MULTIPOLYGON (((-1508063 -1...</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot map</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> us_counties) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_map</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-usa-counties" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A county-level map of the USA.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-usa-counties-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="07-03-simple-features_files/figure-html/fig-usa-counties-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;29.2: A county-level map of the USA."><img src="07-03-simple-features_files/figure-html/fig-usa-counties-1.png" class="img-fluid figure-img" alt="A county-level map of the USA." width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-usa-counties-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29.2: A county-level map of the USA.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We can also get a map of a specific state by including the argument <code>include=</code> in the <code>us_map()</code> function, in addition to the <code>region=</code> argument. This argument takes either a state name, two-letter abbreviation, or FIPS code.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain county-level data</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>wisconsin <span class="ot">=</span> <span class="fu">us_map</span>(<span class="at">regions =</span> <span class="st">"states"</span>, <span class="at">include =</span> <span class="st">"WI"</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>wisconsin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 1 feature and 3 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 552057.8 ymin: -233226.4 xmax: 1024195 ymax: 269672.2
+Projected CRS: NAD27 / US National Atlas Equal Area
+   fips abbr      full                           geom
+50   55   WI Wisconsin MULTIPOLYGON (((1014189 129...</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot map</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> wisconsin) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_map</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-wisconsin" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A map of the Wisconsin.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wisconsin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="07-03-simple-features_files/figure-html/fig-wisconsin-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;29.3: A map of the Wisconsin."><img src="07-03-simple-features_files/figure-html/fig-wisconsin-1.png" class="img-fluid figure-img" alt="A map of the Wisconsin." width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wisconsin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29.3: A map of the Wisconsin.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>If you want just the state with the counties, use <code>region="counties"</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain county-level data</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>wisconsin <span class="ot">=</span> <span class="fu">us_map</span>(<span class="at">regions =</span> <span class="st">"counties"</span>, <span class="at">include =</span> <span class="st">"WI"</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>wisconsin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 72 features and 4 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 552057.8 ymin: -233226.4 xmax: 1024195 ymax: 269672.2
+Projected CRS: NAD27 / US National Atlas Equal Area
+First 10 features:
+      fips abbr      full          county                           geom
+3073 55001   WI Wisconsin    Adams County MULTIPOLYGON (((794099.4 -5...
+3074 55003   WI Wisconsin  Ashland County MULTIPOLYGON (((697301.8 26...
+3075 55005   WI Wisconsin   Barron County MULTIPOLYGON (((608733 1007...
+3076 55007   WI Wisconsin Bayfield County MULTIPOLYGON (((642206.5 22...
+3077 55009   WI Wisconsin    Brown County MULTIPOLYGON (((924981.7 30...
+3078 55011   WI Wisconsin  Buffalo County MULTIPOLYGON (((630435 -145...
+3079 55013   WI Wisconsin  Burnett County MULTIPOLYGON (((552717.8 10...
+3080 55015   WI Wisconsin  Calumet County MULTIPOLYGON (((923666.7 -4...
+3081 55017   WI Wisconsin Chippewa County MULTIPOLYGON (((651489.9 56...
+3082 55019   WI Wisconsin    Clark County MULTIPOLYGON (((711422 4340...</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot map</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> wisconsin) <span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_map</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-wisconsin-counties" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A county-level map of the Wisconsin.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wisconsin-counties-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="07-03-simple-features_files/figure-html/fig-wisconsin-counties-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;29.4: A county-level map of the Wisconsin."><img src="07-03-simple-features_files/figure-html/fig-wisconsin-counties-1.png" class="img-fluid figure-img" alt="A county-level map of the Wisconsin." width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wisconsin-counties-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29.4: A county-level map of the Wisconsin.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Lastly, we can create a map for a particular county by using <code>region="counties"</code> and providing the county FIPS code in the <code>include=</code> argument. For example, say we wanted to create a map of Door County in Wisconsin. To do this we can examine the Wisconsin county-level data and make a note of the FIPS code—in this case Door County’s FIPS code is 55029.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"figs/07-03-door-county-fips.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-find-fips" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Finding the FIPS code for Door County.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-find-fips-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figs/07-03-door-county-fips.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;29.5: Finding the FIPS code for Door County."><img src="figs/07-03-door-county-fips.png" class="img-fluid figure-img" alt="Finding the FIPS code for Door County." width="902"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-find-fips-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29.5: Finding the FIPS code for Door County.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We then create a Door County dataset by using <code>include="55029"</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain Door County data</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>door_county <span class="ot">=</span> <span class="fu">us_map</span>(<span class="at">regions =</span> <span class="st">"counties"</span>, <span class="at">include =</span> <span class="st">"55029"</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>door_county</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 1 feature and 4 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 964965.6 ymin: 37278.64 xmax: 1024195 ymax: 133546
+Projected CRS: NAD27 / US National Atlas Equal Area
+      fips abbr      full      county                           geom
+3087 55029   WI Wisconsin Door County MULTIPOLYGON (((1014189 129...</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot map</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> door_county) <span class="sc">+</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_map</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-door-county" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A map of Door County in Wisconsin.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-door-county-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="07-03-simple-features_files/figure-html/fig-door-county-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;29.6: A map of Door County in Wisconsin."><img src="07-03-simple-features_files/figure-html/fig-door-county-1.png" class="img-fluid figure-img" alt="A map of Door County in Wisconsin." width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-door-county-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29.6: A map of Door County in Wisconsin.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>
