@@ -130,6 +130,7 @@ The simple features map we created uses a different coordinate system. It uses a
 #| label: fig-earth-orange
 #| fig-cap: "The world after flattening it."
 #| fig-alt: "The world after flattening it."
+#| echo: false
 
 knitr::include_graphics("figs/07-03-earth-flat.png")
 ```
@@ -267,6 +268,7 @@ Lastly, we can create a map for a particular county by using `region="counties"`
 #| label: fig-find-fips
 #| fig-cap: "Finding the FIPS code for Door County."
 #| fig-alt: "Finding the FIPS code for Door County."
+#| echo: false
 
 knitr::include_graphics("figs/07-03-door-county-fips.png")
 ```
